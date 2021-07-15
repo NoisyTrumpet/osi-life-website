@@ -1,14 +1,18 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://osilife.com",
     title: "OsiLIFE",
   },
   plugins: [
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "3jUP7g2ItAfGbtQLmy1ZYiS0z11oWVIZgcoNcN0xr-o",
-        spaceId: "90nqm46e3xnk",
+        accessToken: process.env.GATSBY_CONTENTFUL_DELIVERY_API_KEY,
+        spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
       },
     },
     "gatsby-plugin-sass",
