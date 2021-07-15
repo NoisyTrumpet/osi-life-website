@@ -1,6 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -15,6 +15,7 @@ module.exports = {
         spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
       },
     },
+    "@chakra-ui/gatsby-plugin",
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
@@ -36,6 +37,32 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: `gatsby-alias-imports`,
+      options: {
+        aliases: {
+          Components: `src/components`,
+          Constants: `src/constants`,
+          Features: `src/features`,
+          Graphql: `src/graphql`,
+          Hooks: `src/hooks`,
+          Pages: "src/pages",
+          Styles: `src/styles`,
+          Svg: `src/svg`,
+          Utils: `src/utils`,
+        },
+      },
+    },
+    // Fonts
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Baloo+2\:400,500,600,700,800`,
+        ],
+        display: 'swap'
+      }
     },
     {
       resolve: "gatsby-source-filesystem",

@@ -9,17 +9,27 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@chakra-ui/gatsby-plugin": "^2.0.1",
+    "@chakra-ui/icons": "^1.0.14",
+    "@chakra-ui/react": "^1.6.5",
+    "@contentful/rich-text-types": "^14.1.2",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "cross-env": "^7.0.3",
     "dotenv": "^8.6.0",
+    "framer-motion": "^4.1.17",
     "gatsby": "^3.9.1",
+    "gatsby-alias-imports": "^1.0.6",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^1.9.0",
     "gatsby-plugin-manifest": "^3.9.0",
     "gatsby-plugin-mdx": "^2.9.0",
@@ -35,5 +45,11 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "sass": "^1.35.2"
+  },
+  "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.22",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "2.2.1"
   }
 }
