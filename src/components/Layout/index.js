@@ -1,10 +1,19 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import theme from "../../@chakra-ui/gatsby-plugin/theme";
 import { ChakraProvider } from "@chakra-ui/react";
+import Header from "Components/Header";
+import Footer from "Components/Footer";
+import { SkipNavContent, SkipNavLink } from "Components/SkipNav/index";
 
 const Layout = ({ children }) => {
-  return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
+  return (
+    <ChakraProvider theme={theme}>
+      <SkipNavLink />
+      <Header />
+      <SkipNavContent>{children}</SkipNavContent>
+      <Footer />
+    </ChakraProvider>
+  );
 };
 
 export default Layout;

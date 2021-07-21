@@ -6,6 +6,11 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://osilife.com",
     title: "OsiLIFE",
+    titleTemplate: "%s | Remote Patient Care Partners",
+    description: "Remote Patient Care Partners",
+    url: "https://osilife.com", // No trailing slash allowed!
+    image: "src/images/icon.png", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@osilife",
   },
   plugins: [
     {
@@ -58,11 +63,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Baloo+2\:400,500,600,700,800`,
-        ],
-        display: 'swap'
-      }
+        fonts: [`Baloo+2\:400,500,600,700,800`],
+        display: "swap",
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
