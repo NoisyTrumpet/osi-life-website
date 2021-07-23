@@ -27,7 +27,7 @@ export const Template = (props) => {
       }}
       alignItems="center"
       bg={useColorModeValue("white", "gray.800")}
-      boxShadow={useColorModeValue("md", "none")}
+      // boxShadow={useColorModeValue("md", "none")}
       borderBottomWidth={useColorModeValue("none", "1px")}
     >
       {children.find((child) => child.type === Brand)?.props.children}
