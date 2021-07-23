@@ -36,7 +36,7 @@ const Header = () => {
           {navigation.map((link, index) => (
             <NavLink
               key={index}
-              href={`/${link.slug}`}
+              to={`/${link.slug}`}
               isActive={pathname.includes(link.slug)}
             >
               {link.title}
@@ -44,7 +44,9 @@ const Header = () => {
           ))}
         </Navbar.Links>
         <Navbar.Button>
-          <Button aria-label={cta.seoTitle}>{cta.title}</Button>
+          <Button variant="secondary" aria-label={cta.seoTitle}>
+            {cta.title}
+          </Button>
         </Navbar.Button>
       </Navbar>
     </Box>

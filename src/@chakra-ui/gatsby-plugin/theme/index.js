@@ -11,6 +11,7 @@ import styles from "./styles";
 
 // Components overrides & custom
 import Container from "./components/container";
+import Button from "./components/button";
 
 // Foundations
 import sizes from "./foundations/sizes";
@@ -32,6 +33,7 @@ const theme = extendTheme({
   colors,
   components: {
     Container,
+    Button,
   },
   breakpoints,
   config: {
