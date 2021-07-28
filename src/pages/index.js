@@ -13,12 +13,11 @@ const IndexPage = ({ data }) => {
   } = data.contentfulPage;
   // @TODO: Add Hero Component
   // @TODO: Add SVG Wrapper Component
-  console.log(pageBlocks);
 
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
-
+      {/* <h1>{title}</h1> */}
       {pageBlocks.map(
         (block) =>
           block.internal.type === "ContentfulBlockPageHeader" && (

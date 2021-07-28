@@ -1,6 +1,7 @@
-import React from "react";
-import Layout from "Components/Layout";
 import { graphql } from "gatsby";
+import * as React from "react";
+import Layout from "Components/Layout";
+
 import Seo from "Components/Seo";
 
 const PageTemplate = ({ data: page }) => {

@@ -41,8 +41,8 @@ const theme = extendTheme({
     useSystemColorMode: false,
   },
   fonts: {
-    heading: "Baloo 2",
-    body: "Baloo 2",
+    heading: `"Baloo 2"`,
+    body: `"Baloo 2"`,
   },
 });
 

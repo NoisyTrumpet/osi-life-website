@@ -59,14 +59,6 @@ module.exports = {
         },
       },
     },
-    // Fonts
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Baloo+2\:400,500,600,700,800`],
-        display: "swap",
-      },
-    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

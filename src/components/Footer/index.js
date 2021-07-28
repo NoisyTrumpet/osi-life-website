@@ -1,5 +1,4 @@
 import {
-  Box,
   Grid,
   GridItem,
   Text,
@@ -7,27 +6,27 @@ import {
   useColorModeValue as mode,
 } from "@chakra-ui/react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
 
 const Footer = () => {
   const { contentfulSiteSettings } = useStaticQuery(footerQuery);
-  console.log(contentfulSiteSettings);
 
   const {
     siteFooterContent: copyRight,
     siteSocialAccounts: socials,
   } = contentfulSiteSettings;
-  console.log(copyRight.raw);
-  console.log(socials);
 
-  const Bold = ({ children }) => (
-    <Text fontWeight="800" color="red">
-      {children}
-    </Text>
-  );
+  const Linker = ({ children, data }) => {
+    const link = data.data.uri;
+    return (
+      <Link to={link} aria-label={children} fontWeight="bold">
+        {children}
+      </Link>
+    );
+  };
   const TextWrapper = ({ children }) => (
     <Text color={`red`} className="styleing">
       {children}
@@ -35,10 +34,13 @@ const Footer = () => {
   );
 
   const options = {
-    renderMark: {
-      [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
-    },
+    // renderMark: {
+    //   [MARKS.BOLD]: (text) => <Linker>{text}</Linker>,
+    // },
     renderNode: {
+      [INLINES.HYPERLINK]: (node, children) => (
+        <Linker data={node}>{children}</Linker>
+      ),
       [BLOCKS.text]: (node, children) => <TextWrapper>{children}</TextWrapper>,
       [BLOCKS.list_item]: (node, children) => (
         <TextWrapper>{children}</TextWrapper>
@@ -64,40 +66,30 @@ const Footer = () => {
       py={5}
       px={10}
       borderTopLeftRadius={40}
+      mt={"auto"}
     >
       <GridItem color={`white`}>{renderRichText(copyRight, options)}</GridItem>
       <GridItem>
-        {socials.map((social) => {
-          if (social.title === "Facebook") {
-            return (
-              <IconButton
-                mx={1}
-                bg={`secondary`}
-                borderTopRightRadius={`50%`}
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                href={social.url}
-                aria-label={social.title}
-                icon={<FaFacebookF fontSize="20px" />}
-              />
-            );
-          } else if (social.title === "LinkedIn") {
-            return (
-              <IconButton
-                mx={1}
-                bg={`secondary`}
-                borderTopRightRadius={`50%`}
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                href={social.url}
-                aria-label={social.title}
-                icon={<FaLinkedinIn fontSize="20px" />}
-              />
-            );
-          }
-        })}
+        {socials.map((social) => (
+          <IconButton
+            mx={1}
+            bg={`secondary`}
+            borderTopRightRadius={`50%`}
+            as="a"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={social.url}
+            aria-label={social.title}
+            key={social.title}
+            icon={
+              social.title === `Facebook` ? (
+                <FaFacebookF fontSize="20px" color="white" />
+              ) : (
+                <FaLinkedinIn fontSize="20px" color="white" />
+              )
+            }
+          />
+        ))}
       </GridItem>
     </Grid>
   );
