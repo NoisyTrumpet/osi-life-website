@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import * as React from "react";
 import Layout from "Components/Layout";
-
+import FAQs from "Components/FAQs";
 import Seo from "Components/Seo";
 
 const PageTemplate = ({ data: page }) => {
@@ -12,10 +12,28 @@ const PageTemplate = ({ data: page }) => {
     pageBlocks,
   } = page.contentfulPage;
 
-  //   console.log(page.contentfulPage);
+  const BlockReturner = ({ block }) => {
+    if (block !== {} && block?.internal?.type === "ContentfulBlockFaq") {
+      return (
+        <FAQs
+          id={block.id}
+          title={block.title}
+          photo={block.photo}
+          variant={block.settingVariant}
+          items={block.questions}
+        />
+      );
+    }
+    return <div>{console.log(block)}</div>;
+  };
+
+  console.log(pageBlocks);
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
+      {pageBlocks.map((block) => (
+        <BlockReturner block={block} />
+      ))}
       <h1>{title}</h1>
     </Layout>
   );
@@ -85,6 +103,23 @@ export const query = graphql`
                 url
               }
             }
+          }
+        }
+        ... on ContentfulBlockFaq {
+          id
+          title
+          photo {
+            ...imageQuery
+          }
+          questions {
+            answer {
+              raw
+            }
+            question
+          }
+          settingVariant
+          internal {
+            type
           }
         }
       }

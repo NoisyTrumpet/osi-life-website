@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 export const imageQuery = graphql`
   fragment imageQuery on ContentfulAsset {
     title
+    id
     gatsbyImageData(
       quality: 90
       placeholder: BLURRED

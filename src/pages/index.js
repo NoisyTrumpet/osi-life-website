@@ -25,6 +25,7 @@ const IndexPage = ({ data }) => {
               title={block.title}
               variant={block.variant}
               image={block.image}
+              key={block.id}
             />
           )
       )}

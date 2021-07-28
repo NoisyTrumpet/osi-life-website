@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const PhotoWrapper = ({ image, width, height }) => {
+const PhotoWrapper = ({ image, width, height, id }) => {
   return (
     <svg
       data-name="Layer 1"
@@ -11,7 +11,7 @@ const PhotoWrapper = ({ image, width, height }) => {
     >
       <defs>
         <pattern
-          id="img"
+          id={`bg-${id}`}
           patternContentUnits="objectBoundingBox"
           width={"100%"}
           height={"100%"}
@@ -49,7 +49,7 @@ const PhotoWrapper = ({ image, width, height }) => {
       <path
         data-name="SVGID"
         d="M368.24 201.42a49.88 49.88 0 00-49.85-48.08h-69V25.7h-86.36v.09a49.89 49.89 0 00-47 49.8V153.35H.03v86.33h.09a49.89 49.89 0 0049.8 47h66.16v107.3h85.24a49.88 49.88 0 0048.08-49.85v-57.47h118.88v-85.24z"
-        fill={`url(#img)`}
+        fill={`url(#bg-${id})`}
       />
     </svg>
   );

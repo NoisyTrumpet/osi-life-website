@@ -61,6 +61,7 @@ const Hero = ({ title, variant, image }) => {
                 image={image.gatsbyImageData.images.fallback.src}
                 width={image.gatsbyImageData.width}
                 height={image.gatsbyImageData.height}
+                id={image.id}
               />
             </GridItem>
           )}
@@ -90,7 +91,12 @@ const Hero = ({ title, variant, image }) => {
         </Box>
       )}
       {!tabletDown && (
-        <Box position="relative" overflowX="hidden" h="fit-content" sx={{ svg: { width: "100%", marginLeft: '20%'} }}>
+        <Box
+          position="relative"
+          overflowX="hidden"
+          h="fit-content"
+          sx={{ svg: { width: "100%", marginLeft: "20%" } }}
+        >
           <PhotoWrapper
             image={image.gatsbyImageData.images.fallback.src}
             width={image.gatsbyImageData.width}
