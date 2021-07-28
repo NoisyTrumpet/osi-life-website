@@ -21,13 +21,15 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `).then((result) => {
       result.data.allContentfulPage.edges.forEach(({ node }) => {
-        createPage({
-          path: node.slug,
-          component: path.resolve(`./src/templates/page.js`),
-          context: {
-            slug: node.slug,
-          },
-        });
+        if (node.slug !== "/") {
+          createPage({
+            path: node.slug,
+            component: path.resolve(`./src/templates/page.js`),
+            context: {
+              slug: node.slug,
+            },
+          });
+        }
       });
       resolve();
     });
