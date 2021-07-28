@@ -54,7 +54,7 @@ module.exports = {
           Hooks: `src/hooks`,
           Pages: "src/pages",
           Styles: `src/styles`,
-          Svg: `src/svg`,
+          SVG: `src/svg`,
           Utils: `src/utils`,
         },
       },
