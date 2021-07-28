@@ -1,21 +1,17 @@
 import {
   Box,
-  Grid,
-  GridItem,
   Text,
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  useColorModeValue as mode,
   Flex,
 } from "@chakra-ui/react";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { Link } from "gatsby";
 import React from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import PhotoWrapper from "SVG/PhotoWrapper";
 
 const FAQs = ({ id, title, photo, variant, items }) => {
@@ -31,12 +27,6 @@ const FAQs = ({ id, title, photo, variant, items }) => {
   // const { questions: PatientItems } = PatientFAQs;
   // const { questions: ProviderItems } = ProviderFAQs;
   // const { questions: CCMItems } = CCMFAQs;
-
-  const Bold = ({ children }) => (
-    <Text fontWeight="800" color="red">
-      {children}
-    </Text>
-  );
   const TextWrapper = ({ children }) => (
     <Text color={`red`} className="styleing">
       {children}
@@ -76,13 +66,13 @@ const FAQs = ({ id, title, photo, variant, items }) => {
     },
   };
 
-  // if (variant === "Primary") {
   return (
     <Flex
       flexDirection={variant === "Secondary" && `row-reverse`}
       my={`4rem`}
       bg={variant === "Secondary" && `lightGrayBG`}
       borderTopLeftRadius={variant === "Secondary" && 140}
+      key={id}
     >
       <Box
         flex={`40%`}
@@ -146,44 +136,6 @@ const FAQs = ({ id, title, photo, variant, items }) => {
       </Box>
     </Flex>
   );
-  // }
 };
 
 export default FAQs;
-
-{
-  /* <Flex flexDirection={`row-reverse`} my={`4rem`} bg={`lightGrayBG`} borderTopLeftRadius={140}>
-    <Box flex={`40%`} my={`auto`}>
-        <GatsbyImage image={ProviderImg} alt={ProviderFAQs.photo.title} />
-    </Box>
-    <Box flex={`60%`} px={8} py={2} mx={4} my={`auto`}>
-    <Text
-        as="h2"
-        align={`center`}
-        fontSize={28}
-        color={`primary`}
-        fontWeight={500}
-        my={4}
-    >
-      {ProviderFAQs.title}
-    </Text>
-
-    {ProviderItems.map((qaItem) => {
-    return (
-    <Accordion allowToggle>
-      <AccordionItem borderBottomColor={`secondary`} borderTop={`none`}>
-        <AccordionButton color={`primary`} fontWeight={500} fontSize={18}>
-          <Box flex={`1`} textAlign={`left`}>
-            {qaItem.question}
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
-        <AccordionPanel py={4} textAlign={`left`}>
-          {renderRichText(qaItem.answer, options)}
-        </AccordionPanel>
-      </AccordionItem>
-    </Accordion>
-    )})}
-    </Box>
-</Flex> */
-}

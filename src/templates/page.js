@@ -31,7 +31,7 @@ const PageTemplate = ({ data: page }) => {
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
-      {pageBlocks.map((block) => (
+      {pageBlocks && pageBlocks.map((block) => (
         <BlockReturner block={block} />
       ))}
       <h1>{title}</h1>
