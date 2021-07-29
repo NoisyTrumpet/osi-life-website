@@ -1,8 +1,6 @@
 import * as React from "react";
 
 const PhotoWrapper = ({ image, width, height, id, fillColor, imgAlt }) => {
-
-
   return (
     <svg
       data-name="Layer 1"
