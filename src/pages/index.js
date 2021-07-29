@@ -3,6 +3,7 @@ import * as React from "react";
 import Layout from "Components/Layout";
 import Seo from "Components/Seo";
 import Hero from "Components/Hero";
+import FeaturedBenefits from "Components/FeaturedBenefits";
 
 const IndexPage = ({ data }) => {
   const {
@@ -26,6 +27,18 @@ const IndexPage = ({ data }) => {
               variant={block.variant}
               image={block.image}
               key={block.id}
+            />
+          )
+      )}
+      {/* Featured Benefits */}
+      {pageBlocks.map(
+        (featured) =>
+        featured.internal.type === "ContentfulBlockFeaturedBenefits" && (
+            <FeaturedBenefits
+              title={featured.title}
+              blockTitle={featured.benefits.title}
+              blockDescription={featured.benefits.description}
+              key={featured.id}
             />
           )
       )}
