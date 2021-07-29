@@ -88,7 +88,6 @@ const FAQs = ({ id, title, photo, variant, items }) => {
             right: variant === "Primary" && "100",
             position: "relative",
             transform: variant === "Primary" && "scaleX(-1)",
-            // fillColor: {mode("Primary")},
           },
         }}
       >
@@ -96,8 +95,9 @@ const FAQs = ({ id, title, photo, variant, items }) => {
           image={photo.gatsbyImageData.images.fallback.src}
           width={photo.gatsbyImageData.width}
           height={photo.gatsbyImageData.height}
-          alt={photo.title}
+          imgAlt={photo.title}
           id={photo.id}
+          fillColor={variant === "Secondary" && "#00ADBC" || "#FFA500"}
         />
       </Box>
       <Box flex={`60%`} px={8} py={2} mx={4} my={`auto`}>

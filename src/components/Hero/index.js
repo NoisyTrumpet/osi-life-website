@@ -62,6 +62,8 @@ const Hero = ({ title, variant, image }) => {
                 width={image.gatsbyImageData.width}
                 height={image.gatsbyImageData.height}
                 id={image.id}
+                imgAlt={image.title}
+                fillColor="#FFA500"
               />
             </GridItem>
           )}
