@@ -2,6 +2,7 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import Layout from "Components/Layout";
 import FAQs from "Components/FAQs";
+import FeaturedServices from "Components/FeatServices";
 import Seo from "Components/Seo";
 
 const PageTemplate = ({ data: page }) => {
@@ -23,8 +24,13 @@ const PageTemplate = ({ data: page }) => {
           items={block.questions}
         />
       );
+    } else if (
+      block !== {} &&
+      block?.internal?.type === "ContentfulBlockFeaturedServices"
+    ) {
+      return <FeaturedServices services={block.services} id={block.id} />;
     }
-    return <div>{console.log(block)}</div>;
+    return <div></div>;
   };
 
   console.log(pageBlocks);
@@ -100,6 +106,22 @@ export const query = graphql`
               file {
                 url
               }
+            }
+          }
+        }
+        ... on ContentfulBlockFeaturedServices {
+          id
+          internal {
+            type
+          }
+          services {
+            id
+            title
+            image {
+              ...imageQuery
+            }
+            page {
+              slug
             }
           }
         }

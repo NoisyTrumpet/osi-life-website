@@ -103,6 +103,9 @@ const Hero = ({ title, variant, image }) => {
             image={image.gatsbyImageData.images.fallback.src}
             width={image.gatsbyImageData.width}
             height={image.gatsbyImageData.height}
+            id={image.id}
+            imgAlt={image.title}
+            fillColor="#FFA500"
           />
         </Box>
       )}
