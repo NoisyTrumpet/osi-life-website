@@ -13,6 +13,8 @@ module.exports = {
     twitterUsername: "@osilife",
   },
   plugins: [
+    "gatsby-plugin-loadable-components-ssr",
+    `gatsby-plugin-preact`,
     {
       resolve: "gatsby-source-contentful",
       options: {

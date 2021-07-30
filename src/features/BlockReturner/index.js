@@ -1,10 +1,12 @@
 import React from "react";
-import Hero from "Components/Hero";
-import FeaturedBenefits from "Components/FeaturedBenefits";
-import FeaturedServices from "Components/FeatServices";
-import MissionStatement from "Components/MissionStatement";
-import FeaturedTestimonials from "Components/FeaturedTestimonials";
-import FAQs from "Components/FAQs";
+import loadable from '@loadable/component'
+
+const FeaturedTestimonials = loadable(() => import("Components/FeaturedTestimonials"))
+const Hero = loadable(() => import("Components/Hero"))
+const FeaturedBenefits = loadable(() => import("Components/FeaturedBenefits"))
+const FeaturedServices = loadable(() => import("Components/FeatServices"))
+const MissionStatement = loadable(() => import("Components/MissionStatement"))
+const FAQs = loadable(() => import("Components/FAQs"))
 
 const BlockReturner = ({ block }) => {
   if (block !== {}) {
