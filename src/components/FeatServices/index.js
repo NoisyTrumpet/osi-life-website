@@ -10,7 +10,6 @@ import { Link } from "gatsby";
 
 const FeaturedServices = ({ services, id }) => {
   const title = services[0]?.title;
-  console.log(title);
 
   return (
     <Grid
