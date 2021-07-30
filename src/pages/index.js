@@ -14,34 +14,39 @@ const IndexPage = ({ data }) => {
   } = data.contentfulPage;
   // @TODO: Add Hero Component
   // @TODO: Add SVG Wrapper Component
+  const BlockReturner = ({ block }) => {
+    if (block !== {} && block?.internal?.type === "ContentfulBlockPageHeader") {
+      return (
+        <Hero
+          title={block.title}
+          variant={block.variant}
+          image={block.image}
+          key={block.id}
+        />
+      );
+    }
+    if (
+      block !== {} &&
+      block?.internal?.type === "ContentfulBlockFeaturedBenefits"
+    ) {
+      return (
+        <FeaturedBenefits
+          title={block.title}
+          benefits={block.benefits}
+          key={block.id}
+        />
+      );
+    }
+    return <div>{console.log(block)}</div>;
+  };
 
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
       {/* <h1>{title}</h1> */}
-      {pageBlocks.map(
-        (block) =>
-          block.internal.type === "ContentfulBlockPageHeader" && (
-            <Hero
-              title={block.title}
-              variant={block.variant}
-              image={block.image}
-              key={block.id}
-            />
-          )
-      )}
-      {/* Featured Benefits */}
-      {pageBlocks.map(
-        (featured) =>
-        featured.internal.type === "ContentfulBlockFeaturedBenefits" && (
-            <FeaturedBenefits
-              title={featured.title}
-              blockTitle={featured.benefits.title}
-              blockDescription={featured.benefits.description}
-              key={featured.id}
-            />
-          )
-      )}
+      {pageBlocks.map((block) => (
+        <BlockReturner block={block} />
+      ))}
     </Layout>
   );
 };
