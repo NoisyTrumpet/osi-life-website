@@ -99,6 +99,7 @@ export const homeQuery = graphql`
           id
           title
           services {
+            id
             subtitle
             title
             image {

@@ -9,8 +9,6 @@ import React from "react";
 import { Link } from "gatsby";
 
 const FeaturedServices = ({ services, id }) => {
-  const title = services[0]?.title;
-
   return (
     <Grid
       gridTemplateColumns={[
@@ -37,42 +35,45 @@ const FeaturedServices = ({ services, id }) => {
       mt={"auto"}
       key={id}
     >
-      {services.map((service) => {
-        return (
-          <GridItem
-            sx={{
-              svg: {
-                width: "100%",
-                maxWidth: "100%",
-              },
-            }}
+      {services.map((service) => (
+        <GridItem
+          sx={{
+            svg: {
+              width: "100%",
+              maxWidth: "100%",
+            },
+          }}
+          key={service.id}
+        >
+          <PhotoWrapper
+            image={service.image?.gatsbyImageData.images.fallback.src}
+            width={service.image?.gatsbyImageData.width}
+            height={service.image?.gatsbyImageData.height}
+            imgAlt={service.image?.title}
+            id={service.image?.id}
+            fillColor={
+              (service.title === "Chronic Care Management" && "#00ADBC") ||
+              "#FFA500"
+            }
+          />
+          <Link
+            to={service.page.slug}
+            alt={service.title}
+            aria-label={service.title}
           >
-            <PhotoWrapper
-              image={service.image?.gatsbyImageData.images.fallback.src}
-              width={service.image?.gatsbyImageData.width}
-              height={service.image?.gatsbyImageData.height}
-              imgAlt={service.image?.title}
-              id={service.image?.id}
-              fillColor={
-                (service.title === "Chronic Care Management" && "#00ADBC") ||
-                "#FFA500"
-              }
-            />
-            <Link as={`a`} href={service.page.slug}>
-              <Heading
-                as={`h3`}
-                textAlign={`center`}
-                color={mode(`primary`)}
-                _hover={{
-                  color: mode(`secondary`),
-                }}
-              >
-                {service.title}
-              </Heading>
-            </Link>
-          </GridItem>
-        );
-      })}
+            <Heading
+              as={`h3`}
+              textAlign={`center`}
+              color={mode(`primary`)}
+              _hover={{
+                color: mode(`secondary`),
+              }}
+            >
+              {service.title}
+            </Heading>
+          </Link>
+        </GridItem>
+      ))}
     </Grid>
   );
 };
