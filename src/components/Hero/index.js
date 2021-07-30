@@ -26,11 +26,11 @@ const Hero = ({ title, variant, image }) => {
             "repeat(1, 100%)",
             "repeat(1, 100%)",
             "repeat(1, 100%)",
-            "repeat(1, 100%)",
+            "repeat(2, 50%)",
             "repeat(2, 50%)",
           ]}
         >
-          <GridItem px={20} py={[75, 100, 100, 200, 300]}>
+          <GridItem px={[20, 10, 10, 20]} py={[75, 100, 100, 200, 250, 300]}>
             <Heading
               as="h1"
               color="white"

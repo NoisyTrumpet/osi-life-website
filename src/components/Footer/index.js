@@ -57,15 +57,60 @@ const Footer = ({ path }) => {
   };
   console.log(path);
 
-if (path === `/` || path === `/services` || path === `/faq`) {
+  if (path === `/` || path === `/services` || path === `/faq`) {
+    return (
+      <Box bg={mode(`lightGrayBG`)} m={0} p={0} mW={`100vw`}>
+        <Grid
+          gridTemplateColumns={[`100%`, `100%`, `100%`, `85% 15%`, `90% 10%`]}
+          gridTemplateRows={[
+            `repeat(2,.5fr)`,
+            `repeat(2,.5fr)`,
+            `repeat(2,.5fr)`,
+            `repeat(1,1fr)`,
+            `repeat(1,1fr)`,
+          ]}
+          ml={10}
+          bg={mode(`primary`)}
+          py={5}
+          px={10}
+          borderTopLeftRadius={40}
+          mt={"auto"}
+        >
+          <GridItem color={`white`}>
+            {renderRichText(copyRight, options)}
+          </GridItem>
+          <GridItem
+            alignSelf={[`center`, `center`, `center`, `start`, `start`]}
+            justifySelf={`center`}
+          >
+            {socials.map((social) => (
+              <IconButton
+                mx={1}
+                bg={`secondary`}
+                borderTopRightRadius={`50%`}
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={social.url}
+                aria-label={social.title}
+                key={social.title}
+                icon={
+                  social.title === `Facebook` ? (
+                    <FaFacebookF fontSize="20px" color="white" />
+                  ) : (
+                    <FaLinkedinIn fontSize="20px" color="white" />
+                  )
+                }
+              />
+            ))}
+          </GridItem>
+        </Grid>
+      </Box>
+    );
+  }
+
   return (
-      <Box
-    bg={mode(`lightGrayBG`)}
-    m={0}
-    p={0}
-    mW={`100vw`}
-    >
-      <Grid
+    <Grid
       gridTemplateColumns={[`100%`, `100%`, `100%`, `85% 15%`, `90% 10%`]}
       gridTemplateRows={[
         `repeat(2,.5fr)`,
@@ -108,57 +153,7 @@ if (path === `/` || path === `/services` || path === `/faq`) {
         ))}
       </GridItem>
     </Grid>
-    </Box>
   );
-}
-
-return (
-  <Grid
-  gridTemplateColumns={[`100%`, `100%`, `100%`, `85% 15%`, `90% 10%`]}
-  gridTemplateRows={[
-    `repeat(2,.5fr)`,
-    `repeat(2,.5fr)`,
-    `repeat(2,.5fr)`,
-    `repeat(1,1fr)`,
-    `repeat(1,1fr)`,
-  ]}
-  ml={10}
-  bg={mode(`primary`)}
-  py={5}
-  px={10}
-  borderTopLeftRadius={40}
-  mt={"auto"}
->
-  <GridItem color={`white`}>{renderRichText(copyRight, options)}</GridItem>
-  <GridItem
-    alignSelf={[`center`, `center`, `center`, `start`, `start`]}
-    justifySelf={`center`}
-  >
-    {socials.map((social) => (
-      <IconButton
-        mx={1}
-        bg={`secondary`}
-        borderTopRightRadius={`50%`}
-        as="a"
-        target="_blank"
-        rel="noopener noreferrer"
-        href={social.url}
-        aria-label={social.title}
-        key={social.title}
-        icon={
-          social.title === `Facebook` ? (
-            <FaFacebookF fontSize="20px" color="white" />
-          ) : (
-            <FaLinkedinIn fontSize="20px" color="white" />
-          )
-        }
-      />
-    ))}
-  </GridItem>
-</Grid>
-);
-
-  
 };
 
 export default Footer;

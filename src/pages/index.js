@@ -4,6 +4,7 @@ import Layout from "Components/Layout";
 import Seo from "Components/Seo";
 import Hero from "Components/Hero";
 import FeaturedServices from "Components/FeatServices";
+import BlockReturner from "Features/BlockReturner";
 
 const IndexPage = ({ data }) => {
   const {
@@ -15,30 +16,12 @@ const IndexPage = ({ data }) => {
   // @TODO: Add Hero Component
   // @TODO: Add SVG Wrapper Component
 
-  const BlockReturner = ({ block }) => {
-    if (block !== {} && block?.internal?.type === "ContentfulBlockPageHeader") {
-      return (
-        <Hero
-              title={block.title}
-              variant={block.variant}
-              image={block.image}
-              key={block.id}
-            />
-      );
-    } else if (
-      block !== {} &&
-      block?.internal?.type === "ContentfulBlockFeaturedServices"
-    ) {
-      return <FeaturedServices services={block.services} id={block.id} />;
-    }
-    return <div></div>;
-  };
-
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
-      {/* <h1>{title}</h1> */}
-      {pageBlocks && pageBlocks.map((block) => <BlockReturner block={block} />)}
+      {pageBlocks.map((block) => (
+        <BlockReturner block={block} />
+      ))}
     </Layout>
   );
 };
@@ -73,6 +56,7 @@ export const homeQuery = graphql`
           id
           title
           benefits {
+            id
             title
             subtitle
             description {

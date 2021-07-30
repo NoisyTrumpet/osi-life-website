@@ -1,9 +1,8 @@
 import { graphql } from "gatsby";
 import * as React from "react";
 import Layout from "Components/Layout";
-import FAQs from "Components/FAQs";
-import FeaturedServices from "Components/FeatServices";
 import Seo from "Components/Seo";
+import BlockReturner from "Features/BlockReturner";
 
 const PageTemplate = ({ data: page }) => {
   const {
@@ -12,32 +11,9 @@ const PageTemplate = ({ data: page }) => {
     seoDescription: { seoDescription },
     pageBlocks,
   } = page.contentfulPage;
-
-  const BlockReturner = ({ block }) => {
-    if (block !== {} && block?.internal?.type === "ContentfulBlockFaq") {
-      return (
-        <FAQs
-          id={block.id}
-          title={block.title}
-          photo={block.photo}
-          variant={block.settingVariant}
-          items={block.questions}
-        />
-      );
-    } else if (
-      block !== {} &&
-      block?.internal?.type === "ContentfulBlockFeaturedServices"
-    ) {
-      return (<FeaturedServices services={block.services} id={block.id} />);
-    }
-    return <div></div>;
-  };
-
-  console.log(pageBlocks);
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
-      <h1>{title}</h1>
       {pageBlocks && pageBlocks.map((block) => <BlockReturner block={block} />)}
     </Layout>
   );
