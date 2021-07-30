@@ -3,17 +3,29 @@ import {
   GridItem,
   useColorModeValue as mode,
   Heading,
+  Box,
+  Container,
 } from "@chakra-ui/react";
 import PhotoWrapper from "SVG/PhotoWrapper";
 import React from "react";
 import { Link } from "gatsby";
 
 const FeaturedServices = ({ services, id }) => {
-  const title = services[0]?.title;
-  console.log(title);
+  // const title = services[0]?.title;
+  // console.log(title);
 
   return (
-    <Grid
+    <Box
+    bg={mode(`lightGrayBG`)}
+    py={5}
+    px={10}
+    borderTopLeftRadius={80}
+    borderTopRightRadius={80}
+    mt={"auto"}
+    key={id}
+    >
+      <Container>
+      <Grid
       gridTemplateColumns={[
         `repeat(1,85%)`,
         `repeat(1,70%)`,
@@ -30,13 +42,7 @@ const FeaturedServices = ({ services, id }) => {
       ]}
       gridGap={8}
       justifyContent={`space-around`}
-      bg={mode(`lightGrayBG`)}
-      py={5}
-      px={10}
-      borderTopLeftRadius={80}
-      borderTopRightRadius={80}
-      mt={"auto"}
-      key={id}
+     
     >
       {services.map((service) => {
         return (
@@ -54,10 +60,7 @@ const FeaturedServices = ({ services, id }) => {
               height={service.image?.gatsbyImageData.height}
               imgAlt={service.image?.title}
               id={service.image?.id}
-              fillColor={
-                (service.title === "Chronic Care Management" && "#00ADBC") ||
-                "#FFA500"
-              }
+              fillColor={(service.title === "Chronic Care Management" && "#00ADBC" )|| "#FFA500"}
             />
             <Link as={`a`} href={service.page.slug}>
               <Heading
@@ -75,6 +78,8 @@ const FeaturedServices = ({ services, id }) => {
         );
       })}
     </Grid>
+      </Container>
+    </Box>
   );
 };
 

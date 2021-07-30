@@ -3,10 +3,11 @@ import * as React from "react";
 import Layout from "Components/Layout";
 import Seo from "Components/Seo";
 import Hero from "Components/Hero";
+import FeaturedServices from "Components/FeatServices";
 
 const IndexPage = ({ data }) => {
   const {
-    title,
+    // title,
     seoTitle,
     seoDescription: { seoDescription },
     pageBlocks,
@@ -14,21 +15,30 @@ const IndexPage = ({ data }) => {
   // @TODO: Add Hero Component
   // @TODO: Add SVG Wrapper Component
 
-  return (
-    <Layout>
-      <Seo title={seoTitle} description={seoDescription} />
-      {/* <h1>{title}</h1> */}
-      {pageBlocks.map(
-        (block) =>
-          block.internal.type === "ContentfulBlockPageHeader" && (
-            <Hero
+  const BlockReturner = ({ block }) => {
+    if (block !== {} && block?.internal?.type === "ContentfulBlockPageHeader") {
+      return (
+        <Hero
               title={block.title}
               variant={block.variant}
               image={block.image}
               key={block.id}
             />
-          )
-      )}
+      );
+    } else if (
+      block !== {} &&
+      block?.internal?.type === "ContentfulBlockFeaturedServices"
+    ) {
+      return <FeaturedServices services={block.services} id={block.id} />;
+    }
+    return <div></div>;
+  };
+
+  return (
+    <Layout>
+      <Seo title={seoTitle} description={seoDescription} />
+      {/* <h1>{title}</h1> */}
+      {pageBlocks && pageBlocks.map((block) => <BlockReturner block={block} />)}
     </Layout>
   );
 };
@@ -107,10 +117,12 @@ export const homeQuery = graphql`
           id
           title
           services {
-            subtitle
             title
             image {
               ...imageQuery
+            }
+            page {
+              slug
             }
           }
           internal {

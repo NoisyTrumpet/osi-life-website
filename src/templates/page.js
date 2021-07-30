@@ -28,7 +28,7 @@ const PageTemplate = ({ data: page }) => {
       block !== {} &&
       block?.internal?.type === "ContentfulBlockFeaturedServices"
     ) {
-      return <FeaturedServices services={block.services} id={block.id} />;
+      return (<FeaturedServices services={block.services} id={block.id} />);
     }
     return <div></div>;
   };
@@ -37,8 +37,8 @@ const PageTemplate = ({ data: page }) => {
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
-      {pageBlocks && pageBlocks.map((block) => <BlockReturner block={block} />)}
       <h1>{title}</h1>
+      {pageBlocks && pageBlocks.map((block) => <BlockReturner block={block} />)}
     </Layout>
   );
 };
@@ -111,11 +111,8 @@ export const query = graphql`
         }
         ... on ContentfulBlockFeaturedServices {
           id
-          internal {
-            type
-          }
+          title
           services {
-            id
             title
             image {
               ...imageQuery
@@ -123,6 +120,9 @@ export const query = graphql`
             page {
               slug
             }
+          }
+          internal {
+            type
           }
         }
         ... on ContentfulBlockFaq {
