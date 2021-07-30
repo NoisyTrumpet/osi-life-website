@@ -97,7 +97,7 @@ const FAQs = ({ id, title, photo, variant, items }) => {
           height={photo.gatsbyImageData.height}
           imgAlt={photo.title}
           id={photo.id}
-          fillColor={variant === "Secondary" && "#00ADBC" || "#FFA500"}
+          fillColor={(variant === "Secondary" && "#00ADBC") || "#FFA500"}
         />
       </Box>
       <Box flex={`60%`} px={8} py={2} mx={4} my={`auto`}>

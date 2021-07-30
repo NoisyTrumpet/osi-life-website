@@ -3,6 +3,7 @@ import * as React from "react";
 import Layout from "Components/Layout";
 import FAQs from "Components/FAQs";
 import Seo from "Components/Seo";
+import MissionStatement from "Components/MissionStatement";
 
 const PageTemplate = ({ data: page }) => {
   const {
@@ -24,16 +25,29 @@ const PageTemplate = ({ data: page }) => {
         />
       );
     }
-    return <div>{console.log(block)}</div>;
+    if (
+      block !== {} &&
+      block?.internal?.type === "ContentfulBlockMissionStatement"
+    ) {
+      return (
+        <MissionStatement
+          id={block.id}
+          title={block.title}
+          missionTitle={block.missionTitle}
+          missionDescription={block.missionDescription.missionDescription}
+          visionTitle={block.visionTitle}
+          visionDescription={block.visionDescription.visionDescription}
+        />
+      );
+    }
+    return <div></div>;
   };
 
   console.log(pageBlocks);
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
-      {pageBlocks && pageBlocks.map((block) => (
-        <BlockReturner block={block} />
-      ))}
+      {pageBlocks && pageBlocks.map((block) => <BlockReturner block={block} />)}
       <h1>{title}</h1>
     </Layout>
   );
