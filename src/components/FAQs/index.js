@@ -15,18 +15,6 @@ import React from "react";
 import PhotoWrapper from "SVG/PhotoWrapper";
 
 const FAQs = ({ id, title, photo, variant, items }) => {
-  //   const { PatientFAQs, ProviderFAQs, CCMFAQs } = useStaticQuery(faqQuery);
-  //   console.log(PatientFAQs);
-  //   console.log(ProviderFAQs);
-  //   console.log(CCMFAQs);
-
-  // const PatientImg = getImage(PatientFAQs.photo);
-  // const ProviderImg = getImage(ProviderFAQs.photo);
-  // const CCMImg = getImage(CCMFAQs.photo);
-
-  // const { questions: PatientItems } = PatientFAQs;
-  // const { questions: ProviderItems } = ProviderFAQs;
-  // const { questions: CCMItems } = CCMFAQs;
   const TextWrapper = ({ children }) => (
     <Text color={`red`} className="styleing">
       {children}
@@ -42,9 +30,6 @@ const FAQs = ({ id, title, photo, variant, items }) => {
   };
 
   const options = {
-    // renderMark: {
-    //   [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
-    // },
     renderNode: {
       [INLINES.HYPERLINK]: (node, children) => (
         <Linker data={node}>{children}</Linker>
@@ -68,27 +53,33 @@ const FAQs = ({ id, title, photo, variant, items }) => {
 
   return (
     <Flex
-      flexDirection={variant === "Secondary" && `row-reverse`}
+      flexDirection={[
+        `column`,
+        `column`,
+        `column`,
+        (variant === "Secondary" && `row-reverse`) || `row`,
+        variant === "Secondary" && `row-reverse`,
+      ]}
       my={`4rem`}
       bg={variant === "Secondary" && `lightGrayBG`}
       borderTopLeftRadius={variant === "Secondary" && 140}
       key={id}
     >
       <Box
-        flex={`40%`}
+        flex={[`100%`, `100%`, `100%`, `40%`, `40%`]}
         my={`auto`}
         position="relative"
         overflow="hidden"
+        alignSelf={variant === "Secondary" && "flex-end"}
         sx={{
           svg: {
             width: "750px",
             maxWidth: "100%",
             top: "0",
-            left: variant === "Secondary" && "100",
-            right: variant === "Primary" && "100",
+            left: variant === "Secondary" && "20%",
+            right: variant === "Primary" && "20%",
             position: "relative",
             transform: variant === "Primary" && "scaleX(-1)",
-            // fillColor: {mode("Primary")},
           },
         }}
       >
@@ -96,11 +87,18 @@ const FAQs = ({ id, title, photo, variant, items }) => {
           image={photo.gatsbyImageData.images.fallback.src}
           width={photo.gatsbyImageData.width}
           height={photo.gatsbyImageData.height}
-          alt={photo.title}
+          imgAlt={photo.title}
           id={photo.id}
+          fillColor={(variant === "Secondary" && "#00ADBC") || "#FFA500"}
         />
       </Box>
-      <Box flex={`60%`} px={8} py={2} mx={4} my={`auto`}>
+      <Box
+        flex={[`100%`, `100%`, `100%`, `60%`, `60%`]}
+        px={[2, 2, 4, 8, 8]}
+        py={2}
+        mx={4}
+        my={`auto`}
+      >
         <Text
           as="h2"
           align={`center`}

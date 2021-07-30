@@ -60,7 +60,14 @@ const Footer = () => {
 
   return (
     <Grid
-      gridTemplateColumns={`90% 10%`}
+      gridTemplateColumns={[`100%`, `100%`, `100%`, `85% 15%`, `90% 10%`]}
+      gridTemplateRows={[
+        `repeat(2,.5fr)`,
+        `repeat(2,.5fr)`,
+        `repeat(2,.5fr)`,
+        `repeat(1,1fr)`,
+        `repeat(1,1fr)`,
+      ]}
       ml={10}
       bg={mode(`primary`)}
       py={5}
@@ -69,7 +76,10 @@ const Footer = () => {
       mt={"auto"}
     >
       <GridItem color={`white`}>{renderRichText(copyRight, options)}</GridItem>
-      <GridItem>
+      <GridItem
+        alignSelf={[`center`, `center`, `center`, `start`, `start`]}
+        justifySelf={`center`}
+      >
         {socials.map((social) => (
           <IconButton
             mx={1}
