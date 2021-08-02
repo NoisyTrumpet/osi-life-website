@@ -17,6 +17,7 @@ const colors = {
   cardLink: defaultColors.black,
   cardLinkHover: defaultColors.blue["600"],
   black: "#201D1D",
+  darkBG: "#5B6770",
   dark: {
     color: defaultColors.whiteAlpha["800"],
     bg: defaultColors.gray["900"],

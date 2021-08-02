@@ -101,6 +101,8 @@ export const homeQuery = graphql`
           id
           title
           services {
+            id
+            subtitle
             title
             image {
               ...imageQuery
@@ -119,6 +121,30 @@ export const homeQuery = graphql`
             description
           }
           title
+          internal {
+            type
+          }
+        }
+        ... on ContentfulBlockVisualList {
+          id
+          title
+          settingVariant
+          items {
+            subtitle
+            title
+            description {
+              raw
+            }
+            image {
+              ...imageQuery
+            }
+            icon {
+              ...imageQuery
+            }
+            page {
+              slug
+            }
+          }
           internal {
             type
           }
