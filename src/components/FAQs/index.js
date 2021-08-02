@@ -8,48 +8,11 @@ import {
   AccordionIcon,
   Flex,
 } from "@chakra-ui/react";
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
-import { renderRichText } from "gatsby-source-contentful/rich-text";
-import { Link } from "gatsby";
+import RichText from "components/RichText"
 import React from "react";
 import PhotoWrapper from "SVG/PhotoWrapper";
 
 const FAQs = ({ id, title, photo, variant, items }) => {
-  const TextWrapper = ({ children }) => (
-    <Text color={`red`} className="styleing">
-      {children}
-    </Text>
-  );
-  const Linker = ({ children, data }) => {
-    const link = data.data.uri;
-    return (
-      <Link to={link} aria-label={children} fontWeight="bold">
-        {children}
-      </Link>
-    );
-  };
-
-  const options = {
-    renderNode: {
-      [INLINES.HYPERLINK]: (node, children) => (
-        <Linker data={node}>{children}</Linker>
-      ),
-      [BLOCKS.text]: (node, children) => <TextWrapper>{children}</TextWrapper>,
-      [BLOCKS.list_item]: (node, children) => (
-        <TextWrapper>{children}</TextWrapper>
-      ),
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        return (
-          <>
-            <h2>Embedded Asset</h2>
-            <pre>
-              <code>{JSON.stringify(node, null, 2)}</code>
-            </pre>
-          </>
-        );
-      },
-    },
-  };
 
   return (
     <Flex
@@ -112,7 +75,7 @@ const FAQs = ({ id, title, photo, variant, items }) => {
 
         {items.map((item) => {
           return (
-            <Accordion allowToggle>
+            <Accordion allowToggle key={item.id}>
               <AccordionItem borderBottomColor={`secondary`} borderTop={`none`}>
                 <AccordionButton
                   color={`primary`}
@@ -125,7 +88,7 @@ const FAQs = ({ id, title, photo, variant, items }) => {
                   <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel py={4} textAlign={`left`}>
-                  {renderRichText(item.answer, options)}
+                  <RichText content={item.answer}/>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>

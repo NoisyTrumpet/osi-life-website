@@ -1,14 +1,12 @@
 import {
   Grid,
   GridItem,
-  Text,
   IconButton,
   useColorModeValue as mode,
 } from "@chakra-ui/react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
-import { renderRichText } from "gatsby-source-contentful/rich-text";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import RichText from "components/RichText"
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 
 const Footer = () => {
@@ -18,45 +16,6 @@ const Footer = () => {
     siteFooterContent: copyRight,
     siteSocialAccounts: socials,
   } = contentfulSiteSettings;
-
-  const Linker = ({ children, data }) => {
-    const link = data.data.uri;
-    return (
-      <Link to={link} aria-label={children} fontWeight="bold">
-        {children}
-      </Link>
-    );
-  };
-  const TextWrapper = ({ children }) => (
-    <Text color={`red`} className="styleing">
-      {children}
-    </Text>
-  );
-
-  const options = {
-    // renderMark: {
-    //   [MARKS.BOLD]: (text) => <Linker>{text}</Linker>,
-    // },
-    renderNode: {
-      [INLINES.HYPERLINK]: (node, children) => (
-        <Linker data={node}>{children}</Linker>
-      ),
-      [BLOCKS.text]: (node, children) => <TextWrapper>{children}</TextWrapper>,
-      [BLOCKS.list_item]: (node, children) => (
-        <TextWrapper>{children}</TextWrapper>
-      ),
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        return (
-          <>
-            <h2>Embedded Asset</h2>
-            <pre>
-              <code>{JSON.stringify(node, null, 2)}</code>
-            </pre>
-          </>
-        );
-      },
-    },
-  };
 
   return (
     <Grid
@@ -75,7 +34,9 @@ const Footer = () => {
       borderTopLeftRadius={40}
       mt={"auto"}
     >
-      <GridItem color={`white`}>{renderRichText(copyRight, options)}</GridItem>
+      <GridItem color={`white`}>
+        <RichText content={copyRight} />
+        </GridItem>
       <GridItem
         alignSelf={[`center`, `center`, `center`, `start`, `start`]}
         justifySelf={`center`}

@@ -1,35 +1,10 @@
 import * as React from "react";
-import { Container, Box, Grid, Text, Heading } from "@chakra-ui/react";
-import { renderRichText } from "gatsby-source-contentful/rich-text";
-// import PhotoWrapper from "SVG/PhotoWrapper";
-import { BLOCKS } from "@contentful/rich-text-types";
+import { Container, Box, Grid, Heading } from "@chakra-ui/react";
+import RichText from "components/RichText"
 import "./FeaturedBenefits.scss";
 
 const FeaturedBenefits = ({ title, benefits }) => {
-  const TextWrapper = ({ children }) => (
-    <Text color={`#00ADBC`} className="featuredBenefitsSection">
-      {children}
-    </Text>
-  );
 
-  const options = {
-    renderNode: {
-      [BLOCKS.text]: (node, children) => <TextWrapper>{children}</TextWrapper>,
-      [BLOCKS.list_item]: (node, children) => (
-        <TextWrapper>{children}</TextWrapper>
-      ),
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        return (
-          <>
-            <h2>Embedded Asset</h2>
-            <pre>
-              <code>{JSON.stringify(node, null, 2)}</code>
-            </pre>
-          </>
-        );
-      },
-    },
-  };
 
   return (
     <Container maxW="100%" px={0} my={5}>
@@ -57,7 +32,9 @@ const FeaturedBenefits = ({ title, benefits }) => {
             <Heading fontSize="xl" my={2}>
               {benefit.title}
             </Heading>
-            <Box>{renderRichText(benefit.description, options)}</Box>
+            <Box>
+              <RichText content={benefit.description} />
+              </Box>
           </Box>
         ))}
       </Grid>
