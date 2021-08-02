@@ -2,7 +2,6 @@ import {
   Grid,
   GridItem,
   Text,
-  IconButton,
   useColorModeValue as mode,
   Heading,
 } from "@chakra-ui/react";

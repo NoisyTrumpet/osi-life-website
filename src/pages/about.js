@@ -6,7 +6,6 @@ import BlockReturner from "Features/BlockReturner";
 
 const AboutPage = ({ data }) => {
   const {
-    title,
     seoTitle,
     seoDescription: { seoDescription },
     pageBlocks,

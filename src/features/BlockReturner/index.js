@@ -83,7 +83,8 @@ const BlockReturner = ({ block }) => {
         id={block.id}
         title={block.title}
         content={block.content}
-        image={block.photo}
+        photo={block.photo}
+        imageSubCaption={block.imageSubCaption}
       />
     );
   }

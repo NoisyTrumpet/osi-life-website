@@ -6,13 +6,11 @@ import BlockReturner from "Features/BlockReturner";
 
 const IndexPage = ({ data }) => {
   const {
-    title,
+    // title,
     seoTitle,
     seoDescription: { seoDescription },
     pageBlocks,
   } = data.contentfulPage;
-  // @TODO: Add Hero Component
-  // @TODO: Add SVG Wrapper Component
 
   return (
     <Layout>
@@ -79,6 +77,7 @@ export const homeQuery = graphql`
           id
           title
           testimonials {
+            id
             image {
               file {
                 url
