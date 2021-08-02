@@ -4,6 +4,7 @@ import FeaturedBenefits from "Components/FeaturedBenefits";
 import FeaturedServices from "Components/FeatServices";
 import MissionStatement from "Components/MissionStatement";
 import FAQs from "Components/FAQs";
+import VisualList from "Components/VisualList";
 
 const BlockReturner = ({ block }) => {
   if (block !== {} && block?.internal?.type === "ContentfulBlockPageHeader") {
@@ -57,6 +58,16 @@ const BlockReturner = ({ block }) => {
         variant={block.settingVariant}
         photo={block.photo}
         items={block.questions}
+      />
+    );
+  }
+  if (block !== {} && block?.internal?.type === "ContentfulBlockVisualList") {
+    return (
+      <VisualList
+        id={block.id}
+        title={block.title}
+        variant={block.settingVariant}
+        cards={block.items}
       />
     );
   }
