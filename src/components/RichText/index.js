@@ -5,9 +5,8 @@ import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { Link } from "gatsby";
 
 const RichText = ({ content }) => {
-
-  const Bold = ({ children }) => <strong>{children}</strong>
-  const TextWrapper = ({ children }) => <Text>{children}</Text>
+  const Bold = ({ children }) => <strong>{children}</strong>;
+  const TextWrapper = ({ children }) => <Text>{children}</Text>;
 
   const Linker = ({ children, data }) => {
     const link = data.data.uri;
@@ -16,19 +15,23 @@ const RichText = ({ content }) => {
         {children}
       </Link>
     );
-  }
+  };
 
   const options = {
     renderMark: {
-      [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+      [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
     },
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <TextWrapper>{children}</TextWrapper>,
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <TextWrapper>{children}</TextWrapper>
+      ),
       [INLINES.HYPERLINK]: (node, children) => (
         <Linker data={node}>{children}</Linker>
       ),
-      [BLOCKS.LIST_ITEM]: (node, children) => <li>{node.content[0].content[0].value}</li>,
-      [BLOCKS.EMBEDDED_ASSET]: node => {
+      [BLOCKS.LIST_ITEM]: (node, children) => (
+        <li>{node.content[0].content[0].value}</li>
+      ),
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
         return (
           <>
             <h2>Embedded Asset</h2>
@@ -36,16 +39,12 @@ const RichText = ({ content }) => {
               <code>{JSON.stringify(node, null, 2)}</code>
             </pre>
           </>
-        )
+        );
       },
     },
-  }
+  };
 
-  return (
-    <Box>
-      {renderRichText(content, options)}
-    </Box>
-  );
-}
+  return <Box>{renderRichText(content, options)}</Box>;
+};
 
 export default RichText;

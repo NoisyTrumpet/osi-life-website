@@ -5,7 +5,7 @@ import {
   useColorModeValue as mode,
 } from "@chakra-ui/react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-import RichText from "components/RichText"
+import RichText from "components/RichText";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 
@@ -36,7 +36,7 @@ const Footer = () => {
     >
       <GridItem color={`white`}>
         <RichText content={copyRight} />
-        </GridItem>
+      </GridItem>
       <GridItem
         alignSelf={[`center`, `center`, `center`, `start`, `start`]}
         justifySelf={`center`}

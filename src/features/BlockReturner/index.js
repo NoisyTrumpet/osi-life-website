@@ -1,7 +1,9 @@
 import React from "react";
 import loadable from "@loadable/component";
 
-const FeaturedTestimonials = loadable(() => import("Components/FeaturedTestimonials"));
+const FeaturedTestimonials = loadable(() =>
+  import("Components/FeaturedTestimonials")
+);
 const Hero = loadable(() => import("Components/Hero"));
 const FeaturedBenefits = loadable(() => import("Components/FeaturedBenefits"));
 const FeaturedServices = loadable(() => import("Components/FeatServices"));

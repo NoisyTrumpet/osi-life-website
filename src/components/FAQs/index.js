@@ -8,12 +8,11 @@ import {
   AccordionIcon,
   Flex,
 } from "@chakra-ui/react";
-import RichText from "components/RichText"
+import RichText from "components/RichText";
 import React from "react";
 import PhotoWrapper from "SVG/PhotoWrapper";
 
 const FAQs = ({ id, title, photo, variant, items }) => {
-
   return (
     <Flex
       flexDirection={[
@@ -88,7 +87,7 @@ const FAQs = ({ id, title, photo, variant, items }) => {
                   <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel py={4} textAlign={`left`}>
-                  <RichText content={item.answer}/>
+                  <RichText content={item.answer} />
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>

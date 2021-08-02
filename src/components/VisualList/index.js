@@ -9,11 +9,10 @@ import {
   Heading,
   useColorModeValue as mode,
 } from "@chakra-ui/react";
-import RichText from "components/RichText"
+import RichText from "components/RichText";
 // import PhotoWrapper from "SVG/PhotoWrapper";
 
 const VisualList = ({ id, title, variant, cards }) => {
-
   // Secondary Variant
   if (variant === "Secondary") {
     return (
@@ -118,7 +117,7 @@ const VisualList = ({ id, title, variant, cards }) => {
                 {card.title}
               </Heading>
               <Box align="left">
-              <RichText content={card.description} />
+                <RichText content={card.description} />
               </Box>
             </Box>
           );
