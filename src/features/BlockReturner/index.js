@@ -1,12 +1,15 @@
 import React from "react";
-import loadable from '@loadable/component'
+import loadable from "@loadable/component";
 
-const FeaturedTestimonials = loadable(() => import("Components/FeaturedTestimonials"))
-const Hero = loadable(() => import("Components/Hero"))
-const FeaturedBenefits = loadable(() => import("Components/FeaturedBenefits"))
-const FeaturedServices = loadable(() => import("Components/FeatServices"))
-const MissionStatement = loadable(() => import("Components/MissionStatement"))
-const FAQs = loadable(() => import("Components/FAQs"))
+const FeaturedTestimonials = loadable(() =>
+  import("Components/FeaturedTestimonials")
+);
+const Hero = loadable(() => import("Components/Hero"));
+const FeaturedBenefits = loadable(() => import("Components/FeaturedBenefits"));
+const FeaturedServices = loadable(() => import("Components/FeatServices"));
+const MissionStatement = loadable(() => import("Components/MissionStatement"));
+const FAQs = loadable(() => import("Components/FAQs"));
+const VisualList = loadable(() => import("Components/VisualList"));
 
 const BlockReturner = ({ block }) => {
   if (block !== {}) {
@@ -65,7 +68,16 @@ const BlockReturner = ({ block }) => {
       );
     }
   }
-
+  if (block !== {} && block?.internal?.type === "ContentfulBlockVisualList") {
+    return (
+      <VisualList
+        id={block.id}
+        title={block.title}
+        variant={block.settingVariant}
+        cards={block.items}
+      />
+    );
+  }
   return <div key={block.id}>{block !== {} && block.title && block.title}</div>;
 };
 

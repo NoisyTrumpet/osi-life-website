@@ -123,6 +123,30 @@ export const homeQuery = graphql`
             type
           }
         }
+        ... on ContentfulBlockVisualList {
+          id
+          title
+          settingVariant
+          items {
+            subtitle
+            title
+            description {
+              raw
+            }
+            image {
+              ...imageQuery
+            }
+            icon {
+              ...imageQuery
+            }
+            page {
+              slug
+            }
+          }
+          internal {
+            type
+          }
+        }
       }
     }
   }
