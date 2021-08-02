@@ -1,15 +1,14 @@
 import React from "react";
 import loadable from "@loadable/component";
 
-const FeaturedTestimonials = loadable(() =>
-  import("Components/FeaturedTestimonials")
-);
+const FeaturedTestimonials = loadable(() => import("Components/FeaturedTestimonials"));
 const Hero = loadable(() => import("Components/Hero"));
 const FeaturedBenefits = loadable(() => import("Components/FeaturedBenefits"));
 const FeaturedServices = loadable(() => import("Components/FeatServices"));
 const MissionStatement = loadable(() => import("Components/MissionStatement"));
 const FAQs = loadable(() => import("Components/FAQs"));
 const VisualList = loadable(() => import("Components/VisualList"));
+const MediaText = loadable(() => import("Components/MediaText"));
 
 const BlockReturner = ({ block }) => {
   if (block !== {}) {
@@ -75,6 +74,16 @@ const BlockReturner = ({ block }) => {
         title={block.title}
         variant={block.settingVariant}
         cards={block.items}
+      />
+    );
+  }
+  if (block !== {} && block?.internal?.type === "ContentfulBlockMediaText") {
+    return (
+      <MediaText
+        id={block.id}
+        title={block.title}
+        content={block.content}
+        image={block.photo}
       />
     );
   }

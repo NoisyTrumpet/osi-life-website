@@ -124,6 +124,20 @@ export const query = graphql`
             type
           }
         }
+        ... on ContentfulBlockMediaText {
+          id
+          settingVariant
+          title
+          imageSubCaption
+          photo {
+            file {
+              url
+            }
+          }
+          content {
+            raw
+          }
+        }
       }
     }
   }
