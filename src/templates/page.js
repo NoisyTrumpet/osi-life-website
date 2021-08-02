@@ -6,7 +6,7 @@ import BlockReturner from "Features/BlockReturner";
 
 const PageTemplate = ({ data: page }) => {
   const {
-    title,
+    // title,
     seoTitle,
     seoDescription: { seoDescription },
     pageBlocks,

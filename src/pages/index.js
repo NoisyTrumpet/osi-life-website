@@ -13,8 +13,6 @@ const IndexPage = ({ data }) => {
     seoDescription: { seoDescription },
     pageBlocks,
   } = data.contentfulPage;
-  // @TODO: Add Hero Component
-  // @TODO: Add SVG Wrapper Component
 
   return (
     <Layout>
@@ -81,6 +79,7 @@ export const homeQuery = graphql`
           id
           title
           testimonials {
+            id
             image {
               file {
                 url
