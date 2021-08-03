@@ -1,11 +1,9 @@
 import * as React from "react";
 import { Container, Box, Grid, Heading } from "@chakra-ui/react";
-import RichText from "components/RichText"
+import RichText from "components/RichText";
 import "./FeaturedBenefits.scss";
 
 const FeaturedBenefits = ({ title, benefits }) => {
-
-
   return (
     <Container maxW="100%" px={0} my={5}>
       <Heading as="h2" ml={10} mb={5} color="primary">
@@ -34,7 +32,7 @@ const FeaturedBenefits = ({ title, benefits }) => {
             </Heading>
             <Box>
               <RichText content={benefit.description} />
-              </Box>
+            </Box>
           </Box>
         ))}
       </Grid>

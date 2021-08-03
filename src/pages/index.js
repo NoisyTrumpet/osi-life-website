@@ -2,8 +2,6 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import Layout from "Components/Layout";
 import Seo from "Components/Seo";
-import Hero from "Components/Hero";
-import FeaturedServices from "Components/FeatServices";
 import BlockReturner from "Features/BlockReturner";
 
 const IndexPage = ({ data }) => {
@@ -112,6 +110,27 @@ export const homeQuery = graphql`
           }
           internal {
             type
+          }
+        }
+        ... on ContentfulBlockFeaturedServicesHome {
+          id
+          title
+          subtitle
+          internal {
+            type
+          }
+          services {
+            title
+            subtitle
+            description {
+              raw
+            }
+            image {
+              ...imageQuery
+            }
+            page {
+              slug
+            }
           }
         }
         ... on ContentfulBlockForm {

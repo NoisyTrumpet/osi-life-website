@@ -10,6 +10,7 @@ const FeaturedServices = loadable(() => import("Components/FeatServices"));
 const MissionStatement = loadable(() => import("Components/MissionStatement"));
 const FAQs = loadable(() => import("Components/FAQs"));
 const VisualList = loadable(() => import("Components/VisualList"));
+const HomeServices = loadable(() => import("Components/HomeServices"));
 
 const BlockReturner = ({ block }) => {
   if (block !== {}) {
@@ -34,6 +35,15 @@ const BlockReturner = ({ block }) => {
     }
     if (block?.internal?.type === "ContentfulBlockFeaturedServices") {
       return <FeaturedServices services={block.services} id={block.id} />;
+    }
+    if (block?.internal?.type === "ContentfulBlockFeaturedServicesHome") {
+      return (
+        <HomeServices
+          title={block.title}
+          subTitle={block.subtitle}
+          services={block.services}
+        />
+      );
     }
     if (block?.internal?.type === "ContentfulBlockMissionStatement") {
       return (

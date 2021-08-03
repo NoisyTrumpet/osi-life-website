@@ -17,6 +17,8 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import React from "react";
 import { Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { FaArrowRight } from "react-icons/fa";
 
 const HomeServices = ({ title, subTitle, services }) => {
   const TextWrapper = ({ children }) => (
@@ -63,10 +65,15 @@ const HomeServices = ({ title, subTitle, services }) => {
           {subTitle}
         </Text>
       </Box>
-      <Accordion allowToggle mb={8}>
-        <Flex direction={`row`}>
+      <Accordion allowMultiple mb={8}>
+        <Flex direction={[`column`, `column`, `column`, `row`, `row`]}>
           {services.map((service) => (
-            <AccordionItem border={`none`} w={`40%`} mx={`auto`}>
+            <AccordionItem
+              border={`none`}
+              maxW={[`90%`, `75%`, `60%`, `40%`, `40%`]}
+              mx={`auto`}
+              key={service.title}
+            >
               <AccordionButton
                 color={`primary`}
                 fontWeight={500}
@@ -77,36 +84,39 @@ const HomeServices = ({ title, subTitle, services }) => {
                 flexDirection={`column`}
                 _expanded={{
                   display: `grid`,
-                  gridTemplateRows: `repeat(2, auto)`,
-                  gridTemplateColumns: `80% 20%`,
+                  gridTemplateColumns: `70% 30%`,
+                  gridTemplateRows: `100px`,
                 }}
               >
-                <Image
-                  boxSize="100%"
-                  objectFit="cover"
-                  src={service.image.gatsbyImageData}
-                  alt={service.image.title}
+                <Box
                   gridRowStart={`1`}
                   gridColumnStart={`2`}
-                  borderBottomRadius={28}
-                  borderTopRightRadius={28}
-                />
-                {/* <Box
-                  bg={`grey`}
-                  w={`100%`}
-                  h={`100px`}
-                  gridRowStart={`1`}
-                  gridColumnStart={`2`}
-                  borderBottomRadius={28}
-                  borderTopRightRadius={28}
-                ></Box> */}
+                  borderBottomRadius={`20%`}
+                  borderTopRightRadius={`20%`}
+                  bg={`lightGrayBG`}
+                  px={4}
+                  pt={2}
+                  overflow={`hidden`}
+                  maxH={[`350px`, `350px`, `350px`, `350px`, `350px`]}
+                  zIndex={-1}
+                >
+                  <GatsbyImage
+                    image={service.image.gatsbyImageData}
+                    alt={service.image.title}
+                    w={`80%`}
+                    h={`auto`}
+                  />
+                </Box>
                 <Box
                   textAlign={`left`}
                   gridRowStart={`1`}
                   gridColumnStart={`1`}
                   alignSelf={`end`}
+                  mt={2}
                 >
-                  <Text fontSize={`2em`}>{service.subtitle}</Text>
+                  <Text fontSize={`2em`} lineHeight={1}>
+                    {service.subtitle}
+                  </Text>
                 </Box>
                 <Box
                   textAlign={`left`}
@@ -114,9 +124,17 @@ const HomeServices = ({ title, subTitle, services }) => {
                   gridColumnStart={`1`}
                   gridColumnEnd={`3`}
                 >
-                  <Heading color={`secondary`} fontSize={`3.3em`}>
+                  <Heading
+                    color={`secondary`}
+                    fontSize={`3.3em`}
+                    lineHeight={1}
+                  >
                     {service.title}
                   </Heading>
+                  <Box display={`inline-flex`} alignItems={`center`}>
+                    <Text mr={2}>Read More</Text>
+                    <FaArrowRight />
+                  </Box>
                 </Box>
               </AccordionButton>
               <AccordionPanel py={4} textAlign={`left`}>
