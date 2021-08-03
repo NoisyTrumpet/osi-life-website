@@ -11,6 +11,7 @@ const MissionStatement = loadable(() => import("Components/MissionStatement"));
 const FAQs = loadable(() => import("Components/FAQs"));
 const VisualList = loadable(() => import("Components/VisualList"));
 const HomeServices = loadable(() => import("Components/HomeServices"));
+const MediaText = loadable(() => import("Components/MediaText"));
 
 const BlockReturner = ({ block }) => {
   if (block !== {}) {
@@ -85,6 +86,17 @@ const BlockReturner = ({ block }) => {
         title={block.title}
         variant={block.settingVariant}
         cards={block.items}
+      />
+    );
+  }
+  if (block !== {} && block?.internal?.type === "ContentfulBlockMediaText") {
+    return (
+      <MediaText
+        id={block.id}
+        title={block.title}
+        content={block.content}
+        photo={block.photo}
+        imageSubCaption={block.imageSubCaption}
       />
     );
   }
