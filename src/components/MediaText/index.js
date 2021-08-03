@@ -4,24 +4,30 @@ import PropTypes from "prop-types";
 import { Box, Grid, GridItem, Heading, Container } from "@chakra-ui/react";
 import PhotoWrapper from "SVG/PhotoWrapper";
 import RichText from "Components/RichText";
+import "./MediaText.scss"
 
 const MediaText = ({ title, content, photo, imageSubCaption, id }) => {
+  // const [tabletDown] = useMediaQuery("(min-width: 63em)");
+  // const [isMed] = useMediaQuery("(min-width: 48em)");
+
   return (
-    <Container>
+    <Container m="1rem auto">
       <Grid
         gridTemplateColumns={[
           `repeat(1, 100%)`,
           `repeat(1, 100%)`,
-          `1fr, .5fr`,
-          `1.3fr 0.7fr`,
-          `1.3fr 0.7fr`,
+          `repeat(1, 100%)`,
+          `60% 40%`,
+          `60% 40%`,
         ]}
-        gridGap={8}
+        gridGap={[ 2, 4, 4, 8, 8 ]}
         justifyContent={`space-around`}
-        py={12}
+        py={[ 6, 6, 6, 12, 12]}
+        px={[ 6, 6, 6, 12, 12]}
         mt={"auto"}
       >
-        <GridItem>
+        <GridItem className="about-content"> 
+          {/* Text Content */}
           <Heading color="primary">{title}</Heading>
           <Box
             sx={{
@@ -38,14 +44,15 @@ const MediaText = ({ title, content, photo, imageSubCaption, id }) => {
             <RichText content={content} />
           </Box>
         </GridItem>
-        <GridItem>
+        <GridItem className="about-creative">
+          {/* Cross image with smiling man and OSI quote */}
           <Grid
             gridTemplateRows={[
-              `repeat(2,.5fr)`,
-              `repeat(2,.5fr)`,
-              `repeat(2,.5fr)`,
-              `repeat(2,.5fr)`,
-              `repeat(2,.5fr)`,
+              `50% 50%`,
+              `50% 50%`,
+              `50% 50%`,
+              `50% 50%`,
+              `50% 50%`,
             ]}
           >
             <GridItem>
