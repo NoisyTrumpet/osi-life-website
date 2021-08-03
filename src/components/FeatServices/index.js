@@ -62,7 +62,7 @@ const FeaturedServices = ({ services, id }) => {
                 }
               />
               <Link
-                to={service.page.slug}
+                to={`/${service.page.slug}`}
                 alt={service.title}
                 aria-label={service.title}
               >
