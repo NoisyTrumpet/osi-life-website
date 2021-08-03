@@ -1,9 +1,4 @@
-import {
-  Grid,
-  GridItem,
-  useColorModeValue as mode,
-  Heading,
-} from "@chakra-ui/react";
+import { Grid, GridItem, Heading } from "@chakra-ui/react";
 import PhotoWrapper from "SVG/PhotoWrapper";
 import React from "react";
 import { Link } from "gatsby";
@@ -27,7 +22,7 @@ const FeaturedServices = ({ services, id }) => {
       ]}
       gridGap={8}
       justifyContent={`space-around`}
-      bg={mode(`lightGrayBG`)}
+      bg={`lightGrayBG`}
       py={5}
       px={10}
       borderTopLeftRadius={80}
@@ -57,16 +52,17 @@ const FeaturedServices = ({ services, id }) => {
             }
           />
           <Link
-            to={service.page.slug}
+            to={`/${service.page.slug}`}
             alt={service.title}
             aria-label={service.title}
           >
+            {/* service-details */}
             <Heading
               as={`h3`}
               textAlign={`center`}
-              color={mode(`primary`)}
+              color={`primary`}
               _hover={{
-                color: mode(`secondary`),
+                color: `secondary`,
               }}
             >
               {service.title}

@@ -6,7 +6,7 @@ import { Link } from "gatsby";
 
 const RichText = ({ content }) => {
   const Bold = ({ children }) => <strong>{children}</strong>;
-  const TextWrapper = ({ children }) => <Text>{children}</Text>;
+  const TextWrapper = ({ children }) => <Text my={4}>{children}</Text>;
 
   const Linker = ({ children, data }) => {
     const link = data.data.uri;

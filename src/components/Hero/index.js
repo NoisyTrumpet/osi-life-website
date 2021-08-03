@@ -1,19 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  Box,
-  Button,
-  Grid,
-  GridItem,
-  Heading,
-  useMediaQuery,
-} from "@chakra-ui/react";
+import { Box, Button, Grid, GridItem, Heading } from "@chakra-ui/react";
 import PhotoWrapper from "SVG/PhotoWrapper";
 import HandCross from "SVG/HandCross";
 
 const Hero = ({ title, variant, image }) => {
-  const [tabletDown] = useMediaQuery("(min-width: 63em)");
-  const [isMed] = useMediaQuery("(min-width: 48em)");
   return (
     <>
       <Box
@@ -42,31 +33,32 @@ const Hero = ({ title, variant, image }) => {
               {title && title}
             </Heading>
           </GridItem>
-          {tabletDown && (
-            <GridItem
-              position="relative"
-              overflow="hidden"
-              sx={{
-                svg: {
-                  width: "750px",
-                  maxWidth: "100%",
-                  top: "0",
-                  right: "-130",
-                  position: "absolute",
-                },
-              }}
-              zIndex="3"
-            >
-              <PhotoWrapper
-                image={image.gatsbyImageData.images.fallback.src}
-                width={image.gatsbyImageData.width}
-                height={image.gatsbyImageData.height}
-                id={image.id}
-                imgAlt={image.title}
-                fillColor="#FFA500"
-              />
-            </GridItem>
-          )}
+          <GridItem
+            position="relative"
+            overflow="hidden"
+            display={{
+              md: "grid",
+            }}
+            sx={{
+              svg: {
+                width: "750px",
+                maxWidth: "100%",
+                top: "0",
+                right: "-130",
+                position: "absolute",
+              },
+            }}
+            zIndex="3"
+          >
+            <PhotoWrapper
+              image={image.gatsbyImageData.images.fallback.src}
+              width={image.gatsbyImageData.width}
+              height={image.gatsbyImageData.height}
+              id={image.id}
+              imgAlt={image.title}
+              fillColor="#FFA500"
+            />
+          </GridItem>
         </Grid>
         <Box
           position="absolute"
@@ -87,16 +79,27 @@ const Hero = ({ title, variant, image }) => {
           <HandCross />
         </Box>
       </Box>
-      {!isMed && (
-        <Box display="grid" placeItems="center" py={4}>
-          <Button variant="secondary">Contact</Button>
-        </Box>
-      )}
-      {!tabletDown && (
+      <Box
+        display={{
+          sm: "grid",
+          md: "none",
+          lg: "none",
+        }}
+        placeItems="center"
+        py={4}
+        w="100%"
+      >
+        <Button variant="secondary">Contact</Button>
+      </Box>
+      {image && (
         <Box
           position="relative"
           overflowX="hidden"
           h="fit-content"
+          display={{
+            md: "block",
+            lg: "none",
+          }}
           sx={{ svg: { width: "100%", marginLeft: "20%" } }}
         >
           <PhotoWrapper

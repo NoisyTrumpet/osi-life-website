@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Container, Box, Grid, Heading } from "@chakra-ui/react";
-import RichText from "components/RichText";
+import RichText from "Components/RichText";
 import "./FeaturedBenefits.scss";
 
 const FeaturedBenefits = ({ title, benefits }) => {

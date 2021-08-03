@@ -1,5 +1,5 @@
 import React, {
-  useLayoutEffect,
+  // useLayoutEffect,
   useCallback,
   useEffect,
   useState,
@@ -8,7 +8,7 @@ import React, {
 } from "react";
 
 import {
-  useMediaQuery,
+  // useMediaQuery,
   useTheme,
   Progress,
   VStack,
@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import ChevronRight from "SVG/ChevronRight";
 import ChevronLeft from "SVG/ChevronLeft";
+import { useWindowWidth } from "Hooks/index";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
 import { useBoundingRect } from "Hooks/index.js";
 import { percentage } from "Utils/index.js";
@@ -48,15 +49,31 @@ const ChakraCarousel = ({ children, gap }) => {
 
   const { breakpoints } = useTheme();
 
-  const [isBetweenBaseAndMd] = useMediaQuery(
-    `(min-width: ${breakpoints.base}) and (max-width: ${breakpoints.md})`
-  );
+  let width = useWindowWidth();
 
-  const [isBetweenMdAndXl] = useMediaQuery(
-    `(min-width: ${breakpoints.md}) and (max-width: ${breakpoints.xl})`
-  );
+  // const isBetweenBaseAndMd = width <= breakpoints.md;
 
-  const [isGreaterThanXL] = useMediaQuery(`(min-width: ${breakpoints.xl})`);
+  // const isBetweenBaseAndMd = width <= (breakpoints.base.split('px')) || width >= (breakpoints.md.split('px'));
+
+  const isBetweenBaseAndMd =
+    width >= parseInt(breakpoints.base.split("px")[0], 10) ||
+    width <= parseInt(breakpoints.md.split("px")[0], 10);
+
+  const isBetweenMdAndXl =
+    width >= parseInt(breakpoints.md.split("px")[0], 10) &&
+    width <= parseInt(breakpoints.xl.split("px")[0], 10);
+
+  const isGreaterThanXL = width > parseInt(breakpoints.xl.split("px")[0], 10);
+
+  // const [isBetweenBaseAndMd] = useMediaQuery(
+  //   `(min-width: ${breakpoints.base}) and (max-width: ${breakpoints.md})`
+  // );
+
+  // const [isBetweenMdAndXl] = useMediaQuery(
+  //   `(min-width: ${breakpoints.md}) and (max-width: ${breakpoints.xl})`
+  // );
+
+  // const [isGreaterThanXL] = useMediaQuery(`(min-width: ${breakpoints.xl})`);
 
   useEffect(() => {
     if (isBetweenBaseAndMd) {
@@ -139,10 +156,7 @@ function Slider({
 }) {
   const [ref, { width }] = useBoundingRect();
 
-  useLayoutEffect(() => initSliderWidth(Math.round(width)), [
-    width,
-    initSliderWidth,
-  ]);
+  useEffect(() => initSliderWidth(Math.round(width)), [width, initSliderWidth]);
 
   const handleFocus = () => {
     setTrackIsActive(true);

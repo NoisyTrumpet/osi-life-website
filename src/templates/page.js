@@ -14,7 +14,13 @@ const PageTemplate = ({ data: page }) => {
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
-      {pageBlocks && pageBlocks.map((block) => <BlockReturner block={block} />)}
+      {pageBlocks &&
+        pageBlocks.map((block, index) => (
+          <BlockReturner
+            block={block}
+            key={block !== {} ? block.id : `empty-block-${index}`}
+          />
+        ))}
     </Layout>
   );
 };
@@ -49,6 +55,20 @@ export const query = graphql`
           internal {
             type
           }
+        }
+        ... on ContentfulBlockBanner {
+          id
+          title
+          internal {
+            type
+          }
+          contentString
+          ctaButton {
+            slug
+            title
+            seoTitle
+          }
+          settingVariant
         }
         ... on ContentfulBlockMissionStatement {
           id
@@ -114,6 +134,7 @@ export const query = graphql`
             ...imageQuery
           }
           questions {
+            id
             answer {
               raw
             }

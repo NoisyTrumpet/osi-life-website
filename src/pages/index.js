@@ -2,6 +2,8 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import Layout from "Components/Layout";
 import Seo from "Components/Seo";
+// import loadable from "@loadable/component";
+
 import BlockReturner from "Features/BlockReturner";
 
 const IndexPage = ({ data }) => {
@@ -15,8 +17,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
-      {pageBlocks.map((block) => (
-        <BlockReturner block={block} />
+      {pageBlocks.map((block, index) => (
+        <BlockReturner
+          block={block}
+          key={block !== {} ? block.id : `empty-block-${index}`}
+        />
       ))}
     </Layout>
   );

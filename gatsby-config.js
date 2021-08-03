@@ -12,7 +12,12 @@ module.exports = {
     image: "src/images/icon.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@osilife",
   },
+  flags: {
+    FAST_DEV: true,
+    DEV_SSR: true,
+  },
   plugins: [
+    "@chakra-ui/gatsby-plugin",
     "gatsby-plugin-loadable-components-ssr",
     `gatsby-plugin-preact`,
     {
@@ -22,7 +27,7 @@ module.exports = {
         spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
       },
     },
-    "@chakra-ui/gatsby-plugin",
+
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
