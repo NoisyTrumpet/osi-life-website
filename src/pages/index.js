@@ -55,6 +55,11 @@ export const homeQuery = graphql`
             id
             title
             subtitle
+            icon {
+              file {
+                url
+              }
+            }
             description {
               raw
             }
