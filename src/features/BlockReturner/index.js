@@ -14,7 +14,10 @@ import HomeServices from "Components/HomeServices";
 
 const BlockReturner = ({ block }) => {
   if (block && block !== {}) {
-    if (block?.settingVariant === "Primary" && block?.internal?.type === "ContentfulBlockPageHeader") {
+    if (
+      block?.settingVariant === "Primary" &&
+      block?.internal?.type === "ContentfulBlockPageHeader"
+    ) {
       return (
         <Hero
           title={block.title}

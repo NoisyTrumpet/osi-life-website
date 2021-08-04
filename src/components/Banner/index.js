@@ -40,7 +40,9 @@ const Banner = ({ title, content, cta, variant, key }) => {
           {cta && (
             <Box display="grid" placeItems="center" pb={8}>
               {console.log(cta)}
-              <Button variant="secondary" as="a" href={`/${cta?.slug}`} >{cta?.title}</Button>
+              <Button variant="secondary" as="a" href={`/${cta?.slug}`}>
+                {cta?.title}
+              </Button>
             </Box>
           )}
         </Container>

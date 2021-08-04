@@ -76,14 +76,23 @@ const MediaText = ({ title, content, photo, imageSubCaption, id }) => {
                   color: "#FFA500",
                   fontSize: "1.65rem",
                   lineHeight: "1.2",
-                  padding: ["1.5rem 1rem", "2.5rem 2rem", "2.5rem 2rem", "2.5rem 2rem", "2.5rem 2rem"],
+                  padding: [
+                    "1.5rem 1rem",
+                    "2.5rem 2rem",
+                    "2.5rem 2rem",
+                    "2.5rem 2rem",
+                    "2.5rem 2rem",
+                  ],
                   margin: "1rem",
                 }}
               >
                 {imageSubCaption}
               </Box>
-              <Box className="multiHandCrossBox" p={10}>
-                <MultiHandCross className="AboutMultiHandCross" fillColor="#F2F3F4" />
+              <Box className="multiHandCrossBox" p={10} position="relative">
+                <MultiHandCross
+                  className="AboutMultiHandCross"
+                  fillColor="#F2F3F4"
+                />
               </Box>
             </GridItem>
           </Grid>

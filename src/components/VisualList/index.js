@@ -5,7 +5,7 @@ import {
   Flex,
   Grid,
   Heading,
-  useColorModeValue as mode
+  useColorModeValue as mode,
 } from "@chakra-ui/react";
 import RichText from "components/RichText";
 // import PhotoWrapper from "SVG/PhotoWrapper";
@@ -49,7 +49,7 @@ const VisualList = ({ id, title, variant, cards }) => {
               _last={{
                 borderBottomWidth: 0,
                 pb: 0,
-                mb: 0
+                mb: 0,
               }}
             >
               <Box
@@ -115,7 +115,7 @@ const VisualList = ({ id, title, variant, cards }) => {
               borderStyle="solid"
               borderColor="secondary"
               _last={{
-                borderBottomWidth: 0
+                borderBottomWidth: 0,
               }}
             >
               <img src={imageURL} alt="icon" width="140" />
