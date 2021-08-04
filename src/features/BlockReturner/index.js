@@ -11,12 +11,29 @@ const MissionStatement = loadable(() => import("Components/MissionStatement"));
 const FAQs = loadable(() => import("Components/FAQs"));
 const VisualList = loadable(() => import("Components/VisualList"));
 const MediaText = loadable(() => import("Components/MediaText"));
+const ServiceHero = loadable(() => import("Components/ServicesHero"));
 
 const BlockReturner = ({ block }) => {
   if (block !== {}) {
-    if (block?.internal?.type === "ContentfulBlockPageHeader") {
+    if (
+      block?.internal?.type === "ContentfulBlockPageHeader" &&
+      block?.settingVariant === "Primary"
+    ) {
       return (
         <Hero
+          title={block.title}
+          variant={block.variant}
+          image={block.image}
+          key={block.id}
+        />
+      );
+    }
+    if (
+      block?.internal?.type === "ContentfulBlockPageHeader" &&
+      block?.settingVariant === "Secondary"
+    ) {
+      return (
+        <ServiceHero
           title={block.title}
           variant={block.variant}
           image={block.image}

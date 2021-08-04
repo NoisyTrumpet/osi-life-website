@@ -31,6 +31,17 @@ export const query = graphql`
       seoTitle
       seoKeywords
       pageBlocks {
+        ... on ContentfulBlockPageHeader {
+          id
+          settingVariant
+          title
+          image {
+            ...imageQuery
+          }
+          internal {
+            type
+          }
+        }
         ... on ContentfulBlockMediaText {
           id
           title
