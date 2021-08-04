@@ -132,6 +132,7 @@ export const homeQuery = graphql`
           title
           settingVariant
           items {
+            id
             subtitle
             title
             description {

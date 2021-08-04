@@ -4,10 +4,8 @@ import {
   Box,
   Flex,
   Grid,
-  // GridItem,
-  // Text,
   Heading,
-  useColorModeValue as mode,
+  useColorModeValue as mode
 } from "@chakra-ui/react";
 import RichText from "components/RichText";
 // import PhotoWrapper from "SVG/PhotoWrapper";
@@ -48,6 +46,11 @@ const VisualList = ({ id, title, variant, cards }) => {
               borderBottom="3px"
               borderStyle="solid"
               borderColor="secondary"
+              _last={{
+                borderBottomWidth: 0,
+                pb: 0,
+                mb: 0
+              }}
             >
               <Box
                 flex={[`100%`, `100%`, `100%`, `30%`, `30%`]}
@@ -111,9 +114,12 @@ const VisualList = ({ id, title, variant, cards }) => {
               borderBottom="3px"
               borderStyle="solid"
               borderColor="secondary"
+              _last={{
+                borderBottomWidth: 0
+              }}
             >
               <img src={imageURL} alt="icon" width="140" />
-              <Heading as="h4" color="primary" my={8}>
+              <Heading as="h4" color="primary" mt={8} mb={4}>
                 {card.title}
               </Heading>
               <Box align="left">
