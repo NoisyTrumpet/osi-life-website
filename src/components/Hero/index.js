@@ -89,7 +89,7 @@ const Hero = ({ title, variant, image }) => {
         py={4}
         w="100%"
       >
-        <Button variant="secondary">Contact</Button>
+        <Button display="block" margin="0 auto"variant="secondary">Contact</Button>
       </Box>
       {image && (
         <Box

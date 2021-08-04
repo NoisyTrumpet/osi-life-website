@@ -10,6 +10,7 @@ import VisualList from "Components/VisualList";
 import TextBlock from "Components/TextBlock";
 import Banner from "Components/Banner";
 import ServiceHero from "Components/ServicesHero";
+import HomeServices from "Components/HomeServices";
 
 const BlockReturner = ({ block }) => {
   if (block && block !== {}) {
@@ -51,6 +52,15 @@ const BlockReturner = ({ block }) => {
           services={block.services}
           id={block.id}
           key={block.id}
+        />
+      );
+    }
+    if (block?.internal?.type === "ContentfulBlockFeaturedServicesHome") {
+      return (
+        <HomeServices
+          title={block.title}
+          subTitle={block.subtitle}
+          services={block.services}
         />
       );
     }

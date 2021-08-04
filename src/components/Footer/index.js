@@ -3,13 +3,14 @@ import {
   GridItem,
   IconButton,
   useColorModeValue as mode,
+  Box,
 } from "@chakra-ui/react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import RichText from "components/RichText";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ path }) => {
   const { contentfulSiteSettings } = useStaticQuery(footerQuery);
 
   const {

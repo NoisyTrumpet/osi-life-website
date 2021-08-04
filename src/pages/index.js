@@ -117,6 +117,27 @@ export const homeQuery = graphql`
             type
           }
         }
+        ... on ContentfulBlockFeaturedServicesHome {
+          id
+          title
+          subtitle
+          internal {
+            type
+          }
+          services {
+            title
+            subtitle
+            description {
+              raw
+            }
+            image {
+              ...imageQuery
+            }
+            page {
+              slug
+            }
+          }
+        }
         ... on ContentfulBlockForm {
           id
           description {

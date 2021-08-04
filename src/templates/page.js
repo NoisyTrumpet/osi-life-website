@@ -124,11 +124,8 @@ export const query = graphql`
         }
         ... on ContentfulBlockFeaturedServices {
           id
-          internal {
-            type
-          }
+          title
           services {
-            id
             title
             image {
               ...imageQuery
@@ -136,6 +133,9 @@ export const query = graphql`
             page {
               slug
             }
+          }
+          internal {
+            type
           }
         }
         ... on ContentfulBlockFaq {
