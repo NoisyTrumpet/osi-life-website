@@ -1,5 +1,4 @@
 import React from "react";
-// import loadable from "@loadable/component";
 import Hero from "Components/Hero";
 import FeaturedBenefits from "Components/FeaturedBenefits";
 import FeaturedServices from "Components/FeaturedServices";
@@ -10,22 +9,26 @@ import MediaText from "Components/MediaText";
 import VisualList from "Components/VisualList";
 import TextBlock from "Components/TextBlock";
 import Banner from "Components/Banner";
-
-// const FeaturedTestimonials = loadable(() => import("Components/FeaturedTestimonials"));
-// const Hero = loadable(() => import("Components/Hero"));
-// const FeaturedBenefits = loadable(() => import("Components/FeaturedBenefits"));
-// const FeaturedServices = loadable(() => import("Components/FeaturedServices"));
-// const MissionStatement = loadable(() => import("Components/MissionStatement"));
-// const FAQs = loadable(() => import("Components/FAQs"));
-// const VisualList = loadable(() => import("Components/VisualList"));
-// const MediaText = loadable(() => import("Components/MediaText"));
+import ServiceHero from "Components/ServicesHero";
 
 const BlockReturner = ({ block }) => {
-  const isBrowser = typeof window !== `undefined`;
   if (block && block !== {}) {
-    if (block?.internal?.type === "ContentfulBlockPageHeader") {
+    if (block?.settingVariant === "Primary" && block?.internal?.type === "ContentfulBlockPageHeader") {
       return (
         <Hero
+          title={block.title}
+          variant={block.variant}
+          image={block.image}
+          key={block.id}
+        />
+      );
+    }
+    if (
+      block?.internal?.type === "ContentfulBlockPageHeader" &&
+      block?.settingVariant === "Secondary"
+    ) {
+      return (
+        <ServiceHero
           title={block.title}
           variant={block.variant}
           image={block.image}
