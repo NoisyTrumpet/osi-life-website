@@ -1,14 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  Box,
-  Button,
-  Grid,
-  GridItem,
-  Heading,
-  useMediaQuery,
-  Img,
-} from "@chakra-ui/react";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 import PhotoWrapper from "SVG/PhotoWrapper";
 import InfoGraphic from "Svg/InfoGraphic";
 

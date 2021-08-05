@@ -10,7 +10,7 @@ import { SkipNavContent, SkipNavLink } from "Components/SkipNav/index";
 
 const Layout = ({ children }) => {
   const { pathname } = useLocation();
-  console.log(useLocation());
+  // console.log(useLocation());
 
   return (
     <ChakraProvider theme={theme}>

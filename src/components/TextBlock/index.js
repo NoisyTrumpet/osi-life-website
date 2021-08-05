@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Box, Heading } from "@chakra-ui/react";
 import RichText from "Components/RichText";
 

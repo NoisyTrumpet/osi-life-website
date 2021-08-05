@@ -3,7 +3,6 @@ import {
   GridItem,
   IconButton,
   useColorModeValue as mode,
-  Box,
 } from "@chakra-ui/react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import RichText from "components/RichText";

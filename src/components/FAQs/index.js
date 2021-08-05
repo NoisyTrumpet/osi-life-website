@@ -5,9 +5,9 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon,
   Flex,
 } from "@chakra-ui/react";
+import { FaMinus, FaPlus } from "react-icons/fa";
 import RichText from "components/RichText";
 import React from "react";
 import PhotoWrapper from "SVG/PhotoWrapper";
@@ -35,7 +35,7 @@ const FAQs = ({ id, title, photo, variant, items }) => {
         alignSelf={variant === "Secondary" && "flex-end"}
         sx={{
           svg: {
-            width: "750px",
+            width: ["680px", "680px", "680px", "750px", "750px"],
             maxWidth: "100%",
             top: "0",
             left: variant === "Secondary" && "20%",
@@ -64,7 +64,7 @@ const FAQs = ({ id, title, photo, variant, items }) => {
         <Text
           as="h2"
           align={`center`}
-          fontSize={28}
+          fontSize={[28, 28, 36, 36, 36]}
           color={`primary`}
           fontWeight={500}
           my={4}
@@ -76,19 +76,28 @@ const FAQs = ({ id, title, photo, variant, items }) => {
           return (
             <Accordion allowToggle key={item.id}>
               <AccordionItem borderBottomColor={`secondary`} borderTop={`none`}>
-                <AccordionButton
-                  color={`primary`}
-                  fontWeight={500}
-                  fontSize={18}
-                >
-                  <Box flex={`1`} textAlign={`left`}>
-                    {item.question}
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-                <AccordionPanel py={4} textAlign={`left`}>
-                  <RichText content={item.answer} />
-                </AccordionPanel>
+                {({ isExpanded }) => (
+                  <>
+                    <AccordionButton
+                      color={`primary`}
+                      fontWeight={500}
+                      fontSize={18}
+                    >
+                      <Box flex={`1`} textAlign={`left`}>
+                        {item.question}
+                      </Box>
+                      {/* <AccordionIcon /> */}
+                      {isExpanded ? (
+                        <FaMinus fontSize="14px" />
+                      ) : (
+                        <FaPlus fontSize="14px" />
+                      )}
+                    </AccordionButton>
+                    <AccordionPanel py={4} textAlign={`left`}>
+                      <RichText content={item.answer} />
+                    </AccordionPanel>
+                  </>
+                )}
               </AccordionItem>
             </Accordion>
           );
