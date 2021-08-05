@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Container, Box, Grid, Heading } from "@chakra-ui/react";
-import RichText from "Components/RichText";
+import { Container, Box, Grid, Heading, Img } from "@chakra-ui/react";
+import RichText from "components/RichText";
 import "./FeaturedBenefits.scss";
 
 const FeaturedBenefits = ({ title, benefits }) => {
@@ -27,6 +27,7 @@ const FeaturedBenefits = ({ title, benefits }) => {
             className="featuredBenefitBox"
             key={benefit.title}
           >
+            <Img src={benefit.icon.file.url} sx={{ margin: "1rem auto" }} />
             <Heading fontSize="xl" my={2}>
               {benefit.title}
             </Heading>
