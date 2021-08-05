@@ -71,7 +71,7 @@ const VisualList = ({ id, title, variant, cards }) => {
                   {card.title}
                 </Heading>
                 <p>{card.subtitle}</p>
-                <Box align="left" mt={8}>
+                <Box align="left" mt={4}>
                   <RichText content={card.description} />
                 </Box>
               </Box>
