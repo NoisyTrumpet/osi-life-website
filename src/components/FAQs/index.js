@@ -56,7 +56,7 @@ const FAQs = ({ id, title, photo, variant, items }) => {
       </Box>
       <Box
         flex={[`100%`, `100%`, `100%`, `60%`, `60%`]}
-        px={[2, 2, 4, 8, 8]}
+        px={[2, 2, 8, 8, 8]}
         py={2}
         mx={4}
         my={`auto`}
