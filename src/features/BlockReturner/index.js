@@ -46,6 +46,7 @@ const BlockReturner = ({ block }) => {
           title={block.title}
           benefits={block.benefits}
           key={block.id}
+          icon={block.icon}
         />
       );
     }
