@@ -20,7 +20,7 @@ const FeaturedBenefits = ({ title, benefits }) => {
         {benefits.map((benefit) => (
           <Box
             m={0}
-            px={8}
+            px={[8, 8, 12, 8, 8]}
             py={10}
             bg="secondary"
             color="white"

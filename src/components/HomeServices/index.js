@@ -20,7 +20,7 @@ const HomeServices = ({ title, subTitle, services }) => {
     <Container>
       <Box my={8}>
         <Heading color={`primary`}>{title}</Heading>
-        <Text fontSize={`1.5em`} color={`primary`}>
+        <Text fontSize={`1.5em`} color={`primary`} px={[4, 4, 8, 10, 10]}>
           {subTitle}
         </Text>
       </Box>
@@ -29,7 +29,7 @@ const HomeServices = ({ title, subTitle, services }) => {
           {services.map((service) => (
             <AccordionItem
               border={`none`}
-              maxW={[`90%`, `75%`, `60%`, `40%`, `40%`]}
+              maxW={[`90%`, `75%`, `75%`, `40%`, `40%`]}
               mx={`auto`}
               key={service.title}
             >
@@ -59,7 +59,7 @@ const HomeServices = ({ title, subTitle, services }) => {
                       px={[1, 1, 4, 4, 4]}
                       pt={2}
                       overflow={`hidden`}
-                      maxH={[`350px`, `350px`, `350px`, `350px`, `350px`]}
+                      maxH={[`350px`, `500px`, `600px`, `400px`, `400px`]}
                       zIndex={-1}
                     >
                       <GatsbyImage
@@ -109,7 +109,7 @@ const HomeServices = ({ title, subTitle, services }) => {
                       )}
                     </Box>
                   </AccordionButton>
-                  <AccordionPanel py={4} textAlign={`left`}>
+                  <AccordionPanel py={4} px={2} textAlign={`left`}>
                     <RichText content={service.description} />
                   </AccordionPanel>
                 </>

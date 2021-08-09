@@ -82,7 +82,7 @@ const Hero = ({ title, variant, image }) => {
       <Box
         display={{
           sm: "grid",
-          md: "none",
+          md: "grid",
           lg: "none",
         }}
         placeItems="center"

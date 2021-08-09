@@ -101,9 +101,9 @@ const FeaturedServices = ({ services, id, path }) => {
           gridTemplateColumns={[
             `repeat(1,85%)`,
             `repeat(1,70%)`,
-            `repeat(3,30%)`,
-            `repeat(3,30%)`,
-            `repeat(3,30%)`,
+            `repeat(3,20%)`,
+            `repeat(3,20%)`,
+            `repeat(3,20%)`,
           ]}
           gridTemplateRows={[
             `repeat(3,auto)`,
