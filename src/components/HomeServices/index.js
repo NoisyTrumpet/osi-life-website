@@ -40,6 +40,7 @@ const HomeServices = ({ title, subTitle, services }) => {
                     fontWeight={500}
                     fontSize={18}
                     mx={`auto`}
+                    px={1}
                     alignItems={`flex-start`}
                     display={`flex`}
                     flexDirection={`column`}
@@ -55,7 +56,7 @@ const HomeServices = ({ title, subTitle, services }) => {
                       borderBottomRadius={`20%`}
                       borderTopRightRadius={`20%`}
                       bg={`lightGrayBG`}
-                      px={4}
+                      px={[1, 1, 4, 4, 4]}
                       pt={2}
                       overflow={`hidden`}
                       maxH={[`350px`, `350px`, `350px`, `350px`, `350px`]}
@@ -75,7 +76,10 @@ const HomeServices = ({ title, subTitle, services }) => {
                       alignSelf={`end`}
                       mt={2}
                     >
-                      <Text fontSize={`2em`} lineHeight={1}>
+                      <Text
+                        fontSize={[`1.6em`, `1.6em`, `2em`, `2em`, `2em`]}
+                        lineHeight={1}
+                      >
                         {service.subtitle}
                       </Text>
                     </Box>
@@ -87,7 +91,7 @@ const HomeServices = ({ title, subTitle, services }) => {
                     >
                       <Heading
                         color={`secondary`}
-                        fontSize={`3.3em`}
+                        fontSize={[`2.6em`, `2.6em`, `3.3em`, `3.3em`, `3.3em`]}
                         lineHeight={1}
                       >
                         {service.title}
