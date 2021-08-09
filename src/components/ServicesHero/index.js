@@ -29,6 +29,7 @@ const ServiceHero = ({ title, variant, image }) => {
               svg: {
                 width: "750px",
                 maxWidth: "100%",
+                height: "auto",
                 top: "0",
                 right: ["100", "100", "130", "100", "130"],
                 position: "relative",

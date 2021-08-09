@@ -121,6 +121,7 @@ const FeaturedServices = ({ services, id, path }) => {
                 svg: {
                   width: "100%",
                   maxWidth: "100%",
+                  height: "auto",
                 },
               }}
               key={service.id}

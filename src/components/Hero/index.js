@@ -43,6 +43,7 @@ const Hero = ({ title, variant, image }) => {
               svg: {
                 width: "750px",
                 maxWidth: "100%",
+                height: "auto",
                 top: "0",
                 right: "-130",
                 position: "absolute",

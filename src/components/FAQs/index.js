@@ -37,6 +37,7 @@ const FAQs = ({ id, title, photo, variant, items }) => {
           svg: {
             width: ["680px", "680px", "680px", "750px", "750px"],
             maxWidth: "100%",
+            height: "auto",
             top: "0",
             left: variant === "Secondary" && "20%",
             right: variant === "Primary" && "20%",
