@@ -23,7 +23,8 @@ const Footer = ({ path }) => {
     path === "/faq" ||
     path === "/" ||
     path === "/services" ||
-    path === "/about"
+    path === "/about" ||
+    path === "/benefits"
   ) {
     return (
       <Box bg="lightGrayBG">

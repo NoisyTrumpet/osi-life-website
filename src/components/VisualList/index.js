@@ -15,71 +15,70 @@ const VisualList = ({ id, title, variant, cards }) => {
   // Secondary Variant
   if (variant === "Secondary") {
     return (
-      <Container
-        maxW="1500px"
-        p={[5, 20]}
-        my={10}
+      <Box
         bg={mode(`lightGrayBG`)}
         borderTopLeftRadius={80}
         borderTopRightRadius={80}
       >
-        <Heading as="h2" ml={10} my={[5, 0]} color="primary">
-          {title}
-        </Heading>
-        {cards.map((card, index) => {
-          let imageURL = "";
-          if (card.icon && card.icon.file.url) {
-            imageURL = card.icon.file.url;
-          } else if (card.image && card.image.file.url) {
-            imageURL = card.image.file.url;
-          }
-          return (
-            <Flex
-              flexDirection={[
-                `column`,
-                `column`,
-                `column`,
-                (index % 2 === 0 && `row`) || `row-reverse`,
-                index % 2 === 0 && `row`,
-              ]}
-              my={`4rem`}
-              pb={[5, 20]}
-              borderBottom="3px"
-              borderStyle="solid"
-              borderColor="secondary"
-              _last={{
-                borderBottomWidth: 0,
-                pb: 0,
-                mb: 0,
-              }}
-            >
-              <Box
-                flex={[`100%`, `100%`, `100%`, `30%`, `30%`]}
-                my={`auto`}
-                py={2}
-                mx={4}
+        <Container maxW="1500px" p={[5, 20]} mt={10}>
+          <Heading as="h2" ml={10} my={[5, 0]} color="primary">
+            {title}
+          </Heading>
+          {cards.map((card, index) => {
+            let imageURL = "";
+            if (card.icon && card.icon.file.url) {
+              imageURL = card.icon.file.url;
+            } else if (card.image && card.image.file.url) {
+              imageURL = card.image.file.url;
+            }
+            return (
+              <Flex
+                flexDirection={[
+                  `column`,
+                  `column`,
+                  `column`,
+                  (index % 2 === 0 && `row`) || `row-reverse`,
+                  index % 2 === 0 && `row`,
+                ]}
+                my={`4rem`}
+                pb={[5, 20]}
+                borderBottom="3px"
+                borderStyle="solid"
+                borderColor="secondary"
+                _last={{
+                  borderBottomWidth: 0,
+                  pb: 0,
+                  mb: 0,
+                }}
               >
-                <img src={imageURL} alt="icon" />
-              </Box>
-              <Box
-                flex={[`100%`, `100%`, `100%`, `70%`, `70%`]}
-                px={[2, 2, 4, 8, 8]}
-                py={2}
-                mx={4}
-                my={`auto`}
-              >
-                <Heading as="h4" color="primary">
-                  {card.title}
-                </Heading>
-                <p>{card.subtitle}</p>
-                <Box align="left" mt={4}>
-                  <RichText content={card.description} />
+                <Box
+                  flex={[`100%`, `100%`, `100%`, `30%`, `30%`]}
+                  my={`auto`}
+                  py={2}
+                  mx={4}
+                >
+                  <img src={imageURL} alt="icon" />
                 </Box>
-              </Box>
-            </Flex>
-          );
-        })}
-      </Container>
+                <Box
+                  flex={[`100%`, `100%`, `100%`, `70%`, `70%`]}
+                  px={[2, 2, 4, 8, 8]}
+                  py={2}
+                  mx={4}
+                  my={`auto`}
+                >
+                  <Heading as="h4" color="primary">
+                    {card.title}
+                  </Heading>
+                  <p>{card.subtitle}</p>
+                  <Box align="left" mt={4}>
+                    <RichText content={card.description} />
+                  </Box>
+                </Box>
+              </Flex>
+            );
+          })}
+        </Container>
+      </Box>
     );
   }
 
