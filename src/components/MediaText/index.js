@@ -1,13 +1,184 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Box, Grid, GridItem, Heading, Container } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  GridItem,
+  Heading,
+  Container,
+  Flex,
+} from "@chakra-ui/react";
 import PhotoWrapper from "SVG/PhotoWrapper";
 import RichText from "Components/RichText";
 import MultiHandCross from "SVG/MultiHandCross";
 // import "./MediaText.scss";
 
-const MediaText = ({ title, content, photo, imageSubCaption, id }) => {
+const MediaText = ({
+  title,
+  content,
+  photo,
+  imageSubCaption,
+  id,
+  path,
+  variant,
+}) => {
+  if (path === "/services-details") {
+    return (
+      <Flex
+        flexDirection={{
+          base: `column-reverse`,
+          xl: (variant === "Secondary" && `row-reverse`) || `row`,
+          "2xl": variant === "Secondary" && `row-reverse`,
+        }}
+        pb={`4rem`}
+        bg={variant === "Secondary" && `lightGrayBG`}
+        borderTopLeftRadius={variant === "Secondary" && 140}
+        key={id}
+      >
+        <Box
+          flex={[`100%`, `100%`, `100%`, `60%`, `60%`]}
+          px={[2, 2, 8, 8, 8]}
+          py={2}
+          mx={4}
+          my={`auto`}
+        >
+          <Box maxW={800} mx={`auto`}>
+            <Heading color="primary">{title}</Heading>
+            <Box
+              sx={{
+                h2: {
+                  fontSize: "2.25rem !important",
+                  fontWeight: "700 !important",
+                  lineHeight: "1.2 !important",
+                  color: "#00ADBC",
+                  padding: "1rem 0 !important",
+                },
+                p: { padding: [".5rem 0 !important"] },
+              }}
+            >
+              <RichText content={content} />
+            </Box>
+          </Box>
+        </Box>
+        <Box
+          flex={{ base: `100%`, xl: `40%` }}
+          mt={`auto`}
+          mb={8}
+          position="relative"
+          overflow="hidden"
+          alignSelf={variant === "Primary" && "flex-end"}
+          sx={{
+            svg: {
+              width: ["680px", "680px", "680px", "750px", "750px"],
+              maxWidth: "100%",
+              height: "auto",
+              top: "0",
+              left: variant === "Primary" && "20%",
+              right: variant === "Secondary" && "20%",
+              position: "relative",
+              transform: variant === "Secondary" && "scaleX(-1)",
+            },
+          }}
+        >
+          <PhotoWrapper
+            image={photo.gatsbyImageData.images.fallback.src}
+            width={photo.gatsbyImageData.width}
+            height={photo.gatsbyImageData.height}
+            imgAlt={photo.title}
+            id={photo.id}
+            fillColor={(variant === "Secondary" && "#00ADBC") || "#FFA500"}
+          />
+        </Box>
+      </Flex>
+    );
+  }
+  if (path === "/benefits") {
+    return (
+      <Flex
+        flexDirection={{
+          base: `column-reverse`,
+          xl: (variant === "Primary" && `row-reverse`) || `row`,
+          "2xl": variant === "Primary" && `row-reverse`,
+        }}
+        pb={`4rem`}
+        bg={variant === "Secondary" && `lightGrayBG`}
+        borderTopLeftRadius={variant === "Secondary" && 140}
+        key={id}
+      >
+        <Box
+          flex={{ base: `100%`, xl: `60%` }}
+          px={[2, 2, 8, 8, 8]}
+          py={2}
+          mx={4}
+          my={`auto`}
+        >
+          <Box maxW={800} mx={`auto`}>
+            <Heading color="primary">{title}</Heading>
+            <Box
+              sx={{
+                h2: {
+                  fontSize: "2.25rem !important",
+                  fontWeight: "700 !important",
+                  lineHeight: "1.2 !important",
+                  color: "#00ADBC",
+                  padding: "1rem 0 !important",
+                },
+                p: { padding: [".5rem 0 !important"] },
+              }}
+            >
+              <RichText content={content} />
+            </Box>
+          </Box>
+          <Box
+            display={{
+              base: `none`,
+              xl: (title === "Payor" && "block") || "none",
+            }}
+            p={[10, 10, 10, 11, 0, 1]}
+            mx={`auto`}
+            sx={{
+              svg: {
+                height: ["auto", "auto", "auto", "18rem", "30rem"],
+              },
+            }}
+          >
+            <MultiHandCross className="AboutMultiHandCross" fill="#F2F3F4" />
+          </Box>
+        </Box>
+        <Box
+          flex={[`100%`, `100%`, `100%`, `40%`, `40%`]}
+          mt={`auto`}
+          mb={8}
+          position="relative"
+          overflow="hidden"
+          alignSelf={variant === "Secondary" && "flex-end"}
+          sx={{
+            svg: {
+              width: ["680px", "680px", "680px", "750px", "750px"],
+              maxWidth: "100%",
+              height: "auto",
+              top: "0",
+              left: variant === "Secondary" && "20%",
+              right: variant === "Primary" && "20%",
+              position: "relative",
+              transform: variant === "Primary" && "scaleX(-1)",
+            },
+          }}
+        >
+          <PhotoWrapper
+            image={photo.gatsbyImageData.images.fallback.src}
+            width={photo.gatsbyImageData.width}
+            height={photo.gatsbyImageData.height}
+            imgAlt={photo.title}
+            id={photo.id}
+            fillColor={(variant === "Secondary" && "#FFA500") || "#00ADBC"}
+          />
+        </Box>
+      </Flex>
+    );
+  }
+
   return (
     <Container m="0" p="0">
       <Grid
@@ -112,7 +283,13 @@ const MediaText = ({ title, content, photo, imageSubCaption, id }) => {
               </Box>
             </GridItem>
 
-            <GridItem>
+            <GridItem
+              display={
+                (path === "/services-details" && "none") ||
+                (path === "/benefits" && "none") ||
+                "block"
+              }
+            >
               <Box
                 sx={{
                   color: "#FFA500",

@@ -138,6 +138,8 @@ const BlockReturner = ({ block }) => {
           content={block.content}
           photo={block.photo}
           imageSubCaption={block.imageSubCaption}
+          variant={block.settingVariant}
+          path={pathname}
         />
       );
     }
