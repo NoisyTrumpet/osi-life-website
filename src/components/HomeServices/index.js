@@ -47,7 +47,7 @@ const HomeServices = ({ title, subTitle, services }) => {
                     _expanded={{
                       display: `grid`,
                       gridTemplateColumns: `70% 30%`,
-                      gridTemplateRows: `100px`,
+                      gridTemplateRows: `repeat(2, auto)`,
                     }}
                   >
                     <Box
