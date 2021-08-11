@@ -52,12 +52,7 @@ export const query = graphql`
           id
           title
           photo {
-            gatsbyImageData(
-              formats: [PNG, WEBP]
-              layout: CONSTRAINED
-              placeholder: BLURRED
-              quality: 70
-            )
+            ...imageQuery
           }
           settingVariant
           content {
