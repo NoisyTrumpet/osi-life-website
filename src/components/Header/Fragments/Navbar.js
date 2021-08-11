@@ -27,7 +27,7 @@ export const Template = (props) => {
       }}
       alignItems="center"
       bg={useColorModeValue("white", "gray.800")}
-      // boxShadow={useColorModeValue("md", "none")}
+      boxShadow={useColorModeValue("md", "gray.800")}
       borderBottomWidth={useColorModeValue("none", "1px")}
     >
       {children.find((child) => child.type === Brand)?.props.children}
@@ -36,7 +36,8 @@ export const Template = (props) => {
         spacing={3}
         display={{
           base: "none",
-          md: "flex",
+          md: "none",
+          lg: "flex",
         }}
       >
         {children.find((child) => child.type === Links)?.props.children}
@@ -45,7 +46,8 @@ export const Template = (props) => {
       <HStack
         display={{
           base: "none",
-          md: "flex",
+          md: "none",
+          lg: "flex",
         }}
         spacing={3}
       >
@@ -55,7 +57,8 @@ export const Template = (props) => {
       <IconButton
         display={{
           base: "flex",
-          md: "none",
+          md: "flex",
+          lg: "none",
         }}
         size="sm"
         aria-label="Open menu"

@@ -1,8 +1,11 @@
 import { Box, Container, Text, Button } from "@chakra-ui/react";
 import React from "react";
 
-const Banner = ({ title, content, cta, variant, key }) => {
+const Banner = ({ title, content, cta, variant, key, path }) => {
   const bgColor = () => {
+    if (variant === "Primary" && path === "/services") {
+      return "secondary";
+    }
     if (variant === "Primary") {
       return "primary";
     }

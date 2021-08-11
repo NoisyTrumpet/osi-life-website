@@ -1,9 +1,9 @@
 import {
+  Box,
   Grid,
   GridItem,
   IconButton,
   useColorModeValue as mode,
-  Box,
 } from "@chakra-ui/react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import RichText from "components/RichText";
@@ -19,6 +19,69 @@ const Footer = ({ path }) => {
     siteSocialAccounts: socials,
   } = contentfulSiteSettings;
 
+  if (
+    path === "/faq" ||
+    path === "/" ||
+    path === "/services" ||
+    path === "/about"
+  ) {
+    return (
+      <Box bg="lightGrayBG">
+        <Box
+          ml={10}
+          bg={mode(`primary`)}
+          py={5}
+          px={10}
+          borderTopLeftRadius={40}
+          mt={"auto"}
+        >
+          <ContactForm
+            title="Learn More"
+            subtitle="Share your information below to stay up to date with the latest at OsiLIFE."
+          />
+          <Grid
+            gridTemplateColumns={[`100%`, `100%`, `100%`, `85% 15%`, `90% 10%`]}
+            gridTemplateRows={[
+              `repeat(2,.3fr)`,
+              `repeat(2,.3fr)`,
+              `repeat(2,.3fr)`,
+              `repeat(1,1fr)`,
+              `repeat(1,1fr)`,
+            ]}
+          >
+            <GridItem color={`white`}>
+              <RichText content={copyRight} />
+            </GridItem>
+            <GridItem
+              alignSelf={[`center`, `center`, `center`, `start`, `start`]}
+              justifySelf={`center`}
+            >
+              {socials.map((social) => (
+                <IconButton
+                  mx={1}
+                  bg={`secondary`}
+                  borderTopRightRadius={`50%`}
+                  as="a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={social.url}
+                  aria-label={social.title}
+                  key={social.title}
+                  icon={
+                    social.title === `Facebook` ? (
+                      <FaFacebookF fontSize="20px" color="white" />
+                    ) : (
+                      <FaLinkedinIn fontSize="20px" color="white" />
+                    )
+                  }
+                />
+              ))}
+            </GridItem>
+          </Grid>
+        </Box>
+      </Box>
+    );
+  }
   return (
     <Box
       ml={10}

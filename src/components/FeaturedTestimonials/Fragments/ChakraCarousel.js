@@ -59,8 +59,12 @@ const ChakraCarousel = ({ children, gap }) => {
     width >= parseInt(breakpoints.base.split("px")[0], 10) ||
     width <= parseInt(breakpoints.md.split("px")[0], 10);
 
-  const isBetweenMdAndXl =
-    width >= parseInt(breakpoints.md.split("px")[0], 10) &&
+  const isBetweenMdAndLg =
+    width <= parseInt(breakpoints.md.split("px")[0], 10) ||
+    width <= parseInt(breakpoints.lg.split("px")[0], 10);
+
+  const isBetweenLgAndXl =
+    width >= parseInt(breakpoints.lg.split("px")[0], 10) &&
     width <= parseInt(breakpoints.xl.split("px")[0], 10);
 
   const isGreaterThanXL = width > parseInt(breakpoints.xl.split("px")[0], 10);
@@ -81,7 +85,12 @@ const ChakraCarousel = ({ children, gap }) => {
       setMultiplier(0.65);
       setConstraint(1);
     }
-    if (isBetweenMdAndXl) {
+    if (isBetweenMdAndLg) {
+      setItemWidth(sliderWidth - gap);
+      setMultiplier(0.5);
+      setConstraint(1);
+    }
+    if (isBetweenLgAndXl) {
       setItemWidth(sliderWidth / 2 - gap);
       setMultiplier(0.5);
       setConstraint(2);
@@ -91,7 +100,14 @@ const ChakraCarousel = ({ children, gap }) => {
       setMultiplier(0.35);
       setConstraint(2);
     }
-  }, [isBetweenBaseAndMd, isBetweenMdAndXl, isGreaterThanXL, sliderWidth, gap]);
+  }, [
+    isBetweenBaseAndMd,
+    isBetweenMdAndLg,
+    isBetweenLgAndXl,
+    isGreaterThanXL,
+    sliderWidth,
+    gap,
+  ]);
 
   const sliderProps = {
     setTrackIsActive,
@@ -176,42 +192,12 @@ function Slider({
 
   return (
     <Box position="relative">
-      <Box
-        ref={ref}
-        w={{ base: "100%", md: `calc(100% + ${gap}px)` }}
-        ml={{ base: 0, md: `-${gap / 2}px` }}
-        px={`${gap / 2}px`}
-        position="relative"
-        overflow="hidden"
-        _before={{
-          bgGradient: "linear(to-r, base.d400, transparent)",
-          position: "absolute",
-          w: `${gap / 2}px`,
-          content: "''",
-          zIndex: 1,
-          h: "100%",
-          left: 0,
-          top: 0,
-        }}
-        _after={{
-          bgGradient: "linear(to-l, base.d400, transparent)",
-          position: "absolute",
-          w: `${gap / 2}px`,
-          content: "''",
-          zIndex: 1,
-          h: "100%",
-          right: 0,
-          top: 0,
-        }}
-      >
-        {children}
-      </Box>
-
       <Flex w={"100%"} mx="auto">
         <Button
           onClick={handleDecrementClick}
           onFocus={handleFocus}
-          mr={`${gap / 3}px`}
+          mr={`${gap / 2}px`}
+          alignSelf={["flex-end", "flex-end", "flex-end", "center", "center"]}
           color="gray.200"
           variant="link"
           minW={0}
@@ -233,11 +219,43 @@ function Slider({
             },
           }}
         />
+        <Box
+          ref={ref}
+          w={{ base: "100%", md: `calc(100% + ${gap}px)` }}
+          ml={{ base: 0, md: `-${gap / 2}px` }}
+          px={`${gap / 2}px`}
+          pb={[12, 12, 12, 4, 4]}
+          position="relative"
+          overflow="hidden"
+          _before={{
+            bgGradient: "linear(to-r, base.d400, transparent)",
+            position: "absolute",
+            w: `${gap / 2}px`,
+            content: "''",
+            zIndex: 1,
+            h: "100%",
+            left: 0,
+            top: 0,
+          }}
+          _after={{
+            bgGradient: "linear(to-l, base.d400, transparent)",
+            position: "absolute",
+            w: `${gap / 2}px`,
+            content: "''",
+            zIndex: 1,
+            h: "100%",
+            right: 0,
+            top: 0,
+          }}
+        >
+          {children}
+        </Box>
 
         <Button
           onClick={handleIncrementClick}
           onFocus={handleFocus}
-          ml={`${gap / 3}px`}
+          ml={`${gap / 2}px`}
+          alignSelf={["flex-end", "flex-end", "flex-end", "center", "center"]}
           color="gray.200"
           variant="link"
           zIndex={2}

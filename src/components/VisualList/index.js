@@ -8,6 +8,7 @@ import {
   useColorModeValue as mode,
 } from "@chakra-ui/react";
 import RichText from "components/RichText";
+import MultiHandCross from "SVG/MultiHandCross";
 // import PhotoWrapper from "SVG/PhotoWrapper";
 
 const VisualList = ({ id, title, variant, cards }) => {
@@ -15,7 +16,7 @@ const VisualList = ({ id, title, variant, cards }) => {
   if (variant === "Secondary") {
     return (
       <Container
-        maxW="100%"
+        maxW="1500px"
         p={[5, 20]}
         my={10}
         bg={mode(`lightGrayBG`)}
@@ -84,7 +85,7 @@ const VisualList = ({ id, title, variant, cards }) => {
 
   // Primary Variant
   return (
-    <Container maxW="100%" p={[5, 20]} mb={10}>
+    <Container maxW="1500px" p={[5, 20]} mb={10}>
       <Heading as="h2" mb={5} color="primary">
         {title}
       </Heading>
@@ -128,6 +129,15 @@ const VisualList = ({ id, title, variant, cards }) => {
             </Box>
           );
         })}
+        <Box
+          display={[`none`, `none`, `none`, `block`, `block`]}
+          h={`100%`}
+          maxHeight={450}
+          alignSelf={`center`}
+          justifySelf={`center`}
+        >
+          <MultiHandCross fill="#5B677014" />
+        </Box>
       </Grid>
     </Container>
   );

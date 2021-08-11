@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Container, Heading } from "@chakra-ui/react";
 import RichText from "Components/RichText";
 
 const TextBlock = ({ id, title, content }) => {
@@ -15,12 +15,12 @@ const TextBlock = ({ id, title, content }) => {
 
       <Box
         py={8}
-        px={8}
+        px={10}
         bg={`lightBG`}
         borderTopLeftRadius={100}
         borderTopRightRadius={100}
       >
-        {content && <RichText content={content} />}
+        <Container>{content && <RichText content={content} />}</Container>
       </Box>
     </Box>
   );

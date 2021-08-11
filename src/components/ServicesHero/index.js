@@ -27,8 +27,9 @@ const ServiceHero = ({ title, variant, image }) => {
             overflow="hidden"
             sx={{
               svg: {
-                width: "100%",
+                width: "750px",
                 maxWidth: "100%",
+                height: "auto",
                 top: "0",
                 right: ["100", "100", "130", "100", "130"],
                 position: "relative",
@@ -52,6 +53,7 @@ const ServiceHero = ({ title, variant, image }) => {
             px={[2, 4, 4, 8, 8]}
             pt={16}
             w={`100%`}
+            maxH={780}
           >
             <InfoGraphic width={`100%`} height={`auto`} />
           </GridItem>

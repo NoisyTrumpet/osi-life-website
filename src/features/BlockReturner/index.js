@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "@reach/router";
 import Hero from "Components/Hero";
 import FeaturedBenefits from "Components/FeaturedBenefits";
 import FeaturedServices from "Components/FeaturedServices";
@@ -13,6 +14,7 @@ import ServiceHero from "Components/ServicesHero";
 import HomeServices from "Components/HomeServices";
 
 const BlockReturner = ({ block }) => {
+  const { pathname } = useLocation();
   if (block && block !== {}) {
     if (
       block?.settingVariant === "Primary" &&
@@ -56,6 +58,7 @@ const BlockReturner = ({ block }) => {
           services={block.services}
           id={block.id}
           key={block.id}
+          path={pathname}
         />
       );
     }
@@ -112,6 +115,7 @@ const BlockReturner = ({ block }) => {
           variant={block.settingVariant}
           cta={block.ctaButton}
           content={block.contentString}
+          path={pathname}
         />
       );
     }
