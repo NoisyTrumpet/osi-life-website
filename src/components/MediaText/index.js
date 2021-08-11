@@ -30,7 +30,7 @@ const MediaText = ({ title, content, photo, imageSubCaption, id }) => {
         <GridItem
           className="about-content"
           order={[2, 2, 2, 1, 1]}
-          px={[`2rem`, `4rem`, `4.5rem`, `4rem`, `5rem`, `9rem` ]}
+          px={[`2rem`, `4rem`, `4.5rem`, `4rem`, `5rem`, `9rem`]}
         >
           {/* Text Content */}
           <Heading color="primary">{title}</Heading>
@@ -136,7 +136,7 @@ const MediaText = ({ title, content, photo, imageSubCaption, id }) => {
                     "2.75rem 0rem",
                   ],
                   margin: ["1rem 0", "1rem 0", ".5rem", "1.5rem", ".5rem"],
-                  width: [ "auto", "auto" , "auto", "auto", "400px", "500px" ],
+                  width: ["auto", "auto", "auto", "auto", "400px", "500px"],
                 }}
               >
                 {imageSubCaption}
@@ -144,7 +144,7 @@ const MediaText = ({ title, content, photo, imageSubCaption, id }) => {
               <Box
                 className="multiHandCrossBox"
                 display={["none", "none", "none", "block", "block"]}
-                p={[ 10, 10, 10, 11, 0, 1 ]}
+                p={[10, 10, 10, 11, 0, 1]}
                 position="relative"
                 right={[
                   "auto",
