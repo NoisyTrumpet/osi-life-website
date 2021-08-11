@@ -1,4 +1,5 @@
 import React from "react";
+import Fonts from "../../@chakra-ui/gatsby-plugin/theme/foundations/fonts";
 import theme from "../../@chakra-ui/gatsby-plugin/theme";
 // Fonts
 import "@fontsource/baloo-2";
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
 
   return (
     <ChakraProvider theme={theme}>
+      <Fonts />
       <SkipNavLink />
       <Header />
       <SkipNavContent>{children}</SkipNavContent>
