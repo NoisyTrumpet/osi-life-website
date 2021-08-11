@@ -10,10 +10,16 @@ const Button = {
     primary: {
       color: "white",
       backgroundColor: "primary",
+      _hover: {
+        backgroundColor: "secondary",
+      },
     },
     secondary: {
       color: "white",
       backgroundColor: "secondary",
+      _hover: {
+        backgroundColor: "primary",
+      },
     },
     success: {},
     alert: {},

@@ -11,7 +11,7 @@ const ChakraLink = chakra(GatsbyLink, {
     paddingLeft: 3,
     paddingRight: 3,
     borderRadius: "md",
-    fontWeight: "medium",
+    fontWeight: "bold",
     lineHeight: "1.25rem",
     color: "primary",
   },
