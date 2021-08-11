@@ -1,8 +1,8 @@
-import * as React from 'react';
-import {Global} from '@emotion/react';
-import GTAmerica from '../fonts/GT-America-Regular.otf';
-import GTAmericaBold from '../fonts/GT-America-Bold.otf';
-import GTAmericaBoldItalic from '../fonts/GT-America-Bold-Italic.otf';
+import * as React from "react";
+import { Global } from "@emotion/react";
+import GTAmerica from "../fonts/GT-America-Regular.otf";
+import GTAmericaBold from "../fonts/GT-America-Bold.otf";
+import GTAmericaBoldItalic from "../fonts/GT-America-Bold-Italic.otf";
 
 const Fonts = () => (
   <Global

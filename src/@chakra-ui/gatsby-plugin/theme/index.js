@@ -42,7 +42,7 @@ const theme = extendTheme({
   },
   fonts: {
     heading: `"Baloo 2"`,
-    body: `"GT America"`
+    body: `"GT America"`,
   },
 });
 
