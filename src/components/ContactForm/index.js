@@ -195,6 +195,7 @@ const ContactForm = ({ title, subtitle }) => {
               isLoading={isSubmitting}
               type="submit"
               variant="secondary"
+              _hover={{boxShadow: "2px 2px 6px #333"}}
             >
               Submit
             </Button>
