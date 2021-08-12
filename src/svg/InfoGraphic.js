@@ -7,6 +7,7 @@ const InfoGraphic = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       //   width={826}
       //   height={829.613}
+      // height={"auto"}
       viewBox="0 0 826 829.613"
       {...props}
     >

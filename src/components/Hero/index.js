@@ -90,9 +90,11 @@ const Hero = ({ title, variant, image }) => {
         py={4}
         w="100%"
       >
-        <Button display="block" margin="0 auto" variant="secondary">
-          Contact
-        </Button>
+        <a href="#contact" alt="contact">
+          <Button display="block" margin="0 auto" variant="secondary">
+            Contact
+          </Button>
+        </a>
       </Box>
       {image && (
         <Box

@@ -13,9 +13,29 @@ import {
   Button,
   Textarea,
   Grid,
+  Flex,
+  Checkbox,
 } from "@chakra-ui/react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 const ContactForm = ({ title, subtitle }) => {
+  const success = () =>
+    toast.success(
+      "Thank You for your message! Someone from our team will reach out shortly.",
+      {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      }
+    );
+  const error = () =>
+    toast("Ooops! We've encountered an error, please try again!");
+
   const {
     handleSubmit,
     register,
@@ -28,22 +48,25 @@ const ContactForm = ({ title, subtitle }) => {
       Email: values.email,
       Message: values.message,
       Phone: values.phone,
+      Healthcare: values.hCare ? "Checked" : "Not Checked",
+      Patient: values.patient ? "Checked" : "Not Checked",
     };
     return new Promise((resolve) => {
       axios
         .post("https://formspree.io/f/xnqoknvr", formattedValues)
         .then(() => {
-          alert(`Thanks for your message! We'll get back to you shortly.`);
+          success();
           resolve();
         })
         .catch((err) => {
-          alert(`There was an error sending your message.`, err);
+          error();
+          console.log(err);
           resolve();
         });
     });
   };
 
-  const Label = ({ children }) => {
+  const Label = ({ children, id, display }) => {
     return (
       <FormLabel
         position="absolute"
@@ -54,6 +77,8 @@ const ContactForm = ({ title, subtitle }) => {
         bg="secondary"
         px={2}
         borderRadius="4px"
+        htmlFor={id}
+        display={display && display}
       >
         {children}
       </FormLabel>
@@ -62,7 +87,7 @@ const ContactForm = ({ title, subtitle }) => {
 
   return (
     <Box mb={8} id="contact">
-      <Container>
+      <Container px={0}>
         <Box textAlign="center" color="white">
           {title && (
             <Text
@@ -75,12 +100,16 @@ const ContactForm = ({ title, subtitle }) => {
           )}
           {subtitle && <Text>{subtitle}</Text>}
         </Box>
-        <Box>
+        <Box maxWidth="800px" mx="auto">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Grid templateColumns={`repeat(2, 1fr)`} gap={2}>
-              <FormControl my={4}>
+            <Grid templateColumns={[`100%`, `repeat(2, 1fr)`]} gap={2}>
+              <FormControl
+                my={4}
+                id="fname"
+                isInvalid={errors.fname && errors.fname.message}
+              >
                 <Box position="relative">
-                  <Label>First Name</Label>
+                  <Label id="fname">First Name</Label>
                   <Input
                     id="fname"
                     type="text"
@@ -100,9 +129,13 @@ const ContactForm = ({ title, subtitle }) => {
                   {errors.fname && errors.fname.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl my={4}>
+              <FormControl
+                my={4}
+                id="lname"
+                isInvalid={errors.lname && errors.lname.message}
+              >
                 <Box>
-                  <Label>Last Name</Label>
+                  <Label id="lname">Last Name</Label>
                   <Input
                     id="lname"
                     type="text"
@@ -124,10 +157,14 @@ const ContactForm = ({ title, subtitle }) => {
               </FormControl>
             </Grid>
 
-            <Grid templateColumns={`repeat(2, 1fr)`} gap={2}>
-              <FormControl my={4}>
+            <Grid templateColumns={[`100%`, `repeat(2, 1fr)`]} gap={2}>
+              <FormControl
+                my={4}
+                id="email"
+                isInvalid={errors.email && errors.email.message}
+              >
                 <Box>
-                  <Label>E-Mail</Label>
+                  <Label id="email">E-Mail</Label>
                   <Input
                     id="email"
                     type="email"
@@ -136,9 +173,9 @@ const ContactForm = ({ title, subtitle }) => {
                     bg="white"
                     {...register("email", {
                       required: "This is required",
-                      minLength: {
-                        value: 4,
-                        message: "Minimum length should be 4",
+                      pattern: {
+                        value: /\S+@\S+\.\S+/,
+                        message: "Entered value does not match email format",
                       },
                     })}
                   />
@@ -147,9 +184,13 @@ const ContactForm = ({ title, subtitle }) => {
                   {errors.email && errors.email.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl my={4}>
+              <FormControl
+                my={4}
+                id="phone"
+                isInvalid={errors.phone && errors.phone.message}
+              >
                 <Box>
-                  <Label>Phone Number</Label>
+                  <Label id="phone">Phone Number</Label>
                   <Input
                     id="phone"
                     type="tel"
@@ -158,9 +199,9 @@ const ContactForm = ({ title, subtitle }) => {
                     bg="white"
                     {...register("phone", {
                       required: "This is required",
-                      minLength: {
-                        value: 4,
-                        message: "Minimum length should be 4",
+                      pattern: {
+                        value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+                        message: "Entered value does not match phone format",
                       },
                     })}
                   />
@@ -171,40 +212,70 @@ const ContactForm = ({ title, subtitle }) => {
               </FormControl>
             </Grid>
 
-            <FormControl my={4}>
+            <FormControl
+              my={4}
+              id="message"
+              isInvalid={errors.message && errors.message.message}
+            >
               <Box>
-                <Label>Message</Label>
+                <Label id="message">Message</Label>
                 <Textarea
                   id="message"
                   type="text"
                   pt={8}
                   pb={6}
                   bg="white"
-                  {...register("message", {
-                    required: "This is required",
-                    minLength: {
-                      value: 10,
-                      message: "Minimum length should be 10",
-                    },
-                  })}
+                  minH={200}
+                  {...register("message")}
                 />
+                <FormErrorMessage>
+                  {errors.message && errors.message.message}
+                </FormErrorMessage>
               </Box>
-              <FormErrorMessage>
-                {errors.message && errors.message.message}
-              </FormErrorMessage>
             </FormControl>
-
-            <Button
-              mt={4}
-              isLoading={isSubmitting}
-              type="submit"
-              variant="secondary"
-              _hover={{ boxShadow: "2px 2px 8px rgba(51, 51, 51, .5)" }}
-            >
-              Submit
-            </Button>
+            <Flex direction={["column", "row"]} justifyContent="space-between">
+              <Flex color="white">
+                <FormControl w="fit-content" mr={2} id="hCare">
+                  <Label id="hCare" display="none">
+                    Healthcare Provider
+                  </Label>
+                  <Checkbox name="hCare" size="lg" {...register("hCare")}>
+                    Healthcare Provider
+                  </Checkbox>
+                </FormControl>
+                <FormControl w="fit-content">
+                  <Label id="patient" display="none">
+                    Patient
+                  </Label>
+                  <Checkbox name="patient" size="lg" {...register("patient")}>
+                    Patient
+                  </Checkbox>
+                </FormControl>
+              </Flex>
+              <Box>
+                <Button
+                  mt={4}
+                  isLoading={isSubmitting}
+                  type="submit"
+                  variant="secondary"
+                >
+                  Submit
+                </Button>
+              </Box>
+            </Flex>
           </form>
         </Box>
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </Container>
     </Box>
   );
