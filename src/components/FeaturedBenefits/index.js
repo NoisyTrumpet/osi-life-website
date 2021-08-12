@@ -25,9 +25,15 @@ const FeaturedBenefits = ({ title, benefits }) => {
             bg="secondary"
             color="white"
             className="featuredBenefitBox"
-            key={benefit.title}
+            key={benefit.id}
           >
-            <Img src={benefit.icon.file.url} sx={{ margin: "1rem auto" }} />
+            <Img
+              src={benefit.icon.file.url}
+              sx={{ margin: "1rem auto" }}
+              alt={benefit.title}
+              w="auto"
+              h="auto"
+            />
             <Heading fontSize="xl" my={2}>
               {benefit.title}
             </Heading>

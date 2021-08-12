@@ -5,10 +5,11 @@ function ChevronRight(props) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={"100%"}
-      // height={"auto"}
+      height={"100%"}
       viewBox="0 0 47.074 94.147"
       {...props}
     >
+      <title>Next</title>
       <g data-name="Group 308" fill="orange">
         <path
           data-name="Rectangle 146"

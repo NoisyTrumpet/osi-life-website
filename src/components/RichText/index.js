@@ -28,7 +28,7 @@ const RichText = ({ content }) => {
         </Heading>
       ),
       [BLOCKS.HEADING_2]: (node, children) => (
-        <Heading as="h2" fontSize="xl" mt={4} mb={2} color="primary">
+        <Heading as="h2" fontSize="md" mt={4} mb={2} color="primary">
           {children}
         </Heading>
       ),

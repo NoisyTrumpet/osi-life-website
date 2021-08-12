@@ -22,7 +22,12 @@ const FeaturedTestimonials = ({ title, items, key }) => {
             {items.map((item) => (
               <Grid key={item.id} templateColumns={"25% 75%"} gap={2}>
                 <GridItem display="grid" placeItems="center">
-                  <Image src={item.image.file.url} />
+                  <Image
+                    src={item.image.file.url}
+                    alt={item.name}
+                    w="auto"
+                    h="auto"
+                  />
                 </GridItem>
                 <GridItem>
                   <Text

@@ -11,7 +11,6 @@ import { SkipNavContent, SkipNavLink } from "Components/SkipNav/index";
 
 const Layout = ({ children }) => {
   const { pathname } = useLocation();
-  // console.log(useLocation());
   if (typeof window !== "undefined") {
     // eslint-disable-next-line global-require
     require("smooth-scroll")('a[href*="#"]');

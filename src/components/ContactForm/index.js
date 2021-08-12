@@ -60,7 +60,6 @@ const ContactForm = ({ title, subtitle }) => {
         })
         .catch((err) => {
           error();
-          console.log(err);
           resolve();
         });
     });

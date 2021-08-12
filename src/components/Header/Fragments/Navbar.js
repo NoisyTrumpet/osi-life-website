@@ -60,9 +60,9 @@ export const Template = (props) => {
           md: "flex",
           lg: "none",
         }}
-        size="sm"
+        size="lg"
         aria-label="Open menu"
-        fontSize="20px"
+        fontSize="35px"
         variant="ghost"
         onClick={mobileNav.onOpen}
         icon={<HamburgerIcon />}

@@ -329,7 +329,7 @@ export default MediaText;
 
 MediaText.propTypes = {
   title: PropTypes.string,
-  content: PropTypes.string,
+  content: PropTypes.object || PropTypes.string,
   variant: PropTypes.string,
   image: PropTypes.object,
 };
