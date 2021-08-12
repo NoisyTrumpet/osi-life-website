@@ -1,13 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {
-  Box,
-  Grid,
-  GridItem,
-  Heading,
-  Flex,
-} from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, Flex } from "@chakra-ui/react";
 import PhotoWrapper from "SVG/PhotoWrapper";
 import RichText from "Components/RichText";
 import MultiHandCross from "SVG/MultiHandCross";
@@ -137,7 +131,7 @@ const MediaText = ({
             mx={`auto`}
             sx={{
               svg: {
-                height: ["auto", "auto", "auto", "18rem", "30rem"],
+                height: ["auto", "auto", "auto", "18rem", "22rem"],
               },
             }}
           >
@@ -251,15 +245,15 @@ const MediaText = ({
                 },
               }}
             >
-                <PhotoWrapper
-                  className="aboutImg"
-                  image={photo.gatsbyImageData.images.fallback.src}
-                  // width={photo.gatsbyImageData.width}
-                  // height={[“30rem”, “35rem”, “30rem”, “45rem”, “36rem”]}
-                  id={photo.id}
-                  imgAlt={photo.title}
-                  fillColor="#00ADBC"
-                />
+              <PhotoWrapper
+                className="aboutImg"
+                image={photo.gatsbyImageData.images.fallback.src}
+                // width={photo.gatsbyImageData.width}
+                // height={[“30rem”, “35rem”, “30rem”, “45rem”, “36rem”]}
+                id={photo.id}
+                imgAlt={photo.title}
+                fillColor="#00ADBC"
+              />
             </GridItem>
 
             <GridItem
@@ -289,10 +283,11 @@ const MediaText = ({
                     "2.5rem 4.5rem",
                     "1.5rem 0rem",
                     "1rem 1rem",
-                    "2.75rem 6rem 0 0",
+                    "0rem 6rem 0 0",
                   ],
                   margin: ["1rem 0", "2rem 0", ".5rem", "1.5rem", ".5rem"],
                   width: ["auto", "auto", "auto", "auto", "400px", "500px"],
+                  fontFamily: `"Baloo 2"`,
                 }}
               >
                 {imageSubCaption}

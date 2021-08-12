@@ -44,7 +44,12 @@ const Header = () => {
           ))}
         </Navbar.Links>
         <Navbar.Button>
-          <Button variant="secondary" aria-label={cta.seoTitle}>
+          <Button
+            as="a"
+            href="#contact"
+            variant="secondary"
+            aria-label={cta.seoTitle}
+          >
             {cta.title}
           </Button>
         </Navbar.Button>

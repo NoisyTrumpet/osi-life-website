@@ -61,11 +61,15 @@ const ContactForm = ({ title, subtitle }) => {
   };
 
   return (
-    <Box mb={8}>
+    <Box mb={8} id="contact">
       <Container>
         <Box textAlign="center" color="white">
           {title && (
-            <Text fontSize={[`xl`, `2xl`, `3xl`]} fontWeight="bold">
+            <Text
+              fontSize={[`xl`, `2xl`, `3xl`]}
+              fontWeight="bold"
+              fontFamily={`var(--chakra-fonts-heading)`}
+            >
               {title}
             </Text>
           )}
@@ -195,6 +199,7 @@ const ContactForm = ({ title, subtitle }) => {
               isLoading={isSubmitting}
               type="submit"
               variant="secondary"
+              _hover={{ boxShadow: "2px 2px 8px rgba(51, 51, 51, .5)" }}
             >
               Submit
             </Button>
