@@ -23,7 +23,7 @@ const Header = () => {
   } = contentfulSiteSettings;
 
   return (
-    <Box bg={mode("gray.50", "gray.700")}>
+    <Box bg={mode("gray.50", "gray.700")} zIndex={999}>
       <Navbar>
         <Navbar.Brand>
           <Center marginEnd="10">
