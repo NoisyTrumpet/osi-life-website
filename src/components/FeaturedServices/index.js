@@ -70,8 +70,11 @@ const FeaturedServices = ({ services, id, path }) => {
                 >
                   <Heading
                     as={`h3`}
+                    fontSize={[`1.5em`, `1.8em`, `1.5em`, `1.8em`, `1.8em`]}
                     textAlign={`center`}
                     color={mode(`primary`)}
+                    overflowWrap={`normal`}
+                    mt={2}
                     _hover={{
                       color: mode(`secondary`),
                     }}
@@ -147,6 +150,8 @@ const FeaturedServices = ({ services, id, path }) => {
                   fontSize={[`1.5em`, `1.8em`, `1.5em`, `1.8em`, `1.8em`]}
                   textAlign={`center`}
                   color={mode(`primary`)}
+                  overflowWrap={`normal`}
+                  mt={2}
                   _hover={{
                     color: mode(`secondary`),
                   }}
