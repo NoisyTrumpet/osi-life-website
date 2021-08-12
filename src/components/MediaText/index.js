@@ -222,16 +222,17 @@ const MediaText = ({
         <GridItem
           className="about-creative"
           order={[1, 1, 1, 2, 2]}
-          px={[0, 0, 0, 5, 5]}
+          px={0}
         >
           {/* Cross image with smiling man and OSI quote */}
           <Grid
             gridTemplateRows={[
+              `70% 30%`,
+              `75% 25%`,
+              `75% 25%`,
               `50% 50%`,
               `50% 50%`,
-              `50% 50%`,
-              `50% 50%`,
-              `60% 40%`,
+              `55% 45%`,
             ]}
           >
             <GridItem
@@ -244,8 +245,9 @@ const MediaText = ({
                   maxWidth: "100%",
                   height: "auto",
                   top: "0",
-                  left: ["160", "330", "440", "100", "45"],
+                  left: ["140", "330", "360", "100", "45"],
                   position: "relative",
+                  marginBottom: [ "auto", "auto", "1rem", "auto", "auto" ],
                 },
               }}
             >
@@ -282,14 +284,14 @@ const MediaText = ({
                     "-5.2rem",
                   ],
                   padding: [
-                    "1.5rem 2rem",
-                    "1.5rem 4rem",
-                    "1.5rem 4.5rem",
+                    "2.5rem 2rem",
+                    "2rem 4rem",
+                    "2.5rem 4.5rem",
                     "1.5rem 0rem",
                     "1rem 1rem",
                     "2.75rem 6rem 0 0",
                   ],
-                  margin: ["1rem 0", "1rem 0", ".5rem", "1.5rem", ".5rem"],
+                  margin: ["1rem 0", "2rem 0", ".5rem", "1.5rem", ".5rem"],
                   width: ["auto", "auto", "auto", "auto", "400px", "500px"],
                 }}
               >
@@ -312,7 +314,7 @@ const MediaText = ({
                 mx={[0, 0, 0, 0, 5, 0]}
                 sx={{
                   svg: {
-                    height: ["auto", "auto", "auto", "18rem", "19rem"],
+                    height: ["auto", "auto", "auto", "18rem", "17rem"],
                   },
                 }}
               >
