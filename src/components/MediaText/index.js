@@ -6,13 +6,11 @@ import {
   Grid,
   GridItem,
   Heading,
-  Container,
   Flex,
 } from "@chakra-ui/react";
 import PhotoWrapper from "SVG/PhotoWrapper";
 import RichText from "Components/RichText";
 import MultiHandCross from "SVG/MultiHandCross";
-// import "./MediaText.scss";
 
 const MediaText = ({
   title,
@@ -180,7 +178,7 @@ const MediaText = ({
   }
 
   return (
-    <Container m="0" p="0">
+    <>
       <Grid
         gridTemplateColumns={[
           `repeat(1, 100%)`,
@@ -188,8 +186,8 @@ const MediaText = ({
           `repeat(1, 100%)`,
           `60% 40%`,
           `70% 30%`,
-          `75% 25%`,
-          `75% 25%`,
+          `70% 30%`,
+          `70% 30%`,
         ]}
         gridGap={[2, 4, 4, 8, 8, 2]}
         justifyContent={`space-around`}
@@ -224,7 +222,7 @@ const MediaText = ({
         <GridItem
           className="about-creative"
           order={[1, 1, 1, 2, 2]}
-          zIndex={100}
+          zIndex={10}
           px={[0, 0, 0, 5, 5]}
         >
           {/* Cross image with smiling man and OSI quote */}
@@ -236,41 +234,23 @@ const MediaText = ({
               `50% 50%`,
               `60% 40%`,
             ]}
-            position="relative"
-            zIndex={5}
           >
             <GridItem
               className="grid-img-wrapper"
-              overflow={["hidden", "hidden", "hidden", "visible", "visible"]}
-            >
-              <Box
-                sx={{
-                  display: "grid",
-                  position: "relative",
+              position="relative"
+              overflow="hidden"
+              sx={{
+                svg: {
+                  width: ["500px", "500px", "550px", "750px", "750px"],
+                  maxWidth: "100%",
+                  height: "auto",
                   top: "0",
-                  right: [
-                    "-4.688rem",
-                    "-13.25rem",
-                    "-19rem",
-                    "3.25rem",
-                    "-1rem",
-                    "-3.5rem",
-                    "-10.75rem",
-                  ],
-                  zIndex: "200",
-                  svg: {
-                    height: [
-                      "30rem",
-                      "38rem",
-                      "39rem",
-                      "38rem",
-                      "41rem",
-                      "40rem",
-                      "42rem",
-                    ],
-                  },
-                }}
-              >
+                  left: ["160", "330", "440", "100", "45"],
+                  position: "relative",
+                },
+              }}
+              zIndex="3"
+            >
                 <PhotoWrapper
                   className="aboutImg"
                   image={photo.gatsbyImageData.images.fallback.src}
@@ -280,7 +260,6 @@ const MediaText = ({
                   imgAlt={photo.title}
                   fillColor="#00ADBC"
                 />
-              </Box>
             </GridItem>
 
             <GridItem
@@ -310,7 +289,7 @@ const MediaText = ({
                     "1.5rem 4.5rem",
                     "1.5rem 0rem",
                     "1rem 1rem",
-                    "2.75rem 0rem",
+                    "2.75rem 6rem 0 0",
                   ],
                   margin: ["1rem 0", "1rem 0", ".5rem", "1.5rem", ".5rem"],
                   width: ["auto", "auto", "auto", "auto", "400px", "500px"],
@@ -329,9 +308,9 @@ const MediaText = ({
                   "auto",
                   "-0.2rem",
                   "-2.2rem",
-                  "-3.25rem",
+                  "3.25rem",
                 ]}
-                mt={[0, 0, 0, 0, "-10px", "-45px"]}
+                mt={[0, 0, 0, 0, "-10px", "-20px"]}
                 mx={[0, 0, 0, 0, 5, 0]}
                 sx={{
                   svg: {
@@ -348,7 +327,7 @@ const MediaText = ({
           </Grid>
         </GridItem>
       </Grid>
-    </Container>
+    </>
   );
 };
 
