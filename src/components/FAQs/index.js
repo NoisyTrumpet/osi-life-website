@@ -69,6 +69,7 @@ const FAQs = ({ id, title, photo, variant, items }) => {
           color={`primary`}
           fontWeight={500}
           my={4}
+          fontFamily={`var(--chakra-fonts-heading)`}
         >
           {title}
         </Text>
