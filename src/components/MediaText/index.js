@@ -226,7 +226,7 @@ const MediaText = ({
               `75% 25%`,
               `50% 50%`,
               `50% 50%`,
-              `55% 45%`,
+              `65% 35%`,
             ]}
           >
             <GridItem
@@ -235,7 +235,7 @@ const MediaText = ({
               overflow="hidden"
               sx={{
                 svg: {
-                  width: ["500px", "500px", "550px", "750px", "750px"],
+                  width: ["500px", "500px", "550px", "750px", "800px"],
                   maxWidth: "100%",
                   height: "auto",
                   top: "0",
@@ -262,6 +262,7 @@ const MediaText = ({
                 (path === "/benefits" && "none") ||
                 "block"
               }
+              m={[0, 0, 0, "-1rem 0 3rem 0", "-2rem 0 5rem 0"]}
             >
               <Box
                 sx={{
@@ -283,7 +284,7 @@ const MediaText = ({
                     "2.5rem 4.5rem",
                     "1.5rem 0rem",
                     "1rem 1rem",
-                    "0rem 6rem 0 0",
+                    "0rem 5rem 0 0",
                   ],
                   margin: ["1rem 0", "2rem 0", ".5rem", "1.5rem", ".5rem"],
                   width: ["auto", "auto", "auto", "auto", "400px", "500px"],
