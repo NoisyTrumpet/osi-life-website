@@ -213,11 +213,7 @@ const MediaText = ({
           </Box>
         </GridItem>
 
-        <GridItem
-          className="about-creative"
-          order={[1, 1, 1, 2, 2]}
-          px={0}
-        >
+        <GridItem className="about-creative" order={[1, 1, 1, 2, 2]} px={0}>
           {/* Cross image with smiling man and OSI quote */}
           <Grid
             gridTemplateRows={[
@@ -241,7 +237,7 @@ const MediaText = ({
                   top: "0",
                   left: ["140", "330", "360", "100", "45"],
                   position: "relative",
-                  marginBottom: [ "auto", "auto", "1rem", "auto", "auto" ],
+                  marginBottom: ["auto", "auto", "1rem", "auto", "auto"],
                 },
               }}
             >
@@ -257,14 +253,16 @@ const MediaText = ({
             </GridItem>
 
             <GridItem
+              className="quoteMultiHandGridWrapper"
               display={
                 (path === "/services-details" && "none") ||
                 (path === "/benefits" && "none") ||
                 "block"
               }
-              m={[0, 0, 0, "-1rem 0 3rem 0", "-2rem 0 5rem 0"]}
+              m={[0, 0, 0, "-1rem 0 3rem 0", "0 0 5rem 0"]}
             >
               <Box
+                className="osiQuoteBox"
                 sx={{
                   color: "#FFA500",
                   fontSize: "1.65rem",
