@@ -26,16 +26,30 @@ const Banner = ({ title, content, cta, variant, key, path }) => {
   };
   return (
     <Box bg={"lightBG"}>
-      <Box key={key} bg={bgColor()} borderTopRightRadius={"100px"}  fontFamily={`var(--chakra-fonts-heading)`}>
+      <Box
+        key={key}
+        bg={bgColor()}
+        borderTopRightRadius={"100px"}
+        fontFamily={`var(--chakra-fonts-heading)`}
+      >
         <Container>
-          <Box textAlign="center" py={8} maxW={(path === "/benefits" && 950) || 800} mx={`auto`}>
+          <Box
+            textAlign="center"
+            py={8}
+            maxW={(path === "/benefits" && 950) || 800}
+            mx={`auto`}
+          >
             {title && variant === "Primary" && (
               <Text fontSize={"5xl"} fontWeight="bold" color={textColor()}>
                 {title}
               </Text>
             )}
             {content && (
-              <Text color={textColor()} fontSize={(path === "/services" && "2xl") || "2.2em"} fontWeight="bold">
+              <Text
+                color={textColor()}
+                fontSize={(path === "/services" && "2xl") || "2.2em"}
+                fontWeight="bold"
+              >
                 {content}
               </Text>
             )}

@@ -25,7 +25,11 @@ const FeaturedTestimonials = ({ title, items, key }) => {
                   <Image src={item.image.file.url} />
                 </GridItem>
                 <GridItem>
-                  <Text fontSize="3xl" color="secondary" fontFamily={`var(--chakra-fonts-heading)`}>
+                  <Text
+                    fontSize="3xl"
+                    color="secondary"
+                    fontFamily={`var(--chakra-fonts-heading)`}
+                  >
                     {item.name}
                   </Text>
                   <Text fontSize="lg" color="white" textDecoration="italic">
