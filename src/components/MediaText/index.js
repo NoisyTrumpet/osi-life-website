@@ -222,7 +222,6 @@ const MediaText = ({
         <GridItem
           className="about-creative"
           order={[1, 1, 1, 2, 2]}
-          zIndex={10}
           px={[0, 0, 0, 5, 5]}
         >
           {/* Cross image with smiling man and OSI quote */}
@@ -249,7 +248,6 @@ const MediaText = ({
                   position: "relative",
                 },
               }}
-              zIndex="3"
             >
                 <PhotoWrapper
                   className="aboutImg"
