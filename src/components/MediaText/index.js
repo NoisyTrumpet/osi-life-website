@@ -139,7 +139,7 @@ const MediaText = ({
             mx={`auto`}
             sx={{
               svg: {
-                height: ["auto", "auto", "auto", "18rem", "30rem"],
+                height: ["auto", "auto", "auto", "18rem", "22rem"],
               },
             }}
           >

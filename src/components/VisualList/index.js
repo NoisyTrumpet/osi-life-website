@@ -56,6 +56,7 @@ const VisualList = ({ id, title, variant, cards }) => {
                   my={`auto`}
                   py={2}
                   mx={4}
+                  alignSelf={`center`}
                 >
                   <img src={imageURL} alt="icon" />
                 </Box>
