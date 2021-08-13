@@ -9,6 +9,7 @@ import {
 import PhotoWrapper from "SVG/PhotoWrapper";
 import React from "react";
 import { Link } from "gatsby";
+import "./featServSVG.scss"
 
 const FeaturedServices = ({ services, id, path }) => {
   if (path === "/about") {
@@ -21,6 +22,7 @@ const FeaturedServices = ({ services, id, path }) => {
         borderTopRightRadius={0}
         mt={"auto"}
         key={id}
+        className={`featServ`}
       >
         <Container>
           <Grid
@@ -47,6 +49,7 @@ const FeaturedServices = ({ services, id, path }) => {
                   svg: {
                     width: "100%",
                     maxWidth: "100%",
+                    height: "auto",
                   },
                 }}
                 key={service.id}
@@ -58,6 +61,11 @@ const FeaturedServices = ({ services, id, path }) => {
                   imgAlt={service.image?.title}
                   id={service.image?.id}
                   fillColor={
+                    (service.title === "Chronic Care Management" &&
+                      "#00ADBC") ||
+                    "#FFA500"
+                  }
+                  crossColor={
                     (service.title === "Chronic Care Management" &&
                       "#00ADBC") ||
                     "#FFA500"
@@ -98,6 +106,7 @@ const FeaturedServices = ({ services, id, path }) => {
       borderTopRightRadius={80}
       mt={"auto"}
       key={id}
+      className={`featServ`}
     >
       <Container>
         <Grid
@@ -137,6 +146,11 @@ const FeaturedServices = ({ services, id, path }) => {
                 id={service.image?.id}
                 fillColor={
                   (service.title === "Chronic Care Management" && "#00ADBC") ||
+                  "#FFA500"
+                }
+                crossColor={
+                  (service.title === "Chronic Care Management" &&
+                    "#00ADBC") ||
                   "#FFA500"
                 }
               />
