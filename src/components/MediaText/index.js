@@ -174,7 +174,11 @@ const MediaText = ({
               imgAlt={photo.title}
               id={photo.id}
               fillColor={(variant === "Secondary" && "#FFA500") || "#00ADBC"}
-              crossColor={(variant === "Secondary" && "#FFA500") || (photo.title === "Happy Doctor Man" && "#FFA500") || "#00ADBC"}
+              crossColor={
+                (variant === "Secondary" && "#FFA500") ||
+                (photo.title === "Happy Doctor Man" && "#FFA500") ||
+                "#00ADBC"
+              }
               flip={variant === "Secondary" && "-1"} // either 1 or -1
             />
           </Box>

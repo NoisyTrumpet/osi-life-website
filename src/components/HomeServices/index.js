@@ -100,12 +100,20 @@ const HomeServices = ({ title, subTitle, services }) => {
                         {service.title}
                       </Heading>
                       {isExpanded ? (
-                        <Box display={`inline-flex`} alignItems={`center`} _hover={{color: "secondary"}}>
+                        <Box
+                          display={`inline-flex`}
+                          alignItems={`center`}
+                          _hover={{ color: "secondary" }}
+                        >
                           <Text mr={2}>Read Less</Text>
                           <FaChevronRight />
                         </Box>
                       ) : (
-                        <Box display={`inline-flex`} alignItems={`center`} _hover={{color: "secondary"}}>
+                        <Box
+                          display={`inline-flex`}
+                          alignItems={`center`}
+                          _hover={{ color: "secondary" }}
+                        >
                           <Text mr={2}>Read More</Text>
                           <FaChevronRight />
                         </Box>

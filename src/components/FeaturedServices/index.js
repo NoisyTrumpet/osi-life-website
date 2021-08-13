@@ -9,7 +9,7 @@ import {
 import PhotoWrapper from "SVG/PhotoWrapper";
 import React from "react";
 import { Link } from "gatsby";
-import "./featServSVG.scss"
+import "./featServSVG.scss";
 
 const FeaturedServices = ({ services, id, path }) => {
   if (path === "/about") {
@@ -149,8 +149,7 @@ const FeaturedServices = ({ services, id, path }) => {
                   "#FFA500"
                 }
                 crossColor={
-                  (service.title === "Chronic Care Management" &&
-                    "#00ADBC") ||
+                  (service.title === "Chronic Care Management" && "#00ADBC") ||
                   "#FFA500"
                 }
               />

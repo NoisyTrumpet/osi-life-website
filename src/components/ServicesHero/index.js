@@ -59,10 +59,14 @@ const ServiceHero = ({ title, variant, image }) => {
             sx={{
               svg: {
                 height: "auto",
-              }
+              },
             }}
           >
-            <InfoGraphic width={`100%`} height={`auto`} style={{ maxHeight: `100%` }} />
+            <InfoGraphic
+              width={`100%`}
+              height={`auto`}
+              style={{ maxHeight: `100%` }}
+            />
           </GridItem>
         </Grid>
       </Box>

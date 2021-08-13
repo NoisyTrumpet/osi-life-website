@@ -54,7 +54,7 @@ const FAQs = ({ id, title, photo, variant, items }) => {
           id={photo.id}
           fillColor={(variant === "Secondary" && "#00ADBC") || "#FFA500"}
           crossColor={(variant === "Secondary" && "#00ADBC") || "#FFA500"}
-          flip={ variant === "Primary" && "-1"}
+          flip={variant === "Primary" && "-1"}
         />
       </Box>
       <Box

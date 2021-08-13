@@ -60,7 +60,7 @@ const VisualList = ({ id, title, variant, cards }) => {
                   sx={{
                     svg: {
                       height: "auto",
-                    }
+                    },
                   }}
                 >
                   <img src={imageURL} alt="icon" height="auto" />
@@ -126,7 +126,7 @@ const VisualList = ({ id, title, variant, cards }) => {
               sx={{
                 svg: {
                   height: "auto",
-                }
+                },
               }}
             >
               <img src={imageURL} alt="icon" width="140" height="auto" />
@@ -148,7 +148,7 @@ const VisualList = ({ id, title, variant, cards }) => {
           sx={{
             svg: {
               height: "auto",
-            }
+            },
           }}
         >
           <MultiHandCross fill="#5B677014" />
