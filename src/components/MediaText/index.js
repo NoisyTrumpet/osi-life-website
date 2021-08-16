@@ -200,11 +200,11 @@ const MediaText = ({
           <Box
             sx={{
               h2: {
-                fontSize: "2.25rem !important",
-                fontWeight: "700 !important",
-                lineHeight: "1.2 !important",
-                color: "#00ADBC",
-                padding: "1rem 0 !important",
+                fontFamily: "var(--chakra-fonts-heading)",
+                fontWeight: "var(--chakra-fontWeights-bold)",
+                fontSize: "var(--chakra-fontSizes-3xl)",
+                lineHeight: "1.33",
+                color: "var(--chakra-colors-primary)"
               },
               p: { padding: [".5rem 0 !important"] },
             }}
@@ -235,9 +235,10 @@ const MediaText = ({
                   maxWidth: "100%",
                   height: "auto",
                   top: "0",
-                  left: ["140", "330", "360", "100", "45"],
+                  left: ["90", "225", "360", "100", "45"],
                   position: "relative",
                   marginBottom: ["auto", "auto", "1rem", "auto", "auto"],
+                  g: { fill: "#FFA500" },
                 },
               }}
             >
