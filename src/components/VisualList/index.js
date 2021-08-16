@@ -57,8 +57,13 @@ const VisualList = ({ id, title, variant, cards }) => {
                   py={2}
                   mx={4}
                   alignSelf={`center`}
+                  sx={{
+                    svg: {
+                      height: "auto",
+                    },
+                  }}
                 >
-                  <img src={imageURL} alt="icon" />
+                  <img src={imageURL} alt="icon" height="auto" />
                 </Box>
                 <Box
                   flex={[`100%`, `100%`, `100%`, `70%`, `70%`]}
@@ -118,8 +123,13 @@ const VisualList = ({ id, title, variant, cards }) => {
               _last={{
                 borderBottomWidth: 0,
               }}
+              sx={{
+                svg: {
+                  height: "auto",
+                },
+              }}
             >
-              <img src={imageURL} alt="icon" width="140" />
+              <img src={imageURL} alt="icon" width="140" height="auto" />
               <Heading as="h4" color="primary" mt={8} mb={4}>
                 {card.title}
               </Heading>
@@ -135,6 +145,11 @@ const VisualList = ({ id, title, variant, cards }) => {
           maxHeight={450}
           alignSelf={`center`}
           justifySelf={`center`}
+          sx={{
+            svg: {
+              height: "auto",
+            },
+          }}
         >
           <MultiHandCross fill="#5B677014" />
         </Box>

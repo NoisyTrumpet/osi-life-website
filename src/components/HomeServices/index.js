@@ -49,6 +49,9 @@ const HomeServices = ({ title, subTitle, services }) => {
                       gridTemplateColumns: `70% 30%`,
                       gridTemplateRows: `repeat(2, auto)`,
                     }}
+                    _hover={{
+                      bg: "none",
+                    }}
                   >
                     <Box
                       gridRowStart={`1`}
@@ -97,12 +100,20 @@ const HomeServices = ({ title, subTitle, services }) => {
                         {service.title}
                       </Heading>
                       {isExpanded ? (
-                        <Box display={`none`} alignItems={`center`}>
-                          <Text mr={2}>Read More</Text>
+                        <Box
+                          display={`inline-flex`}
+                          alignItems={`center`}
+                          _hover={{ color: "secondary" }}
+                        >
+                          <Text mr={2}>Read Less</Text>
                           <FaChevronRight />
                         </Box>
                       ) : (
-                        <Box display={`inline-flex`} alignItems={`center`}>
+                        <Box
+                          display={`inline-flex`}
+                          alignItems={`center`}
+                          _hover={{ color: "secondary" }}
+                        >
                           <Text mr={2}>Read More</Text>
                           <FaChevronRight />
                         </Box>

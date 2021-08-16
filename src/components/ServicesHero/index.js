@@ -45,6 +45,8 @@ const ServiceHero = ({ title, variant, image }) => {
               id={image.id}
               imgAlt={image.title}
               fillColor="#00ADBC"
+              crossColor="#FFA500"
+              flip="-1" // either 1 or -1
             />
           </GridItem>
           <GridItem
@@ -54,8 +56,17 @@ const ServiceHero = ({ title, variant, image }) => {
             pt={16}
             w={`100%`}
             maxH={780}
+            sx={{
+              svg: {
+                height: "auto",
+              },
+            }}
           >
-            <InfoGraphic width={`100%`} height={`auto`} />
+            <InfoGraphic
+              width={`100%`}
+              height={`auto`}
+              style={{ maxHeight: `100%` }}
+            />
           </GridItem>
         </Grid>
       </Box>

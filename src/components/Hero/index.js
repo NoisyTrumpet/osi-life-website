@@ -58,6 +58,7 @@ const Hero = ({ title, variant, image }) => {
               id={image.id}
               imgAlt={image.title}
               fillColor="#FFA500"
+              crossColor="#FFA500"
             />
           </GridItem>
         </Grid>
