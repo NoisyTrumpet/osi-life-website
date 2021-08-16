@@ -251,7 +251,7 @@ const ContactForm = ({ title, subtitle }) => {
                   </Checkbox>
                 </FormControl>
               </Flex>
-              <Box>
+              <Box alignSelf={{ base: `center`, sm: `flex-start` }}>
                 <Button
                   mt={4}
                   isLoading={isSubmitting}

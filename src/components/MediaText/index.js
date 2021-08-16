@@ -19,13 +19,14 @@ const MediaText = ({
     return (
       <Box
         bg={variant === "Secondary" && `lightGrayBG`}
-        borderTopLeftRadius={variant === "Secondary" && 140}
+        borderTopRightRadius={variant === "Secondary" && 140}
+        overflowX={{ base: `hidden` }}
       >
         <Flex
           flexDirection={{
             base: `column-reverse`,
-            xl: (variant === "Secondary" && `row-reverse`) || `row`,
-            "2xl": variant === "Secondary" && `row-reverse`,
+            lg: (variant === "Secondary" && `row-reverse`) || `row`,
+            // "2xl": variant === "Secondary" && `row-reverse`,
           }}
           pb={`4rem`}
           maxW={`1500px`}
@@ -33,14 +34,16 @@ const MediaText = ({
           key={id}
         >
           <Box
-            flex={[`100%`, `100%`, `100%`, `60%`, `60%`]}
+            flex={{ base: `100%`, lg: `60%` }}
             px={[2, 2, 8, 8, 8]}
             py={2}
             mx={4}
             my={`auto`}
           >
             <Box maxW={800} mx={`auto`}>
-              <Heading color="primary">{title}</Heading>
+              <Heading color="primary" mt={4}>
+                {title}
+              </Heading>
               <Box
                 sx={{
                   h2: {
@@ -50,6 +53,9 @@ const MediaText = ({
                     color: "#00ADBC",
                     padding: "1rem 0 !important",
                   },
+                  h5: {
+                    fontSize: `var(--chakra-fontSizes-lg)`,
+                  },
                   p: { padding: [".5rem 0 !important"] },
                 }}
               >
@@ -58,20 +64,19 @@ const MediaText = ({
             </Box>
           </Box>
           <Box
-            flex={{ base: `100%`, xl: `40%` }}
-            mt={`auto`}
-            mb={8}
+            flex={{ base: `100%`, lg: `40%` }}
+            my={`auto`}
+            pb={8}
             position="relative"
-            overflowX={{ base: `hidden`, "2xl": `visible` }}
             alignSelf={variant === "Primary" && "flex-end"}
             sx={{
               svg: {
-                width: ["680px", "680px", "680px", "750px", "750px"],
+                width: { base: "680px", xl: "750px" },
                 maxWidth: "100%",
                 height: "auto",
                 top: "0",
-                left: variant === "Primary" && "20%",
-                right: variant === "Secondary" && "20%",
+                left: variant === "Primary" && "25%",
+                right: variant === "Secondary" && "25%",
                 position: "relative",
                 transform: variant === "Secondary" && "scaleX(-1)",
               },
@@ -85,6 +90,8 @@ const MediaText = ({
               id={photo.id}
               fillColor={(variant === "Secondary" && "#00ADBC") || "#FFA500"}
               crossColor={(variant === "Secondary" && "#00ADBC") || "#FFA500"}
+              imageFlip={variant === "Primary" && "-1"} // either 1 or -1
+              crossesFlip={variant === "Secondary" && "-1"} // either 1 or -1
             />
           </Box>
         </Flex>
@@ -96,26 +103,30 @@ const MediaText = ({
       <Box
         bg={variant === "Secondary" && `lightGrayBG`}
         borderTopLeftRadius={variant === "Secondary" && 140}
+        overflowX={{ base: `hidden` }}
       >
         <Flex
           flexDirection={{
             base: `column-reverse`,
-            xl: (variant === "Primary" && `row-reverse`) || `row`,
-            "2xl": variant === "Primary" && `row-reverse`,
+            lg: (variant === "Primary" && `row-reverse`) || `row`,
+            // "2xl": variant === "Primary" && `row-reverse`,
           }}
           pb={`4rem`}
           maxW={`1500px`}
+          mx={`auto`}
           key={id}
         >
           <Box
-            flex={{ base: `100%`, xl: `60%` }}
+            flex={{ base: `100%`, lg: `60%` }}
             px={[2, 2, 8, 8, 8]}
             py={2}
             mx={4}
             my={`auto`}
           >
             <Box maxW={800} mx={`auto`}>
-              <Heading color="primary">{title}</Heading>
+              <Heading color="primary" mt={4}>
+                {title}
+              </Heading>
               <Box
                 sx={{
                   h2: {
@@ -124,6 +135,9 @@ const MediaText = ({
                     lineHeight: "1.2 !important",
                     color: "#00ADBC",
                     padding: "1rem 0 !important",
+                  },
+                  h5: {
+                    fontSize: `var(--chakra-fontSizes-lg)`,
                   },
                   p: { padding: [".5rem 0 !important"] },
                 }}
@@ -148,20 +162,20 @@ const MediaText = ({
             </Box>
           </Box>
           <Box
-            flex={[`100%`, `100%`, `100%`, `40%`, `40%`]}
+            flex={{ base: "100%", lg: "40%" }}
             mt={`auto`}
-            mb={8}
+            pb={8}
+            my={`auto`}
             position="relative"
-            overflowX={{ base: `hidden`, "2xl": `visible` }}
             alignSelf={variant === "Secondary" && "flex-end"}
             sx={{
               svg: {
-                width: ["680px", "680px", "680px", "750px", "750px"],
+                width: { base: "680px", xl: "750px" },
                 maxWidth: "100%",
                 height: "auto",
                 top: "0",
-                left: variant === "Secondary" && "20%",
-                right: variant === "Primary" && "20%",
+                left: variant === "Secondary" && "25%",
+                right: variant === "Primary" && "25%",
                 position: "relative",
                 transform: variant === "Primary" && "scaleX(-1)",
               },
@@ -179,7 +193,8 @@ const MediaText = ({
                 (photo.title === "Happy Doctor Man" && "#FFA500") ||
                 "#00ADBC"
               }
-              flip={variant === "Secondary" && "-1"} // either 1 or -1
+              crossesFlip={variant === "Secondary" && "-1"} // either 1 or -1
+              imageFlip={variant === "Secondary" && "-1"} // either 1 or -1
             />
           </Box>
         </Flex>
@@ -205,6 +220,7 @@ const MediaText = ({
         px={0}
         mt={"auto"}
         mx={0}
+        overflow={{ base: `hidden` }}
       >
         <GridItem
           className="about-content"
@@ -244,7 +260,7 @@ const MediaText = ({
             <GridItem
               className="grid-img-wrapper"
               position="relative"
-              overflow="hidden"
+              // overflow="hidden"
               sx={{
                 svg: {
                   width: ["500px", "500px", "550px", "750px", "800px"],
@@ -266,6 +282,7 @@ const MediaText = ({
                 imgAlt={photo.title}
                 fillColor="#00ADBC"
                 crossColor="#FFA500"
+                imageFlip={"-1"} // either 1 or -1
               />
             </GridItem>
 

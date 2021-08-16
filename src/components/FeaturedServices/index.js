@@ -70,6 +70,7 @@ const FeaturedServices = ({ services, id, path }) => {
                       "#00ADBC") ||
                     "#FFA500"
                   }
+                  imageFlip={"-1"} // either 1 or -1
                 />
                 <Link
                   to={`/${service.page.slug}`}
@@ -152,6 +153,7 @@ const FeaturedServices = ({ services, id, path }) => {
                   (service.title === "Chronic Care Management" && "#00ADBC") ||
                   "#FFA500"
                 }
+                imageFlip={"-1"} // either 1 or -1
               />
               <Link
                 to={`/${service.page.slug}`}

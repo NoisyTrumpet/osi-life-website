@@ -26,6 +26,10 @@ const Button = {
       //   backgroundColor: "primary",
       // },
     },
+    darkGrey: {
+      color: "white",
+      backgroundColor: "darkGray",
+    },
     success: {},
     alert: {},
     warning: {},
