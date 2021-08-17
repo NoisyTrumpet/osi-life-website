@@ -8,7 +8,8 @@ const PhotoWrapper = ({
   fillColor,
   imgAlt,
   crossColor,
-  flip,
+  crossesFlip,
+  imageFlip,
 }) => {
   return (
     <svg
@@ -43,7 +44,7 @@ const PhotoWrapper = ({
       </defs>
       <g
         style={{
-          transform: `scaleX(${flip})`,
+          transform: `scaleX(${crossesFlip})`,
           transformOrigin: `center`,
           transformBox: `fill-box`,
         }}
@@ -78,6 +79,11 @@ const PhotoWrapper = ({
         data-name="SVGID"
         d="M0 180.63v76.44h106.63v51.49a44.74 44.74 0 0043.12 44.7h76.44v-96.19h59.33a44.73 44.73 0 0044.65-42.14h.08v-77.42H226.19V67.77a44.73 44.73 0 00-42.14-44.65V23h-77.42v114.51h-61.9A44.73 44.73 0 000 180.63z"
         fill={`url(#bg-${id})`}
+        style={{
+          transform: `scaleX(${imageFlip})`,
+          transformOrigin: `center`,
+          transformBox: `fill-box`,
+        }}
       />
     </svg>
   );

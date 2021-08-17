@@ -14,6 +14,8 @@ const ServiceHero = ({ title, variant, image }) => {
         pb={4}
       >
         <Grid
+          maxWidth={`1500px`}
+          mx={`auto`}
           templateColumns={[
             "repeat(1, 100%)",
             "repeat(1, 100%)",
@@ -24,14 +26,14 @@ const ServiceHero = ({ title, variant, image }) => {
         >
           <GridItem
             position="relative"
-            overflow="hidden"
+            overflow={{ base: "hidden", "2xl": "visible" }}
             sx={{
               svg: {
                 width: "750px",
                 maxWidth: "100%",
                 height: "auto",
                 top: "0",
-                right: ["100", "100", "130", "100", "130"],
+                right: { base: "23%", md: "17%", lg: "23%" },
                 position: "relative",
                 transform: "scaleX(-1)",
               },
@@ -46,7 +48,7 @@ const ServiceHero = ({ title, variant, image }) => {
               imgAlt={image.title}
               fillColor="#00ADBC"
               crossColor="#FFA500"
-              flip="-1" // either 1 or -1
+              crossesFlip="-1" // either 1 or -1
             />
           </GridItem>
           <GridItem

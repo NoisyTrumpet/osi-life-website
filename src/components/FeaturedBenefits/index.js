@@ -34,7 +34,7 @@ const FeaturedBenefits = ({ title, benefits }) => {
               w="auto"
               h="auto"
             />
-            <Heading fontSize="xl" my={2}>
+            <Heading fontSize="2xl" my={2}>
               {benefit.title}
             </Heading>
             <Box>
