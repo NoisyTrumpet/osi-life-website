@@ -13,6 +13,7 @@ const Fonts = () => (
         font-style: normal;
         font-weight: normal;
         src: url(${GTAmerica});
+        font-display: swap;
       }
       /* Bold */
       @font-face {
@@ -20,6 +21,7 @@ const Fonts = () => (
         font-style: normal;
         font-weight: bold;
         src: url(${GTAmericaBold});
+        font-display: swap;
       }
       /* Bold Italic */
       @font-face {
@@ -27,6 +29,7 @@ const Fonts = () => (
         font-style: italic;
         font-weight: bold;
         src: url(${GTAmericaBoldItalic});
+        font-display: swap;
       }
       `}
   />

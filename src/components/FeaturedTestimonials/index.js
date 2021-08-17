@@ -25,8 +25,8 @@ const FeaturedTestimonials = ({ title, items, key }) => {
                   <Image
                     src={item.image.file.url}
                     alt={item.name}
-                    w="auto"
-                    h="auto"
+                    w="145px"
+                    h="150px"
                   />
                 </GridItem>
                 <GridItem>

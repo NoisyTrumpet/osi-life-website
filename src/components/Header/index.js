@@ -30,7 +30,12 @@ const Header = () => {
         <Navbar.Brand>
           <Center marginEnd="10">
             <Link to="/" aria-label={title}>
-              <Image src={logo.file.url} alt={title} />
+              <Image
+                src={logo.file.url}
+                alt={title}
+                width="198.27px"
+                height="62.67px"
+              />
             </Link>
           </Center>
         </Navbar.Brand>

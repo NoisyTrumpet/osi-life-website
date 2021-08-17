@@ -24,7 +24,7 @@ export const NavLink = (props) => {
     <ChakraLink
       aria-current={isActive ? "page" : undefined}
       _hover={{
-        bg: mode("gray.100", "gray.700"),
+        bg: mode("#5B677014", "gray.700"),
       }}
       _activeLink={{
         // bg: mode("blue.600", "blue.200"),
