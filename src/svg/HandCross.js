@@ -8,7 +8,9 @@ function HandCross(props) {
       width="100%"
       // height="auto"
       viewBox="0 0 430.034 430.034"
-      fillColor={props.fillColor || "inherit"}
+      style={{
+        fill: props.fillColor || "inherit",
+      }}
       {...props}
     >
       <g data-name="Group 285" class="small-hand">

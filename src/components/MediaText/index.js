@@ -21,6 +21,7 @@ const MediaText = ({
         bg={variant === "Secondary" && `lightGrayBG`}
         borderTopRightRadius={variant === "Secondary" && 140}
         overflowX={{ base: `hidden` }}
+        id={title.split(" ")[0].toLowerCase()}
       >
         <Flex
           flexDirection={{
@@ -236,7 +237,7 @@ const MediaText = ({
                 fontWeight: "var(--chakra-fontWeights-bold)",
                 fontSize: "var(--chakra-fontSizes-3xl)",
                 lineHeight: "1.33",
-                color: "var(--chakra-colors-primary)"
+                color: "var(--chakra-colors-primary)",
               },
               p: { padding: [".5rem 0 !important"] },
             }}
@@ -247,27 +248,18 @@ const MediaText = ({
 
         <GridItem className="about-creative" order={[1, 1, 1, 2, 2]} px={0}>
           {/* Cross image with smiling man and OSI quote */}
-          <Grid
-            gridTemplateRows={[
-              `70% 30%`,
-              `75% 25%`,
-              `75% 25%`,
-              `50% 50%`,
-              `50% 50%`,
-              `65% 35%`,
-            ]}
-          >
+          <Grid gridTemplateRows={[`fit-content fit-content`]}>
             <GridItem
               className="grid-img-wrapper"
               position="relative"
+              maxH="fit-content"
               // overflow="hidden"
               sx={{
                 svg: {
                   width: ["500px", "500px", "550px", "750px", "800px"],
                   maxWidth: "100%",
+                  maxHeight: "100%",
                   height: "auto",
-                  top: "0",
-                  left: ["90", "225", "360", "100", "45"],
                   position: "relative",
                   marginBottom: ["auto", "auto", "1rem", "auto", "auto"],
                   g: { fill: "#FFA500" },
@@ -294,7 +286,7 @@ const MediaText = ({
                 (path === "/benefits" && "none") ||
                 "block"
               }
-              m={[0, 0, 0, "-1rem 0 3rem 0", "0 0 5rem 0"]}
+              // m={[0, 0, 0, "-1rem 0 3rem 0", "0 0 5rem 0"]}
             >
               <Box
                 className="osiQuoteBox"
@@ -303,14 +295,6 @@ const MediaText = ({
                   fontSize: "1.65rem",
                   lineHeight: "1.2",
                   position: "relatve",
-                  right: [
-                    "auto",
-                    "auto",
-                    "auto",
-                    "-8.2rem",
-                    "-8.2rem",
-                    "-5.2rem",
-                  ],
                   padding: [
                     "2.5rem 2rem",
                     "2rem 4rem",

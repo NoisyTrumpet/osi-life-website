@@ -70,7 +70,7 @@ const Hero = ({ title, variant, image }) => {
           opacity="0.25"
           w={[130, 170, 170, 270, 370]}
         >
-          <HandCross />
+          <HandCross fillColor="#ffffff" />
         </Box>
         <Box
           position="absolute"
@@ -79,7 +79,7 @@ const Hero = ({ title, variant, image }) => {
           opacity="0.25"
           w={[180, 220, 220, 370, 511]}
         >
-          <HandCross />
+          <HandCross fillColor="#ffffff" />
         </Box>
       </Box>
       <Box
