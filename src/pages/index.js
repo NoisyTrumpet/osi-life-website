@@ -143,16 +143,7 @@ export const homeQuery = graphql`
             }
           }
         }
-        ... on ContentfulBlockForm {
-          id
-          description {
-            description
-          }
-          title
-          internal {
-            type
-          }
-        }
+
         ... on ContentfulBlockVisualList {
           id
           title

@@ -12,8 +12,9 @@ const FeaturedTestimonials = ({ title, items, key }) => {
           <Text
             my={4}
             color="secondary"
-            fontSize="4xl"
+            fontSize="6xl"
             textAlign={["left", "center"]}
+            fontFamily={`var(--chakra-fonts-heading)`}
           >
             {title}
           </Text>
@@ -21,10 +22,19 @@ const FeaturedTestimonials = ({ title, items, key }) => {
             {items.map((item) => (
               <Grid key={item.id} templateColumns={"25% 75%"} gap={2}>
                 <GridItem display="grid" placeItems="center">
-                  <Image src={item.image.file.url} />
+                  <Image
+                    src={item.image.file.url}
+                    alt={item.name}
+                    w="auto"
+                    h="auto"
+                  />
                 </GridItem>
                 <GridItem>
-                  <Text fontSize="2xl" color="secondary">
+                  <Text
+                    fontSize="3xl"
+                    color="secondary"
+                    fontFamily={`var(--chakra-fonts-heading)`}
+                  >
                     {item.name}
                   </Text>
                   <Text fontSize="lg" color="white" textDecoration="italic">

@@ -43,6 +43,7 @@ const Hero = ({ title, variant, image }) => {
               svg: {
                 width: "750px",
                 maxWidth: "100%",
+                height: "auto",
                 top: "0",
                 right: "-130",
                 position: "absolute",
@@ -82,16 +83,18 @@ const Hero = ({ title, variant, image }) => {
       <Box
         display={{
           sm: "grid",
-          md: "none",
+          md: "grid",
           lg: "none",
         }}
         placeItems="center"
         py={4}
         w="100%"
       >
-        <Button display="block" margin="0 auto" variant="secondary">
-          Contact
-        </Button>
+        <a href="#contact" alt="contact">
+          <Button display="block" margin="0 auto" variant="secondary">
+            Contact
+          </Button>
+        </a>
       </Box>
       {image && (
         <Box

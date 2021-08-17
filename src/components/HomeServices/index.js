@@ -20,7 +20,7 @@ const HomeServices = ({ title, subTitle, services }) => {
     <Container>
       <Box my={8}>
         <Heading color={`primary`}>{title}</Heading>
-        <Text fontSize={`1.5em`} color={`primary`}>
+        <Text fontSize={`1.5em`} color={`primary`} px={[4, 4, 8, 10, 10]}>
           {subTitle}
         </Text>
       </Box>
@@ -29,7 +29,7 @@ const HomeServices = ({ title, subTitle, services }) => {
           {services.map((service) => (
             <AccordionItem
               border={`none`}
-              maxW={[`90%`, `75%`, `60%`, `40%`, `40%`]}
+              maxW={[`90%`, `75%`, `75%`, `40%`, `40%`]}
               mx={`auto`}
               key={service.title}
             >
@@ -40,13 +40,14 @@ const HomeServices = ({ title, subTitle, services }) => {
                     fontWeight={500}
                     fontSize={18}
                     mx={`auto`}
+                    px={1}
                     alignItems={`flex-start`}
                     display={`flex`}
                     flexDirection={`column`}
                     _expanded={{
                       display: `grid`,
                       gridTemplateColumns: `70% 30%`,
-                      gridTemplateRows: `100px`,
+                      gridTemplateRows: `repeat(2, auto)`,
                     }}
                   >
                     <Box
@@ -55,10 +56,10 @@ const HomeServices = ({ title, subTitle, services }) => {
                       borderBottomRadius={`20%`}
                       borderTopRightRadius={`20%`}
                       bg={`lightGrayBG`}
-                      px={4}
+                      px={[1, 1, 4, 4, 4]}
                       pt={2}
                       overflow={`hidden`}
-                      maxH={[`350px`, `350px`, `350px`, `350px`, `350px`]}
+                      maxH={[`350px`, `500px`, `600px`, `400px`, `400px`]}
                       zIndex={-1}
                     >
                       <GatsbyImage
@@ -75,7 +76,10 @@ const HomeServices = ({ title, subTitle, services }) => {
                       alignSelf={`end`}
                       mt={2}
                     >
-                      <Text fontSize={`2em`} lineHeight={1}>
+                      <Text
+                        fontSize={[`1.6em`, `1.6em`, `2em`, `2em`, `2em`]}
+                        lineHeight={1}
+                      >
                         {service.subtitle}
                       </Text>
                     </Box>
@@ -87,7 +91,7 @@ const HomeServices = ({ title, subTitle, services }) => {
                     >
                       <Heading
                         color={`secondary`}
-                        fontSize={`3.3em`}
+                        fontSize={[`2.6em`, `2.6em`, `3.3em`, `3.3em`, `3.3em`]}
                         lineHeight={1}
                       >
                         {service.title}
@@ -105,7 +109,7 @@ const HomeServices = ({ title, subTitle, services }) => {
                       )}
                     </Box>
                   </AccordionButton>
-                  <AccordionPanel py={4} textAlign={`left`}>
+                  <AccordionPanel py={4} px={2} textAlign={`left`}>
                     <RichText content={service.description} />
                   </AccordionPanel>
                 </>

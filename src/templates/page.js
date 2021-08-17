@@ -3,24 +3,35 @@ import * as React from "react";
 import Layout from "Components/Layout";
 import Seo from "Components/Seo";
 import BlockReturner from "Features/BlockReturner";
+import RichText from "Components/RichText";
+import { Container, Heading } from "@chakra-ui/react";
 
 const PageTemplate = ({ data: page }) => {
   const {
-    // title,
+    title,
     seoTitle,
     seoDescription: { seoDescription },
     pageBlocks,
+    body,
   } = page.contentfulPage;
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
-      {pageBlocks &&
+      {pageBlocks ? (
         pageBlocks.map((block, index) => (
           <BlockReturner
             block={block}
             key={block !== {} ? block.id : `empty-block-${index}`}
           />
-        ))}
+        ))
+      ) : (
+        <Container py={8}>
+          <Heading as="h1" color="primary">
+            {title}
+          </Heading>
+          <RichText content={body} />
+        </Container>
+      )}
     </Layout>
   );
 };
@@ -33,6 +44,9 @@ export const query = graphql`
       title
       seoDescription {
         seoDescription
+      }
+      body {
+        raw
       }
       seoTitle
       seoKeywords
@@ -52,12 +66,7 @@ export const query = graphql`
           id
           title
           photo {
-            gatsbyImageData(
-              formats: [PNG, WEBP]
-              layout: CONSTRAINED
-              placeholder: BLURRED
-              quality: 70
-            )
+            ...imageQuery
           }
           settingVariant
           content {

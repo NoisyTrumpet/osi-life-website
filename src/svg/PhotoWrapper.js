@@ -7,6 +7,7 @@ const PhotoWrapper = ({ image, width, height, id, fillColor, imgAlt }) => {
       xmlns="http://www.w3.org/2000/svg"
       // width={387.1}
       // height={399.94}
+      // height={"auto"}
       viewBox="0 0 387.1 399.94"
     >
       <title>{imgAlt}</title>
