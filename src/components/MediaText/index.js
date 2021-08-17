@@ -194,7 +194,7 @@ const MediaText = ({
                 (photo.title === "Happy Doctor Man" && "#FFA500") ||
                 "#00ADBC"
               }
-              crossesFlip={variant === "Secondary" && "-1"} // either 1 or -1
+              crossesFlip={variant === "Primary" && "-1"} // either 1 or -1
               imageFlip={variant === "Secondary" && "-1"} // either 1 or -1
             />
           </Box>

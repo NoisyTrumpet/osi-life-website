@@ -19,7 +19,9 @@ const HomeServices = ({ title, subTitle, services }) => {
   return (
     <Container>
       <Box my={8}>
-        <Heading color={`primary`}>{title}</Heading>
+        <Heading color={`primary`} mb={2}>
+          {title}
+        </Heading>
         <Text fontSize={`1.5em`} color={`primary`} px={[4, 4, 8, 10, 10]}>
           {subTitle}
         </Text>

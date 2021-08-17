@@ -6,7 +6,7 @@ import "./FeaturedBenefits.scss";
 const FeaturedBenefits = ({ title, benefits }) => {
   return (
     <Container maxW="100%" px={0} my={5}>
-      <Heading as="h2" ml={10} mb={5} color="primary">
+      <Heading as="h2" ml={10} my={8} color="primary">
         {title}
       </Heading>
       <Grid
