@@ -78,6 +78,7 @@ const MediaText = ({
             imgAlt={photo.title}
             id={photo.id}
             fillColor={(variant === "Secondary" && "#00ADBC") || "#FFA500"}
+            crossColor={variant === "Primary" ? "#00ADBC" : "#FFA500"}
           />
         </Box>
       </Flex>
