@@ -3,7 +3,10 @@ import React from "react";
 
 const Banner = ({ title, content, cta, variant, key, path }) => {
   const bgColor = () => {
-    if (variant === "Primary" && path === "/services") {
+    if (
+      (variant === "Primary" && path === "/services") ||
+      (variant === "Primary" && path === "/benefits")
+    ) {
       return "secondary";
     }
     if (variant === "Primary") {
@@ -39,7 +42,7 @@ const Banner = ({ title, content, cta, variant, key, path }) => {
             maxW={(path === "/benefits" && 950) || 800}
             mx={`auto`}
           >
-            {title && variant === "Primary" && (
+            {title && variant === "Primary" && path !== "/benefits" && (
               <Text fontSize={"5xl"} fontWeight="bold" color={textColor()}>
                 {title}
               </Text>
@@ -56,7 +59,11 @@ const Banner = ({ title, content, cta, variant, key, path }) => {
           </Box>
           {cta && (
             <Box display="grid" placeItems="center" pb={8}>
-              <Button variant="secondary" as="a" href={`/${cta?.slug}`}>
+              <Button
+                variant={(path === "/benefits" && "darkGrey") || "secondary"}
+                as="a"
+                href={`#contact`}
+              >
                 {cta?.title}
               </Button>
             </Box>

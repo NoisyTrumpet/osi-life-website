@@ -18,8 +18,8 @@ const InfoGraphic = (props) => {
           transform="translate(0 680.613)"
           fill="orange"
           fontSize={61.695}
-          fontFamily="Baloo 2"
-          fontWeight={500}
+          fontFamily={`var(--chakra-fonts-heading)`}
+          fontWeight={600}
           className="lastAni"
         >
           <tspan x={124.303} y={65}>
@@ -31,7 +31,7 @@ const InfoGraphic = (props) => {
           transform="translate(396.217 440.004)"
           fill="#00adbc"
           fontSize={37}
-          fontFamily="Baloo 2"
+          fontFamily={`var(--chakra-fonts-heading)`}
           fontWeight={600}
           letterSpacing="-.012em"
           className="secondAni"
@@ -49,7 +49,7 @@ const InfoGraphic = (props) => {
             transform="translate(108.483 624.559)"
             fill="#00adbc"
             fontSize={33}
-            fontFamily="Baloo 2"
+            fontFamily={`var(--chakra-fonts-heading)`}
             fontWeight={600}
             className="secondAni"
           >
@@ -67,7 +67,7 @@ const InfoGraphic = (props) => {
             transform="translate(398.816 35)"
             fill="#00adbc"
             fontSize={33}
-            fontFamily="Baloo 2"
+            fontFamily={`var(--chakra-fonts-heading)`}
             fontWeight={600}
             className="secondAni"
           >
@@ -83,7 +83,7 @@ const InfoGraphic = (props) => {
           transform="translate(689.737 624.559)"
           fill="#00adbc"
           fontSize={33}
-          fontFamily="Baloo 2"
+          fontFamily={`var(--chakra-fonts-heading)`}
           fontWeight={600}
           data-name="Group 87"
           className="secondAni"

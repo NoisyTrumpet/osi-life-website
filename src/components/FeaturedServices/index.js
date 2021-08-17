@@ -9,6 +9,7 @@ import {
 import PhotoWrapper from "SVG/PhotoWrapper";
 import React from "react";
 import { Link } from "gatsby";
+import "./featServSVG.scss";
 
 const FeaturedServices = ({ services, id, path }) => {
   if (path === "/about") {
@@ -21,6 +22,7 @@ const FeaturedServices = ({ services, id, path }) => {
         borderTopRightRadius={0}
         mt={"auto"}
         key={id}
+        className={`featServ`}
       >
         <Container>
           <Grid
@@ -47,27 +49,36 @@ const FeaturedServices = ({ services, id, path }) => {
                   svg: {
                     width: "100%",
                     maxWidth: "100%",
+                    height: "auto",
                   },
                 }}
                 key={service.id}
               >
-                <PhotoWrapper
-                  image={service.image?.gatsbyImageData.images.fallback.src}
-                  width={service.image?.gatsbyImageData.width}
-                  height={service.image?.gatsbyImageData.height}
-                  imgAlt={service.image?.title}
-                  id={service.image?.id}
-                  fillColor={
-                    (service.title === "Chronic Care Management" &&
-                      "#00ADBC") ||
-                    "#FFA500"
-                  }
-                />
                 <Link
-                  to={`/${service.page.slug}`}
+                  to={`/${service.page.slug}#${service.title
+                    .split(" ")[0]
+                    .toLowerCase()}`}
                   alt={service.title}
                   aria-label={service.title}
                 >
+                  <PhotoWrapper
+                    image={service.image?.gatsbyImageData.images.fallback.src}
+                    width={service.image?.gatsbyImageData.width}
+                    height={service.image?.gatsbyImageData.height}
+                    imgAlt={service.image?.title}
+                    id={service.image?.id}
+                    fillColor={
+                      (service.title === "Chronic Care Management" &&
+                        "#00ADBC") ||
+                      "#FFA500"
+                    }
+                    crossColor={
+                      (service.title === "Chronic Care Management" &&
+                        "#00ADBC") ||
+                      "#FFA500"
+                    }
+                    imageFlip={"-1"} // either 1 or -1
+                  />
                   <Heading
                     as={`h3`}
                     fontSize={[`1.5em`, `1.8em`, `1.5em`, `1.8em`, `1.8em`]}
@@ -98,6 +109,7 @@ const FeaturedServices = ({ services, id, path }) => {
       borderTopRightRadius={80}
       mt={"auto"}
       key={id}
+      className={`featServ`}
     >
       <Container>
         <Grid
@@ -120,31 +132,47 @@ const FeaturedServices = ({ services, id, path }) => {
         >
           {services.map((service) => (
             <GridItem
-              sx={{
-                svg: {
-                  width: "100%",
-                  maxWidth: "100%",
-                  height: "auto",
-                },
-              }}
+              // sx={{
+              //   svg: {
+              //     width: "fit-content",
+              //     maxWidth: "100%",
+              //     height: "auto",
+              //     margin: '0 auto',
+              //   },
+              //   a: {
+              //     margin: '0 auto',
+              //   }
+              // }}
+              display="grid"
+              placeItems="center"
               key={service.id}
             >
-              <PhotoWrapper
-                image={service.image?.gatsbyImageData.images.fallback.src}
-                width={service.image?.gatsbyImageData.width}
-                height={service.image?.gatsbyImageData.height}
-                imgAlt={service.image?.title}
-                id={service.image?.id}
-                fillColor={
-                  (service.title === "Chronic Care Management" && "#00ADBC") ||
-                  "#FFA500"
-                }
-              />
               <Link
-                to={`/${service.page.slug}`}
+                to={`/${service.page.slug}#${service.title
+                  .split(" ")[0]
+                  .toLowerCase()}`}
                 alt={service.title}
                 aria-label={service.title}
               >
+                <PhotoWrapper
+                  image={service.image?.gatsbyImageData.images.fallback.src}
+                  width={service.image?.gatsbyImageData.width}
+                  height={service.image?.gatsbyImageData.height}
+                  imgAlt={service.image?.title}
+                  id={service.image?.id}
+                  fillColor={
+                    (service.title === "Chronic Care Management" &&
+                      "#00ADBC") ||
+                    "#FFA500"
+                  }
+                  crossColor={
+                    (service.title === "Chronic Care Management" &&
+                      "#00ADBC") ||
+                    "#FFA500"
+                  }
+                  imageFlip={"-1"} // either 1 or -1
+                />
+
                 <Heading
                   as={`h3`}
                   fontSize={[`1.5em`, `1.8em`, `1.5em`, `1.8em`, `1.8em`]}

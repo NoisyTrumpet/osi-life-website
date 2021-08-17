@@ -10,6 +10,7 @@ import Navbar from "./Fragments/Navbar";
 import { useLocation } from "@reach/router";
 import { NavLink } from "./Fragments/NavLink";
 import { graphql, Link, useStaticQuery } from "gatsby";
+import SubMenu from "./Fragments/SubMenu";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -20,6 +21,7 @@ const Header = () => {
     siteHeaderCta: cta,
     navigation,
     siteTitle: title,
+    subMenu,
   } = contentfulSiteSettings;
 
   return (
@@ -33,15 +35,31 @@ const Header = () => {
           </Center>
         </Navbar.Brand>
         <Navbar.Links>
-          {navigation.map((link, index) => (
-            <NavLink
-              key={index}
-              to={`/${link.slug}`}
-              isActive={pathname.includes(link.slug)}
-            >
-              {link.title}
-            </NavLink>
-          ))}
+          {navigation.map(
+            (link, index) =>
+              link.title === "Services" ? (
+                <SubMenu
+                  title={link.title}
+                  links={subMenu}
+                  link={`/${link.slug}`}
+                />
+              ) : (
+                <NavLink
+                  key={index}
+                  to={`/${link.slug}`}
+                  isActive={pathname.includes(link.slug)}
+                >
+                  {link.title}
+                </NavLink>
+              )
+            // <NavLink
+            //     key={index}
+            //     to={`/${link.slug}`}
+            //     isActive={pathname.includes(link.slug)}
+            //   >
+            //     {link.title}
+            //   </NavLink>
+          )}
         </Navbar.Links>
         <Navbar.Button>
           <Button
@@ -78,6 +96,10 @@ const menuQuery = graphql`
         slug
         title
         seoTitle
+      }
+      subMenu {
+        title
+        url
       }
     }
   }

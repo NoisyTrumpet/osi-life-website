@@ -17,6 +17,7 @@ module.exports = {
     DEV_SSR: true,
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     "@chakra-ui/gatsby-plugin",
     "gatsby-plugin-loadable-components-ssr",
     `gatsby-plugin-preact`,

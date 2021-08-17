@@ -29,11 +29,12 @@ const Footer = ({ path }) => {
     return (
       <Box bg="lightGrayBG">
         <Box
-          ml={10}
+          ml={{ base: 0, sm: 10 }}
           bg={mode(`primary`)}
           py={5}
           px={10}
           borderTopLeftRadius={40}
+          borderTopRightRadius={{ base: 40, sm: 0 }}
           mt={"auto"}
         >
           <ContactForm
@@ -85,11 +86,12 @@ const Footer = ({ path }) => {
   }
   return (
     <Box
-      ml={10}
+      ml={{ base: 0, sm: 10 }}
       bg={mode(`primary`)}
       py={5}
       px={10}
       borderTopLeftRadius={40}
+      borderTopRightRadius={{ base: 40, sm: 0 }}
       mt={"auto"}
     >
       <ContactForm
@@ -97,7 +99,9 @@ const Footer = ({ path }) => {
         subtitle="Share your information below to stay up to date with the latest at OsiLIFE."
       />
       <Grid
-        gridTemplateColumns={[`100%`, `100%`, `100%`, `85% 15%`, `90% 10%`]}
+        maxW={`1500px`}
+        mx={`auto`}
+        gridTemplateColumns={{ base: `100%`, xl: `85% 15%` }}
         gridTemplateRows={[
           `repeat(2,.5fr)`,
           `repeat(2,.5fr)`,
@@ -110,7 +114,7 @@ const Footer = ({ path }) => {
           <RichText content={copyRight} />
         </GridItem>
         <GridItem
-          alignSelf={[`center`, `center`, `center`, `start`, `start`]}
+          alignSelf={{ base: `center`, xl: `start` }}
           justifySelf={`center`}
         >
           {socials.map((social) => (

@@ -193,7 +193,7 @@ const MediaText = ({
           className="about-content"
           order={[2, 2, 2, 1, 1]}
           px={[`2rem`, `4rem`, `4.5rem`, `4rem`, `5rem`, `5rem`]}
-          mt={[`5rem`, 0, 0, 0, 0 ]}
+          mt={[`5.5rem`, 0, 0, 0, 0 ]}
         >
           {/* Text Content */}
           <Heading color="primary">{title}</Heading>
@@ -267,7 +267,7 @@ const MediaText = ({
                 (path === "/benefits" && "none") ||
                 "block"
               }
-              m={[ "-4rem 0 -4rem 0", 0, 0, "-1rem 0 3rem 0", "-1rem 0 5rem 0" ]}
+              m={[ "-4rem 0 -4rem 0", 0, 0, "-1rem 0 3rem 0", "0 0 5rem 0" ]}
             >
               <Box
                 className="osiQuoteBox"
@@ -287,12 +287,12 @@ const MediaText = ({
                   padding: [
                     "2.5rem 2rem",
                     "2rem 4rem",
-                    "3rem 4.5rem",
+                    "2.5rem 4.5rem",
                     "1.5rem 0rem",
                     "1rem 1rem",
                     "3rem 0 1rem 0",
                   ],
-                  margin: ["2rem 0 0 0", "2rem 0", ".5rem", "1.5rem", "1rem 0"],
+                  margin: ["2rem 0 0", "2rem 0", ".5rem", "1.5rem", "1rem 0"],
                   width: ["auto", "auto", "auto", "auto", "400px", "600px"],
                   fontFamily: `"Baloo 2"`,
                 }}

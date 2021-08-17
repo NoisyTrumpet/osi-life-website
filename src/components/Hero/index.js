@@ -58,6 +58,8 @@ const Hero = ({ title, variant, image }) => {
               id={image.id}
               imgAlt={image.title}
               fillColor="#FFA500"
+              crossColor="#FFA500"
+              imageFlip={"-1"} // either 1 or -1
             />
           </GridItem>
         </Grid>
@@ -68,7 +70,7 @@ const Hero = ({ title, variant, image }) => {
           opacity="0.25"
           w={[130, 170, 170, 270, 370]}
         >
-          <HandCross />
+          <HandCross fillColor="#ffffff" />
         </Box>
         <Box
           position="absolute"
@@ -77,7 +79,7 @@ const Hero = ({ title, variant, image }) => {
           opacity="0.25"
           w={[180, 220, 220, 370, 511]}
         >
-          <HandCross />
+          <HandCross fillColor="#ffffff" />
         </Box>
       </Box>
       <Box
@@ -114,6 +116,8 @@ const Hero = ({ title, variant, image }) => {
             id={image.id}
             imgAlt={image.title}
             fillColor="#FFA500"
+            crossColor="#FFA500"
+            imageFlip={"-1"} // either 1 or -1
           />
         </Box>
       )}

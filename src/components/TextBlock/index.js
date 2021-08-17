@@ -20,7 +20,9 @@ const TextBlock = ({ id, title, content }) => {
         borderTopLeftRadius={100}
         borderTopRightRadius={100}
       >
-        <Container>{content && <RichText content={content} />}</Container>
+        <Container sx={{ h2: { fontSize: `var(--chakra-fontSizes-lg)` } }}>
+          {content && <RichText content={content} />}
+        </Container>
       </Box>
     </Box>
   );
