@@ -16,17 +16,16 @@ const ServiceHero = ({ title, variant, image }) => {
         <Grid
           maxWidth={`1500px`}
           mx={`auto`}
-          templateColumns={[
-            "repeat(1, 100%)",
-            "repeat(1, 100%)",
-            "repeat(1, 100%)",
-            "repeat(2, 50%)",
-            "repeat(2, 50%)",
-          ]}
+          // maxHeight={`750px`}
+          overflowX={{ base: "hidden", "2xl": "visible" }}
+          templateColumns={{
+            base: "repeat(1, 100%)",
+            lg: "55% 45%",
+          }}
+          templateRows={{ base: "repeat(2, auto)", lg: "repeat(1, auto)" }}
         >
           <GridItem
             position="relative"
-            overflow={{ base: "hidden", "2xl": "visible" }}
             sx={{
               svg: {
                 width: "750px",
@@ -52,22 +51,25 @@ const ServiceHero = ({ title, variant, image }) => {
             />
           </GridItem>
           <GridItem
-            alignSelf={`centrer`}
+            alignSelf={`center`}
             justifySelf={`center`}
             px={[2, 4, 4, 8, 8]}
-            pt={16}
+            py={8}
             w={`100%`}
-            maxH={780}
+            // maxH={700}
+            // position="relative"
             sx={{
               svg: {
+                width: "6000px",
+                maxWidth: "100%",
                 height: "auto",
+                m: `auto`,
               },
             }}
           >
             <InfoGraphic
-              width={`100%`}
-              height={`auto`}
-              style={{ maxHeight: `100%` }}
+            // width={`100%`}
+            // height={`auto`}
             />
           </GridItem>
         </Grid>

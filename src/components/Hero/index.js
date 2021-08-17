@@ -11,8 +11,12 @@ const Hero = ({ title, variant, image }) => {
         backgroundColor="primary"
         borderBottomLeftRadius={["178px", "190px", "200px"]}
         position="relative"
+        overflowX={{ base: "hidden" }}
       >
         <Grid
+          maxW={1500}
+          mx={`auto`}
+          // overflowX={{ base: "hidden", "2xl": "visible" }}
           templateColumns={[
             "repeat(1, 100%)",
             "repeat(1, 100%)",
@@ -35,7 +39,8 @@ const Hero = ({ title, variant, image }) => {
           </GridItem>
           <GridItem
             position="relative"
-            overflow="hidden"
+            // overflow="hidden"
+            maxH={750}
             display={{
               md: "grid",
             }}
@@ -45,7 +50,7 @@ const Hero = ({ title, variant, image }) => {
                 maxWidth: "100%",
                 height: "auto",
                 top: "0",
-                right: "-130",
+                right: "-23%",
                 position: "absolute",
               },
             }}
