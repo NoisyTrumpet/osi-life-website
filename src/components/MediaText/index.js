@@ -57,7 +57,6 @@ const MediaText = ({
           flex={{ base: `100%`, xl: `40%` }}
           mt={`auto`}
           mb={8}
-          position="relative"
           overflow="hidden"
           alignSelf={variant === "Primary" && "flex-end"}
           sx={{
@@ -68,7 +67,6 @@ const MediaText = ({
               top: "0",
               left: variant === "Primary" && "20%",
               right: variant === "Secondary" && "20%",
-              position: "relative",
               transform: variant === "Secondary" && "scaleX(-1)",
             },
           }}
@@ -180,30 +178,33 @@ const MediaText = ({
           `repeat(1, 100%)`,
           `60% 40%`,
           `70% 30%`,
-          `70% 30%`,
-          `70% 30%`,
+          `50% 50%`,
+          `50% 50%`,
         ]}
-        gridGap={[2, 4, 4, 8, 8, 2]}
+        gridGap={[2, 4, 4, 8, 8, 4]}
         justifyContent={`space-around`}
-        py={[6, 6, 6, 12, 12]}
+        py={[ 6, 6, 6, 12, 12 ]}
         px={0}
         mt={"auto"}
-        mx={0}
+        mx={[ 0, 0, 0, 0, 0, 6, 6 ]}
+        justifyItems={`flex-end`}
       >
         <GridItem
           className="about-content"
           order={[2, 2, 2, 1, 1]}
-          px={[`2rem`, `4rem`, `4.5rem`, `4rem`, `5rem`, `9rem`]}
+          px={[`2rem`, `4rem`, `4.5rem`, `4rem`, `5rem`, `5rem`]}
+          mt={[`5rem`, 0, 0, 0, 0 ]}
         >
           {/* Text Content */}
           <Heading color="primary">{title}</Heading>
           <Box
             sx={{
               h2: {
-                fontSize: "2.25rem !important",
-                fontWeight: "700 !important",
-                lineHeight: "1.2 !important",
-                color: "#00ADBC",
+                fontFamily: "var(--chakra-fonts-heading)",
+                fontWeight: "var(--chakra-fontWeights-bold)",
+                fontSize: "var(--chakra-fontSizes-3xl)",
+                lineHeight: "1.33",
+                color: "var(--chakra-colors-primary)"
               },
               p: { padding: [".5rem 0 !important"] },
             }}
@@ -212,33 +213,39 @@ const MediaText = ({
           </Box>
         </GridItem>
 
-        <GridItem className="about-creative" order={[1, 1, 1, 2, 2]} px={0}>
+        <GridItem 
+          className="about-creative" 
+          order={[1, 1, 1, 2, 2]} 
+          px={0} 
+          marginRight={[ 0, 0, 0, 0, 0, 20, 20 ]}
+        >
           {/* Cross image with smiling man and OSI quote */}
           <Grid
             gridTemplateRows={[
-              `70% 30%`,
+              `75% 25%`,
               `75% 25%`,
               `75% 25%`,
               `50% 50%`,
               `50% 50%`,
-              `65% 35%`,
+              `50% 50%`,
             ]}
-            position="relative"
-            zIndex="5"
           >
             <GridItem
               className="grid-img-wrapper"
               position="relative"
               overflow="hidden"
+              height="fit-content"
               sx={{
                 svg: {
-                  width: ["500px", "500px", "550px", "750px", "800px"],
+                  width: ["600px", "500px", "550px", "750px", "600px", "600px"],
                   maxWidth: "100%",
                   height: "auto",
                   top: "0",
-                  left: ["140", "330", "360", "100", "45"],
+                  left: ["170", "225", "360", "100", "45", "auto"],
+                  right: [ "auto", "auto" , "auto" , "auto" , "auto" , "0"],
                   position: "relative",
                   marginBottom: ["auto", "auto", "1rem", "auto", "auto"],
+                  g: { fill: "#FFA500" },
                 },
               }}
             >
@@ -246,7 +253,7 @@ const MediaText = ({
                 className="aboutImg"
                 image={photo.gatsbyImageData.images.fallback.src}
                 // width={photo.gatsbyImageData.width}
-                // height={[“30rem”, “35rem”, “30rem”, “45rem”, “36rem”]}
+                // height={["30rem", "35rem", "30rem", "45rem", "36rem"]}
                 id={photo.id}
                 imgAlt={photo.title}
                 fillColor="#00ADBC"
@@ -260,7 +267,7 @@ const MediaText = ({
                 (path === "/benefits" && "none") ||
                 "block"
               }
-              m={[0, 0, 0, "-1rem 0 3rem 0", "0 0 5rem 0"]}
+              m={[ "-4rem 0 -4rem 0", 0, 0, "-1rem 0 3rem 0", "-1rem 0 5rem 0" ]}
             >
               <Box
                 className="osiQuoteBox"
@@ -275,18 +282,18 @@ const MediaText = ({
                     "auto",
                     "-8.2rem",
                     "-8.2rem",
-                    "-5.2rem",
+                    "auto",
                   ],
                   padding: [
                     "2.5rem 2rem",
                     "2rem 4rem",
-                    "2.5rem 4.5rem",
+                    "3rem 4.5rem",
                     "1.5rem 0rem",
                     "1rem 1rem",
-                    "0rem 5rem 0 0",
+                    "3rem 0 1rem 0",
                   ],
-                  margin: ["1rem 0", "2rem 0", ".5rem", "1.5rem", ".5rem"],
-                  width: ["auto", "auto", "auto", "auto", "400px", "500px"],
+                  margin: ["2rem 0 0 0", "2rem 0", ".5rem", "1.5rem", "1rem 0"],
+                  width: ["auto", "auto", "auto", "auto", "400px", "600px"],
                   fontFamily: `"Baloo 2"`,
                 }}
               >
@@ -309,7 +316,7 @@ const MediaText = ({
                 mx={[0, 0, 0, 0, 5, 0]}
                 sx={{
                   svg: {
-                    height: ["auto", "auto", "auto", "18rem", "17rem"],
+                    height: ["auto", "auto", "auto", "18rem", "25rem"],
                   },
                 }}
               >
