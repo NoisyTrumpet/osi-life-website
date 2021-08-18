@@ -212,8 +212,8 @@ const InfoGraphic = (props) => {
         />
       </g>
       <text
-        transform="translate(16.46 239.33)"
-        fontSize={22.451}
+        transform="translate(9 239.33)"
+        fontSize={`var(--chakra-fontSizes-2xl)`}
         fill="#ffa400"
         fontFamily={`var(--chakra-fonts-heading)`}
         fontWeight={800}
@@ -239,8 +239,8 @@ const InfoGraphic = (props) => {
         {"Patient Care Partners"}
       </text>
       <text
-        transform="translate(194.51 197.31)"
-        fontSize={11.075}
+        transform="translate(190.51 197.31)"
+        fontSize={`var(--chakra-fontSizes-xs)`}
         fill="#00adbb"
         fontFamily={`var(--chakra-fonts-heading)`}
         fontWeight={600}
@@ -250,8 +250,8 @@ const InfoGraphic = (props) => {
         {"Patients"}
       </text>
       <text
-        transform="translate(82.43 138.71)"
-        fontSize={12.592}
+        transform="translate(79 138.71)"
+        fontSize={`var(--chakra-fontSizes-xs)`}
         fill="#00adbb"
         fontFamily={`var(--chakra-fonts-heading)`}
         fontWeight={600}
@@ -268,7 +268,7 @@ const InfoGraphic = (props) => {
       </text>
       <text
         transform="translate(0 197.31)"
-        fontSize={10.99}
+        fontSize={`var(--chakra-fontSizes-xs)`}
         fill="#00adbb"
         fontFamily={`var(--chakra-fonts-heading)`}
         fontWeight={600}
@@ -281,8 +281,8 @@ const InfoGraphic = (props) => {
         </tspan>
       </text>
       <text
-        transform="translate(95.99 9.2)"
-        fontSize={10.99}
+        transform="translate(90.99 9.2)"
+        fontSize={`var(--chakra-fontSizes-xs)`}
         fill="#00adbb"
         fontFamily={`var(--chakra-fonts-heading)`}
         fontWeight={600}
