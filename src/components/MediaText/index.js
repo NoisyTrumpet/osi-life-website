@@ -63,7 +63,6 @@ const MediaText = ({
           </Box>
           <Box
             flex={{ base: `100%`, lg: `40%` }}
-            mt={`auto`}
             mb={8}
             alignSelf={variant === "Primary" && "flex-end"}
             sx={{
@@ -210,8 +209,9 @@ const MediaText = ({
         py={[6, 6, 6, 12, 12]}
         px={0}
         mt={"auto"}
-        mx={[0, 0, 0, 0, 0, 6, 6]}
+        mx={"auto"}
         justifyItems={`flex-end`}
+        maxWidth={`1500px`}
       >
         <GridItem
           className="about-content"
@@ -247,18 +247,15 @@ const MediaText = ({
           <Grid gridTemplateRows={{ base: `repeat(2, auto)` }}>
             <GridItem
               className="grid-img-wrapper"
-              position="relative"
               overflow="hidden"
-              height="fit-content"
               sx={{
                 svg: {
                   width: ["600px", "500px", "550px", "750px", "600px", "600px"],
                   maxWidth: "100%",
                   height: "auto",
                   top: "0",
-                  left: ["20", "20", "360", "100", "45", "auto"],
-                  right: ["auto", "auto", "auto", "auto", "auto", "0"],
                   position: "relative",
+                  marginLeft: ["20%", "45%", "47%", "22%", "auto", "auto"],
                   marginBottom: ["auto", "auto", "1rem", "auto", "auto"],
                 },
               }}

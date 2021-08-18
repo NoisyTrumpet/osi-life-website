@@ -50,6 +50,8 @@ const Footer = ({ path }) => {
               `repeat(1,1fr)`,
               `repeat(1,1fr)`,
             ]}
+            maxWidth={`1500px`}
+            mx={`auto`}
           >
             <GridItem color={`white`}>
               <RichText content={copyRight} />

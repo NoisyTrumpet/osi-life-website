@@ -35,7 +35,7 @@ const Banner = ({ title, content, cta, variant, key, path }) => {
         borderTopRightRadius={"100px"}
         fontFamily={`var(--chakra-fonts-heading)`}
       >
-        <Container>
+        <Container maxWidth={`1500px`} mx={`auto`}>
           <Box
             textAlign="center"
             py={8}

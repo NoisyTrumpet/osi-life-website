@@ -5,7 +5,7 @@ import RichText from "Components/RichText";
 const TextBlock = ({ id, title, content }) => {
   return (
     <Box key={id} pt={8}>
-      <Box px={8} pb={8}>
+      <Box px={8} pb={8} maxW={`1500px`} mx={`auto`}>
         {title && (
           <Heading as="h2" color="primary">
             {title}
@@ -20,7 +20,7 @@ const TextBlock = ({ id, title, content }) => {
         borderTopLeftRadius={100}
         borderTopRightRadius={100}
       >
-        <Container sx={{ h2: { fontSize: `var(--chakra-fontSizes-lg)` } }}>
+        <Container maxW={`1500px`} mx={`auto`} sx={{ h2: { fontSize: `var(--chakra-fontSizes-lg)` } }}>
           {content && <RichText content={content} />}
         </Container>
       </Box>

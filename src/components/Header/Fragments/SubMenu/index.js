@@ -19,8 +19,9 @@ const SubMenu = ({ title, link, links }) => {
       height="fit-content"
       overflow="visible"
       role="group"
+
     >
-      <Box maxW="7xl">
+      <Box maxW={["100%","7xl"]}>
         <HStack as="button" color={mode("black", "white")} p="0">
           <UniversalLink to={link} aria-label={title}>
             <Text
@@ -52,6 +53,8 @@ const SubMenu = ({ title, link, links }) => {
           overflow="visible"
           shadow="xl"
           color="secondary"
+          boxShadow={"gray.800"}
+      borderBottomWidth={"1px"}
           fontSize={`var(--chakra-fontSizes-lg)`}
         >
           <Box as="ul" listStyleType="none" px="2" pb="2">

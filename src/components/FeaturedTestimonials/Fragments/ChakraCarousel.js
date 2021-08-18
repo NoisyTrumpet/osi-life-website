@@ -190,6 +190,9 @@ function Slider({
       setActiveItem((prev) => prev + 1);
   };
 
+  const isFirst = (activeItem === 0);
+  const isLast = (activeItem === positions.length - constraint);
+
   return (
     <Box position="relative">
       <Flex w={"100%"} mx="auto">
@@ -197,10 +200,11 @@ function Slider({
           onClick={handleDecrementClick}
           onFocus={handleFocus}
           mr={`${gap / 2}px`}
-          alignSelf={["flex-end", "flex-end", "flex-end", "center", "center"]}
+          alignSelf={['flex-end','center']}
           color="gray.200"
           variant="link"
           minW={0}
+          ml={4}
           maxW={18}
           _hover={{
             transform: `scale(1.3)`,
@@ -214,7 +218,7 @@ function Slider({
           w={{ base: "100%", md: `calc(100% + ${gap}px)` }}
           ml={{ base: 0, md: `-${gap / 2}px` }}
           px={[`0px`, `${gap / 2}px`]}
-          pb={[12, 12, 12, 4, 4]}
+          // pb={[0, 12, 12, 4, 4]}
           position="relative"
           overflow="hidden"
           _before={{
@@ -245,11 +249,13 @@ function Slider({
           onClick={handleIncrementClick}
           onFocus={handleFocus}
           ml={`${gap / 2}px`}
-          alignSelf={["flex-end", "flex-end", "flex-end", "center", "center"]}
+          // alignSelf={["flex-end", "flex-end", "flex-end", "center", "center"]}
+          alignSelf={['flex-end','center']}
           color="gray.200"
           variant="link"
           zIndex={2}
           minW={0}
+          mr={4}
           maxW={18}
           _hover={{
             transform: `scale(1.3)`,
@@ -263,6 +269,8 @@ function Slider({
         alignSelf="center"
         borderRadius="2px"
         bg="base.d100"
+        px={2}
+        mt={3}
         flex={1}
         h="3px"
         title="Progress Bar Label"

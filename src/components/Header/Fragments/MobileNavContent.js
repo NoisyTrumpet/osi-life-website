@@ -31,7 +31,7 @@ export const MobileNavContent = (props) => {
             direction="column"
             w="100%"
             bg={bg}
-            h="100vh"
+            h="fit-content"
             overflow="auto"
             pos="absolute"
             top={0}
@@ -39,18 +39,18 @@ export const MobileNavContent = (props) => {
             zIndex={20}
             px={4}
             py={4}
+            boxShadow="0 0 0 1px gray.300"
           >
             {children}
             <IconButton
               size="lg"
               aria-label="Close menu"
-              fontSize="35px"
               variant="ghost"
               onClick={onClose}
               pos="absolute"
-              top={7}
-              right={7}
-              icon={<CloseButton />}
+              top={6}
+              right={4}
+              icon={<CloseButton fontSize="30px"/>}
             />
           </Flex>
         </motion.div>

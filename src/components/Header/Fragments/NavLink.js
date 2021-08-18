@@ -11,11 +11,11 @@ const ChakraLink = chakra(GatsbyLink, {
     paddingLeft: 3,
     paddingRight: 3,
     borderRadius: "md",
-    fontWeight: "bold",
-    lineHeight: "1.25rem",
+    fontWeight: "light",
+    // lineHeight: "1.25rem",
     color: "primary",
-    fontFamily: `var(--chakra-fonts-heading)`,
-    fontSize: `var(--chakra-fontSizes-lg)`,
+    fontFamily: `"Baloo 2"`,
+    fontSize: `lg`,
   },
 });
 

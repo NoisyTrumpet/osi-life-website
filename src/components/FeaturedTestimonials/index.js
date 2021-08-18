@@ -8,7 +8,7 @@ const FeaturedTestimonials = ({ title, items, key }) => {
   return (
     <Box bg="lightBG">
       <Box borderTopRightRadius={80} bg="darkBG" key={key}>
-        <Container py={6}>
+        <Container py={6} maxWidth={`1500px`} mx={`auto`} px={0}>
           <Text
             my={4}
             color="secondary"
@@ -16,6 +16,7 @@ const FeaturedTestimonials = ({ title, items, key }) => {
             textAlign={["left", "center"]}
             fontFamily={`var(--chakra-fonts-heading)`}
             id="testimonial-label"
+            px={[4,0]}
           >
             {title}
           </Text>
