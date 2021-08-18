@@ -5,7 +5,7 @@ const InfoGraphic = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 233.96 244.94"
+      viewBox="0 0 238.96 244.94"
       //   width={233.96}
       //   height={244.94}
       {...props}
@@ -25,7 +25,7 @@ const InfoGraphic = (props) => {
           d="M72.4 179.69l-3.18-7.5 3.18-7.49-17.77 7.49 17.77 7.5z"
         />
         <path
-          className="elem-ani-3"
+          className="elem-ani-2"
           fill="#00adbb"
           d="M171.12 179.69l3.18-7.5-3.18-7.49 17.77 7.49-17.77 7.5z"
         />
@@ -45,7 +45,7 @@ const InfoGraphic = (props) => {
           d="M143.14 60.06l4.77-6.6 8.06-1.15-15.61-11.33 2.78 19.08z"
         />
         <path
-          className="elem-ani-6"
+          className="elem-ani-5"
           fill="#00adbb"
           d="M188.38 134.94l8.07-1.15 4.77-6.6 2.77 19.09-15.61-11.34z"
         />
@@ -60,7 +60,7 @@ const InfoGraphic = (props) => {
           d="M90.8 51.32l-51.13 84.61"
         />
         <path
-          className="elem-ani-8"
+          className="elem-ani-9"
           fill="#00adbb"
           d="M81.44 52.31l8.06 1.15 4.77 6.6 2.78-19.08-15.61 11.33z"
         />

@@ -37,10 +37,10 @@
 }
 
 .elem-ani-1 {
-  -webkit-animation: animate-elem-stroke-1 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both,
-    animate-elem-fill-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
-  animation: animate-elem-stroke-1 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both,
-    animate-elem-fill-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
+  -webkit-animation: animate-elem-stroke-1 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) .6s both,
+    animate-elem-fill-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4s both;
+  animation: animate-elem-stroke-1 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) .6s both,
+    animate-elem-fill-1 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-2 {
@@ -88,12 +88,12 @@
 }
 
 .elem-ani-2 {
-  -webkit-animation: animate-elem-stroke-2 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both,
-                       animate-elem-fill-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.9s both;
-          animation: animate-elem-stroke-2 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both,
-               animate-elem-fill-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.9s both;
+  -webkit-animation: animate-elem-stroke-2 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) .7s both,
+                       animate-elem-fill-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
+          animation: animate-elem-stroke-2 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) .7s both,
+               animate-elem-fill-2 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
 }
-
+/* 
 @-webkit-keyframes animate-elem-stroke-3 {
   0% {
     stroke-dashoffset: 56.855342864990234px;
@@ -139,11 +139,11 @@
 }
 
 .elem-ani-3 {
-  -webkit-animation: animate-elem-stroke-3 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both,
-                       animate-elem-fill-3 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
-          animation: animate-elem-stroke-3 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both,
-               animate-elem-fill-3 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
-}
+  -webkit-animation: animate-elem-stroke-3 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) .8s both,
+                       animate-elem-fill-3 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) .6s both;
+          animation: animate-elem-stroke-3 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) .8s both,
+               animate-elem-fill-3 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) .6s both;
+} */
 
 @-webkit-keyframes animate-elem-stroke-4 {
   0% {
@@ -178,10 +178,10 @@
 }
 
 .elem-ani-4 {
-  -webkit-animation: animate-elem-stroke-4 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.30000000000000004s both,
-                       animate-elem-fill-4 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.1s both;
-          animation: animate-elem-stroke-4 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.30000000000000004s both,
-               animate-elem-fill-4 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.1s both;
+  -webkit-animation: animate-elem-stroke-4 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) .90000000000000004s both,
+                       animate-elem-fill-4 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7s both;
+          animation: animate-elem-stroke-4 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) .90000000000000004s both,
+               animate-elem-fill-4 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-5 {
@@ -229,12 +229,12 @@
 }
 
 .elem-ani-5 {
-  -webkit-animation: animate-elem-stroke-5 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4s both,
-                       animate-elem-fill-5 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.2000000000000002s both;
-          animation: animate-elem-stroke-5 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4s both,
-               animate-elem-fill-5 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.2000000000000002s both;
+  -webkit-animation: animate-elem-stroke-5 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both,
+                       animate-elem-fill-5 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8000000000000002s both;
+          animation: animate-elem-stroke-5 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both,
+               animate-elem-fill-5 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8000000000000002s both;
 }
-
+/* 
 @-webkit-keyframes animate-elem-stroke-6 {
   0% {
     stroke-dashoffset: 56.87894058227539px;
@@ -280,11 +280,11 @@
 }
 
 .elem-ani-6 {
-  -webkit-animation: animate-elem-stroke-6 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both,
-                       animate-elem-fill-6 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.3s both;
-          animation: animate-elem-stroke-6 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both,
-               animate-elem-fill-6 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.3s both;
-}
+  -webkit-animation: animate-elem-stroke-6 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both,
+                       animate-elem-fill-6 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.9s both;
+          animation: animate-elem-stroke-6 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both,
+               animate-elem-fill-6 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.9s both;
+} */
 
 @-webkit-keyframes animate-elem-stroke-7 {
   0% {
@@ -319,12 +319,12 @@
 }
 
 .elem-ani-7 {
-  -webkit-animation: animate-elem-stroke-7 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6000000000000001s both,
-                       animate-elem-fill-7 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.4000000000000001s both;
-          animation: animate-elem-stroke-7 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6000000000000001s both,
-               animate-elem-fill-7 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.4000000000000001s both;
+  -webkit-animation: animate-elem-stroke-7 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000001s both,
+                       animate-elem-fill-7 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.0000000000000001s both;
+          animation: animate-elem-stroke-7 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000001s both,
+               animate-elem-fill-7 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.0000000000000001s both;
 }
-
+/* 
 @-webkit-keyframes animate-elem-stroke-8 {
   0% {
     stroke-dashoffset: 56.85472869873047px;
@@ -370,11 +370,11 @@
 }
 
 .elem-ani-8 {
-  -webkit-animation: animate-elem-stroke-8 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7000000000000001s both,
-                       animate-elem-fill-8 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.5s both;
-          animation: animate-elem-stroke-8 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7000000000000001s both,
-               animate-elem-fill-8 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.5s both;
-}
+  -webkit-animation: animate-elem-stroke-8 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3000000000000001s both,
+                       animate-elem-fill-8 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.1s both;
+          animation: animate-elem-stroke-8 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3000000000000001s both,
+               animate-elem-fill-8 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.1s both;
+} */
 
 @-webkit-keyframes animate-elem-stroke-9 {
   0% {
@@ -421,10 +421,10 @@
 }
 
 .elem-ani-9 {
-  -webkit-animation: animate-elem-stroke-9 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both,
-                       animate-elem-fill-9 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.6s both;
-          animation: animate-elem-stroke-9 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both,
-               animate-elem-fill-9 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.6s both;
+  -webkit-animation: animate-elem-stroke-9 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4s both,
+                       animate-elem-fill-9 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.2s both;
+          animation: animate-elem-stroke-9 1.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4s both,
+               animate-elem-fill-9 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.2s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-10 {
@@ -472,10 +472,10 @@
 }
 
 .elem-ani-10 {
-  -webkit-animation: animate-elem-stroke-10 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3000000000000003s both,
-                       animate-elem-fill-10 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1000000000000005s both;
-          animation: animate-elem-stroke-10 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3000000000000003s both,
-               animate-elem-fill-10 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1000000000000005s both;
+  -webkit-animation: animate-elem-stroke-10 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.1000000000000003s both,
+                       animate-elem-fill-10 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) .9000000000000005s both;
+          animation: animate-elem-stroke-10 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.1000000000000003s both,
+               animate-elem-fill-10 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) .9000000000000005s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-11 {
@@ -523,10 +523,10 @@
 }
 
 .elem-ani-11 {
-  -webkit-animation: animate-elem-stroke-11 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4000000000000004s both,
-                       animate-elem-fill-11 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both;
-          animation: animate-elem-stroke-11 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4000000000000004s both,
-               animate-elem-fill-11 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both;
+  -webkit-animation: animate-elem-stroke-11 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.2000000000000004s both,
+                       animate-elem-fill-11 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
+          animation: animate-elem-stroke-11 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.2000000000000004s both,
+               animate-elem-fill-11 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-12 {
@@ -574,10 +574,10 @@
 }
 
 .elem-ani-12 {
-  -webkit-animation: animate-elem-stroke-12 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both,
-                       animate-elem-fill-12 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
-          animation: animate-elem-stroke-12 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both,
-               animate-elem-fill-12 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
+  -webkit-animation: animate-elem-stroke-12 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3s both,
+                       animate-elem-fill-12 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both;
+          animation: animate-elem-stroke-12 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3s both,
+               animate-elem-fill-12 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-13 {
@@ -625,10 +625,10 @@
 }
 
 .elem-ani-13 {
-  -webkit-animation: animate-elem-stroke-13 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6s both,
-                       animate-elem-fill-13 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000004s both;
-          animation: animate-elem-stroke-13 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6s both,
-               animate-elem-fill-13 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000004s both;
+  -webkit-animation: animate-elem-stroke-13 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4s both,
+                       animate-elem-fill-13 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000004s both;
+          animation: animate-elem-stroke-13 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4s both,
+               animate-elem-fill-13 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000004s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-14 {
@@ -656,10 +656,10 @@
 }
 
 .elem-ani-14 {
-  -webkit-animation: animate-elem-stroke-14 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3000000000000003s both,
-                       animate-elem-fill-14 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1000000000000005s both;
-          animation: animate-elem-stroke-14 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3000000000000003s both,
-               animate-elem-fill-14 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1000000000000005s both;
+  -webkit-animation: animate-elem-stroke-14 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.1000000000000003s both,
+                       animate-elem-fill-14 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) .9000000000000005s both;
+          animation: animate-elem-stroke-14 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.1000000000000003s both,
+               animate-elem-fill-14 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) .9000000000000005s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-15 {
@@ -707,10 +707,10 @@
 }
 
 .elem-ani-15 {
-  -webkit-animation: animate-elem-stroke-15 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4000000000000001s both,
-                       animate-elem-fill-15 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both;
-          animation: animate-elem-stroke-15 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4000000000000001s both,
-               animate-elem-fill-15 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both;
+  -webkit-animation: animate-elem-stroke-15 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.2000000000000001s both,
+                       animate-elem-fill-15 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
+          animation: animate-elem-stroke-15 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.2000000000000001s both,
+               animate-elem-fill-15 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-16 {
@@ -758,10 +758,10 @@
 }
 
 .elem-ani-16 {
-  -webkit-animation: animate-elem-stroke-16 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both,
-                       animate-elem-fill-16 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
-          animation: animate-elem-stroke-16 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both,
-               animate-elem-fill-16 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
+  -webkit-animation: animate-elem-stroke-16 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3s both,
+                       animate-elem-fill-16 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both;
+          animation: animate-elem-stroke-16 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3s both,
+               animate-elem-fill-16 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-17 {
@@ -809,10 +809,10 @@
 }
 
 .elem-ani-17 {
-  -webkit-animation: animate-elem-stroke-17 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6s both,
-                       animate-elem-fill-17 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000004s both;
-          animation: animate-elem-stroke-17 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6s both,
-               animate-elem-fill-17 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000004s both;
+  -webkit-animation: animate-elem-stroke-17 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4s both,
+                       animate-elem-fill-17 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000004s both;
+          animation: animate-elem-stroke-17 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4s both,
+               animate-elem-fill-17 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000004s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-18 {
@@ -860,10 +860,10 @@
 }
 
 .elem-ani-18 {
-  -webkit-animation: animate-elem-stroke-18 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.7s both,
-                       animate-elem-fill-18 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
-          animation: animate-elem-stroke-18 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.7s both,
-               animate-elem-fill-18 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
+  -webkit-animation: animate-elem-stroke-18 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both,
+                       animate-elem-fill-18 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
+          animation: animate-elem-stroke-18 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both,
+               animate-elem-fill-18 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-19 {
@@ -911,10 +911,10 @@
 }
 
 .elem-ani-19 {
-  -webkit-animation: animate-elem-stroke-19 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8000000000000003s both,
-                       animate-elem-fill-19 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6000000000000005s both;
-          animation: animate-elem-stroke-19 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8000000000000003s both,
-               animate-elem-fill-19 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6000000000000005s both;
+  -webkit-animation: animate-elem-stroke-19 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6000000000000003s both,
+                       animate-elem-fill-19 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000005s both;
+          animation: animate-elem-stroke-19 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6000000000000003s both,
+               animate-elem-fill-19 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000005s both;
 }
 
 @-webkit-keyframes animate-svg-stroke-20 {
@@ -962,10 +962,10 @@
 }
 
 .elem-ani-20 {
-  -webkit-animation: animate-elem-stroke-20 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9000000000000001s both,
-                       animate-elem-fill-20 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7s both;
-          animation: animate-elem-stroke-20 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9000000000000001s both,
-               animate-elem-fill-20 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7s both;
+  -webkit-animation: animate-elem-stroke-20 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.7000000000000001s both,
+                       animate-elem-fill-20 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
+          animation: animate-elem-stroke-20 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.7000000000000001s both,
+               animate-elem-fill-20 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-21 {
@@ -1013,10 +1013,10 @@
 }
 
 .elem-ani-21 {
-  -webkit-animation: animate-elem-stroke-21 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both,
-                       animate-elem-fill-21 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
-          animation: animate-elem-stroke-21 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both,
-               animate-elem-fill-21 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
+  -webkit-animation: animate-elem-stroke-21 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) .8s both,
+                       animate-elem-fill-21 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s both;
+          animation: animate-elem-stroke-21 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) .8s both,
+               animate-elem-fill-21 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-22 {
@@ -1064,10 +1064,10 @@
 }
 
 .elem-ani-22 {
-  -webkit-animation: animate-elem-stroke-22 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both,
-                       animate-elem-fill-22 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.9000000000000004s both;
-          animation: animate-elem-stroke-22 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both,
-               animate-elem-fill-22 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.9000000000000004s both;
+  -webkit-animation: animate-elem-stroke-22 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) .9s both,
+                       animate-elem-fill-22 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7000000000000004s both;
+          animation: animate-elem-stroke-22 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) .9s both,
+               animate-elem-fill-22 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7000000000000004s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-23 {
@@ -1115,10 +1115,10 @@
 }
 
 .elem-ani-23 {
-  -webkit-animation: animate-elem-stroke-23 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both,
-                       animate-elem-fill-23 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
-          animation: animate-elem-stroke-23 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both,
-               animate-elem-fill-23 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
+  -webkit-animation: animate-elem-stroke-23 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both,
+                       animate-elem-fill-23 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
+          animation: animate-elem-stroke-23 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both,
+               animate-elem-fill-23 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-24 {
@@ -1166,10 +1166,10 @@
 }
 
 .elem-ani-24 {
-  -webkit-animation: animate-elem-stroke-24 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3000000000000003s both,
-                       animate-elem-fill-24 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1000000000000005s both;
-          animation: animate-elem-stroke-24 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3000000000000003s both,
-               animate-elem-fill-24 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1000000000000005s both;
+  -webkit-animation: animate-elem-stroke-24 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.1000000000000003s both,
+                       animate-elem-fill-24 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) .9000000000000005s both;
+          animation: animate-elem-stroke-24 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.1000000000000003s both,
+               animate-elem-fill-24 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) .9000000000000005s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-25 {
@@ -1217,10 +1217,10 @@
 }
 
 .elem-ani-25 {
-  -webkit-animation: animate-elem-stroke-25 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4000000000000004s both,
-                       animate-elem-fill-25 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both;
-          animation: animate-elem-stroke-25 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4000000000000004s both,
-               animate-elem-fill-25 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both;
+  -webkit-animation: animate-elem-stroke-25 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.2000000000000004s both,
+                       animate-elem-fill-25 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
+          animation: animate-elem-stroke-25 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.2000000000000004s both,
+               animate-elem-fill-25 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-26 {
@@ -1268,10 +1268,10 @@
 }
 
 .elem-ani-26 {
-  -webkit-animation: animate-elem-stroke-26 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both,
-                       animate-elem-fill-26 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
-          animation: animate-elem-stroke-26 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both,
-               animate-elem-fill-26 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
+  -webkit-animation: animate-elem-stroke-26 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3s both,
+                       animate-elem-fill-26 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both;
+          animation: animate-elem-stroke-26 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3s both,
+               animate-elem-fill-26 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-27 {
@@ -1319,10 +1319,10 @@
 }
 
 .elem-ani-27 {
-  -webkit-animation: animate-elem-stroke-27 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6s both,
-                       animate-elem-fill-27 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000004s both;
-          animation: animate-elem-stroke-27 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6s both,
-               animate-elem-fill-27 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000004s both;
+  -webkit-animation: animate-elem-stroke-27 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4s both,
+                       animate-elem-fill-27 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000004s both;
+          animation: animate-elem-stroke-27 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4s both,
+               animate-elem-fill-27 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000004s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-28 {
@@ -1370,10 +1370,10 @@
 }
 
 .elem-ani-28 {
-  -webkit-animation: animate-elem-stroke-28 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.7s both,
-                       animate-elem-fill-28 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
-          animation: animate-elem-stroke-28 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.7s both,
-               animate-elem-fill-28 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
+  -webkit-animation: animate-elem-stroke-28 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both,
+                       animate-elem-fill-28 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
+          animation: animate-elem-stroke-28 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s both,
+               animate-elem-fill-28 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-29 {
@@ -1421,10 +1421,10 @@
 }
 
 .elem-ani-29 {
-  -webkit-animation: animate-elem-stroke-29 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8000000000000003s both,
-                       animate-elem-fill-29 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6000000000000005s both;
-          animation: animate-elem-stroke-29 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8000000000000003s both,
-               animate-elem-fill-29 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6000000000000005s both;
+  -webkit-animation: animate-elem-stroke-29 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6000000000000003s both,
+                       animate-elem-fill-29 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000005s both;
+          animation: animate-elem-stroke-29 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6000000000000003s both,
+               animate-elem-fill-29 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000005s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-30 {
@@ -1472,10 +1472,10 @@
 }
 
 .elem-ani-30 {
-  -webkit-animation: animate-elem-stroke-30 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9000000000000004s both,
-                       animate-elem-fill-30 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7s both;
-          animation: animate-elem-stroke-30 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9000000000000004s both,
-               animate-elem-fill-30 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7s both;
+  -webkit-animation: animate-elem-stroke-30 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.7000000000000004s both,
+                       animate-elem-fill-30 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
+          animation: animate-elem-stroke-30 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 0.7000000000000004s both,
+               animate-elem-fill-30 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-31 {
@@ -1523,10 +1523,10 @@
 }
 
 .elem-ani-31 {
-  -webkit-animation: animate-elem-stroke-31 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both,
-                       animate-elem-fill-31 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
-          animation: animate-elem-stroke-31 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both,
-               animate-elem-fill-31 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
+  -webkit-animation: animate-elem-stroke-31 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) .8s both,
+                       animate-elem-fill-31 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s both;
+          animation: animate-elem-stroke-31 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) .8s both,
+               animate-elem-fill-31 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-32 {
@@ -1574,10 +1574,10 @@
 }
 
 .elem-ani-32 {
-  -webkit-animation: animate-elem-stroke-32 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both,
-                       animate-elem-fill-32 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.9000000000000004s both;
-          animation: animate-elem-stroke-32 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both,
-               animate-elem-fill-32 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.9000000000000004s both;
+  -webkit-animation: animate-elem-stroke-32 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) .9s both,
+                       animate-elem-fill-32 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7000000000000004s both;
+          animation: animate-elem-stroke-32 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) .9s both,
+               animate-elem-fill-32 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7000000000000004s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-33 {
@@ -1625,10 +1625,10 @@
 }
 
 .elem-ani-33 {
-  -webkit-animation: animate-elem-stroke-33 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both,
-                       animate-elem-fill-33 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
-          animation: animate-elem-stroke-33 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both,
-               animate-elem-fill-33 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
+  -webkit-animation: animate-elem-stroke-33 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both,
+                       animate-elem-fill-33 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
+          animation: animate-elem-stroke-33 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both,
+               animate-elem-fill-33 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-35 {
@@ -1678,10 +1678,10 @@
 }
 
 .elem-ani-34 {
-  -webkit-animation: animate-elem-stroke-34 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both,
-                       animate-elem-fill-34 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.6s both;
-          animation: animate-elem-stroke-34 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both,
-               animate-elem-fill-34 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.6s both;
+  -webkit-animation: animate-elem-stroke-34 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s both,
+                       animate-elem-fill-34 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.4s both;
+          animation: animate-elem-stroke-34 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s both,
+               animate-elem-fill-34 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.4s both;
 }
 
 @-webkit-keyframes animate-elem-stroke-35 {
@@ -1731,8 +1731,8 @@
 }
 
 .elem-ani-35 {
-  -webkit-animation: animate-elem-stroke-35 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4s both,
-                       animate-elem-fill-35 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.2s both;
-          animation: animate-elem-stroke-35 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4s both,
-               animate-elem-fill-35 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2.2s both;
+  -webkit-animation: animate-elem-stroke-35 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both,
+                       animate-elem-fill-35 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
+          animation: animate-elem-stroke-35 1.6s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both,
+               animate-elem-fill-35 0.8s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
 }

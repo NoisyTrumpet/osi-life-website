@@ -21,7 +21,7 @@ const VisualList = ({ id, title, variant, cards }) => {
         borderTopLeftRadius={80}
         borderTopRightRadius={80}
       >
-        <Container maxW="1500px" p={[5, 20]} mt={10}>
+        <Container maxW="1500px" p={[5, 20]} mb={10}>
           <Heading as="h2" ml={10} my={[5, 0]} color="primary">
             {title}
           </Heading>
@@ -121,8 +121,8 @@ const VisualList = ({ id, title, variant, cards }) => {
           return (
             <Box
               m={0}
-              py={[10, 20]}
-              px={[0, 5, 5, 5, 20]}
+              py={10}
+              px={[0, 10]}
               align="center"
               className="visualListBox"
               key={card.id}
@@ -156,8 +156,7 @@ const VisualList = ({ id, title, variant, cards }) => {
           );
         })}
         <Box
-          display={[`none`, `none`, `none`, `block`, `block`]}
-          h={`100%`}
+          display={{ base: `none`, lg: `block` }}
           maxHeight={450}
           alignSelf={`center`}
           justifySelf={`center`}

@@ -17,160 +17,179 @@ const MediaText = ({
 }) => {
   if (path === "/services-details") {
     return (
-      <Flex
-        flexDirection={{
-          base: `column-reverse`,
-          lg: (variant === "Primary" && `row-reverse`) || `row`,
-          xl: (variant === "Primary" && `row-reverse`) || `row`,
-          "2xl": variant === "Primary" && `row-reverse`,
-        }}
-        pb={`4rem`}
+      <Box
         bg={variant === "Secondary" && `lightGrayBG`}
-        borderTopLeftRadius={variant === "Secondary" && 140}
+        borderTopRightRadius={variant === "Secondary" && 140}
         id={title.split(" ")[0].toLowerCase()}
         key={id}
+        overflowX={{ base: `hidden` }}
       >
-        <Box
-          flex={[`100%`, `100%`, `100%`, `60%`, `60%`]}
-          px={[2, 2, 8, 8, 8]}
-          py={2}
-          mx={4}
-          my={`auto`}
+        <Flex
+          flexDirection={{
+            base: `column-reverse`,
+            lg: (variant === "Secondary" && `row-reverse`) || `row`,
+          }}
+          pb={`4rem`}
+          maxW={1500}
+          mx={`auto`}
         >
-          <Box maxW={800} mx={`auto`}>
-            <Heading color="primary">{title}</Heading>
-            <Box
-              sx={{
-                h2: {
-                  fontSize: "2.25rem !important",
-                  fontWeight: "700 !important",
-                  lineHeight: "1.2 !important",
-                  color: "#00ADBC",
-                  padding: "1rem 0 !important",
-                },
-                p: { padding: [".5rem 0 !important"] },
-              }}
-            >
-              <RichText content={content} />
+          <Box
+            flex={{ base: `100%`, lg: `60%` }}
+            px={{ base: 2, md: 8 }}
+            pt={{ base: 6, lg: 12 }}
+            mx={4}
+            my={`auto`}
+          >
+            <Box maxW={800} mx={`auto`}>
+              <Heading color="primary">{title}</Heading>
+              <Box
+                sx={{
+                  h2: {
+                    fontSize: "2.25rem !important",
+                    fontWeight: "700 !important",
+                    lineHeight: "1.2 !important",
+                    color: "#00ADBC",
+                    padding: "1rem 0 !important",
+                  },
+                  h4: {
+                    fontSize: `var(--chakra-fontSizes-lg)`,
+                  },
+                  p: { padding: [".5rem 0 !important"] },
+                }}
+              >
+                <RichText content={content} />
+              </Box>
             </Box>
           </Box>
-        </Box>
-        <Box
-          flex={{ base: `100%`, lg: `100%`, xl: `100%` }}
-          mt={`auto`}
-          mb={8}
-          overflow="hidden"
-          alignSelf={variant === "Primary" && "flex-end"}
-          sx={{
-            svg: {
-              width: ["680px", "680px", "680px", "750px", "750px"],
-              maxWidth: "100%",
-              height: "auto",
-              top: "0",
-              left: variant === "Primary" && "20%",
-              right: variant === "Secondary" && "20%",
-              transform: variant === "Secondary" && "scaleX(-1)",
-            },
-          }}
-        >
-          <PhotoWrapper
-            image={photo.gatsbyImageData.images.fallback.src}
-            width={photo.gatsbyImageData.width}
-            height={photo.gatsbyImageData.height}
-            imgAlt={photo.title}
-            id={photo.id}
-            fillColor={(variant === "Secondary" && "#00ADBC") || "#FFA500"}
-            crossColor={variant === "Secondary" ? "#00ADBC" : "#FFA500"}
-          />
-        </Box>
-      </Flex>
+          <Box
+            flex={{ base: `100%`, lg: `40%` }}
+            mt={`auto`}
+            mb={8}
+            alignSelf={variant === "Primary" && "flex-end"}
+            sx={{
+              svg: {
+                width: { base: "680px", xl: "750px" },
+                maxWidth: "100%",
+                height: "auto",
+                top: "0",
+                left: variant === "Primary" && "25%",
+                right: variant === "Secondary" && "25%",
+                transform: variant === "Secondary" && "scaleX(-1)",
+                position: "relative",
+              },
+            }}
+          >
+            <PhotoWrapper
+              image={photo.gatsbyImageData.images.fallback.src}
+              width={photo.gatsbyImageData.width}
+              height={photo.gatsbyImageData.height}
+              imgAlt={photo.title}
+              id={photo.id}
+              fillColor={(variant === "Secondary" && "#00ADBC") || "#FFA500"}
+              crossColor={variant === "Secondary" ? "#00ADBC" : "#FFA500"}
+              imageFlip={variant === "Primary" && "-1"} // either 1 or -1
+              crossesFlip={variant === "Secondary" && "-1"} // either 1 or -1
+            />
+          </Box>
+        </Flex>
+      </Box>
     );
   }
   if (path === "/benefits") {
     return (
-      <Flex
-        flexDirection={{
-          base: `column-reverse`,
-          lg: (variant === "Primary" && `row-reverse`) || `row`,
-          xl: (variant === "Primary" && `row-reverse`) || `row`,
-          "2xl": variant === "Primary" && `row-reverse`,
-        }}
-        pb={`4rem`}
+      <Box
         bg={variant === "Secondary" && `lightGrayBG`}
         borderTopLeftRadius={variant === "Secondary" && 140}
         key={id}
+        overflowX={{ base: `hidden` }}
       >
-        <Box
-          flex={{ base: `100%`, xl: `60%` }}
-          px={[2, 2, 8, 8, 8]}
-          py={2}
-          mx={4}
-          my={`auto`}
+        <Flex
+          flexDirection={{
+            base: `column-reverse`,
+            lg: (variant === "Primary" && `row-reverse`) || `row`,
+            xl: (variant === "Primary" && `row-reverse`) || `row`,
+            "2xl": variant === "Primary" && `row-reverse`,
+          }}
+          pb={`4rem`}
+          maxW={1500}
+          mx={`auto`}
         >
-          <Box maxW={800} mx={`auto`}>
-            <Heading color="primary">{title}</Heading>
+          <Box
+            flex={{ base: `100%`, lg: `60%` }}
+            px={{ base: 2, md: 8 }}
+            pt={{ base: 6, lg: 12 }}
+            mx={4}
+            my={`auto`}
+          >
+            <Box maxW={800} mx={`auto`}>
+              <Heading color="primary">{title}</Heading>
+              <Box
+                sx={{
+                  h2: {
+                    fontSize: "2.25rem !important",
+                    fontWeight: "700 !important",
+                    lineHeight: "1.2 !important",
+                    color: "#00ADBC",
+                    padding: "1rem 0 !important",
+                  },
+                  h5: {
+                    fontSize: `var(--chakra-fontSizes-lg)`,
+                  },
+                  p: { padding: [".5rem 0 !important"] },
+                }}
+              >
+                <RichText content={content} />
+              </Box>
+            </Box>
             <Box
+              display={{
+                base: `none`,
+                xl: (title === "Payor" && "block") || "none",
+              }}
+              p={[10, 10, 10, 11, 0, 1]}
+              mx={`auto`}
               sx={{
-                h2: {
-                  fontSize: "2.25rem !important",
-                  fontWeight: "700 !important",
-                  lineHeight: "1.2 !important",
-                  color: "#00ADBC",
-                  padding: "1rem 0 !important",
+                svg: {
+                  height: ["auto", "auto", "auto", "18rem", "22rem"],
                 },
-                p: { padding: [".5rem 0 !important"] },
               }}
             >
-              <RichText content={content} />
+              <MultiHandCross className="AboutMultiHandCross" fill="#F2F3F4" />
             </Box>
           </Box>
           <Box
-            display={{
-              base: `none`,
-              xl: (title === "Payor" && "block") || "none",
-            }}
-            p={[10, 10, 10, 11, 0, 1]}
-            mx={`auto`}
+            flex={{ base: `100%`, lg: `40%` }}
+            mt={`auto`}
+            mb={8}
+            position="relative"
+            alignSelf={variant === "Secondary" && "flex-end"}
             sx={{
               svg: {
-                height: ["auto", "auto", "auto", "18rem", "22rem"],
+                width: { base: "680px", xl: "750px" },
+                maxWidth: "100%",
+                height: "auto",
+                top: "0",
+                left: variant === "Secondary" && "25%",
+                right: variant === "Primary" && "25%",
+                position: "relative",
+                transform: variant === "Primary" && "scaleX(-1)",
               },
             }}
           >
-            <MultiHandCross className="AboutMultiHandCross" fill="#F2F3F4" />
+            <PhotoWrapper
+              image={photo.gatsbyImageData.images.fallback.src}
+              width={photo.gatsbyImageData.width}
+              height={photo.gatsbyImageData.height}
+              imgAlt={photo.title}
+              id={photo.id}
+              crossColor={variant === "Primary" ? "#00ADBC" : "#FFA500"}
+              fillColor={(variant === "Secondary" && "#FFA500") || "#00ADBC"}
+              imageFlip={variant === "Secondary" && "-1"} // either 1 or -1
+              crossesFlip={variant === "Primary" && "-1"} // either 1 or -1
+            />
           </Box>
-        </Box>
-        <Box
-          flex={[`100%`, `100%`, `100%`, `100%`, `40%`]}
-          mt={`auto`}
-          mb={8}
-          position="relative"
-          overflow="hidden"
-          alignSelf={variant === "Secondary" && "flex-end"}
-          sx={{
-            svg: {
-              width: ["680px", "680px", "680px", "750px", "750px"],
-              maxWidth: "100%",
-              height: "auto",
-              top: "0",
-              left: variant === "Secondary" && "20%",
-              right: variant === "Primary" && "20%",
-              position: "relative",
-              transform: variant === "Primary" && "scaleX(-1)",
-            },
-          }}
-        >
-          <PhotoWrapper
-            image={photo.gatsbyImageData.images.fallback.src}
-            width={photo.gatsbyImageData.width}
-            height={photo.gatsbyImageData.height}
-            imgAlt={photo.title}
-            id={photo.id}
-            crossColor={variant === "Primary" ? "#00ADBC" : "#FFA500"}
-            fillColor={(variant === "Secondary" && "#FFA500") || "#00ADBC"}
-          />
-        </Box>
-      </Flex>
+        </Flex>
+      </Box>
     );
   }
 
@@ -225,16 +244,7 @@ const MediaText = ({
           marginRight={[0, 0, 0, 0, 0, 20, 20]}
         >
           {/* Cross image with smiling man and OSI quote */}
-          <Grid
-            gridTemplateRows={[
-              `fit-content fit-content`,
-              `fit-content fit-content`,
-              `fit-content fit-content`,
-              `50% 50%`,
-              `50% 50%`,
-              `50% 50%`,
-            ]}
-          >
+          <Grid gridTemplateRows={{ base: `repeat(2, auto)` }}>
             <GridItem
               className="grid-img-wrapper"
               position="relative"
@@ -250,7 +260,6 @@ const MediaText = ({
                   right: ["auto", "auto", "auto", "auto", "auto", "0"],
                   position: "relative",
                   marginBottom: ["auto", "auto", "1rem", "auto", "auto"],
-                  g: { fill: "#FFA500" },
                 },
               }}
             >
@@ -262,6 +271,8 @@ const MediaText = ({
                 id={photo.id}
                 imgAlt={photo.title}
                 fillColor="#00ADBC"
+                crossColor="#FFA500"
+                imageFlip="-1" // either 1 or -1
               />
             </GridItem>
 

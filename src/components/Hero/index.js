@@ -35,6 +35,7 @@ const Hero = ({ title, image }) => {
               fontSize={["3xl", "4xl", "5xl", "6xl"]}
               fontWeight={300}
               maxWidth={["100%", "100%", 600]}
+              m="0 auto"
             >
               {title && title}
             </Heading>

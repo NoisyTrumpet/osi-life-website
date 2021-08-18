@@ -53,7 +53,7 @@ const ServiceHero = ({ title, variant, image }) => {
           <GridItem
             alignSelf={`center`}
             justifySelf={`center`}
-            px={[2, 4, 4, 8, 8]}
+            px={{ base: 4, md: 8 }}
             py={8}
             w={`100%`}
             // maxH={700}
