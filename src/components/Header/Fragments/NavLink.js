@@ -15,6 +15,7 @@ const ChakraLink = chakra(GatsbyLink, {
     lineHeight: "1.25rem",
     color: "primary",
     fontFamily: `var(--chakra-fonts-heading)`,
+    fontSize: `var(--chakra-fontSizes-lg)`,
   },
 });
 

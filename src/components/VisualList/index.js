@@ -20,8 +20,11 @@ const VisualList = ({ id, title, variant, cards }) => {
         bg={mode(`lightGrayBG`)}
         borderTopLeftRadius={80}
         borderTopRightRadius={80}
+        mt={16}
+        mb={0}
+        pb={10}
       >
-        <Container maxW="1500px" p={[5, 20]} mb={10}>
+        <Container maxW="1500px" p={[5, 20]}>
           <Heading as="h2" ml={10} my={[5, 0]} color="primary">
             {title}
           </Heading>

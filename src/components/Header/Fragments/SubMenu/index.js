@@ -23,7 +23,12 @@ const SubMenu = ({ title, link, links }) => {
       <Box maxW="7xl">
         <HStack as="button" color={mode("black", "white")} p="0">
           <UniversalLink to={link} aria-label={title}>
-            <Text fontWeight={`bold`} color="primary" fontFamily={`"Baloo 2"`}>
+            <Text
+              fontWeight={`bold`}
+              color="primary"
+              fontFamily={`"Baloo 2"`}
+              fontSize={`var(--chakra-fontSizes-lg)`}
+            >
               {title && title}
             </Text>
           </UniversalLink>
@@ -47,6 +52,7 @@ const SubMenu = ({ title, link, links }) => {
           overflow="visible"
           shadow="xl"
           color="secondary"
+          fontSize={`var(--chakra-fontSizes-lg)`}
         >
           <Box as="ul" listStyleType="none" px="2" pb="2">
             {useLinks.map((link, idx) => (

@@ -110,6 +110,7 @@ const FAQs = ({ id, title, photo, variant, items }) => {
                         color={`primary`}
                         fontWeight={500}
                         fontSize={18}
+                        fontFamily={`var(--chakra-fonts-heading)`}
                       >
                         <Box flex={`1`} textAlign={`left`}>
                           {item.question}

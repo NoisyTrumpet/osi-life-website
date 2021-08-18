@@ -105,6 +105,7 @@ const HomeServices = ({ title, subTitle, services }) => {
                         <Box
                           display={`inline-flex`}
                           alignItems={`center`}
+                          fontFamily={`var(--chakra-fonts-body)`}
                           _hover={{ color: "secondary" }}
                         >
                           <Text mr={2}>Read Less</Text>
@@ -114,6 +115,7 @@ const HomeServices = ({ title, subTitle, services }) => {
                         <Box
                           display={`inline-flex`}
                           alignItems={`center`}
+                          fontFamily={`var(--chakra-fonts-body)`}
                           _hover={{ color: "secondary" }}
                         >
                           <Text mr={2}>Read More</Text>
@@ -122,7 +124,16 @@ const HomeServices = ({ title, subTitle, services }) => {
                       )}
                     </Box>
                   </AccordionButton>
-                  <AccordionPanel py={4} px={2} textAlign={`left`}>
+                  <AccordionPanel
+                    py={4}
+                    px={2}
+                    textAlign={`left`}
+                    sx={{
+                      h4: {
+                        fontSize: `var(--chakra-fontSizes-lg)`,
+                      },
+                    }}
+                  >
                     <RichText content={service.description} />
                   </AccordionPanel>
                 </>

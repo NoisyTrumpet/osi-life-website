@@ -27,35 +27,50 @@ const Page404 = () => {
               <Box
                 m={`auto`}
                 align={`center`}
-                opacity={`.4`}
+                opacity={`.25`}
                 position={`absolute`}
                 top={`30%`}
                 left={{ base: `50%`, sm: `53%`, lg: `28%` }}
                 width={{ base: `80%`, sm: `65%`, lg: `30%` }}
+                sx={{
+                  svg: {
+                    fill: "#fff !important",
+                  },
+                }}
               >
-                <HandCross width={`100%`} height={`auto`} fill="#5B677014" />
+                <HandCross width={`100%`} height={`auto`} />
               </Box>
               <Box
                 m={`auto`}
                 align={`center`}
-                opacity={`.4`}
+                opacity={`.25`}
                 position={`absolute`}
                 top={{ base: `-9%`, sm: `-5%`, lg: `-8%` }}
                 left={{ base: `-15%`, sm: `-5%`, lg: `2%` }}
                 width={{ base: `60%`, sm: `40%`, lg: `22%` }}
+                sx={{
+                  svg: {
+                    fill: "#fff !important",
+                  },
+                }}
               >
-                <HandCross width={`100%`} height={`auto`} fill="#5B677014" />
+                <HandCross width={`100%`} height={`auto`} />
               </Box>
               <Box
                 m={`auto`}
                 align={`center`}
-                opacity={`.4`}
+                opacity={`.25`}
                 position={`absolute`}
                 top={{ base: `45%`, sm: `53%`, lg: `45%` }}
                 left={{ base: `-54%`, sm: `-13%`, lg: `-5%` }}
                 width={{ base: `50%`, sm: `35%`, lg: `15%` }}
+                sx={{
+                  svg: {
+                    fill: "#fff !important",
+                  },
+                }}
               >
-                <HandCross width={`100%`} height={`auto`} fill="#5B677014" />
+                <HandCross width={`100%`} height={`auto`} />
               </Box>
             </Box>
             <Box
