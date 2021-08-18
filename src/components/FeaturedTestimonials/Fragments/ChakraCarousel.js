@@ -202,28 +202,19 @@ function Slider({
           variant="link"
           minW={0}
           maxW={18}
+          _hover={{
+            transform: `scale(1.3)`,
+          }}
         >
           <ChevronLeft />
         </Button>
 
-        <Progress
-          value={percentage(activeItem, positions.length - constraint)}
-          alignSelf="center"
-          borderRadius="2px"
-          bg="base.d100"
-          flex={1}
-          h="3px"
-          sx={{
-            "> div": {
-              backgroundColor: "gray.400",
-            },
-          }}
-        />
+
         <Box
           ref={ref}
           w={{ base: "100%", md: `calc(100% + ${gap}px)` }}
           ml={{ base: 0, md: `-${gap / 2}px` }}
-          px={`${gap / 2}px`}
+          px={[`0px`,`${gap / 2}px`]}
           pb={[12, 12, 12, 4, 4]}
           position="relative"
           overflow="hidden"
@@ -261,10 +252,28 @@ function Slider({
           zIndex={2}
           minW={0}
           maxW={18}
+          _hover={{
+            transform: `scale(1.3)`,
+          }}
         >
           <ChevronRight />
         </Button>
       </Flex>
+      <Progress
+          value={percentage(activeItem, positions.length - constraint)}
+          alignSelf="center"
+          borderRadius="2px"
+          bg="base.d100"
+          flex={1}
+          h="3px"
+          title="Progress Bar Label"
+          aria-labelledby="testimonial-label"
+          sx={{
+            "> div": {
+              backgroundColor: "gray.400",
+            },
+          }}
+        />
     </Box>
   );
 }

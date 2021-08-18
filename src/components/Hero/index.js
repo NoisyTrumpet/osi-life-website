@@ -25,13 +25,13 @@ const Hero = ({ title, variant, image }) => {
             "repeat(2, 50%)",
           ]}
         >
-          <GridItem px={[20, 10, 10, 20]} py={[75, 100, 100, 200, 250, 300]}>
+          <GridItem px={[10, 10, 10, 10, 20]} py={[75, 100, 100, 200, 250, 300]}>
             <Heading
               as="h1"
               color="white"
               fontSize={["3xl", "4xl", "5xl", "6xl"]}
               fontWeight={300}
-              maxWidth={600}
+              maxWidth={['100%', '100%', 600]}
               m="0 auto"
             >
               {title && title}

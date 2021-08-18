@@ -20,8 +20,9 @@ const MediaText = ({
       <Flex
         flexDirection={{
           base: `column-reverse`,
-          xl: (variant === "Secondary" && `row-reverse`) || `row`,
-          "2xl": variant === "Secondary" && `row-reverse`,
+          lg: (variant === "Primary" && `row-reverse`) || `row`,
+          xl: (variant === "Primary" && `row-reverse`) || `row`,
+          "2xl": variant === "Primary" && `row-reverse`,
         }}
         pb={`4rem`}
         bg={variant === "Secondary" && `lightGrayBG`}

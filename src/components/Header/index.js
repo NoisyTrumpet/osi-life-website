@@ -33,8 +33,8 @@ const Header = () => {
               <Image
                 src={logo.file.url}
                 alt={title}
-                width="198.27px"
-                height="62.67px"
+                htmlWidth="198.27"
+                htmlHeight="62.67"
               />
             </Link>
           </Center>

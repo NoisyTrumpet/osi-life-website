@@ -15,6 +15,7 @@ const FeaturedTestimonials = ({ title, items, key }) => {
             fontSize="6xl"
             textAlign={["left", "center"]}
             fontFamily={`var(--chakra-fonts-heading)`}
+            id="testimonial-label"
           >
             {title}
           </Text>
@@ -25,8 +26,8 @@ const FeaturedTestimonials = ({ title, items, key }) => {
                   <Image
                     src={item.image.file.url}
                     alt={item.name}
-                    w="145px"
-                    h="150px"
+                    htmlWidth="145"
+                    htmlHeight="150"
                   />
                 </GridItem>
                 <GridItem>
@@ -34,6 +35,7 @@ const FeaturedTestimonials = ({ title, items, key }) => {
                     fontSize="3xl"
                     color="secondary"
                     fontFamily={`var(--chakra-fonts-heading)`}
+
                   >
                     {item.name}
                   </Text>
