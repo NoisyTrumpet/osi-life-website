@@ -4,7 +4,7 @@ import { Box, Button, Grid, GridItem, Heading } from "@chakra-ui/react";
 import PhotoWrapper from "SVG/PhotoWrapper";
 import HandCross from "SVG/HandCross";
 
-const Hero = ({ title, variant, image }) => {
+const Hero = ({ title, image }) => {
   return (
     <>
       <Box
@@ -25,28 +25,31 @@ const Hero = ({ title, variant, image }) => {
             "repeat(2, 50%)",
           ]}
         >
-          <GridItem px={[10, 10, 10, 10, 20]} py={[75, 100, 100, 200, 250, 300]}>
+          <GridItem
+            px={[10, 10, 10, 10, 20]}
+            py={[75, 100, 100, 200, 250, 300]}
+          >
             <Heading
               as="h1"
               color="white"
               fontSize={["3xl", "4xl", "5xl", "6xl"]}
               fontWeight={300}
-              maxWidth={['100%', '100%', 600]}
-              m="0 auto"
+              maxWidth={["100%", "100%", 600]}
             >
               {title && title}
             </Heading>
           </GridItem>
           <GridItem
             position="relative"
-            // overflow="hidden"
+            w="100%"
             maxH={750}
             display={{
-              md: "grid",
+              base: "none",
+              lg: "grid",
             }}
             sx={{
               svg: {
-                width: "750px",
+                width: "100%",
                 maxWidth: "100%",
                 height: "auto",
                 top: "0",
@@ -112,13 +115,13 @@ const Hero = ({ title, variant, image }) => {
             md: "block",
             lg: "none",
           }}
-          sx={{ svg: { width: "100%", marginLeft: "20%" } }}
+          sx={{ svg: { width: "80%", marginLeft: "33%" } }}
         >
           <PhotoWrapper
             image={image.gatsbyImageData.images.fallback.src}
             width={image.gatsbyImageData.width}
             height={image.gatsbyImageData.height}
-            id={image.id}
+            id={`${image.id}-mobile`}
             imgAlt={image.title}
             fillColor="#FFA500"
             crossColor="#FFA500"

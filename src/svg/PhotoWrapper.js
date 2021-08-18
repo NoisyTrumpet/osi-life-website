@@ -15,7 +15,6 @@ const PhotoWrapper = ({
     <svg
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
-      // width={387.04}
       // height={356.63}
       // height={"auto"}
       viewBox="0 0 387.04 356.63"

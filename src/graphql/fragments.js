@@ -5,7 +5,7 @@ export const imageQuery = graphql`
     title
     id
     gatsbyImageData(
-      quality: 60
+      quality: 50
       placeholder: BLURRED
       formats: [WEBP, PNG]
       layout: CONSTRAINED

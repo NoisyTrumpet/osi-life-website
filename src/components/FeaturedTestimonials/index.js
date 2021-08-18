@@ -35,7 +35,6 @@ const FeaturedTestimonials = ({ title, items, key }) => {
                     fontSize="3xl"
                     color="secondary"
                     fontFamily={`var(--chakra-fonts-heading)`}
-
                   >
                     {item.name}
                   </Text>

@@ -1,4 +1,9 @@
-import { CloseButton, Flex, useColorModeValue } from "@chakra-ui/react";
+import {
+  CloseButton,
+  Flex,
+  useColorModeValue,
+  IconButton,
+} from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import * as React from "react";
 
@@ -36,7 +41,17 @@ export const MobileNavContent = (props) => {
             py={4}
           >
             {children}
-            <CloseButton pos="absolute" top={4} right={4} onClick={onClose} />
+            <IconButton
+              size="lg"
+              aria-label="Close menu"
+              fontSize="35px"
+              variant="ghost"
+              onClick={onClose}
+              pos="absolute"
+              top={7}
+              right={7}
+              icon={<CloseButton />}
+            />
           </Flex>
         </motion.div>
       )}

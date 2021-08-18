@@ -46,11 +46,11 @@ const SubMenu = ({ title, link, links }) => {
           rounded="lg"
           overflow="visible"
           shadow="xl"
-          color="primary"
+          color="secondary"
         >
           <Box as="ul" listStyleType="none" px="2" pb="2">
             {useLinks.map((link, idx) => (
-              <Box as="li" key={idx} mx={0} color="primary">
+              <Box as="li" key={idx} mx={0} color="secondary">
                 <MenuItem href={link.href} title={link.title} />
               </Box>
             ))}

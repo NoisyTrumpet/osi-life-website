@@ -31,7 +31,7 @@ const FeaturedBenefits = ({ title, benefits }) => {
               src={benefit.icon.file.url}
               sx={{ margin: "1rem auto" }}
               alt={benefit.title}
-              h={'115'}
+              h={"115"}
               htmlWidth="136"
               htmlHeight="115"
               maxW="100%"

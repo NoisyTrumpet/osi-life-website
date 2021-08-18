@@ -6,6 +6,7 @@ import {
   Grid,
   Heading,
   useColorModeValue as mode,
+  Image,
 } from "@chakra-ui/react";
 import RichText from "components/RichText";
 import MultiHandCross from "SVG/MultiHandCross";
@@ -63,7 +64,15 @@ const VisualList = ({ id, title, variant, cards }) => {
                     },
                   }}
                 >
-                  <img src={imageURL} alt="icon" height="auto" />
+                  <Image
+                    src={imageURL}
+                    alt={card.title}
+                    width="100%"
+                    height="auto"
+                    htmlWidth="140"
+                    htmlHeight="140"
+                  />
+                  {/* <img src={imageURL} alt="icon" height="auto" /> */}
                 </Box>
                 <Box
                   flex={[`100%`, `100%`, `100%`, `70%`, `70%`]}
@@ -113,7 +122,7 @@ const VisualList = ({ id, title, variant, cards }) => {
             <Box
               m={0}
               py={[10, 20]}
-              px={[0, 20]}
+              px={[0, 5, 5, 5, 20]}
               align="center"
               className="visualListBox"
               key={card.id}
@@ -129,7 +138,14 @@ const VisualList = ({ id, title, variant, cards }) => {
                 },
               }}
             >
-              <img src={imageURL} alt="icon" width="140" height="auto" />
+              <Image
+                src={imageURL}
+                alt={card.title}
+                width="140"
+                height="140"
+                htmlWidth="140"
+                htmlHeight="140"
+              />
               <Heading as="h4" color="primary" mt={8} mb={4}>
                 {card.title}
               </Heading>

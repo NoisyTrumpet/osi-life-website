@@ -27,7 +27,7 @@ const MediaText = ({
         pb={`4rem`}
         bg={variant === "Secondary" && `lightGrayBG`}
         borderTopLeftRadius={variant === "Secondary" && 140}
-        id={title.split(' ')[0].toLowerCase()}
+        id={title.split(" ")[0].toLowerCase()}
         key={id}
       >
         <Box

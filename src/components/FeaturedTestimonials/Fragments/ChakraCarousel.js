@@ -209,12 +209,11 @@ function Slider({
           <ChevronLeft />
         </Button>
 
-
         <Box
           ref={ref}
           w={{ base: "100%", md: `calc(100% + ${gap}px)` }}
           ml={{ base: 0, md: `-${gap / 2}px` }}
-          px={[`0px`,`${gap / 2}px`]}
+          px={[`0px`, `${gap / 2}px`]}
           pb={[12, 12, 12, 4, 4]}
           position="relative"
           overflow="hidden"
@@ -260,20 +259,20 @@ function Slider({
         </Button>
       </Flex>
       <Progress
-          value={percentage(activeItem, positions.length - constraint)}
-          alignSelf="center"
-          borderRadius="2px"
-          bg="base.d100"
-          flex={1}
-          h="3px"
-          title="Progress Bar Label"
-          aria-labelledby="testimonial-label"
-          sx={{
-            "> div": {
-              backgroundColor: "gray.400",
-            },
-          }}
-        />
+        value={percentage(activeItem, positions.length - constraint)}
+        alignSelf="center"
+        borderRadius="2px"
+        bg="base.d100"
+        flex={1}
+        h="3px"
+        title="Progress Bar Label"
+        aria-labelledby="testimonial-label"
+        sx={{
+          "> div": {
+            backgroundColor: "gray.400",
+          },
+        }}
+      />
     </Box>
   );
 }

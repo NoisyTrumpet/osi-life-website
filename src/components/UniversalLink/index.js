@@ -1,4 +1,4 @@
-import { useColorModeValue as mode, chakra } from "@chakra-ui/react";
+import { chakra } from "@chakra-ui/react";
 import * as React from "react";
 import { Link as GatsbyLink } from "gatsby";
 
@@ -16,6 +16,11 @@ const ChakraLink = chakra(GatsbyLink, {
     color: "primary",
     fontFamily: `var(--chakra-fonts-heading)`,
   },
+  variants: {
+    subMenu: {
+      color: "secondary",
+    },
+  },
 });
 
 const UniversalLink = (props) => {
@@ -23,13 +28,14 @@ const UniversalLink = (props) => {
   return (
     <ChakraLink
       aria-current={isActive ? "page" : undefined}
-      _hover={{
-        bg: mode("gray.100", "gray.700"),
-      }}
-      _activeLink={{
-        // bg: mode("blue.600", "blue.200"),
-        color: mode("secondary", "gray.900"),
-      }}
+      // _hover={{
+      //   bg: mode("gray.100", "gray.700"),
+      // }}
+      // _activeLink={{
+      //   // bg: mode("blue.600", "blue.200"),
+      //   color: mode("secondary", "gray.900"),
+      // }}
+      color={props.color}
       {...rest}
     />
   );
