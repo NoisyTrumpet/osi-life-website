@@ -190,8 +190,8 @@ function Slider({
       setActiveItem((prev) => prev + 1);
   };
 
-  const isFirst = (activeItem === 0);
-  const isLast = (activeItem === positions.length - constraint);
+  // const isFirst = (activeItem === 0);
+  // const isLast = (activeItem === positions.length - constraint);
 
   return (
     <Box position="relative">
@@ -200,7 +200,7 @@ function Slider({
           onClick={handleDecrementClick}
           onFocus={handleFocus}
           mr={`${gap / 2}px`}
-          alignSelf={['flex-end','center']}
+          alignSelf={["flex-end", "center"]}
           color="gray.200"
           variant="link"
           minW={0}
@@ -250,7 +250,7 @@ function Slider({
           onFocus={handleFocus}
           ml={`${gap / 2}px`}
           // alignSelf={["flex-end", "flex-end", "flex-end", "center", "center"]}
-          alignSelf={['flex-end','center']}
+          alignSelf={["flex-end", "center"]}
           color="gray.200"
           variant="link"
           zIndex={2}

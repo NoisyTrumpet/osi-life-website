@@ -1,13 +1,5 @@
 import * as React from "react";
-import {
-  Container,
-  Box,
-  Flex,
-  Grid,
-  Heading,
-  useColorModeValue as mode,
-  Image,
-} from "@chakra-ui/react";
+import { Container, Box, Flex, Grid, Heading, Image } from "@chakra-ui/react";
 import RichText from "components/RichText";
 import MultiHandCross from "SVG/MultiHandCross";
 // import PhotoWrapper from "SVG/PhotoWrapper";
@@ -17,7 +9,7 @@ const VisualList = ({ id, title, variant, cards }) => {
   if (variant === "Secondary") {
     return (
       <Box
-        bg={'lightGrayBG'}
+        bg={"lightGrayBG"}
         borderTopLeftRadius={80}
         borderTopRightRadius={80}
         mt={16}
@@ -36,62 +28,62 @@ const VisualList = ({ id, title, variant, cards }) => {
             }} */}
           {cards.map((card, index) => (
             <Flex
-            flexDirection={[
-              `column`,
-              `column`,
-              `column`,
-              (index % 2 === 0 && `row`) || `row-reverse`,
-              index % 2 === 0 && `row`,
-            ]}
-            my={`4rem`}
-            pb={[5, 20]}
-            borderBottom="3px"
-            borderStyle="solid"
-            borderColor="secondary"
-            _last={{
-              borderBottomWidth: 0,
-              pb: 0,
-              mb: 0,
-            }}
-          >
-            <Box
-              flex={[`100%`, `100%`, `100%`, `30%`, `30%`]}
-              my={`auto`}
-              py={2}
-              mx={4}
-              alignSelf={`center`}
-              sx={{
-                svg: {
-                  height: "auto",
-                },
+              flexDirection={[
+                `column`,
+                `column`,
+                `column`,
+                (index % 2 === 0 && `row`) || `row-reverse`,
+                index % 2 === 0 && `row`,
+              ]}
+              my={`4rem`}
+              pb={[5, 20]}
+              borderBottom="3px"
+              borderStyle="solid"
+              borderColor="secondary"
+              _last={{
+                borderBottomWidth: 0,
+                pb: 0,
+                mb: 0,
               }}
             >
-              <Image
-                src={card.icon ? card.icon.file.url : card.image.file.url}
-                alt={card.title}
-                width="100%"
-                height="auto"
-                htmlWidth="140"
-                htmlHeight="140"
-              />
-              {/* <img src={imageURL} alt="icon" height="auto" /> */}
-            </Box>
-            <Box
-              flex={[`100%`, `100%`, `100%`, `70%`, `70%`]}
-              px={[2, 2, 4, 8, 8]}
-              py={2}
-              mx={4}
-              my={`auto`}
-            >
-              <Heading as="h4" color="primary">
-                {card.title}
-              </Heading>
-              <p>{card.subtitle}</p>
-              <Box align="left" mt={4}>
-                <RichText content={card.description} />
+              <Box
+                flex={[`100%`, `100%`, `100%`, `30%`, `30%`]}
+                my={`auto`}
+                py={2}
+                mx={4}
+                alignSelf={`center`}
+                sx={{
+                  svg: {
+                    height: "auto",
+                  },
+                }}
+              >
+                <Image
+                  src={card.icon ? card.icon.file.url : card.image.file.url}
+                  alt={card.title}
+                  width="100%"
+                  height="auto"
+                  htmlWidth="140"
+                  htmlHeight="140"
+                />
+                {/* <img src={imageURL} alt="icon" height="auto" /> */}
               </Box>
-            </Box>
-          </Flex>
+              <Box
+                flex={[`100%`, `100%`, `100%`, `70%`, `70%`]}
+                px={[2, 2, 4, 8, 8]}
+                py={2}
+                mx={4}
+                my={`auto`}
+              >
+                <Heading as="h4" color="primary">
+                  {card.title}
+                </Heading>
+                <p>{card.subtitle}</p>
+                <Box align="left" mt={4}>
+                  <RichText content={card.description} />
+                </Box>
+              </Box>
+            </Flex>
           ))}
         </Container>
       </Box>
@@ -100,7 +92,7 @@ const VisualList = ({ id, title, variant, cards }) => {
 
   // Primary Variant
   return (
-    <Container maxW="1500px" p={[5, 20]} mb={10} >
+    <Container maxW="1500px" p={[5, 20]} mb={10}>
       <Heading as="h2" mb={5} color="primary">
         {title}
       </Heading>

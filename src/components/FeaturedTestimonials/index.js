@@ -16,7 +16,7 @@ const FeaturedTestimonials = ({ title, items, key }) => {
             textAlign={["left", "center"]}
             fontFamily={`var(--chakra-fonts-heading)`}
             id="testimonial-label"
-            px={[4,0]}
+            px={[4, 0]}
           >
             {title}
           </Text>

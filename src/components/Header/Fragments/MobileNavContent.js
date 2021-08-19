@@ -50,7 +50,7 @@ export const MobileNavContent = (props) => {
               pos="absolute"
               top={6}
               right={4}
-              icon={<CloseButton fontSize="30px"/>}
+              icon={<CloseButton fontSize="30px" />}
             />
           </Flex>
         </motion.div>
