@@ -43,18 +43,20 @@ const MediaText = ({
             <Box maxW={800} mx={`auto`}>
               <Heading color="primary">{title}</Heading>
               <Box
-              // sx={{
-              //   // h2: {
-              //   //   fontSize: "2.25rem !important",
-              //   //   fontWeight: "700 !important",
-              //   //   lineHeight: "1.2 !important",
-              //   //   padding: "1rem 0 !important",
-              //   // },
-              //   // h4: {
-              //   //   fontSize: `var(--chakra-fontSizes-lg)`,
-              //   // },
-              //   p: { padding: [".5rem 0 !important"] },
-              // }}
+              sx={{
+                h2: {
+                  fontSize: "2.25rem !important",
+                  fontWeight: "700 !important",
+                  lineHeight: "1.2 !important",
+                  padding: "1rem 0 !important",
+                  color: `#00ADBC!important`
+                },
+                h4: {
+                  fontSize: `var(--chakra-fontSizes-lg)`,
+                  color: `#00ADBC!important`
+                },
+                // p: { padding: [".5rem 0 !important"] },
+              }}
               >
                 <RichText content={content} />
               </Box>
