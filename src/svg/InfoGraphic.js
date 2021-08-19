@@ -243,7 +243,7 @@ const InfoGraphic = (props) => {
         fontSize={`var(--chakra-fontSizes-xs)`}
         fill="#00adbb"
         fontFamily={`var(--chakra-fonts-heading)`}
-        fontWeight={600}
+        fontWeight={500}
         data-name="Layer 5"
         className="elem-ani-35"
       >
@@ -254,7 +254,7 @@ const InfoGraphic = (props) => {
         fontSize={`var(--chakra-fontSizes-xs)`}
         fill="#00adbb"
         fontFamily={`var(--chakra-fonts-heading)`}
-        fontWeight={600}
+        fontWeight={500}
         letterSpacing="-.012em"
         data-name="Layer 4"
         className="elem-ani-35"
@@ -271,7 +271,7 @@ const InfoGraphic = (props) => {
         fontSize={`var(--chakra-fontSizes-xs)`}
         fill="#00adbb"
         fontFamily={`var(--chakra-fonts-heading)`}
-        fontWeight={600}
+        fontWeight={500}
         data-name="Layer 3"
         className="elem-ani-35"
       >
@@ -285,7 +285,7 @@ const InfoGraphic = (props) => {
         fontSize={`var(--chakra-fontSizes-xs)`}
         fill="#00adbb"
         fontFamily={`var(--chakra-fonts-heading)`}
-        fontWeight={600}
+        fontWeight={500}
         data-name="Layer 2"
         className="elem-ani-35"
       >

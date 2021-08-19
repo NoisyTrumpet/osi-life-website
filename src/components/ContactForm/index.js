@@ -275,7 +275,7 @@ const ContactForm = ({ title, subtitle }) => {
           draggable
           pauseOnHover
           style={{
-            backgroundColor: '#00ADBC'
+            backgroundColor: "#00ADBC",
           }}
         />
       </Container>

@@ -1,39 +1,95 @@
 .firstAni {
-    animation: firstAni 1s linear;
+  animation: firstAni 1s linear;
 }
+
 .secondAni {
-    animation: secondAni 2s linear;
+  animation: secondAni 2s linear;
 }
+
 .thirdAni {
-    animation: thirdAni 3s linear;
+  animation: thirdAni 3s linear;
 }
+
 .lastAni {
-    animation: lastAni 4s linear;
+  animation: lastAni 4s linear;
 }
 
 @keyframes firstAni {
-    0% { opacity: 0; }
-    50% { opacity: 0; }
-    75% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 0;
   }
-  @keyframes secondAni {
-    0% { opacity: 0; }
-    50% { opacity: 0; }
-    75% { opacity: 0; }
-    100% { opacity: 1; }
+
+  50% {
+    opacity: 0;
   }
-  @keyframes thirdAni {
-    0% { opacity: 0; }
-    25% { opacity: 0; }
-    50% { opacity: 0; }
-    75% { opacity: 0; }
-    100% { opacity: 1; }
+
+  75% {
+    opacity: 0;
   }
-  @keyframes lastAni {
-    0% { opacity: 0; }
-    25% { opacity: 0; }
-    50% { opacity: 0; }
-    75% { opacity: 0; }
-    100% { opacity: 1; }
+
+  100% {
+    opacity: 1;
   }
+}
+
+@keyframes secondAni {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes thirdAni {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lastAni {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
