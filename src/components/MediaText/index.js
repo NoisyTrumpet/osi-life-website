@@ -41,7 +41,7 @@ const MediaText = ({
             my={`auto`}
           >
             <Box maxW={800} mx={`auto`}>
-              <Heading color="primary">{title}</Heading>
+              <Heading color="#00ADBC!important">{title}</Heading>
               <Box
               sx={{
                 h2: {
