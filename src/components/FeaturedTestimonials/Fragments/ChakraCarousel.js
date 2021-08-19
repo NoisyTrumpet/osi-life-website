@@ -383,11 +383,11 @@ function Track({
   useEffect(() => {
     handleResize(positions);
 
-    document.addEventListener("keydown", handleKeyDown);
-    document.addEventListener("mousedown", handleClick);
+    document.addEventListener("keydown", handleKeyDown, {passive: true});
+    document.addEventListener("mousedown", handleClick, {passive: true});
     return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", handleKeyDown, {passive: true});
+      document.removeEventListener("mousedown", handleClick, {passive: true});
     };
   }, [handleClick, handleResize, handleKeyDown, positions]);
 

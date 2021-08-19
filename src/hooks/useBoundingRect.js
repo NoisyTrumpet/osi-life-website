@@ -32,11 +32,11 @@ export default function useBoundingRect(limit) {
 
       const listener = debounce(limit ? limit : 100, measure);
 
-      window.addEventListener("resize", listener);
-      window.addEventListener("scroll", listener);
+      window.addEventListener("resize", listener, {passive: true});
+      window.addEventListener("scroll", listener, {passive: true});
       return () => {
-        window.removeEventListener("resize", listener);
-        window.removeEventListener("scroll", listener);
+        window.removeEventListener("resize", listener, {passive: true});
+        window.removeEventListener("scroll", listener, {passive: true});
       };
     }
   }, [node, limit]);
