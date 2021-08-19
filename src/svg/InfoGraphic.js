@@ -10,7 +10,7 @@ const InfoGraphic = (props) => {
       //   height={244.94}
       {...props}
     >
-      <g data-name="Layer 1">
+      <g data-name="Line Bottom">
         <path
           className="elem-ani-1"
           fill="none"
@@ -30,7 +30,7 @@ const InfoGraphic = (props) => {
           d="M171.12 179.69l3.18-7.5-3.18-7.49 17.77 7.49-17.77 7.5z"
         />
       </g>
-      <g data-name="Layer 12">
+      <g data-name="Line Right">
         <path
           className="elem-ani-4"
           fill="none"
@@ -50,7 +50,7 @@ const InfoGraphic = (props) => {
           d="M188.38 134.94l8.07-1.15 4.77-6.6 2.77 19.09-15.61-11.34z"
         />
       </g>
-      <g data-name="Layer 11">
+      <g data-name="Line Left">
         <path
           className="elem-ani-7"
           fill="none"
@@ -70,7 +70,7 @@ const InfoGraphic = (props) => {
           d="M36.19 127.19l4.77 6.6 8.06 1.15-15.6 11.34 2.77-19.09z"
         />
       </g>
-      <g data-name="Layer 10">
+      <g data-name="Patient icon">
         <path
           d="M217.43 166.06l5.9-5.36 8.63 7.92v-3.92l-7.66-7a1.43 1.43 0 00-1.95 0l-4 3.62a7.4 7.4 0 01-.94 4.75z"
           className="elem-ani-10"
@@ -92,7 +92,7 @@ const InfoGraphic = (props) => {
           fill="#ffa400"
         />
       </g>
-      <g data-name="Layer 9">
+      <g data-name="Managers Icon">
         <path
           d="M44.67 146.6a6.05 6.05 0 00-6 5.43 5.63 5.63 0 000 .58 5.93 5.93 0 001.16 3.53l-.76 2.24 2.33-.74a6.08 6.08 0 009.4-5 3.54 3.54 0 000-.46 6.05 6.05 0 00-6.13-5.58zm3.54 8.5a1.79 1.79 0 01-1.2.83c-.32 0-.32.26-2.12-.43a7.25 7.25 0 01-3-2.66 3.77 3.77 0 01-.63-1.21 2 2 0 01-.09-.6 1.92 1.92 0 01.62-1.46.63.63 0 01.47-.22h.34c.1 0 .25-.06.39.29l.55 1.31a.29.29 0 010 .3l-.12.21-.06.09-.27.31c-.08.08-.18.18-.07.35a5 5 0 001 1.22 4.72 4.72 0 001.42.87c.18.08.28.07.38-.05a8.49 8.49 0 00.57-.68c.11-.18.23-.15.39-.09s1 .48 1.21.57.3.13.34.2a1.58 1.58 0 01-.09.85z"
           className="elem-ani-14"
@@ -124,32 +124,32 @@ const InfoGraphic = (props) => {
           fill="#ffa400"
         />
       </g>
-      <g data-name="Layer 8">
+      <g data-name="Center Heart" transform="translate(0 4)">
         <path
           d="M118.8 101.62l4-11.15a1.08 1.08 0 012 0l3 7.74 4-6.62a1.08 1.08 0 011.49-.38 1 1 0 01.3.28l4.49 6a.72.72 0 01.15.27c2.92-4.59 4.74-9.17 4.74-13.76a11.59 11.59 0 00-11.58-11.58c-5.79 0-8.69 2.9-11.58 8.69a24.34 24.34 0 00-3.17-5z"
-          className="elem-ani-20"
+          // className="elem-ani-20"
           fill="#ffa400"
           fillRule="evenodd"
         />
         <path
           d="M103.56 90.58a1.09 1.09 0 011.53 0 1 1 0 01.29.47l1.15 3.64 6.9-21.16a11.26 11.26 0 00-5.21-1.11A11.58 11.58 0 0096.65 84a23.4 23.4 0 003 10.81z"
-          className="elem-ani-21"
+          // className="elem-ani-21"
           fill="#ffa400"
           fillRule="evenodd"
         />
         <path
           d="M136.36 98.7l-3.53-4.67-4.24 7.1a1.08 1.08 0 01-2-.12l-2.79-7.11-4.65 13.12a1.09 1.09 0 01-2.13-.23l-2.5-29.77-7 21.42a1.12 1.12 0 01-.72.76 1.09 1.09 0 01-1.37-.71l-1.61-5.1-2.83 3a1.23 1.23 0 01-.29.22c4.39 7.34 11.73 14.67 19.06 22 6.51-6.5 13-13 17.47-19.52a1.07 1.07 0 01-.92-.43"
-          className="elem-ani-22"
+          // className="elem-ani-22"
           fill="#ffa400"
           fillRule="evenodd"
         />
         <path
           d="M145.9 98.31a9.73 9.73 0 013.34 19.06 9.57 9.57 0 01-7.33-.85.34.34 0 00-.51.09c-1.81 2.11-3.62 4.2-5.43 6.29a1.15 1.15 0 01-1.92.15l-.64-.56a1.08 1.08 0 01-.12-1.64c.47-.56 1-1.11 1.43-1.66 1.37-1.58 2.73-3.17 4.11-4.74.17-.21.21-.34 0-.58a9.71 9.71 0 015.48-15.3c.51-.12 1-.18 1.57-.26m.22 3a6.77 6.77 0 107.22 6.26 6.73 6.73 0 00-7.22-6.26"
-          className="elem-ani-23"
+          // className="elem-ani-23"
           fill="#ffa400"
         />
       </g>
-      <g data-name="Layer 7">
+      <g data-name="Medical Icon">
         <path
           d="M120.45 29.49l-.51 32.62c0 3.36-.89 4-.89 0l-.51-32.62a2.21 2.21 0 111.91 0"
           className="elem-ani-24"
@@ -250,14 +250,14 @@ const InfoGraphic = (props) => {
         {"Patients"}
       </text>
       <text
-        transform="translate(79 138.71)"
+        transform="translate(79 142)"
         fontSize={`var(--chakra-fontSizes-xs)`}
         fill="#00adbb"
         fontFamily={`var(--chakra-fonts-heading)`}
         fontWeight={500}
         letterSpacing="-.012em"
         data-name="Layer 4"
-        className="elem-ani-35"
+        // className="elem-ani-35"
       >
         {"Remote Patient"}
         <tspan>
