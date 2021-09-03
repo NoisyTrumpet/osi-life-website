@@ -33,6 +33,7 @@
     "framer-motion": "^4.1.17",
     "gatsby": "^3.9.1",
     "gatsby-alias-imports": "^1.0.6",
+    "gatsby-plugin-google-tagmanager": "^3.13.0",
     "gatsby-plugin-image": "^1.9.0",
     "gatsby-plugin-loadable-components-ssr": "^3.2.0",
     "gatsby-plugin-manifest": "^3.9.0",
