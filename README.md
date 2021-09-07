@@ -1,54 +1,17 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/48695422/129576348-d68af850-4295-406d-a67a-4cc308cfd4b1.png" />
+</div>
 
-## 🚀 Quick start
+## About
+Remote patient technology with a human touch.
 
-1.  **Create a Gatsby site.**
+A sibling website to Osi Vision to direct providers and patients to a new medical device monitoring company. The website introduces the company and its members, explains the medical technology, pitches a new way of managing doctor-patient relationships and interactions.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Built with
+- [Gatsby][1]: Gatsby provides development teams an open source frontend framework for creating dynamic, optimized websites and a cloud platform for delivering them on a blazing fast edge network.
+- [Contentful][2]: Contentful provides easily scalable content management, only querying necessary data for faster load times.
+- [Chakra-UI with Gatsby][3]: A simple, modular and accessible component library that gives you the building blocks you need to build your Gatsby applications. Customized Chakra-UI components by our team for a unique branded look.
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+[1]: https://www.gatsbyjs.com/ "Gatsby"
+[2]: https://www.contentful.com/developers/ "Contentful"
+[3]: https://chakra-ui.com/guides/integrations/with-gatsby "Chakra-UI with Gatsby"
