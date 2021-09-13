@@ -14,7 +14,6 @@ import {
   Textarea,
   Grid,
   Flex,
-  Checkbox,
   Stack,
   RadioGroup,
   Radio,
@@ -46,14 +45,23 @@ const ContactForm = ({ title, subtitle }) => {
   } = useForm();
 
   const onSubmit = (values) => {
+    const inquiryType = () => {
+      if (values.hCare) {
+        return values.hCare;
+      }
+      if (values.patient) {
+        return values.patient;
+      }
+      return 'Not Selected'
+    }
     const formattedValues = {
       Name: `${values.fname} ${values.lname}`,
       Email: values.email,
       Message: values.message,
       Phone: values.phone,
-      Healthcare: values.hCare ? "Checked" : "Not Checked",
-      Patient: values.patient ? "Checked" : "Not Checked",
+      'Inquiry Type': inquiryType()
     };
+
     return new Promise((resolve) => {
       axios
         .post("https://formspree.io/f/xnqoknvr", formattedValues)
@@ -199,7 +207,7 @@ const ContactForm = ({ title, subtitle }) => {
                     pt={8}
                     pb={6}
                     bg="white"
-                    defaultValue="example: 210-111-1111"
+                    placeholder="example: 210-111-1111"
                     {...register("phone", {
                       required: "This is required",
                       pattern: {
@@ -258,14 +266,14 @@ const ContactForm = ({ title, subtitle }) => {
                   <Stack spacing={5} direction="row">
                     <Radio
                       colorScheme="whiteAlpha"
-                      value="1"
+                      value="Healthcare Provider"
                       {...register("hCare")}
                     >
                       Healthcare Provider
                     </Radio>
                     <Radio
                       colorScheme="whiteAlpha"
-                      value="2"
+                      value="Patient"
                       {...register("patient")}
                     >
                       Patient
