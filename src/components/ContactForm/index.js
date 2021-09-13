@@ -14,7 +14,9 @@ import {
   Textarea,
   Grid,
   Flex,
-  Checkbox,
+  Stack,
+  RadioGroup,
+  Radio,
 } from "@chakra-ui/react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -43,14 +45,23 @@ const ContactForm = ({ title, subtitle }) => {
   } = useForm();
 
   const onSubmit = (values) => {
+    const inquiryType = () => {
+      if (values.hCare) {
+        return values.hCare;
+      }
+      if (values.patient) {
+        return values.patient;
+      }
+      return 'Not Selected'
+    }
     const formattedValues = {
       Name: `${values.fname} ${values.lname}`,
       Email: values.email,
       Message: values.message,
       Phone: values.phone,
-      Healthcare: values.hCare ? "Checked" : "Not Checked",
-      Patient: values.patient ? "Checked" : "Not Checked",
+      'Inquiry Type': inquiryType()
     };
+
     return new Promise((resolve) => {
       axios
         .post("https://formspree.io/f/xnqoknvr", formattedValues)
@@ -118,8 +129,8 @@ const ContactForm = ({ title, subtitle }) => {
                     {...register("fname", {
                       required: "This is required",
                       minLength: {
-                        value: 4,
-                        message: "Minimum length should be 4",
+                        value: 2,
+                        message: "Minimum length should be 2",
                       },
                     })}
                   />
@@ -144,8 +155,8 @@ const ContactForm = ({ title, subtitle }) => {
                     {...register("lname", {
                       required: "This is required",
                       minLength: {
-                        value: 4,
-                        message: "Minimum length should be 4",
+                        value: 2,
+                        message: "Minimum length should be 2",
                       },
                     })}
                   />
@@ -196,6 +207,7 @@ const ContactForm = ({ title, subtitle }) => {
                     pt={8}
                     pb={6}
                     bg="white"
+                    placeholder="example: 210-111-1111"
                     {...register("phone", {
                       required: "This is required",
                       pattern: {
@@ -234,7 +246,7 @@ const ContactForm = ({ title, subtitle }) => {
             </FormControl>
             <Flex direction={["column", "row"]} justifyContent="space-between">
               <Flex color="white">
-                <FormControl w="fit-content" mr={2} id="hCare">
+                {/* <FormControl w="fit-content" mr={2} id="hCare">
                   <Label id="hCare" display="none">
                     Healthcare Provider
                   </Label>
@@ -249,7 +261,25 @@ const ContactForm = ({ title, subtitle }) => {
                   <Checkbox name="patient" size="lg" {...register("patient")}>
                     Patient
                   </Checkbox>
-                </FormControl>
+                </FormControl> */}
+                <RadioGroup defaultValue="2">
+                  <Stack spacing={5} direction="row">
+                    <Radio
+                      colorScheme="whiteAlpha"
+                      value="Healthcare Provider"
+                      {...register("hCare")}
+                    >
+                      Healthcare Provider
+                    </Radio>
+                    <Radio
+                      colorScheme="whiteAlpha"
+                      value="Patient"
+                      {...register("patient")}
+                    >
+                      Patient
+                    </Radio>
+                  </Stack>
+                </RadioGroup>
               </Flex>
               <Box alignSelf={{ base: `center`, sm: `flex-start` }}>
                 <Button
@@ -274,9 +304,6 @@ const ContactForm = ({ title, subtitle }) => {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-          style={{
-            backgroundColor: "#00ADBC",
-          }}
         />
       </Container>
     </Box>

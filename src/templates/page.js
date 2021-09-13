@@ -38,6 +38,8 @@ const PageTemplate = ({ data: page }) => {
 
 export default PageTemplate;
 
+// 
+
 export const query = graphql`
   query PageTemplateQuery($slug: String!) {
     contentfulPage(slug: { eq: $slug }) {
@@ -49,7 +51,6 @@ export const query = graphql`
         raw
       }
       seoTitle
-      seoKeywords
       pageBlocks {
         ... on ContentfulBlockPageHeader {
           id
