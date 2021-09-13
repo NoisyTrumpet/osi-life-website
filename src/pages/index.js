@@ -36,7 +36,6 @@ export const homeQuery = graphql`
       seoDescription {
         seoDescription
       }
-      seoKeywords
       seoMetaRobotsNofollow
       seoMetaRobotsNoindex
       seoTitle

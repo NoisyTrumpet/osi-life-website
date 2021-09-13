@@ -49,7 +49,6 @@ export const query = graphql`
         raw
       }
       seoTitle
-      seoKeywords
       pageBlocks {
         ... on ContentfulBlockPageHeader {
           id

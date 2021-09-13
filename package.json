@@ -31,7 +31,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^8.6.0",
     "framer-motion": "^4.1.17",
-    "gatsby": "^3.9.1",
+    "gatsby": "^3.13.0",
     "gatsby-alias-imports": "^1.0.6",
     "gatsby-plugin-google-tagmanager": "^3.13.0",
     "gatsby-plugin-image": "^1.9.0",
