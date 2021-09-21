@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage;
 
-// 
+//
 
 export const homeQuery = graphql`
   query homeQuery {
