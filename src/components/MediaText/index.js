@@ -80,7 +80,8 @@ const MediaText = ({
             }}
           >
             <PhotoWrapper
-              image={photo.gatsbyImageData.images.fallback.src}
+              image={photo}
+              safariSource={photo.file.url}
               width={photo.gatsbyImageData.width}
               height={photo.gatsbyImageData.height}
               imgAlt={photo.title}
@@ -177,7 +178,8 @@ const MediaText = ({
             }}
           >
             <PhotoWrapper
-              image={photo.gatsbyImageData.images.fallback.src}
+              image={photo}
+              safariSource={photo.file.url}
               width={photo.gatsbyImageData.width}
               height={photo.gatsbyImageData.height}
               imgAlt={photo.title}
@@ -263,7 +265,8 @@ const MediaText = ({
             >
               <PhotoWrapper
                 className="aboutImg"
-                image={photo.gatsbyImageData.images.fallback.src}
+                image={photo}
+                safariSource={photo.file.url}
                 // width={photo.gatsbyImageData.width}
                 // height={["30rem", "35rem", "30rem", "45rem", "36rem"]}
                 id={photo.id}

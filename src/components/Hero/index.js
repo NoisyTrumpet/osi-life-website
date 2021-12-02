@@ -61,7 +61,8 @@ const Hero = ({ title, image }) => {
             zIndex="3"
           >
             <PhotoWrapper
-              image={image.gatsbyImageData.images.fallback.src}
+              image={image}
+              safariSource={image.file.url}
               width={image.gatsbyImageData.width}
               height={image.gatsbyImageData.height}
               id={image.id}
@@ -119,7 +120,8 @@ const Hero = ({ title, image }) => {
           sx={{ svg: { width: "80%", marginLeft: "33%" } }}
         >
           <PhotoWrapper
-            image={image.gatsbyImageData.images.fallback.src}
+            image={image}
+            safariSource={image.file.url}
             width={image.gatsbyImageData.width}
             height={image.gatsbyImageData.height}
             id={`${image.id}-mobile`}

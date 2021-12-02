@@ -52,14 +52,14 @@ const ContactForm = ({ title, subtitle }) => {
       if (values.patient) {
         return values.patient;
       }
-      return 'Not Selected'
-    }
+      return "Not Selected";
+    };
     const formattedValues = {
       Name: `${values.fname} ${values.lname}`,
       Email: values.email,
       Message: values.message,
       Phone: values.phone,
-      'Inquiry Type': inquiryType()
+      "Inquiry Type": inquiryType(),
     };
 
     return new Promise((resolve) => {

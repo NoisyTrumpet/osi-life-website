@@ -62,7 +62,8 @@ const FeaturedServices = ({ services, id, path }) => {
                   aria-label={service.title}
                 >
                   <PhotoWrapper
-                    image={service.image?.gatsbyImageData.images.fallback.src}
+                    image={service.image}
+                    safariSource={service.image.file.url}
                     width={service.image?.gatsbyImageData.width}
                     height={service.image?.gatsbyImageData.height}
                     imgAlt={service.image?.title}
@@ -155,7 +156,8 @@ const FeaturedServices = ({ services, id, path }) => {
                 aria-label={service.title}
               >
                 <PhotoWrapper
-                  image={service.image?.gatsbyImageData.images.fallback.src}
+                  image={service.image}
+                  safariSource={service.image.file.url}
                   width={service.image?.gatsbyImageData.width}
                   height={service.image?.gatsbyImageData.height}
                   imgAlt={service.image?.title}

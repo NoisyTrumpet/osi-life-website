@@ -2,6 +2,7 @@ import * as React from "react";
 
 const PhotoWrapper = ({
   image,
+  safariSource,
   width,
   height,
   id,
@@ -11,6 +12,47 @@ const PhotoWrapper = ({
   crossesFlip,
   imageFlip,
 }) => {
+  const windowGlobal = typeof window !== "undefined" && window;
+
+  const ImageAsset = () => {
+    if (windowGlobal) {
+      const isSafari = /^((?!chrome|android).)*safari/i.test(
+        navigator.userAgent
+      );
+      const imageSource = image.gatsbyImageData.images.sources[0].srcSet;
+      const imageSizes = imageSource.split(",");
+      // Remove 480w from imageSizes[0]
+      const imageUrl = imageSizes[2].split(" ")[0];
+      if (isSafari) {
+        return (
+          <image
+            width={1}
+            height={1}
+            href={safariSource}
+            x="0"
+            y="0"
+            id="image"
+            preserveAspectRatio="xMidYMid slice"
+            // path="url(#prefix__SVGID_1_)"
+          />
+        );
+      } else {
+        return (
+          <image
+            width={1}
+            height={1}
+            href={imageUrl}
+            x="0"
+            y="0"
+            id="image"
+            preserveAspectRatio="xMidYMid slice"
+            // path="url(#prefix__SVGID_1_)"
+          />
+        );
+      }
+    }
+  };
+
   return (
     <svg
       data-name="Layer 1"
@@ -29,16 +71,7 @@ const PhotoWrapper = ({
           viewBox="0 0 1 1"
           preserveAspectRatio="xMidYMid slice"
         >
-          <image
-            width={1}
-            height={1}
-            href={image}
-            x="0"
-            y="0"
-            id="image"
-            preserveAspectRatio="xMidYMid slice"
-            // path="url(#prefix__SVGID_1_)"
-          />
+          <ImageAsset/>
         </pattern>
       </defs>
       <g

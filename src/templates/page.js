@@ -38,7 +38,7 @@ const PageTemplate = ({ data: page }) => {
 
 export default PageTemplate;
 
-// 
+//
 
 export const query = graphql`
   query PageTemplateQuery($slug: String!) {

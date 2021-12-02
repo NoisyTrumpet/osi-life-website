@@ -52,7 +52,8 @@ const FAQs = ({ id, title, photo, variant, items }) => {
           }}
         >
           <PhotoWrapper
-            image={photo.gatsbyImageData.images.fallback.src}
+            image={photo}
+            safariSource={photo.file.url}
             width={photo.gatsbyImageData.width}
             height={photo.gatsbyImageData.height}
             imgAlt={photo.title}

@@ -40,7 +40,8 @@ const ServiceHero = ({ title, variant, image }) => {
             zIndex="3"
           >
             <PhotoWrapper
-              image={image.gatsbyImageData.images.fallback.src}
+              image={image}
+              safariSource={image.file.url}
               width={image.gatsbyImageData.width}
               height={image.gatsbyImageData.height}
               id={image.id}
