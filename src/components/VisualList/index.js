@@ -107,9 +107,9 @@ const VisualList = ({ id, title, variant, cards }) => {
         {cards.map((card) => {
           let imageURL = "";
           if (card.icon && card.icon.file.url) {
-            imageURL = card.icon.file.url;
+            imageURL = `https:${card.icon.file.url.split(["//"][1])}`;
           } else if (card.image && card.image.file.url) {
-            imageURL = card.image.file.url;
+            imageURL = `https:${card.image.file.url.split(["//"][1])}`;
           }
           return (
             <Box

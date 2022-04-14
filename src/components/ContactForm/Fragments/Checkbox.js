@@ -12,9 +12,8 @@ import { CheckboxBox } from "./CheckboxBox";
 
 export const ButtonCheckbox = (props) => {
   const { icon, title, description, price, ...rest } = props;
-  const { getCheckboxProps, getInputProps, getLabelProps, state } = useCheckbox(
-    rest
-  );
+  const { getCheckboxProps, getInputProps, getLabelProps, state } =
+    useCheckbox(rest);
   const id = useId();
   return (
     <label {...getLabelProps()}>

@@ -24,6 +24,7 @@ const Header = () => {
     subMenu,
   } = contentfulSiteSettings;
 
+
   return (
     <Box bg={mode("gray.50", "gray.700")} zIndex={999}>
       <Navbar>
@@ -31,7 +32,7 @@ const Header = () => {
           <Center marginEnd="10">
             <Link to="/" aria-label={title}>
               <Image
-                src={logo.file.url}
+                src={`https:${logo.file.url.split(["//"][1])}`}
                 alt={title}
                 htmlWidth="198.27"
                 htmlHeight="62.67"

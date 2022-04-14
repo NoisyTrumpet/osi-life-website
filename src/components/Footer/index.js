@@ -14,10 +14,8 @@ import ContactForm from "Components/ContactForm";
 const Footer = ({ path }) => {
   const { contentfulSiteSettings } = useStaticQuery(footerQuery);
 
-  const {
-    siteFooterContent: copyRight,
-    siteSocialAccounts: socials,
-  } = contentfulSiteSettings;
+  const { siteFooterContent: copyRight, siteSocialAccounts: socials } =
+    contentfulSiteSettings;
 
   if (
     path === "/faq" ||

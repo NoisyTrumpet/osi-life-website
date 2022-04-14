@@ -71,7 +71,7 @@ const PhotoWrapper = ({
           viewBox="0 0 1 1"
           preserveAspectRatio="xMidYMid slice"
         >
-          <ImageAsset/>
+          <ImageAsset />
         </pattern>
       </defs>
       <g

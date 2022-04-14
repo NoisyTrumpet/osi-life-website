@@ -28,7 +28,7 @@ const FeaturedBenefits = ({ title, benefits }) => {
             key={benefit.id}
           >
             <Img
-              src={benefit.icon.file.url}
+              src={`https:${benefit.icon.file.url.split(["//"][1])}`}
               sx={{ margin: "1rem auto" }}
               alt={benefit.title}
               h={"115"}

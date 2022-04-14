@@ -69,6 +69,7 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+static/~partytown
 
 # Local Netlify folder
 .netlify

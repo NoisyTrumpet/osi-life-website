@@ -211,7 +211,8 @@ const ContactForm = ({ title, subtitle }) => {
                     {...register("phone", {
                       required: "This is required",
                       pattern: {
-                        value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+                        value:
+                          /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
                         message: "Entered value does not match phone format",
                       },
                     })}
