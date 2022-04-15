@@ -24,7 +24,6 @@ const Header = () => {
     subMenu,
   } = contentfulSiteSettings;
 
-
   return (
     <Box bg={mode("gray.50", "gray.700")} zIndex={999}>
       <Navbar>

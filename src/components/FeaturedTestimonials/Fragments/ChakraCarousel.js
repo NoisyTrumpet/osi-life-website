@@ -39,6 +39,7 @@ const ChakraCarousel = ({ children, gap }) => {
   const [activeItem, setActiveItem] = useState(0);
   const [constraint, setConstraint] = useState(0);
   const [itemWidth, setItemWidth] = useState(0);
+  let width = useWindowWidth();
 
   const initSliderWidth = useCallback((width) => setSliderWidth(width), []);
 
@@ -48,8 +49,6 @@ const ChakraCarousel = ({ children, gap }) => {
   );
 
   const { breakpoints } = useTheme();
-
-  let width = useWindowWidth();
 
   // const isBetweenBaseAndMd = width <= breakpoints.md;
 
@@ -68,16 +67,6 @@ const ChakraCarousel = ({ children, gap }) => {
     width <= parseInt(breakpoints.xl.split("px")[0], 10);
 
   const isGreaterThanXL = width > parseInt(breakpoints.xl.split("px")[0], 10);
-
-  // const [isBetweenBaseAndMd] = useMediaQuery(
-  //   `(min-width: ${breakpoints.base}) and (max-width: ${breakpoints.md})`
-  // );
-
-  // const [isBetweenMdAndXl] = useMediaQuery(
-  //   `(min-width: ${breakpoints.md}) and (max-width: ${breakpoints.xl})`
-  // );
-
-  // const [isGreaterThanXL] = useMediaQuery(`(min-width: ${breakpoints.xl})`);
 
   useEffect(() => {
     if (isBetweenBaseAndMd) {

@@ -18,7 +18,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify`,
     "@chakra-ui/gatsby-plugin",
-    "gatsby-plugin-loadable-components-ssr",
     `gatsby-plugin-preact`,
     // {
     //   resolve: "gatsby-plugin-google-tagmanager",

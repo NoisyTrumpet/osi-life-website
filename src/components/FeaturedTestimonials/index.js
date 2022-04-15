@@ -25,7 +25,7 @@ const FeaturedTestimonials = ({ title, items, key }) => {
               <Grid key={item.id} templateColumns={"25% 75%"} gap={2}>
                 <GridItem display="grid" placeItems="center">
                   <Image
-                    src={item.image.file.url}
+                    src={`https:${item.image.file.url.split("//")[1]}`}
                     alt={item.name}
                     htmlWidth="145"
                     htmlHeight="150"
