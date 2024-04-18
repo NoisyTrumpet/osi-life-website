@@ -7,7 +7,7 @@ function OsiLogoHoriz(props) {
       //   width={321.93}
       //   height={93.45}
       viewBox="0 0 321.93 93.45"
-      fillColor={props.fillColor || "inherit"}
+      fillcolor={props.fillColor || "inherit"}
       {...props}
     >
       <g fill="#fff" data-name="Layer 2">

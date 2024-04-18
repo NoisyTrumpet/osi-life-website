@@ -12,7 +12,16 @@ const PhotoWrapper = ({
   crossesFlip,
   imageFlip,
 }) => {
+  const [isReady, setIsReady] = React.useState(false);
   const windowGlobal = typeof window !== "undefined" && window;
+
+  React.useEffect(() => {
+    setIsReady(true);
+  }, []);
+
+  if (!isReady) {
+    return null;
+  }
 
   const ImageAsset = () => {
     if (windowGlobal) {
@@ -52,6 +61,8 @@ const PhotoWrapper = ({
       }
     }
   };
+
+  
 
   return (
     <svg

@@ -4,10 +4,10 @@ import React from "react";
 import ChakraCaousel from "./Fragments/ChakraCarousel";
 // Testimonials Component
 
-const FeaturedTestimonials = ({ title, items, key }) => {
+const FeaturedTestimonials = ({ title, items }) => {
   return (
     <Box bg="lightBG">
-      <Box borderTopRightRadius={80} bg="darkBG" key={key}>
+      <Box borderTopRightRadius={80} bg="darkBG">
         <Container py={6} maxWidth={`1500px`} mx={`auto`} px={0}>
           <Text
             my={4}

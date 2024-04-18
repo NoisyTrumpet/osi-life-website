@@ -1,6 +1,7 @@
+require("dotenv").config()
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
 module.exports = {
   siteMetadata: {
@@ -18,7 +19,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify`,
     "@chakra-ui/gatsby-plugin",
-    `gatsby-plugin-preact`,
+    // `gatsby-plugin-preact`,
     // {
     //   resolve: "gatsby-plugin-google-tagmanager",
     //   options: {
@@ -41,8 +42,10 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: process.env.GATSBY_CONTENTFUL_DELIVERY_API_KEY,
-        spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
+        downloadLocal: true,
+        accessToken: process.env.CONTENTFUL_DELIVERY_API_KEY,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        environment: process.env.CONTENTFUL_ENVIRONMENT,
       },
     },
 
