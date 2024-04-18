@@ -1,8 +1,7 @@
 # example netlify.toml
 [build]
-  command = "npm run build"
+  command = "gatsby clean && npm run build"
   functions = "netlify/functions"
-  install = "npm install --force"
   publish = "public"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
