@@ -101,7 +101,6 @@ const FeaturedServices = ({ services, id, path }) => {
       </Box>
     );
   }
-
 };
 
 export default FeaturedServices;

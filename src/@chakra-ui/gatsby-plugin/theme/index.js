@@ -18,7 +18,6 @@ import colors from "./foundations/colors";
 
 // Custom breakpoints
 
-
 const theme = extendTheme({
   styles,
   space: sizes,

@@ -57,7 +57,7 @@ const Header = () => {
                 >
                   {link.title}
                 </NavLink>
-              )
+              ),
             // <NavLink
             //     key={index}
             //     to={`/${link.slug}`}

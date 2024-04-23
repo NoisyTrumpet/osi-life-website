@@ -14,7 +14,7 @@ import { MobileNavContent } from "./MobileNavContent";
 
 export const Template = (props) => {
   const children = React.Children.toArray(props.children).filter(
-    isValidElement
+    isValidElement,
   );
   const mobileNav = useDisclosure();
   return (

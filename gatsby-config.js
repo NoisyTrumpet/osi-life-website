@@ -1,7 +1,7 @@
-require("dotenv").config()
+require("dotenv").config();
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -15,7 +15,6 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
-    
   },
   headers: [
     {
@@ -24,9 +23,9 @@ module.exports = {
         {
           key: `X-Frame-Options`,
           value: `ALLOW`,
-        }
-      ]
-    }
+        },
+      ],
+    },
   ],
   plugins: [
     `gatsby-plugin-netlify`,

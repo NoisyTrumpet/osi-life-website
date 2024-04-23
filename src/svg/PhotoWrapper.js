@@ -26,7 +26,7 @@ const PhotoWrapper = ({
   const ImageAsset = () => {
     if (windowGlobal) {
       const isSafari = /^((?!chrome|android).)*safari/i.test(
-        navigator.userAgent
+        navigator.userAgent,
       );
       const imageSource = image.gatsbyImageData.images.sources[0].srcSet;
       const imageSizes = imageSource.split(",");
@@ -61,8 +61,6 @@ const PhotoWrapper = ({
       }
     }
   };
-
-  
 
   return (
     <svg
