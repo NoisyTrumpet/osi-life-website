@@ -43,8 +43,9 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: {
         downloadLocal: true,
-        accessToken: process.env.CONTENTFUL_DELIVERY_API_KEY,
+        accessToken: process.env.CONTENTFUL_PREVIEW_API_KEY,
         spaceId: process.env.CONTENTFUL_SPACE_ID,
+        host: process.env.CONTENTFUL_HOST,
         environment: process.env.CONTENTFUL_ENVIRONMENT,
       },
     },
