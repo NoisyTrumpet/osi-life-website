@@ -19,8 +19,13 @@ module.exports = {
   },
   headers: [
     {
-      key: `X-Frame-Options`,
-      value: `ALLOW`,
+      source: `*`,
+      headers: [
+        {
+          key: `X-Frame-Options`,
+          value: `ALLOW`,
+        }
+      ]
     }
   ],
   plugins: [
