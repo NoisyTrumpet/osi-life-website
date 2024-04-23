@@ -21,7 +21,7 @@ const PageTemplate = ({ data: page }) => {
         pageBlocks.map((block, index) => (
           <BlockReturner
             block={block}
-            key={block !== {} ? block.id : `empty-block-${index}`}
+            key={block ? block.id : `empty-block-${index}`}
           />
         ))
       ) : (

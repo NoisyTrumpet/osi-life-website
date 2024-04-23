@@ -15,7 +15,14 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
+    
   },
+  headers: [
+    {
+      key: `X-Frame-Options`,
+      value: `ALLOW`,
+    }
+  ],
   plugins: [
     `gatsby-plugin-netlify`,
     "@chakra-ui/gatsby-plugin",
