@@ -14,6 +14,9 @@ const PageTemplate = ({ data: page }) => {
     pageBlocks,
     body,
   } = page.contentfulPage;
+
+  
+
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />

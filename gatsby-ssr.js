@@ -2,7 +2,6 @@ import React from "react";
 import { Partytown } from "@builder.io/partytown/react";
 // You might prefer to add these as an env vars
 const ORIGIN = "https://www.googletagmanager.com";
-import { ContentfulLivePreviewProvider } from "@contentful/live-preview/react";
 
 const resolveUrl = (url) => {
   if (
@@ -40,13 +39,3 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
   ]);
 };
-
-export const wrapRootElement = ({ element }) => (
-  <ContentfulLivePreviewProvider
-    locale="en-US"
-    enableInspectorMode={true}
-    enableLiveUpdates={true}
-  >
-    {element}
-  </ContentfulLivePreviewProvider>
-);
