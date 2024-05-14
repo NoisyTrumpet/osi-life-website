@@ -33,7 +33,7 @@ const ContactForm = ({ title, subtitle }) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      }
+      },
     );
   const error = () =>
     toast("Ooops! We've encountered an error, please try again!");

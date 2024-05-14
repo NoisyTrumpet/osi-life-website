@@ -46,7 +46,7 @@ const ChakraCarousel = ({ children, gap }) => {
 
   const positions = useMemo(
     () => children.map((_, index) => -Math.abs((itemWidth + gap) * index)),
-    [children, itemWidth, gap]
+    [children, itemWidth, gap],
   );
 
   const { breakpoints } = useTheme();
@@ -347,7 +347,7 @@ function Track({
         setTrackIsActive(true);
       } else setTrackIsActive(false);
     },
-    [setTrackIsActive]
+    [setTrackIsActive],
   );
 
   const handleKeyDown = useCallback(
@@ -367,7 +367,7 @@ function Track({
         }
       }
     },
-    [trackIsActive, setActiveItem, activeItem, constraint, positions.length]
+    [trackIsActive, setActiveItem, activeItem, constraint, positions.length],
   );
 
   useEffect(() => {

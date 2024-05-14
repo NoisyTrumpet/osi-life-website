@@ -15,7 +15,7 @@ import HomeServices from "Components/HomeServices";
 
 const BlockReturner = ({ block }) => {
   const { pathname } = useLocation();
-  if (block && block.id) {
+  if (block) {
     if (
       block?.settingVariant === "Primary" &&
       block?.internal?.type === "ContentfulBlockPageHeader"
@@ -156,7 +156,7 @@ const BlockReturner = ({ block }) => {
     }
   }
 
-  if (!block ) {
+  if (!block) {
     return <div key="empty block">Empty Block</div>;
   }
 

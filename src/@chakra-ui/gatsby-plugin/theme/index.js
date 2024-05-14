@@ -16,7 +16,7 @@ import Button from "./components/button";
 import sizes from "./foundations/sizes";
 import colors from "./foundations/colors";
 
-
+// Custom breakpoints
 
 const theme = extendTheme({
   styles,

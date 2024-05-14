@@ -12,12 +12,21 @@ const PhotoWrapper = ({
   crossesFlip,
   imageFlip,
 }) => {
+  const [isReady, setIsReady] = React.useState(false);
   const windowGlobal = typeof window !== "undefined" && window;
+
+  React.useEffect(() => {
+    setIsReady(true);
+  }, []);
+
+  if (!isReady) {
+    return null;
+  }
 
   const ImageAsset = () => {
     if (windowGlobal) {
       const isSafari = /^((?!chrome|android).)*safari/i.test(
-        navigator.userAgent
+        navigator.userAgent,
       );
       const imageSource = image.gatsbyImageData.images.sources[0].srcSet;
       const imageSizes = imageSource.split(",");

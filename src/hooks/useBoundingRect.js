@@ -1,20 +1,9 @@
-import { useState, useCallback, useLayoutEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { debounce } from "../utils";
 import { isClient } from "../constants/index";
 
 function getDimensionObject(node) {
-  if (!node || !isClient) {
-    return {
-      width: 0,
-      height: 0,
-      top: 0,
-      left: 0,
-      x: 0,
-      y: 0,
-      right: 0,
-      bottom: 0,
-    };
-  }
+  if (!node) return {};
 
   const rect = node.getBoundingClientRect();
   return {
@@ -33,26 +22,30 @@ export default function useBoundingRect(limit) {
   const [dimensions, setDimensions] = useState(getDimensionObject(null));
   const [node, setNode] = useState(null);
 
-  const ref = useCallback((node) => setNode(node), []);
+  const ref = useCallback((node) => {
+    setNode(node);
+  }, []);
 
-  useLayoutEffect(() => {
-    if (!isClient) return;
-    const measure = () =>
-      window.requestAnimationFrame(() => {
-        setDimensions(getDimensionObject(node));
-      });
+  useEffect(() => {
+    if (typeof window !== "undefined" && node) {
+      const measure = () => {
+        window.requestAnimationFrame(() => {
+          setDimensions(getDimensionObject(node));
+        });
+      };
 
-    measure();
+      measure(); // Initial measurement
 
-    const listener = debounce(limit ? limit : 100, measure);
+      const debouncedMeasure = debounce(limit || 100, measure);
 
-    window.addEventListener("resize", listener);
-    window.addEventListener("scroll", listener);
-    return () => {
-      window.removeEventListener("resize", listener);
-      window.removeEventListener("scroll", listener);
-    };
-  }, [node, limit]);
+      window.addEventListener("resize", debouncedMeasure);
+      window.addEventListener("scroll", debouncedMeasure);
+      return () => {
+        window.removeEventListener("resize", debouncedMeasure);
+        window.removeEventListener("scroll", debouncedMeasure);
+      };
+    }
+  }, [node, limit]); // Depend on node and limit to re-run when they change
 
   return [ref, dimensions, node];
 }

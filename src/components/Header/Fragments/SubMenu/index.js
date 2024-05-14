@@ -27,7 +27,12 @@ const SubMenu = ({ title, link, links }) => {
       {/* Mobile Accordion */}
       <Accordion display={["block", "block", "block", "none"]} allowToggle>
         <AccordionItem>
-          <AccordionButton d="flex" justifyContent="space-between" pl={3}>
+          <AccordionButton
+            display="flex"
+            justifyContent="space-between"
+            pl={3}
+            id={`accordion-button`}
+          >
             <UniversalLink to={link} aria-label={title} padding="0" zIndex="3">
               <Text
                 fontWeight={`bold`}
@@ -43,7 +48,12 @@ const SubMenu = ({ title, link, links }) => {
           <AccordionPanel p="2">
             <Box as="ul" listStyleType="none">
               {useLinks.map((link, idx) => (
-                <Box as="li" key={idx} mx={0} color="secondary">
+                <Box
+                  as="li"
+                  key={`sub-menu-item-${idx}`}
+                  mx={0}
+                  color="secondary"
+                >
                   <MenuItem href={link.href} title={link.title} />
                 </Box>
               ))}
@@ -98,7 +108,12 @@ const SubMenu = ({ title, link, links }) => {
           >
             <Box as="ul" listStyleType="none" px="2" pb="2">
               {useLinks.map((link, idx) => (
-                <Box as="li" key={idx} mx={0} color="secondary">
+                <Box
+                  as="li"
+                  key={`sub-nav-${idx}-link-${link.title}`}
+                  mx={0}
+                  color="secondary"
+                >
                   <MenuItem href={link.href} title={link.title} />
                 </Box>
               ))}

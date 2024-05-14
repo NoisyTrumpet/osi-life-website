@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
       {pageBlocks.map((block, index) => (
         <BlockReturner
           block={block}
-          key={block.id ? block.id : `empty-block-${index}`}
+          key={block ? block.id : `empty-block-${index}`}
         />
       ))}
     </Layout>

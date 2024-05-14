@@ -47,16 +47,17 @@ const Header = () => {
                   title={link.title}
                   links={subMenu}
                   link={`/${link.slug}`}
+                  key={`sub-menu-${index}-${link.id}`}
                 />
               ) : (
                 <NavLink
-                  key={index}
+                  key={`sub-menu-${index}-${link.id}`}
                   to={`/${link.slug}`}
                   isActive={pathname.includes(link.slug)}
                 >
                   {link.title}
                 </NavLink>
-              )
+              ),
             // <NavLink
             //     key={index}
             //     to={`/${link.slug}`}

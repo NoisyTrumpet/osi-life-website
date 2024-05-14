@@ -98,11 +98,11 @@ const FAQs = ({ id, title, photo, variant, items }) => {
                     borderTop: "none",
                   },
                 }}
+                key={item.id}
               >
                 <AccordionItem
                   // borderBottomColor={`secondary`}
                   // borderTop={`none`}
-                  key={item.id}
                   className="questions"
                 >
                   {({ isExpanded }) => (

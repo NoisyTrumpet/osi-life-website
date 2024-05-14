@@ -1,7 +1,7 @@
 import { Box, Container, Text, Button } from "@chakra-ui/react";
 import React from "react";
 
-const Banner = ({ title, content, cta, variant, key, path }) => {
+const Banner = ({ title, content, cta, variant, path }) => {
   const bgColor = () => {
     if (
       (variant === "Primary" && path === "/services") ||
@@ -30,7 +30,6 @@ const Banner = ({ title, content, cta, variant, key, path }) => {
   return (
     <Box bg={"lightBG"}>
       <Box
-        key={key}
         bg={bgColor()}
         borderTopRightRadius={"100px"}
         fontFamily={`var(--chakra-fonts-heading)`}
