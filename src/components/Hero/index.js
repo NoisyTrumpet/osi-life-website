@@ -29,6 +29,7 @@ const Hero = ({ title, image }) => {
             px={[10, 10, 10, 10, 20]}
             py={[75, 100, 100, 200, 250, 300]}
           >
+          {title && (
             <Heading
               as="h1"
               color="white"
@@ -37,8 +38,9 @@ const Hero = ({ title, image }) => {
               maxWidth={["100%", "100%", 600]}
               m="0 auto"
             >
-              {title && title}
+              {title}
             </Heading>
+          )}
           </GridItem>
           <GridItem
             position="relative"

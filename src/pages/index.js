@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
       {pageBlocks.map((block, index) => (
         <BlockReturner
           block={block}
-          key={block !== {} ? block.id : `empty-block-${index}`}
+          key={block.id ? block.id : `empty-block-${index}`}
         />
       ))}
     </Layout>
@@ -43,6 +43,14 @@ export const homeQuery = graphql`
       seoTitle
       title
       pageBlocks {
+        # ... on ContentfulBlockNewHero {
+        #   id
+        #   bodyText {
+        #     raw
+        #   }
+        #   button
+          
+        # }
         ... on ContentfulBlockPageHeader {
           id
           settingVariant

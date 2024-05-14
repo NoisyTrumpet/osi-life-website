@@ -22,6 +22,7 @@ import { useWindowWidth } from "Hooks/index";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
 import { useBoundingRect } from "Hooks/index.js";
 import { percentage } from "Utils/index.js";
+import { isClient } from "../../../constants/index";
 
 const MotionFlex = motion(Flex);
 
@@ -370,6 +371,8 @@ function Track({
   );
 
   useEffect(() => {
+    if (!isClient) return;
+
     handleResize(positions);
 
     document.addEventListener("keydown", handleKeyDown);

@@ -1,7 +1,21 @@
 import { useState, useCallback, useLayoutEffect } from "react";
 import { debounce } from "../utils";
+import { isClient } from "../constants/index";
 
 function getDimensionObject(node) {
+  if (!node || !isClient) {
+    return {
+      width: 0,
+      height: 0,
+      top: 0,
+      left: 0,
+      x: 0,
+      y: 0,
+      right: 0,
+      bottom: 0,
+    };
+  }
+
   const rect = node.getBoundingClientRect();
   return {
     width: rect.width,
@@ -16,29 +30,28 @@ function getDimensionObject(node) {
 }
 
 export default function useBoundingRect(limit) {
-  const [dimensions, setDimensions] = useState({});
+  const [dimensions, setDimensions] = useState(getDimensionObject(null));
   const [node, setNode] = useState(null);
 
   const ref = useCallback((node) => setNode(node), []);
 
   useLayoutEffect(() => {
-    if ("undefined" !== typeof window && node) {
-      const measure = () =>
-        window.requestAnimationFrame(() => {
-          setDimensions(getDimensionObject(node));
-        });
+    if (!isClient) return;
+    const measure = () =>
+      window.requestAnimationFrame(() => {
+        setDimensions(getDimensionObject(node));
+      });
 
-      measure();
+    measure();
 
-      const listener = debounce(limit ? limit : 100, measure);
+    const listener = debounce(limit ? limit : 100, measure);
 
-      window.addEventListener("resize", listener);
-      window.addEventListener("scroll", listener);
-      return () => {
-        window.removeEventListener("resize", listener);
-        window.removeEventListener("scroll", listener);
-      };
-    }
+    window.addEventListener("resize", listener);
+    window.addEventListener("scroll", listener);
+    return () => {
+      window.removeEventListener("resize", listener);
+      window.removeEventListener("scroll", listener);
+    };
   }, [node, limit]);
 
   return [ref, dimensions, node];

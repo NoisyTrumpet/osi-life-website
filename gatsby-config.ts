@@ -1,8 +1,10 @@
+import type { GatsbyConfig } from "gatsby"
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-module.exports = {
+
+const config: GatsbyConfig = {
   siteMetadata: {
     siteUrl: "https://osilife.com",
     title: "OsiLIFE",
@@ -15,10 +17,11 @@ module.exports = {
   flags: {
     FAST_DEV: true,
   },
+  // graphqlTypegen: true,
   plugins: [
+    'gatsby-plugin-postcss',
     `gatsby-plugin-netlify`,
     "@chakra-ui/gatsby-plugin",
-    `gatsby-plugin-preact`,
     // {
     //   resolve: "gatsby-plugin-google-tagmanager",
     //   options: {
@@ -94,3 +97,5 @@ module.exports = {
     },
   ],
 };
+
+export default config;
