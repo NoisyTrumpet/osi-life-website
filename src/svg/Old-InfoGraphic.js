@@ -1,5 +1,5 @@
 import * as React from "react";
-import "Components/ServicesHero/graphicStyles.css";
+import "components/ServicesHero/graphicStyles.css";
 
 const InfoGraphic = (props) => {
   return (

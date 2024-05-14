@@ -9,7 +9,7 @@ function HandCross(props) {
       // height="auto"
       viewBox="0 0 430.034 430.034"
       style={{
-        fill: props.fillcolor || "inherit",
+        fill: props.fillColor || "inherit",
       }}
       {...props}
     >

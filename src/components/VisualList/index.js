@@ -1,8 +1,7 @@
 import * as React from "react";
 import { Container, Box, Flex, Grid, Heading, Image } from "@chakra-ui/react";
 import RichText from "components/RichText";
-import MultiHandCross from "SVG/MultiHandCross";
-// import PhotoWrapper from "SVG/PhotoWrapper";
+import MultiHandCross from "svg/MultiHandCross";
 
 const VisualList = ({ id, title, variant, cards }) => {
   // Secondary Variant

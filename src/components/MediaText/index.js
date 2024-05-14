@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Box, Grid, GridItem, Heading, Flex } from "@chakra-ui/react";
-import PhotoWrapper from "SVG/PhotoWrapper";
-import RichText from "Components/RichText";
-import MultiHandCross from "SVG/MultiHandCross";
+import PhotoWrapper from "svg/PhotoWrapper";
+import RichText from "components/RichText";
+import MultiHandCross from "svg/MultiHandCross";
 
 const MediaText = ({
   title,

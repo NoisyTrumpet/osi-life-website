@@ -4,7 +4,12 @@ import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { Link } from "gatsby";
 
-const RichText = ({ content }) => {
+const RichText = ({
+  content,
+  className = "",
+  color = "primary",
+  textClassName = "",
+}) => {
   const Bold = ({ children }) => <strong>{children}</strong>;
   const TextWrapper = ({ children }) => <Text py={2}>{children}</Text>;
 
@@ -17,38 +22,100 @@ const RichText = ({ content }) => {
     );
   };
 
+  const containsName = (node) => {
+    // contains OsiLife
+    return node[0].includes("OsiLIFE");
+  };
+
+  const renderOsiWrapper = (node, children) => {
+    // wrap just the LIFE in OsiLIFE in a span with a different color keeping the rest of the text the same
+    const lifeIndex = node[0].indexOf("LIFE");
+    const lifeLength = "LIFE".length;
+    const firstPart = node[0].slice(0, lifeIndex);
+    const secondPart = node[0].slice(lifeIndex, lifeIndex + lifeLength);
+    const thirdPart = node[0].slice(lifeIndex + lifeLength);
+    return (
+      <span>
+        {firstPart}
+        <span className={`text-secondary font-bolder`}>{secondPart}</span>
+        {thirdPart}
+      </span>
+    );
+  };
+
   const options = {
     renderMark: {
-      [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
+      [MARKS.BOLD]: (text) => <b>{text}</b>,
     },
     renderNode: {
       [BLOCKS.HEADING_1]: (node, children) => (
-        <Heading as="h1" fontSize="3xl" mb={3} color="primary">
-          {children}
+        <Heading
+          as="h1"
+          fontSize="3xl"
+          mb={3}
+          color={color}
+          className={textClassName}
+        >
+          {containsName(children) ? renderOsiWrapper(children) : children}
         </Heading>
       ),
       [BLOCKS.HEADING_2]: (node, children) => (
-        <Heading as="h2" fontSize="md" mt={4} mb={2} color="primary">
+        <Heading
+          as="h2"
+          fontSize="md"
+          mt={4}
+          mb={2}
+          color={color}
+          className={textClassName}
+        >
           {children}
         </Heading>
       ),
       [BLOCKS.HEADING_3]: (node, children) => (
-        <Heading as="h3" fontSize="lg" mt={4} mb={1} color="primary">
+        <Heading
+          as="h3"
+          fontSize="lg"
+          mt={4}
+          mb={1}
+          color={color}
+          className={textClassName}
+        >
           {children}
         </Heading>
       ),
       [BLOCKS.HEADING_4]: (node, children) => (
-        <Heading as="h4" fontSize="md" mt={4} mb={1} color="primary">
+        <Heading
+          as="h4"
+          fontSize="md"
+          mt={4}
+          mb={1}
+          color={color}
+          className={textClassName}
+        >
           {children}
         </Heading>
       ),
       [BLOCKS.HEADING_5]: (node, children) => (
-        <Heading as="h5" fontSize="md" mt={4} mb={1} color="primary">
+        <Heading
+          as="h5"
+          fontSize="md"
+          mt={4}
+          mb={1}
+          color={color}
+          className={textClassName}
+        >
           {children}
         </Heading>
       ),
       [BLOCKS.HEADING_6]: (node, children) => (
-        <Heading as="h6" fontSize="xs" mt={4} mb={1} color="primary">
+        <Heading
+          as="h6"
+          fontSize="xs"
+          mt={4}
+          mb={1}
+          color={color}
+          className={textClassName}
+        >
           {children}
         </Heading>
       ),
@@ -74,7 +141,7 @@ const RichText = ({ content }) => {
     },
   };
 
-  return <Box>{renderRichText(content, options)}</Box>;
+  return <Box className={className}>{renderRichText(content, options)}</Box>;
 };
 
 export default RichText;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@chakra-ui/react";
 
-const Button = (color, type, text, link, isLink, onClick) => {
+const OsiButton = (color, type, text, link, isLink, onClick) => {
   return (
     <Button
       color={color || "primary"}
@@ -15,4 +15,4 @@ const Button = (color, type, text, link, isLink, onClick) => {
   );
 };
 
-export default Button;
+export default OsiButton;

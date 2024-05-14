@@ -9,7 +9,7 @@ import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import RichText from "components/RichText";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import ContactForm from "Components/ContactForm";
+import ContactForm from "components/ContactForm";
 
 const Footer = ({ path }) => {
   const { contentfulSiteSettings } = useStaticQuery(footerQuery);

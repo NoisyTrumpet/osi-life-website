@@ -6,7 +6,7 @@ import {
   Box,
   Container,
 } from "@chakra-ui/react";
-import PhotoWrapper from "SVG/PhotoWrapper";
+import PhotoWrapper from "svg/PhotoWrapper";
 import React from "react";
 import { Link } from "gatsby";
 import "./featServSVG.scss";

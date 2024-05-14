@@ -1,21 +1,27 @@
 import React from "react";
 import { useLocation } from "@reach/router";
-import Hero from "Components/Hero";
-import FeaturedBenefits from "Components/FeaturedBenefits";
-import FeaturedServices from "Components/FeaturedServices";
-import MissionStatement from "Components/MissionStatement";
-import FAQs from "Components/FAQs";
-import FeaturedTestimonials from "Components/FeaturedTestimonials";
-import MediaText from "Components/MediaText";
-import VisualList from "Components/VisualList";
-import TextBlock from "Components/TextBlock";
-import Banner from "Components/Banner";
-import ServiceHero from "Components/ServicesHero";
-import HomeServices from "Components/HomeServices";
+import Hero from "components/Hero";
+import FeaturedBenefits from "components/FeaturedBenefits";
+import FeaturedServices from "components/FeaturedServices";
+import MissionStatement from "components/MissionStatement";
+import FAQs from "components/FAQs";
+import FeaturedTestimonials from "components/FeaturedTestimonials";
+import MediaText from "components/MediaText";
+import VisualList from "components/VisualList";
+import TextBlock from "components/TextBlock";
+import Banner from "components/Banner";
+import ServiceHero from "components/ServicesHero";
+import HomeServices from "components/HomeServices";
+import NewHero from "components/NewHero/NewHero";
 
 const BlockReturner = ({ block }) => {
   const { pathname } = useLocation();
   if (block) {
+    // New Hero
+    if (block?.internal?.type === "ContentfulBlockNewHero") {
+      return <NewHero {...block} key={block.id} />;
+    }
+
     if (
       block?.settingVariant === "Primary" &&
       block?.internal?.type === "ContentfulBlockPageHeader"

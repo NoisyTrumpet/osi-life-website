@@ -10,7 +10,7 @@ import {
 import { FaMinus, FaPlus } from "react-icons/fa";
 import RichText from "components/RichText";
 import React from "react";
-import PhotoWrapper from "SVG/PhotoWrapper";
+import PhotoWrapper from "svg/PhotoWrapper";
 
 const FAQs = ({ id, title, photo, variant, items }) => {
   return (

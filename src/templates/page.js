@@ -1,9 +1,9 @@
 import { graphql } from "gatsby";
 import * as React from "react";
-import Layout from "Components/Layout";
-import Seo from "Components/Seo";
-import BlockReturner from "Features/BlockReturner";
-import RichText from "Components/RichText";
+import Layout from "components/Layout";
+import Seo from "components/Seo";
+import BlockReturner from "features/BlockReturner";
+import RichText from "components/RichText";
 import { Container, Heading } from "@chakra-ui/react";
 
 const PageTemplate = ({ data: page }) => {
@@ -14,8 +14,6 @@ const PageTemplate = ({ data: page }) => {
     pageBlocks,
     body,
   } = page.contentfulPage;
-
-  
 
   return (
     <Layout>

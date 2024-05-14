@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Box, Button, Grid, GridItem, Heading } from "@chakra-ui/react";
-import PhotoWrapper from "SVG/PhotoWrapper";
-import HandCross from "SVG/HandCross";
+import PhotoWrapper from "svg/PhotoWrapper";
+import HandCross from "svg/HandCross";
 
 const Hero = ({ title, image }) => {
   return (
@@ -29,18 +29,18 @@ const Hero = ({ title, image }) => {
             px={[10, 10, 10, 10, 20]}
             py={[75, 100, 100, 200, 250, 300]}
           >
-          {title && (
-            <Heading
-              as="h1"
-              color="white"
-              fontSize={["3xl", "4xl", "5xl", "6xl"]}
-              fontWeight={300}
-              maxWidth={["100%", "100%", 600]}
-              m="0 auto"
-            >
-              {title}
-            </Heading>
-          )}
+            {title && (
+              <Heading
+                as="h1"
+                color="white"
+                fontSize={["3xl", "4xl", "5xl", "6xl"]}
+                fontWeight={300}
+                maxWidth={["100%", "100%", 600]}
+                m="0 auto"
+              >
+                {title}
+              </Heading>
+            )}
           </GridItem>
           <GridItem
             position="relative"

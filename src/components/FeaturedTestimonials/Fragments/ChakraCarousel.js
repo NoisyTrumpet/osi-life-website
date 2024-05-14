@@ -16,12 +16,12 @@ import {
   Flex,
   Box,
 } from "@chakra-ui/react";
-import ChevronRight from "SVG/ChevronRight";
-import ChevronLeft from "SVG/ChevronLeft";
-import { useWindowWidth } from "Hooks/index";
+import ChevronRight from "svg/ChevronRight";
+import ChevronLeft from "svg/ChevronLeft";
+import { useWindowWidth } from "hooks/index";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
-import { useBoundingRect } from "Hooks/index.js";
-import { percentage } from "Utils/index.js";
+import { useBoundingRect } from "hooks/index.js";
+import { percentage } from "utils/index.js";
 import { isClient } from "../../../constants/index";
 
 const MotionFlex = motion(Flex);
