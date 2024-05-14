@@ -8,7 +8,7 @@ import Header from "components/Header";
 import Footer from "components/Footer";
 import { useLocation } from "@reach/router";
 import { SkipNavContent, SkipNavLink } from "components/SkipNav/index";
-import "Styles/main.scss";
+import "styles/main.scss";
 
 const Layout = ({ children }) => {
   const { pathname } = useLocation();
