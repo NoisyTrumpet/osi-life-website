@@ -477,7 +477,7 @@ type ContentfulBlockBannerConnection_sumArgs = {
   field: ContentfulBlockBannerFieldSelector;
 };
 
-type ContentfulBlockBannerContentfulBlockFaqContentfulBlockFeaturedServicesContentfulBlockFeaturedServicesHomeContentfulBlockFeaturedTestimonialsContentfulBlockFeaturesContentfulBlockMediaTextContentfulBlockMissionStatementContentfulBlockNewHeroContentfulBlockPageHeaderContentfulBlockTextContentfulBlockVisualListContentfulPostUnion = ContentfulBlockBanner | ContentfulBlockFaq | ContentfulBlockFeaturedServices | ContentfulBlockFeaturedServicesHome | ContentfulBlockFeaturedTestimonials | ContentfulBlockFeatures | ContentfulBlockMediaText | ContentfulBlockMissionStatement | ContentfulBlockNewHero | ContentfulBlockPageHeader | ContentfulBlockText | ContentfulBlockVisualList | ContentfulPost;
+type ContentfulBlockBannerContentfulBlockFaqContentfulBlockFeaturedServicesContentfulBlockFeaturedTestimonialsContentfulBlockFeaturesContentfulBlockMediaTextContentfulBlockMissionStatementContentfulBlockNewHeroContentfulBlockPageHeaderContentfulBlockVisualListContentfulPostUnion = ContentfulBlockBanner | ContentfulBlockFaq | ContentfulBlockFeaturedServices | ContentfulBlockFeaturedTestimonials | ContentfulBlockFeatures | ContentfulBlockMediaText | ContentfulBlockMissionStatement | ContentfulBlockNewHero | ContentfulBlockPageHeader | ContentfulBlockVisualList | ContentfulPost;
 
 type ContentfulBlockBannerEdge = {
   readonly next: Maybe<ContentfulBlockBanner>;
@@ -1535,7 +1535,6 @@ type ContentfulBlockFeaturedServicesHome = ContentfulEntry & ContentfulReference
   readonly id: Scalars['ID'];
   readonly internal: Internal;
   readonly node_locale: Scalars['String'];
-  readonly page: Maybe<ReadonlyArray<Maybe<ContentfulPage>>>;
   readonly parent: Maybe<Node>;
   readonly services: Maybe<ReadonlyArray<Maybe<ContentfulCard>>>;
   readonly spaceId: Maybe<Scalars['String']>;
@@ -1613,7 +1612,6 @@ type ContentfulBlockFeaturedServicesHomeFieldSelector = {
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
   readonly node_locale: InputMaybe<FieldSelectorEnum>;
-  readonly page: InputMaybe<ContentfulPageFieldSelector>;
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly services: InputMaybe<ContentfulCardFieldSelector>;
   readonly spaceId: InputMaybe<FieldSelectorEnum>;
@@ -1630,7 +1628,6 @@ type ContentfulBlockFeaturedServicesHomeFilterInput = {
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
   readonly node_locale: InputMaybe<StringQueryOperatorInput>;
-  readonly page: InputMaybe<ContentfulPageFilterListInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly services: InputMaybe<ContentfulCardFilterListInput>;
   readonly spaceId: InputMaybe<StringQueryOperatorInput>;
@@ -1692,7 +1689,6 @@ type ContentfulBlockFeaturedServicesHomeSortInput = {
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
   readonly node_locale: InputMaybe<SortOrderEnum>;
-  readonly page: InputMaybe<ContentfulPageSortInput>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly services: InputMaybe<ContentfulCardSortInput>;
   readonly spaceId: InputMaybe<SortOrderEnum>;
@@ -2576,6 +2572,7 @@ type ContentfulBlockMediaText = ContentfulEntry & ContentfulReference & Node & {
   readonly photo: Maybe<ContentfulAsset>;
   readonly settingVariant: Maybe<Scalars['String']>;
   readonly spaceId: Maybe<Scalars['String']>;
+  readonly startsOn: Maybe<Scalars['Boolean']>;
   readonly sys: Maybe<ContentfulBlockMediaTextSys>;
   readonly title: Maybe<Scalars['String']>;
   readonly updatedAt: Maybe<Scalars['Date']>;
@@ -2672,6 +2669,7 @@ type ContentfulBlockMediaTextFieldSelector = {
   readonly photo: InputMaybe<ContentfulAssetFieldSelector>;
   readonly settingVariant: InputMaybe<FieldSelectorEnum>;
   readonly spaceId: InputMaybe<FieldSelectorEnum>;
+  readonly startsOn: InputMaybe<FieldSelectorEnum>;
   readonly sys: InputMaybe<ContentfulBlockMediaTextSysFieldSelector>;
   readonly title: InputMaybe<FieldSelectorEnum>;
   readonly updatedAt: InputMaybe<FieldSelectorEnum>;
@@ -2691,6 +2689,7 @@ type ContentfulBlockMediaTextFilterInput = {
   readonly photo: InputMaybe<ContentfulAssetFilterInput>;
   readonly settingVariant: InputMaybe<StringQueryOperatorInput>;
   readonly spaceId: InputMaybe<StringQueryOperatorInput>;
+  readonly startsOn: InputMaybe<BooleanQueryOperatorInput>;
   readonly sys: InputMaybe<ContentfulBlockMediaTextSysFilterInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
   readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
@@ -2751,6 +2750,7 @@ type ContentfulBlockMediaTextSortInput = {
   readonly photo: InputMaybe<ContentfulAssetSortInput>;
   readonly settingVariant: InputMaybe<SortOrderEnum>;
   readonly spaceId: InputMaybe<SortOrderEnum>;
+  readonly startsOn: InputMaybe<SortOrderEnum>;
   readonly sys: InputMaybe<ContentfulBlockMediaTextSysSortInput>;
   readonly title: InputMaybe<SortOrderEnum>;
   readonly updatedAt: InputMaybe<SortOrderEnum>;
@@ -3602,7 +3602,6 @@ type ContentfulBlockText = ContentfulEntry & ContentfulReference & Node & {
   readonly id: Scalars['ID'];
   readonly internal: Internal;
   readonly node_locale: Scalars['String'];
-  readonly page: Maybe<ReadonlyArray<Maybe<ContentfulPage>>>;
   readonly parent: Maybe<Node>;
   readonly settingVariant: Maybe<Scalars['String']>;
   readonly spaceId: Maybe<Scalars['String']>;
@@ -3696,7 +3695,6 @@ type ContentfulBlockTextFieldSelector = {
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
   readonly node_locale: InputMaybe<FieldSelectorEnum>;
-  readonly page: InputMaybe<ContentfulPageFieldSelector>;
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly settingVariant: InputMaybe<FieldSelectorEnum>;
   readonly spaceId: InputMaybe<FieldSelectorEnum>;
@@ -3713,7 +3711,6 @@ type ContentfulBlockTextFilterInput = {
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
   readonly node_locale: InputMaybe<StringQueryOperatorInput>;
-  readonly page: InputMaybe<ContentfulPageFilterListInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly settingVariant: InputMaybe<StringQueryOperatorInput>;
   readonly spaceId: InputMaybe<StringQueryOperatorInput>;
@@ -3771,7 +3768,6 @@ type ContentfulBlockTextSortInput = {
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
   readonly node_locale: InputMaybe<SortOrderEnum>;
-  readonly page: InputMaybe<ContentfulPageSortInput>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly settingVariant: InputMaybe<SortOrderEnum>;
   readonly spaceId: InputMaybe<SortOrderEnum>;
@@ -5141,7 +5137,7 @@ type ContentfulPage = ContentfulEntry & ContentfulReference & Node & {
   readonly id: Scalars['ID'];
   readonly internal: Internal;
   readonly node_locale: Scalars['String'];
-  readonly pageBlocks: Maybe<ReadonlyArray<Maybe<ContentfulBlockBannerContentfulBlockFaqContentfulBlockFeaturedServicesContentfulBlockFeaturedServicesHomeContentfulBlockFeaturedTestimonialsContentfulBlockFeaturesContentfulBlockMediaTextContentfulBlockMissionStatementContentfulBlockNewHeroContentfulBlockPageHeaderContentfulBlockTextContentfulBlockVisualListContentfulPostUnion>>>;
+  readonly pageBlocks: Maybe<ReadonlyArray<Maybe<ContentfulBlockBannerContentfulBlockFaqContentfulBlockFeaturedServicesContentfulBlockFeaturedTestimonialsContentfulBlockFeaturesContentfulBlockMediaTextContentfulBlockMissionStatementContentfulBlockNewHeroContentfulBlockPageHeaderContentfulBlockVisualListContentfulPostUnion>>>;
   readonly parent: Maybe<Node>;
   readonly seoDescription: Maybe<contentfulPageSeoDescriptionTextNode>;
   readonly seoMetaRobotsNofollow: Maybe<Scalars['Boolean']>;
@@ -8607,7 +8603,6 @@ type Query_contentfulBlockFeaturedServicesHomeArgs = {
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
   node_locale: InputMaybe<StringQueryOperatorInput>;
-  page: InputMaybe<ContentfulPageFilterListInput>;
   parent: InputMaybe<NodeFilterInput>;
   services: InputMaybe<ContentfulCardFilterListInput>;
   spaceId: InputMaybe<StringQueryOperatorInput>;
@@ -8699,6 +8694,7 @@ type Query_contentfulBlockMediaTextArgs = {
   photo: InputMaybe<ContentfulAssetFilterInput>;
   settingVariant: InputMaybe<StringQueryOperatorInput>;
   spaceId: InputMaybe<StringQueryOperatorInput>;
+  startsOn: InputMaybe<BooleanQueryOperatorInput>;
   sys: InputMaybe<ContentfulBlockMediaTextSysFilterInput>;
   title: InputMaybe<StringQueryOperatorInput>;
   updatedAt: InputMaybe<DateQueryOperatorInput>;
@@ -8825,7 +8821,6 @@ type Query_contentfulBlockTextArgs = {
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
   node_locale: InputMaybe<StringQueryOperatorInput>;
-  page: InputMaybe<ContentfulPageFilterListInput>;
   parent: InputMaybe<NodeFilterInput>;
   settingVariant: InputMaybe<StringQueryOperatorInput>;
   spaceId: InputMaybe<StringQueryOperatorInput>;
@@ -9275,12 +9270,17 @@ type Query_siteArgs = {
   buildTime: InputMaybe<DateQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
   flags: InputMaybe<SiteFlagsFilterInput>;
+  graphqlTypegen: InputMaybe<SiteGraphqlTypegenFilterInput>;
   host: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
+  jsxRuntime: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
+  pathPrefix: InputMaybe<StringQueryOperatorInput>;
+  polyfill: InputMaybe<BooleanQueryOperatorInput>;
   port: InputMaybe<IntQueryOperatorInput>;
   siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
+  trailingSlash: InputMaybe<StringQueryOperatorInput>;
 };
 
 
@@ -9485,12 +9485,17 @@ type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly children: ReadonlyArray<Node>;
   readonly flags: Maybe<SiteFlags>;
+  readonly graphqlTypegen: Maybe<SiteGraphqlTypegen>;
   readonly host: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
+  readonly jsxRuntime: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
+  readonly pathPrefix: Maybe<Scalars['String']>;
+  readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly port: Maybe<Scalars['Int']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
+  readonly trailingSlash: Maybe<Scalars['String']>;
 };
 
 
@@ -9676,24 +9681,34 @@ type SiteFieldSelector = {
   readonly buildTime: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly flags: InputMaybe<SiteFlagsFieldSelector>;
+  readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFieldSelector>;
   readonly host: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly jsxRuntime: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly pathPrefix: InputMaybe<FieldSelectorEnum>;
+  readonly polyfill: InputMaybe<FieldSelectorEnum>;
   readonly port: InputMaybe<FieldSelectorEnum>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataFieldSelector>;
+  readonly trailingSlash: InputMaybe<FieldSelectorEnum>;
 };
 
 type SiteFilterInput = {
   readonly buildTime: InputMaybe<DateQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly flags: InputMaybe<SiteFlagsFilterInput>;
+  readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFilterInput>;
   readonly host: InputMaybe<StringQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
+  readonly jsxRuntime: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
+  readonly pathPrefix: InputMaybe<StringQueryOperatorInput>;
+  readonly polyfill: InputMaybe<BooleanQueryOperatorInput>;
   readonly port: InputMaybe<IntQueryOperatorInput>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
+  readonly trailingSlash: InputMaybe<StringQueryOperatorInput>;
 };
 
 type SiteFlags = {
@@ -9852,6 +9867,30 @@ type SiteFunctionSortInput = {
   readonly parent: InputMaybe<NodeSortInput>;
   readonly pluginName: InputMaybe<SortOrderEnum>;
   readonly relativeCompiledFilePath: InputMaybe<SortOrderEnum>;
+};
+
+type SiteGraphqlTypegen = {
+  readonly documentSearchPaths: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly generateOnBuild: Maybe<Scalars['Boolean']>;
+  readonly typesOutputPath: Maybe<Scalars['String']>;
+};
+
+type SiteGraphqlTypegenFieldSelector = {
+  readonly documentSearchPaths: InputMaybe<FieldSelectorEnum>;
+  readonly generateOnBuild: InputMaybe<FieldSelectorEnum>;
+  readonly typesOutputPath: InputMaybe<FieldSelectorEnum>;
+};
+
+type SiteGraphqlTypegenFilterInput = {
+  readonly documentSearchPaths: InputMaybe<StringQueryOperatorInput>;
+  readonly generateOnBuild: InputMaybe<BooleanQueryOperatorInput>;
+  readonly typesOutputPath: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteGraphqlTypegenSortInput = {
+  readonly documentSearchPaths: InputMaybe<SortOrderEnum>;
+  readonly generateOnBuild: InputMaybe<SortOrderEnum>;
+  readonly typesOutputPath: InputMaybe<SortOrderEnum>;
 };
 
 type SiteGroupConnection = {
@@ -10231,12 +10270,17 @@ type SiteSortInput = {
   readonly buildTime: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly flags: InputMaybe<SiteFlagsSortInput>;
+  readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenSortInput>;
   readonly host: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
+  readonly jsxRuntime: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
+  readonly pathPrefix: InputMaybe<SortOrderEnum>;
+  readonly polyfill: InputMaybe<SortOrderEnum>;
   readonly port: InputMaybe<SortOrderEnum>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataSortInput>;
+  readonly trailingSlash: InputMaybe<SortOrderEnum>;
 };
 
 type SortOrderEnum =
@@ -12588,7 +12632,7 @@ type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: 
 type homeQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type homeQueryQuery = { readonly contentfulPage: { readonly id: string, readonly seoMetaRobotsNofollow: boolean | null, readonly seoMetaRobotsNoindex: boolean | null, readonly seoTitle: string | null, readonly title: string | null, readonly seoDescription: { readonly seoDescription: string | null } | null, readonly pageBlocks: ReadonlyArray<{ readonly id: string, readonly title: string | null, readonly services: ReadonlyArray<{ readonly id: string, readonly subtitle: string | null, readonly title: string | null, readonly image: { readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null, readonly page: { readonly slug: string | null } | null } | null> | null, readonly internal: { readonly type: string } } | { readonly id: string, readonly title: string | null, readonly subtitle: string | null, readonly internal: { readonly type: string }, readonly services: ReadonlyArray<{ readonly title: string | null, readonly subtitle: string | null, readonly description: { readonly raw: string | null } | null, readonly image: { readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null, readonly page: { readonly slug: string | null } | null } | null> | null } | { readonly id: string, readonly title: string | null, readonly testimonials: ReadonlyArray<{ readonly id: string, readonly name: string | null, readonly image: { readonly file: { readonly url: string | null } | null } | null, readonly quote: { readonly internal: { readonly content: string | null } } | null } | null> | null, readonly internal: { readonly type: string } } | { readonly id: string, readonly title: string | null, readonly variant: string | null, readonly backgroundColor: string | null, readonly benefits: ReadonlyArray<{ readonly id: string, readonly title: string | null, readonly subtitle: string | null, readonly accentColor: string | null, readonly icon: { readonly file: { readonly url: string | null } | null } | null, readonly description: { readonly raw: string | null } | null, readonly image: { readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null } | null> | null, readonly internal: { readonly type: string } } | { readonly id: string, readonly bottomTitle: string | null, readonly bodyText: { readonly raw: string | null } | null, readonly mediaItems: ReadonlyArray<{ readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null> | null, readonly button: { readonly id: string, readonly label: string | null, readonly link: string | null, readonly variant: string | null } | null, readonly wins: { readonly items: ReadonlyArray<{ readonly icon: string | null, readonly label: string | null } | null> | null } | null, readonly internal: { readonly type: string } } | { readonly id: string, readonly settingVariant: string | null, readonly title: string | null, readonly image: { readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null, readonly internal: { readonly type: string } } | { readonly id: string, readonly title: string | null, readonly content: { readonly raw: string | null } | null, readonly internal: { readonly type: string } } | { readonly id: string, readonly title: string | null, readonly settingVariant: string | null, readonly items: ReadonlyArray<{ readonly id: string, readonly subtitle: string | null, readonly title: string | null, readonly description: { readonly raw: string | null } | null, readonly image: { readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null, readonly icon: { readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null, readonly page: { readonly slug: string | null } | null } | null> | null, readonly internal: { readonly type: string } } | {} | null> | null } | null };
+type homeQueryQuery = { readonly contentfulPage: { readonly id: string, readonly seoMetaRobotsNofollow: boolean | null, readonly seoMetaRobotsNoindex: boolean | null, readonly seoTitle: string | null, readonly title: string | null, readonly seoDescription: { readonly seoDescription: string | null } | null, readonly pageBlocks: ReadonlyArray<{ readonly id: string, readonly title: string | null, readonly testimonials: ReadonlyArray<{ readonly id: string, readonly name: string | null, readonly image: { readonly file: { readonly url: string | null } | null } | null, readonly quote: { readonly internal: { readonly content: string | null } } | null } | null> | null, readonly internal: { readonly type: string } } | { readonly id: string, readonly title: string | null, readonly variant: string | null, readonly backgroundColor: string | null, readonly accentColor: string | null, readonly benefits: ReadonlyArray<{ readonly id: string, readonly title: string | null, readonly subtitle: string | null, readonly accentColor: string | null, readonly icon: { readonly file: { readonly url: string | null } | null } | null, readonly description: { readonly raw: string | null } | null, readonly image: { readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null, readonly page: { readonly slug: string | null } | null } | null> | null, readonly internal: { readonly type: string } } | { readonly id: string, readonly title: string | null, readonly settingVariant: string | null, readonly startsOn: boolean | null, readonly photo: { readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null, readonly content: { readonly raw: string | null } | null, readonly internal: { readonly type: string } } | { readonly id: string, readonly bottomTitle: string | null, readonly bodyText: { readonly raw: string | null } | null, readonly mediaItems: ReadonlyArray<{ readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null> | null, readonly button: { readonly id: string, readonly label: string | null, readonly link: string | null, readonly variant: string | null } | null, readonly wins: { readonly items: ReadonlyArray<{ readonly icon: string | null, readonly label: string | null } | null> | null } | null, readonly internal: { readonly type: string } } | { readonly id: string, readonly settingVariant: string | null, readonly title: string | null, readonly image: { readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null, readonly internal: { readonly type: string } } | { readonly id: string, readonly title: string | null, readonly settingVariant: string | null, readonly items: ReadonlyArray<{ readonly id: string, readonly subtitle: string | null, readonly title: string | null, readonly description: { readonly raw: string | null } | null, readonly image: { readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null, readonly icon: { readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null } | null, readonly page: { readonly slug: string | null } | null } | null> | null, readonly internal: { readonly type: string } } | {} | null> | null } | null };
 
 type imageQueryFragment = { readonly title: string | null, readonly id: string, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null, readonly file: { readonly url: string | null, readonly details: { readonly image: { readonly height: number | null, readonly width: number | null } | null } | null } | null };
 

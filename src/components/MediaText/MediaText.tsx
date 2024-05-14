@@ -1,10 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { Box, Grid, GridItem, Heading, Flex } from "@chakra-ui/react";
 import PhotoWrapper from "svg/PhotoWrapper";
 import RichText from "components/RichText";
 import MultiHandCross from "svg/MultiHandCross";
+import clsx from "clsx";
+import { GatsbyImage } from "gatsby-plugin-image";
+
+type MediaTextProps = Queries.ContentfulBlockMediaText & {
+  className?: string;
+  path?: string;
+};
 
 const MediaText = ({
   title,
@@ -13,8 +19,44 @@ const MediaText = ({
   imageSubCaption,
   id,
   path,
-  variant,
-}) => {
+  settingVariant: variant,
+  startsOn,
+  ...props
+}: MediaTextProps) => {
+  const isSimple = variant === "Simple";
+  console.log("isSimple", variant);
+
+  const isLeft = startsOn === true || startsOn === null;
+  const isRight = startsOn === false;
+
+  if (isSimple) {
+    return (
+      <div className={``}>
+        <div className={`container mx-auto max-w-7xl`}>
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-4`}>
+            {/* Body */}
+            <div className={clsx(`flex flex-col justify-center items-start px-2 md:px-8`, {
+                "order-1": isRight,
+                "order-2": isLeft,
+            })}>
+              <Heading as="h2" className={`text-4xl font-bold `}>{title}</Heading>
+              <div className={``}>
+                <RichText content={content} />
+              </div>
+            </div>
+            {/* Media */}
+            <div className={clsx(`flex justify-center items-center`, {
+                "order-2": isRight,
+                "order-1": isLeft,
+            })}>
+              <GatsbyImage image={photo.gatsbyImageData} alt={photo.title} />
+              </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (path === "/services-details") {
     return (
       <Box
@@ -267,13 +309,14 @@ const MediaText = ({
                 className="aboutImg"
                 image={photo}
                 safariSource={photo.file.url}
-                // width={photo.gatsbyImageData.width}
-                // height={["30rem", "35rem", "30rem", "45rem", "36rem"]}
+                width={photo.gatsbyImageData.width}
+                height={["30rem", "35rem", "30rem", "45rem", "36rem"]}
                 id={photo.id}
                 imgAlt={photo.title}
                 fillColor="#00ADBC"
                 crossColor="#FFA500"
                 imageFlip="-1" // either 1 or -1
+                crossesFlip="1" // either 1 or -1
               />
             </GridItem>
 
@@ -344,10 +387,3 @@ const MediaText = ({
 };
 
 export default MediaText;
-
-MediaText.propTypes = {
-  title: PropTypes.string,
-  content: PropTypes.object || PropTypes.string,
-  variant: PropTypes.string,
-  image: PropTypes.object,
-};

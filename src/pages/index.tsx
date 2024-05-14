@@ -106,16 +106,6 @@ export const homeQuery = graphql`
           backgroundColor
           accentColor
         }
-        ... on ContentfulBlockText {
-          id
-          title
-          content {
-            raw
-          }
-          internal {
-            type
-          }
-        }
         ... on ContentfulBlockFeaturedTestimonials {
           id
           title
@@ -137,46 +127,21 @@ export const homeQuery = graphql`
             type
           }
         }
-        ... on ContentfulBlockFeaturedServices {
+        ... on ContentfulBlockMediaText {
           id
           title
-          services {
-            id
-            subtitle
-            title
-            image {
-              ...imageQuery
-            }
-            page {
-              slug
-            }
+          photo {
+            ...imageQuery
+          }
+          settingVariant
+          content {
+            raw
           }
           internal {
             type
           }
+          startsOn
         }
-        ... on ContentfulBlockFeaturedServicesHome {
-          id
-          title
-          subtitle
-          internal {
-            type
-          }
-          services {
-            title
-            subtitle
-            description {
-              raw
-            }
-            image {
-              ...imageQuery
-            }
-            page {
-              slug
-            }
-          }
-        }
-
         ... on ContentfulBlockVisualList {
           id
           title

@@ -10,7 +10,7 @@ function ChevronRight(props) {
       {...props}
     >
       <title>Next</title>
-      <g data-name="Group 308" fill="orange">
+      <g data-name="Group 308" fill="#00ADBC">
         <path
           data-name="Rectangle 146"
           d="M17.311 8.445l29.34 29.34a.6.6 0 010 .848l-2.11 2.11a8.957 8.957 0 01-12.667 0L.424 9.29a.6.6 0 010-.848 11.943 11.943 0 0116.887.002z"

@@ -6,7 +6,7 @@ import FeaturedServices from "components/FeaturedServices";
 import MissionStatement from "components/MissionStatement";
 import FAQs from "components/FAQs";
 import FeaturedTestimonials from "components/FeaturedTestimonials";
-import MediaText from "components/MediaText";
+import MediaText from "components/MediaText/MediaText";
 import VisualList from "components/VisualList";
 import TextBlock from "components/TextBlock";
 import Banner from "components/Banner";
@@ -141,18 +141,8 @@ const BlockReturner = ({ block }) => {
       );
     }
     if (block?.internal?.type === "ContentfulBlockMediaText") {
-      return (
-        <MediaText
-          key={block.id}
-          id={block.id}
-          title={block.title}
-          content={block.content}
-          photo={block.photo}
-          imageSubCaption={block.imageSubCaption}
-          variant={block.settingVariant}
-          path={pathname}
-        />
-      );
+      console.log("block", block);
+      return <MediaText {...block} path={pathname} />;
     }
     if (block?.internal?.type === "ContentfulBlockVisualList") {
       return (

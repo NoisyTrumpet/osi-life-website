@@ -49,11 +49,7 @@ const Features = ({
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-16 px-4 lg:px-0">
             {benefits.map((benefit) => (
-              <Card 
-                key={benefit.id} 
-                {...benefit} 
-                variant={variant}
-                />
+              <Card key={benefit.id} {...benefit} variant={variant} />
             ))}
           </div>
         </div>
@@ -76,15 +72,14 @@ const Card = ({
   image,
   className,
   variant,
-  page
+  page,
 }: CardProps) => {
   const textColor = `text-${accentColor}`;
   // only 50% of container height
   const bottomGradient = `bg-gradient-to-t-custom from-${accentColor} to-white`;
   const isPrimary = variant === "primary";
   const isSecondary = variant === "secondary";
-  console.log(page)
-
+  console.log(page);
 
   return (
     <ConditionalWrapper
@@ -95,11 +90,14 @@ const Card = ({
       )}
       condition={isSecondary && page !== null}
       wrapper={(children) => (
-        <a href={page?.slug} className={clsx(
-          `rounded-xl relative h-fit z-[1]`,
-          isPrimary && bottomGradient,
-          className,
-        )}>
+        <a
+          href={page?.slug}
+          className={clsx(
+            `rounded-xl relative h-fit z-[1]`,
+            isPrimary && bottomGradient,
+            className,
+          )}
+        >
           {children}
         </a>
       )}
@@ -114,20 +112,22 @@ const Card = ({
           >
             {title}
           </Heading>
-          {subtitle && (<p className="text-md md:text-xl">{subtitle}</p>)}
+          {subtitle && <p className="text-md md:text-xl">{subtitle}</p>}
           {isPrimary && (
             <RichText content={description} className="text-center px-6" />
           )}
         </div>
-        <div className={clsx({
-          "pt-6 md:pt-12": isPrimary,
-          "order-first": isSecondary,
-        })}>
+        <div
+          className={clsx({
+            "pt-6 md:pt-12": isPrimary,
+            "order-first": isSecondary,
+          })}
+        >
           <GatsbyImage
             image={image.gatsbyImageData}
             alt={title}
             className={clsx(`w-full`, {
-              "rounded-lg": isSecondary
+              "rounded-lg": isSecondary,
             })}
           />
         </div>
