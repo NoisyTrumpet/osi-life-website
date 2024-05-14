@@ -100,7 +100,10 @@ const NewHero = ({
                 className={`flex flex-col md:flex-row gap-2 items-center px-4 md:px-12`}
               >
                 <Icon type={win.icon} className={`w-12 h-12 md:w-32`} />
-                <Heading as="h3" className={`text-xl lg:text-2xl text-center md:text-left`}>
+                <Heading
+                  as="h3"
+                  className={`text-xl lg:text-2xl text-center md:text-left`}
+                >
                   {win.label}
                 </Heading>
               </div>

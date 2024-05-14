@@ -1,3 +1,4 @@
+require("dotenv").config();
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -15,6 +16,7 @@ module.exports = {
   flags: {
     FAST_DEV: true,
   },
+  // graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-postcss",
     `gatsby-plugin-netlify`,

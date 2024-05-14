@@ -95,12 +95,16 @@ export const homeQuery = graphql`
             image {
               ...imageQuery
             }
+            page {
+              slug
+            }
           }
           internal {
             type
           }
           variant
           backgroundColor
+          accentColor
         }
         ... on ContentfulBlockText {
           id
