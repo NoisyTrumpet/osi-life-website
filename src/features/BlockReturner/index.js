@@ -13,6 +13,7 @@ import Banner from "components/Banner";
 import ServiceHero from "components/ServicesHero";
 import HomeServices from "components/HomeServices";
 import NewHero from "components/NewHero/NewHero";
+import Features from "components/Features/Features";
 
 const BlockReturner = ({ block }) => {
   const { pathname } = useLocation();
@@ -20,6 +21,10 @@ const BlockReturner = ({ block }) => {
     // New Hero
     if (block?.internal?.type === "ContentfulBlockNewHero") {
       return <NewHero {...block} key={block.id} />;
+    }
+    // Features
+    if (block?.internal?.type === "ContentfulBlockFeatures") {
+      return <Features {...block} key={block.id} />;
     }
 
     if (

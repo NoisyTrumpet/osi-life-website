@@ -41,7 +41,7 @@ const NewHero = ({
   ];
 
   return (
-    <div className="bg-primary relative">
+    <div className="bg-primary relative overflow-hidden">
       <div
         className={`py-8 md:py-12 container w-full max-w-8xl mx-auto flex flex-col lg:flex-row relative`}
       >
@@ -92,15 +92,15 @@ const NewHero = ({
         >
           {bottomTitle}
         </Heading>
-        <div className={`bg-white rounded-lg px-2 py-4`}>
-          <div className={`flex flex-col md:flex-row gap-2`}>
+        <div className={`bg-white rounded-lg px-2 py-4 md:py-12 mx-4 lg:mx-0`}>
+          <div className={`flex flex-col lg:flex-row gap-2`}>
             {wins.items.map((win) => (
               <div
                 key={win.label}
-                className={`flex gap-2 items-center px-4 md:px-12`}
+                className={`flex flex-col md:flex-row gap-2 items-center px-4 md:px-12`}
               >
                 <Icon type={win.icon} className={`w-12 h-12 md:w-32`} />
-                <Heading as="h3" className={`text-2xl`}>
+                <Heading as="h3" className={`text-xl lg:text-2xl text-center md:text-left`}>
                   {win.label}
                 </Heading>
               </div>

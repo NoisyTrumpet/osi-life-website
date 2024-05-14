@@ -76,7 +76,7 @@ export const homeQuery = graphql`
             type
           }
         }
-        ... on ContentfulBlockFeaturedBenefits {
+        ... on ContentfulBlockFeatures {
           id
           title
           benefits {
@@ -91,10 +91,16 @@ export const homeQuery = graphql`
             description {
               raw
             }
+            accentColor
+            image {
+              ...imageQuery
+            }
           }
           internal {
             type
           }
+          variant
+          backgroundColor
         }
         ... on ContentfulBlockText {
           id
