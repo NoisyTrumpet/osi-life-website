@@ -42,7 +42,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: process.env.GATSBY_CONTENTFUL_PREVIEW_API_KEY,
+        accessToken: process.env.GATSBY_CONTENTFUL_DELIVERY_API_KEY,
         spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
       },
     },
