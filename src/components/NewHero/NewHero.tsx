@@ -35,9 +35,9 @@ const NewHero = ({
   const hasMediaItems = mediaItems && mediaItems.length > 0;
 
   const imageClasses = [
-    `absolute top-0 md:-top-12 left-2 h-fit  z-0 w-1/2`,
+    `absolute top-0 lg:-top-12 left-2 h-fit  z-0 w-1/2`,
     `absolute top-[10%] right-0 h-fit  z-0 w-1/2`,
-    `absolute bottom-0 left-[18%] h-fit z-0 w-1/2`,
+    `absolute -bottom-12 lg:bottom-0 left-[18%] h-fit z-0 w-1/2`,
   ];
 
   return (
@@ -45,12 +45,12 @@ const NewHero = ({
       <div
         className={`py-8 md:py-12 container w-full max-w-8xl mx-auto flex flex-col lg:flex-row relative`}
       >
-        <div className={`w-full lg:w-[50%] flex flex-col gap-2 z-[1]`}>
+        <div className={`w-full lg:w-[50%] flex flex-col gap-2 z-[1] px-2 md:px-0`}>
           <RichText
             content={bodyText}
             className={`text-white `}
             color={"white"}
-            textClassName={`text-6xl`}
+            textClassName={`text-3xl md:text-6xl`}
           />
           <Button
             variant={button.variant}
@@ -62,7 +62,7 @@ const NewHero = ({
           </Button>
         </div>
         <div
-          className={`w-full lg:w-[50%] relative min-h-[550px] lg:bg-primary z-[1]`}
+          className={`w-full lg:w-[50%] relative min-h-[330px] md:min-h-[550px] lg:bg-primary z-[1]`}
         >
           {hasMediaItems &&
             mediaItems.map((mediaItem, index) => (

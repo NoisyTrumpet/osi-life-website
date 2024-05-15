@@ -32,7 +32,7 @@ const Features = ({
       <div className="container w-full max-w-7xl mx-auto">
         <div className="flex flex-col gap-4">
           <div
-            className={clsx(`flex`, {
+            className={clsx(`flex px-2 md:px-0`, {
               "flex-col justify-center items-center": isPrimary || isAlt,
               "flex-row items-center justify-start": isSecondary,
             })}
@@ -40,7 +40,7 @@ const Features = ({
             <Heading
               as="h2"
               className={clsx(
-                `text-3xl md:text-4xl font-bold text-center md:whitespace-nowrap`,
+                `text-3xl md:text-4xl font-bold text-center whitespace-nowrap`,
                 titleColor,
               )}
             >
@@ -89,10 +89,6 @@ const Card = ({
   const isSecondary = variant === "secondary";
   const isAlt = variant === "alt";
 
-
-
-
-  console.log(page);
 
   return (
     <ConditionalWrapper
