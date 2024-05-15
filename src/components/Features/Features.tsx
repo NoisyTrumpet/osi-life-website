@@ -93,11 +93,11 @@ const Card = ({
   return (
     <ConditionalWrapper
       className={clsx(
-        `rounded-xl relative h-fit z-[1]`,
+        `rounded-xl relative h-full z-[1]`,
         isPrimary && bottomGradient,
         className,
         {
-          "bg-white h-full px-4 py-6": isAlt,
+          "bg-white px-4 py-6": isAlt,
         }
       )}
       condition={isSecondary && page !== null}
@@ -105,7 +105,7 @@ const Card = ({
         <a
           href={page?.slug}
           className={clsx(
-            `rounded-xl relative h-fit z-[1]`,
+            `rounded-xl relative h-full z-[1]`,
             isPrimary && bottomGradient,
             className,
             
@@ -115,7 +115,7 @@ const Card = ({
         </a>
       )}
     >
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex flex-col items-center gap-2 justify-between h-full">
         <div
           className={`flex flex-col gap-2 items-center justify-center px-2 py-2`}
         >
