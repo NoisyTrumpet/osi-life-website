@@ -35,22 +35,31 @@ const MediaText = ({
         <div className={`container mx-auto max-w-7xl`}>
           <div className={`grid grid-cols-1 md:grid-cols-2 gap-4`}>
             {/* Body */}
-            <div className={clsx(`flex flex-col justify-center items-start px-2 md:px-8`, {
-                "order-1": isRight,
-                "order-2": isLeft,
-            })}>
-              <Heading as="h2" className={`text-4xl font-bold `}>{title}</Heading>
+            <div
+              className={clsx(
+                `flex flex-col justify-center items-start px-2 md:px-8`,
+                {
+                  "order-1": isRight,
+                  "order-2": isLeft,
+                },
+              )}
+            >
+              <Heading as="h2" className={`text-4xl font-bold `}>
+                {title}
+              </Heading>
               <div className={``}>
                 <RichText content={content} />
               </div>
             </div>
             {/* Media */}
-            <div className={clsx(`flex justify-center items-center`, {
+            <div
+              className={clsx(`flex justify-center items-center`, {
                 "order-2": isRight,
                 "order-1": isLeft,
-            })}>
+              })}
+            >
               <GatsbyImage image={photo.gatsbyImageData} alt={photo.title} />
-              </div>
+            </div>
           </div>
         </div>
       </div>

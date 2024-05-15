@@ -87,6 +87,7 @@ export const homeQuery = graphql`
               file {
                 url
               }
+              ...imageQuery
             }
             description {
               raw

@@ -10,23 +10,23 @@ const FeaturedTestimonials = ({ title, items }) => {
       <Box borderTopRightRadius={80} bg="white">
         <Container py={6} maxWidth={`1500px`} mx={`auto`} px={0}>
           <div className={`flex flex-row justify-start items-center gap-4`}>
-          <Text
-            my={4}
-            color="darkGray"
-            fontSize="6xl"
-            textAlign={["left", "center"]}
-            fontFamily={`var(--chakra-fonts-heading)`}
-            id="testimonial-label"
-            px={[4, 0]}
-          >
-            {title}
-          </Text>
-          <div className={`flex-grow h-[2px] bg-secondary rounded`} />
+            <Text
+              my={4}
+              color="darkGray"
+              fontSize="6xl"
+              textAlign={["left", "center"]}
+              fontFamily={`var(--chakra-fonts-heading)`}
+              id="testimonial-label"
+              px={[4, 0]}
+            >
+              {title}
+            </Text>
+            <div className={`flex-grow h-[2px] bg-secondary rounded`} />
           </div>
           <ChakraCaousel gap={32}>
             {items.map((item) => (
-              <Grid 
-                key={item.id} 
+              <Grid
+                key={item.id}
                 gap={2}
                 className={`bg-gray px-4 py-8 rounded-lg`}
               >

@@ -126,7 +126,7 @@ const RichText = ({
         <Linker data={node}>{children}</Linker>
       ),
       [BLOCKS.LIST_ITEM]: (node, children) => (
-        <li>{node.content[0].content[0].value}</li>
+        <li className={``}>{node.content[0].content[0].value}</li>
       ),
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         return (
