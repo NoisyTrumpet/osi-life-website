@@ -52,7 +52,7 @@ const NewHero = ({
             content={bodyText}
             className={`text-white `}
             color={"white"}
-            textClassName={`text-3xl md:text-6xl`}
+            textClassName={`text-3xl md:text-6xl font-light`}
           />
           <Button
             variant={button.variant}

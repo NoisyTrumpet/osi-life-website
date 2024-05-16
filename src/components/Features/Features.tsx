@@ -123,7 +123,7 @@ const Card = ({
     >
       <div className="flex flex-col items-center gap-2 h-full justify-between">
         <div
-          className={`flex flex-col gap-2 md:gap-6 items-center justify-start h-full px-2 py-2`}
+          className={`flex flex-col gap-2 md:gap-4 items-center justify-start h-full px-2 py-2`}
         >
           {isAlt && icon && icon.gatsbyImageData && (
             <div className={`aspect-square flex flex-col items-center justify-center`}>
@@ -140,10 +140,11 @@ const Card = ({
           <Heading
             as="h3"
             className={clsx(
-              "text-xl md:text-3xl font-light text-center relative",
+              "text-xl font-light text-center relative",
               textColor,
               {
-                "md:max-w-[80%] mx-auto": isSecondary,
+                "md:text-3xl": isPrimary || isAlt,
+                "md:max-w-[80%] mx-auto md:text-3xl": isSecondary,
               },
             )}
           >
@@ -153,7 +154,7 @@ const Card = ({
           )}
           </Heading>
           {subtitle && (
-            <p className="text-md md:text-lg text-center flex">{subtitle}</p>
+            <p className="text-md md:text-xl text-center flex">{subtitle}</p>
           )}
           {(isPrimary || isAlt) && (
             <RichText

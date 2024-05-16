@@ -44,7 +44,7 @@ const MediaText = ({
                 },
               )}
             >
-              <Heading as="h2" className={`text-4xl font-bold `}>
+              <Heading as="h2" className={`text-4xl font-light`}>
                 {title}
               </Heading>
               <div className={``}>

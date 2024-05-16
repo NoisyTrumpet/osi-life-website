@@ -37,7 +37,7 @@ const RichText = ({
     return (
       <span>
         {firstPart}
-        <span className={`text-secondary font-bolder`}>{secondPart}</span>
+        <span className={`text-secondary font-bold`}>{secondPart}</span>
         {thirdPart}
       </span>
     );
