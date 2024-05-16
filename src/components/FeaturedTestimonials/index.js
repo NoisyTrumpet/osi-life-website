@@ -6,9 +6,8 @@ import ChakraCaousel from "./Fragments/ChakraCarousel";
 
 const FeaturedTestimonials = ({ title, items }) => {
   return (
-    <Box bg="lightBG">
-      <Box borderTopRightRadius={80} bg="white">
-        <Container py={6} maxWidth={`1500px`} mx={`auto`} px={0}>
+    <Box>
+      <Container py={6} maxWidth={`1500px`} mx={`auto`} px={0}>
           <div
             className={`flex flex-row justify-start items-center gap-4 w-full text-center`}
           >
@@ -28,7 +27,13 @@ const FeaturedTestimonials = ({ title, items }) => {
             />
           </div>
           <ChakraCaousel gap={32}>
-            {items.map((item) => (
+            {items.map((item) => {
+              const { name, quote } = item;
+
+              const nameConatinsOsiLife = name.includes("OsiLIFE");
+
+
+              return (
               <Grid
                 key={item.id}
                 gap={2}
@@ -40,17 +45,27 @@ const FeaturedTestimonials = ({ title, items }) => {
                     color="darkGray"
                     fontFamily={`var(--chakra-fonts-heading)`}
                   >
-                    {item.name}
+                    {nameConatinsOsiLife ? (
+                      <>
+                        <span className={`text-primary`}>Osi</span>
+                        <span className={`text-secondary font-bold`}>LIFE</span>
+                        <span> {item.name.split("OsiLIFE")[1]}</span>
+                      </>
+                    ) : 
+                    <>
+                      {item.name}
+                    </>
+                  }
                   </Text>
                   <Text fontSize="lg" color="darkGray" textDecoration="italic">
                     "{item.quote.internal.content}"
                   </Text>
                 </GridItem>
               </Grid>
-            ))}
+            )
+            })}
           </ChakraCaousel>
         </Container>
-      </Box>
     </Box>
   );
 };

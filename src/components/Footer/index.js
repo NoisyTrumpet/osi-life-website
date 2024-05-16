@@ -25,7 +25,7 @@ const Footer = ({ path }) => {
     path === "/benefits"
   ) {
     return (
-      <Box bg="lightGrayBG">
+      <Box bg="white">
         <Box
           ml={{ base: 0, sm: 10 }}
           bg={mode(`primary`)}

@@ -16,8 +16,7 @@ import {
   Flex,
   Box,
 } from "@chakra-ui/react";
-import ChevronRight from "svg/ChevronRight";
-import ChevronLeft from "svg/ChevronLeft";
+import RightArrow from "svg/RightArrow";
 import { useWindowWidth } from "hooks/index";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
 import { useBoundingRect } from "hooks/index.js";
@@ -200,7 +199,7 @@ function Slider({
             transform: `scale(1.3)`,
           }}
         >
-          <ChevronLeft />
+          <RightArrow className={`text-primary w-6 h-6 transform rotate-180`} />
         </Button>
 
         <Box
@@ -251,7 +250,7 @@ function Slider({
             transform: `scale(1.3)`,
           }}
         >
-          <ChevronRight />
+          <RightArrow className={`text-primary w-6 h-6`} />
         </Button>
       </Flex>
       <Progress

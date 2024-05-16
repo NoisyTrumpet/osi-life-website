@@ -29,7 +29,7 @@ const Features = ({
       : "text-darkGray";
 
   return (
-    <div className={twMerge(clsx(`py-4 md:py-8 z-[1]`, bgColor), className)}>
+    <div className={twMerge(clsx(`py-4 lg:py-8 z-[1] relative`, bgColor), className)}>
       <div className="container w-full max-w-7xl mx-auto">
         <div className="flex flex-col gap-4">
           <div
@@ -56,13 +56,14 @@ const Features = ({
               />
             )}
           </div>
-          <div className="flex flex-col md:flex-row gap-4 md:gap-16 px-4 lg:px-0 relative h-full">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-16 px-4 lg:px-0 relative h-full">
             {benefits.map((benefit) => (
               <Card
                 key={benefit.id}
                 {...benefit}
                 variant={variant}
-                className={clsx(`w-full md:w-1/3 h-full flex-grow flex`, )}
+                className={clsx(`w-full md:w-1/2 lg:w-1/3 flex flex-col`,{
+                } )}
               />
             ))}
           </div>
@@ -99,7 +100,7 @@ const Card = ({
   return (
     <ConditionalWrapper
       className={clsx(
-        `rounded-xl relative h-full z-[1]`,
+        `rounded-xl relative z-[1]`,
         isPrimary && bottomGradient,
         className,
         {
@@ -111,7 +112,7 @@ const Card = ({
         <a
           href={page?.slug}
           className={clsx(
-            `rounded-xl relative h-full z-[1]`,
+            `rounded-xl relative z-[1]`,
             isPrimary && bottomGradient,
             className,
           )}
@@ -120,9 +121,9 @@ const Card = ({
         </a>
       )}
     >
-      <div className="flex flex-col items-center gap-2 justify-bewteen h-full">
+      <div className="flex flex-col items-center gap-2 h-full justify-between">
         <div
-          className={`flex flex-col gap-2 md:gap-6 items-center justify-center h-full px-2 py-2`}
+          className={`flex flex-col gap-2 md:gap-6 items-center justify-start h-full px-2 py-2`}
         >
           {isAlt && icon && icon.gatsbyImageData && (
             <div className={`aspect-square flex flex-col items-center justify-center`}>
@@ -152,7 +153,7 @@ const Card = ({
           )}
           </Heading>
           {subtitle && (
-            <p className="text-md md:text-lg text-center">{subtitle}</p>
+            <p className="text-md md:text-lg text-center flex">{subtitle}</p>
           )}
           {(isPrimary || isAlt) && (
             <RichText
@@ -164,7 +165,7 @@ const Card = ({
           )}
         </div>
         <div
-          className={clsx({
+          className={clsx(`flex flex-col relative`,{
             "order-first": isSecondary,
           })}
         >
