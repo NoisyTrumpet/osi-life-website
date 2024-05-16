@@ -9,7 +9,9 @@ const FeaturedTestimonials = ({ title, items }) => {
     <Box bg="lightBG">
       <Box borderTopRightRadius={80} bg="white">
         <Container py={6} maxWidth={`1500px`} mx={`auto`} px={0}>
-          <div className={`flex flex-row justify-start items-center gap-4 w-full text-center`}>
+          <div
+            className={`flex flex-row justify-start items-center gap-4 w-full text-center`}
+          >
             <Text
               my={4}
               color="darkGray"
@@ -21,14 +23,16 @@ const FeaturedTestimonials = ({ title, items }) => {
             >
               {title}
             </Text>
-            <div className={`flex-grow h-[2px] bg-secondary rounded hidden md:flex`} />
+            <div
+              className={`flex-grow h-[2px] bg-secondary rounded hidden md:flex`}
+            />
           </div>
           <ChakraCaousel gap={32}>
             {items.map((item) => (
               <Grid
                 key={item.id}
                 gap={2}
-                className={`bg-gray px-4 py-8 rounded-lg`}
+                className={`bg-gray px-4 py-8 md:px-12 md:py-16 rounded-lg`}
               >
                 <GridItem>
                   <Text

@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gradient-to-t-custom":
-          "linear-gradient(to top, var(--tw-gradient-from) 15%, white 50%, var(--tw-gradient-to) 100%)",
+          "linear-gradient(to top, var(--tw-gradient-from) 0%, white 53.94%, var(--tw-gradient-to) 151.64%)",
         // background: linear-gradient(180deg, #FFFFFF 53.94%, rgba(28, 101, 108, 0.495) 151.64%);
       },
       colors: {

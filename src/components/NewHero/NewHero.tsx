@@ -45,7 +45,9 @@ const NewHero = ({
       <div
         className={`py-8 md:py-12 container w-full max-w-8xl mx-auto flex flex-col lg:flex-row relative`}
       >
-        <div className={`w-full lg:w-[50%] flex flex-col gap-2 z-[1] px-2 md:px-0`}>
+        <div
+          className={`w-full lg:w-[50%] flex flex-col gap-2 z-[1] px-2 md:px-0`}
+        >
           <RichText
             content={bodyText}
             className={`text-white `}
@@ -88,7 +90,7 @@ const NewHero = ({
       >
         <Heading
           as="h2"
-          className={`text-white text-2xl md:text-4xl text-center`}
+          className={`text-white text-2xl md:text-4xl text-center font-medium`}
         >
           {bottomTitle}
         </Heading>
@@ -102,7 +104,7 @@ const NewHero = ({
                 <Icon type={win.icon} className={`w-12 h-12 md:w-32`} />
                 <Heading
                   as="h3"
-                  className={`text-xl lg:text-2xl text-center md:text-left`}
+                  className={`text-xl font-light lg:text-2xl text-center md:text-left`}
                 >
                   {win.label}
                 </Heading>

@@ -279,6 +279,13 @@ const ContactForm = ({ title, subtitle }) => {
                     >
                       Patient
                     </Radio>
+                    <Radio
+                      colorScheme="whiteAlpha"
+                      value="Payor"
+                      {...register("payor")}
+                    >
+                      Payor
+                    </Radio>
                   </Stack>
                 </RadioGroup>
               </Flex>
