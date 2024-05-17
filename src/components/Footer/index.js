@@ -9,7 +9,7 @@ import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import RichText from "components/RichText";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import ContactForm from "Components/ContactForm";
+import ContactForm from "components/ContactForm";
 
 const Footer = ({ path }) => {
   const { contentfulSiteSettings } = useStaticQuery(footerQuery);
@@ -25,7 +25,7 @@ const Footer = ({ path }) => {
     path === "/benefits"
   ) {
     return (
-      <Box bg="lightGrayBG">
+      <Box bg="white">
         <Box
           ml={{ base: 0, sm: 10 }}
           bg={mode(`primary`)}

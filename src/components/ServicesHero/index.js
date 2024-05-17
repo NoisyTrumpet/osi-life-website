@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Box, Grid, GridItem } from "@chakra-ui/react";
-import PhotoWrapper from "SVG/PhotoWrapper";
-import InfoGraphic from "SVG/InfoGraphic";
+import PhotoWrapper from "svg/PhotoWrapper";
+import InfoGraphic from "svg/InfoGraphic";
 
 const ServiceHero = ({ title, variant, image }) => {
   return (

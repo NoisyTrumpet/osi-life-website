@@ -1,6 +1,6 @@
 import { useColorModeValue as mode } from "@chakra-ui/react";
 import * as React from "react";
-import UniversalLink from "Components/UniversalLink";
+import UniversalLink from "components/UniversalLink";
 const MenuItem = (props) => {
   const { title, href } = props;
   return (

@@ -8,7 +8,7 @@ function MultiHandCross(props) {
       width="100%"
       // height="auto"
       viewBox="0 0 571.9 591.24"
-      fillColor={props.fillColor || "inherit"}
+      fillcolor={props.fillColor || "inherit"}
       {...props}
     >
       <g id="Group_374" transform="translate(-3432.032 -4259.647)">

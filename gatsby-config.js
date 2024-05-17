@@ -1,3 +1,4 @@
+require("dotenv").config();
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -15,10 +16,11 @@ module.exports = {
   flags: {
     FAST_DEV: true,
   },
+  // graphqlTypegen: true,
   plugins: [
+    "gatsby-plugin-postcss",
     `gatsby-plugin-netlify`,
     "@chakra-ui/gatsby-plugin",
-    `gatsby-plugin-preact`,
     // {
     //   resolve: "gatsby-plugin-google-tagmanager",
     //   options: {
@@ -72,15 +74,15 @@ module.exports = {
       resolve: `gatsby-alias-imports`,
       options: {
         aliases: {
-          Components: `src/components`,
-          Constants: `src/constants`,
-          Features: `src/features`,
-          Graphql: `src/graphql`,
-          Hooks: `src/hooks`,
-          Pages: "src/pages",
-          Styles: `src/styles`,
-          SVG: `src/svg`,
-          Utils: `src/utils`,
+          components: `src/components`,
+          constants: `src/constants`,
+          features: `src/features`,
+          graphql: `src/graphql`,
+          hooks: `src/hooks`,
+          pages: "src/pages",
+          styles: `src/styles`,
+          svg: `src/svg`,
+          utils: `src/utils`,
         },
       },
     },

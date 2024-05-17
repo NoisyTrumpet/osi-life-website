@@ -1,5 +1,5 @@
 import * as React from "react";
-import "Components/ServicesHero/InfoGraphicAni.css";
+import "components/ServicesHero/InfoGraphicAni.css";
 
 const InfoGraphic = (props) => {
   return (

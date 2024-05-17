@@ -1,9 +1,9 @@
 import { graphql } from "gatsby";
 import * as React from "react";
-import Layout from "Components/Layout";
-import Seo from "Components/Seo";
-import BlockReturner from "Features/BlockReturner";
-import RichText from "Components/RichText";
+import Layout from "components/Layout";
+import Seo from "components/Seo";
+import BlockReturner from "features/BlockReturner";
+import RichText from "components/RichText";
 import { Container, Heading } from "@chakra-ui/react";
 
 const PageTemplate = ({ data: page }) => {
@@ -14,6 +14,7 @@ const PageTemplate = ({ data: page }) => {
     pageBlocks,
     body,
   } = page.contentfulPage;
+
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
@@ -21,7 +22,7 @@ const PageTemplate = ({ data: page }) => {
         pageBlocks.map((block, index) => (
           <BlockReturner
             block={block}
-            key={block !== {} ? block.id : `empty-block-${index}`}
+            key={block ? block.id : `empty-block-${index}`}
           />
         ))
       ) : (

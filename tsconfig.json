@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "target": "es6",
+    "baseUrl": "./src",
+    "paths": {
+      "@components": ["/components/*"],
+      "@helper": ["/helper/*"],
+      "@pages": ["/pages/*"],
+      "@styles": ["/styles/*"],
+      "@utils": ["/utils/*"],
+      "@hooks": ["/hooks/*"],
+      "@lib": ["/lib/*"],
+      "@data": ["/data/*"],
+      "@context": ["/context/*"],
+      "@types": ["/types/*"],
+      "@features": ["/features/*"],
+      "@SVG": ["/svg/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": false
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

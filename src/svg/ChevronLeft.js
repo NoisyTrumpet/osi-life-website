@@ -10,7 +10,7 @@ function ChevronLeft(props) {
       {...props}
     >
       <title>Previous</title>
-      <g data-name="Group 309" fill="orange">
+      <g data-name="Group 309" fill="#00ADBC">
         <path
           data-name="Rectangle 146"
           d="M46.649 9.291l-31.45 31.45a8.957 8.957 0 01-12.667 0L.421 38.629a.6.6 0 010-.848L29.759 8.443a11.943 11.943 0 0116.89 0 .6.6 0 010 .848z"

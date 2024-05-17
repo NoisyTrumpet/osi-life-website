@@ -4,11 +4,12 @@ import theme from "../../@chakra-ui/gatsby-plugin/theme";
 // Fonts
 import "@fontsource/baloo-2";
 import { ChakraProvider } from "@chakra-ui/react";
-import Header from "Components/Header";
-import Footer from "Components/Footer";
+import Header from "components/Header";
+import Footer from "components/Footer";
 import { useLocation } from "@reach/router";
-import { SkipNavContent, SkipNavLink } from "Components/SkipNav/index";
-import "Styles/main.scss";
+import { SkipNavContent, SkipNavLink } from "components/SkipNav/index";
+import "styles/main.scss";
+// TEST
 
 const Layout = ({ children }) => {
   const { pathname } = useLocation();

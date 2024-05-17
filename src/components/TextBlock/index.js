@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container, Heading } from "@chakra-ui/react";
-import RichText from "Components/RichText";
+import RichText from "components/RichText";
 
 const TextBlock = ({ id, title, content }) => {
   return (

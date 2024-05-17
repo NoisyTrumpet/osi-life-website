@@ -1,27 +1,24 @@
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import * as React from "react";
-import Layout from "Components/Layout";
-import Seo from "Components/Seo";
-// import loadable from "@loadable/component";
+import Layout from "components/Layout";
+import Seo from "components/Seo";
+import BlockReturner from "features/BlockReturner";
 
-import BlockReturner from "Features/BlockReturner";
-
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data }: any) => {
   const {
     // title,
     seoTitle,
     seoDescription: { seoDescription },
     pageBlocks,
-  } = data.contentfulPage;
+  } = data.contentfulPage as Queries.ContentfulPage;
+
+  console.log(pageBlocks);
 
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
       {pageBlocks.map((block, index) => (
-        <BlockReturner
-          block={block}
-          key={block !== {} ? block.id : `empty-block-${index}`}
-        />
+        <BlockReturner block={block} key={block.id} />
       ))}
     </Layout>
   );
@@ -43,6 +40,31 @@ export const homeQuery = graphql`
       seoTitle
       title
       pageBlocks {
+        ... on ContentfulBlockNewHero {
+          id
+          bodyText {
+            raw
+          }
+          mediaItems {
+            ...imageQuery
+          }
+          button {
+            id
+            label
+            link
+            variant
+          }
+          bottomTitle
+          wins {
+            items {
+              icon
+              label
+            }
+          }
+          internal {
+            type
+          }
+        }
         ... on ContentfulBlockPageHeader {
           id
           settingVariant
@@ -54,7 +76,7 @@ export const homeQuery = graphql`
             type
           }
         }
-        ... on ContentfulBlockFeaturedBenefits {
+        ... on ContentfulBlockFeatures {
           id
           title
           benefits {
@@ -65,24 +87,25 @@ export const homeQuery = graphql`
               file {
                 url
               }
+              ...imageQuery
             }
             description {
               raw
             }
+            accentColor
+            image {
+              ...imageQuery
+            }
+            page {
+              slug
+            }
           }
           internal {
             type
           }
-        }
-        ... on ContentfulBlockText {
-          id
-          title
-          content {
-            raw
-          }
-          internal {
-            type
-          }
+          variant
+          backgroundColor
+          accentColor
         }
         ... on ContentfulBlockFeaturedTestimonials {
           id
@@ -105,46 +128,21 @@ export const homeQuery = graphql`
             type
           }
         }
-        ... on ContentfulBlockFeaturedServices {
+        ... on ContentfulBlockMediaText {
           id
           title
-          services {
-            id
-            subtitle
-            title
-            image {
-              ...imageQuery
-            }
-            page {
-              slug
-            }
+          photo {
+            ...imageQuery
+          }
+          settingVariant
+          content {
+            raw
           }
           internal {
             type
           }
+          startsOn
         }
-        ... on ContentfulBlockFeaturedServicesHome {
-          id
-          title
-          subtitle
-          internal {
-            type
-          }
-          services {
-            title
-            subtitle
-            description {
-              raw
-            }
-            image {
-              ...imageQuery
-            }
-            page {
-              slug
-            }
-          }
-        }
-
         ... on ContentfulBlockVisualList {
           id
           title

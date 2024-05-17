@@ -28,12 +28,12 @@ const HomeServices = ({ title, subTitle, services }) => {
       </Box>
       <Accordion allowMultiple mb={8}>
         <Flex direction={[`column`, `column`, `column`, `row`, `row`]}>
-          {services.map((service) => (
+          {services.map((service, i) => (
             <AccordionItem
               border={`none`}
               maxW={[`90%`, `75%`, `75%`, `40%`, `40%`]}
               mx={`auto`}
-              key={service.title}
+              key={`service-${service.title}-accordion-item-${i}`}
             >
               {({ isExpanded }) => (
                 <>

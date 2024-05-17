@@ -10,7 +10,7 @@ import {
 import { FaMinus, FaPlus } from "react-icons/fa";
 import RichText from "components/RichText";
 import React from "react";
-import PhotoWrapper from "SVG/PhotoWrapper";
+import PhotoWrapper from "svg/PhotoWrapper";
 
 const FAQs = ({ id, title, photo, variant, items }) => {
   return (
@@ -98,11 +98,11 @@ const FAQs = ({ id, title, photo, variant, items }) => {
                     borderTop: "none",
                   },
                 }}
+                key={item.id}
               >
                 <AccordionItem
                   // borderBottomColor={`secondary`}
                   // borderTop={`none`}
-                  key={item.id}
                   className="questions"
                 >
                   {({ isExpanded }) => (

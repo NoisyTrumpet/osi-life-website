@@ -33,7 +33,7 @@ const ContactForm = ({ title, subtitle }) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      }
+      },
     );
   const error = () =>
     toast("Ooops! We've encountered an error, please try again!");
@@ -278,6 +278,13 @@ const ContactForm = ({ title, subtitle }) => {
                       {...register("patient")}
                     >
                       Patient
+                    </Radio>
+                    <Radio
+                      colorScheme="whiteAlpha"
+                      value="Payor"
+                      {...register("payor")}
+                    >
+                      Payor
                     </Radio>
                   </Stack>
                 </RadioGroup>

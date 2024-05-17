@@ -9,7 +9,7 @@ const resolveUrl = (url) => {
     url.hostname === "connect.facebook.net"
   ) {
     var proxyUrl = new URL(
-      `https://coop-atm.mygenfcu.workers.dev/?${url.href}`
+      `https://coop-atm.mygenfcu.workers.dev/?${url.href}`,
     );
     // proxyUrl.searchParams.append('', )
     return proxyUrl;

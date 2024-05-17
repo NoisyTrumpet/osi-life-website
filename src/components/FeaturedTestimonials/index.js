@@ -4,50 +4,68 @@ import React from "react";
 import ChakraCaousel from "./Fragments/ChakraCarousel";
 // Testimonials Component
 
-const FeaturedTestimonials = ({ title, items, key }) => {
+const FeaturedTestimonials = ({ title, items }) => {
   return (
-    <Box bg="lightBG">
-      <Box borderTopRightRadius={80} bg="darkBG" key={key}>
-        <Container py={6} maxWidth={`1500px`} mx={`auto`} px={0}>
-          <Text
-            my={4}
-            color="secondary"
-            fontSize="6xl"
-            textAlign={["left", "center"]}
-            fontFamily={`var(--chakra-fonts-heading)`}
-            id="testimonial-label"
-            px={[4, 0]}
+    <Box>
+      <Container py={6} maxWidth={`1500px`} mx={`auto`} px={0}>
+          <div
+            className={`flex flex-row justify-start items-center gap-4 w-full text-center`}
           >
-            {title}
-          </Text>
+            <Text
+              my={4}
+              color="darkGray"
+              fontSize="6xl"
+              textAlign={"center"}
+              fontFamily={`var(--chakra-fonts-heading)`}
+              id="testimonial-label"
+              px={[4, 0]}
+            >
+              {title}
+            </Text>
+            <div
+              className={`flex-grow h-[2px] bg-secondary rounded hidden md:flex`}
+            />
+          </div>
           <ChakraCaousel gap={32}>
-            {items.map((item) => (
-              <Grid key={item.id} templateColumns={"25% 75%"} gap={2}>
-                <GridItem display="grid" placeItems="center">
-                  <Image
-                    src={`https:${item.image.file.url}`}
-                    alt={item.name}
-                    htmlWidth="145"
-                    htmlHeight="150"
-                  />
-                </GridItem>
+            {items.map((item) => {
+              const { name, quote } = item;
+
+              const nameConatinsOsiLife = name.includes("OsiLIFE");
+
+
+              return (
+              <Grid
+                key={item.id}
+                gap={2}
+                className={`bg-gray px-4 py-8 md:px-12 md:py-16 rounded-lg`}
+              >
                 <GridItem>
                   <Text
                     fontSize="3xl"
-                    color="secondary"
+                    color="darkGray"
                     fontFamily={`var(--chakra-fonts-heading)`}
                   >
-                    {item.name}
+                    {nameConatinsOsiLife ? (
+                      <>
+                        <span className={`text-primary`}>Osi</span>
+                        <span className={`text-secondary font-bold`}>LIFE</span>
+                        <span> {item.name.split("OsiLIFE")[1]}</span>
+                      </>
+                    ) : 
+                    <>
+                      {item.name}
+                    </>
+                  }
                   </Text>
-                  <Text fontSize="lg" color="white" textDecoration="italic">
+                  <Text fontSize="lg" color="darkGray" textDecoration="italic">
                     "{item.quote.internal.content}"
                   </Text>
                 </GridItem>
               </Grid>
-            ))}
+            )
+            })}
           </ChakraCaousel>
         </Container>
-      </Box>
     </Box>
   );
 };

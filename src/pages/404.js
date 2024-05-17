@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Box, Heading, Text, Button, Flex } from "@chakra-ui/react";
-import Layout from "Components/Layout";
-import Seo from "Components/Seo";
-import HandCross from "SVG/HandCross";
-import OsiLogoHoriz from "SVG/OsiLogoHoriz";
+import Layout from "components/Layout";
+import Seo from "components/Seo";
+import HandCross from "svg/HandCross";
+import OsiLogoHoriz from "svg/OsiLogoHoriz";
 import { StaticImage } from "gatsby-plugin-image";
 
 const Page404 = () => {

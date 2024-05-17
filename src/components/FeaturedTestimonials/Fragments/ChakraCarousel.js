@@ -16,12 +16,12 @@ import {
   Flex,
   Box,
 } from "@chakra-ui/react";
-import ChevronRight from "SVG/ChevronRight";
-import ChevronLeft from "SVG/ChevronLeft";
-import { useWindowWidth } from "Hooks/index";
+import RightArrow from "svg/RightArrow";
+import { useWindowWidth } from "hooks/index";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
-import { useBoundingRect } from "Hooks/index.js";
-import { percentage } from "Utils/index.js";
+import { useBoundingRect } from "hooks/index.js";
+import { percentage } from "utils/index.js";
+import { isClient } from "../../../constants/index";
 
 const MotionFlex = motion(Flex);
 
@@ -45,7 +45,7 @@ const ChakraCarousel = ({ children, gap }) => {
 
   const positions = useMemo(
     () => children.map((_, index) => -Math.abs((itemWidth + gap) * index)),
-    [children, itemWidth, gap]
+    [children, itemWidth, gap],
   );
 
   const { breakpoints } = useTheme();
@@ -199,7 +199,7 @@ function Slider({
             transform: `scale(1.3)`,
           }}
         >
-          <ChevronLeft />
+          <RightArrow className={`text-primary w-6 h-6 transform rotate-180`} />
         </Button>
 
         <Box
@@ -250,7 +250,7 @@ function Slider({
             transform: `scale(1.3)`,
           }}
         >
-          <ChevronRight />
+          <RightArrow className={`text-primary w-6 h-6`} />
         </Button>
       </Flex>
       <Progress
@@ -346,7 +346,7 @@ function Track({
         setTrackIsActive(true);
       } else setTrackIsActive(false);
     },
-    [setTrackIsActive]
+    [setTrackIsActive],
   );
 
   const handleKeyDown = useCallback(
@@ -366,10 +366,12 @@ function Track({
         }
       }
     },
-    [trackIsActive, setActiveItem, activeItem, constraint, positions.length]
+    [trackIsActive, setActiveItem, activeItem, constraint, positions.length],
   );
 
   useEffect(() => {
+    if (!isClient) return;
+
     handleResize(positions);
 
     document.addEventListener("keydown", handleKeyDown);
