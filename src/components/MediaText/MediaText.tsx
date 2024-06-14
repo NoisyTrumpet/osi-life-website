@@ -24,7 +24,6 @@ const MediaText = ({
   ...props
 }: MediaTextProps) => {
   const isSimple = variant === "Simple";
-  console.log("isSimple", variant);
 
   const isLeft = startsOn === true || startsOn === null;
   const isRight = startsOn === false;
@@ -160,7 +159,6 @@ const MediaText = ({
             base: `column-reverse`,
             lg: (variant === "Primary" && `row-reverse`) || `row`,
             xl: (variant === "Primary" && `row-reverse`) || `row`,
-            "2xl": variant === "Primary" && `row-reverse`,
           }}
           pb={`4rem`}
           maxW={1500}

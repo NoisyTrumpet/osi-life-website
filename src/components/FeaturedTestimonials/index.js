@@ -8,32 +8,31 @@ const FeaturedTestimonials = ({ title, items }) => {
   return (
     <Box>
       <Container py={6} maxWidth={`1500px`} mx={`auto`} px={0}>
-          <div
-            className={`flex flex-row justify-start items-center gap-4 w-full text-center`}
+        <div
+          className={`flex flex-row justify-start items-center gap-4 w-full text-center`}
+        >
+          <Text
+            my={4}
+            color="darkGray"
+            fontSize="6xl"
+            textAlign={"center"}
+            fontFamily={`var(--chakra-fonts-heading)`}
+            id="testimonial-label"
+            px={[4, 0]}
           >
-            <Text
-              my={4}
-              color="darkGray"
-              fontSize="6xl"
-              textAlign={"center"}
-              fontFamily={`var(--chakra-fonts-heading)`}
-              id="testimonial-label"
-              px={[4, 0]}
-            >
-              {title}
-            </Text>
-            <div
-              className={`flex-grow h-[2px] bg-secondary rounded hidden md:flex`}
-            />
-          </div>
-          <ChakraCaousel gap={32}>
-            {items.map((item) => {
-              const { name, quote } = item;
+            {title}
+          </Text>
+          <div
+            className={`flex-grow h-[2px] bg-secondary rounded hidden md:flex`}
+          />
+        </div>
+        <ChakraCaousel gap={32}>
+          {items.map((item) => {
+            const { name, quote } = item;
 
-              const nameConatinsOsiLife = name.includes("OsiLIFE");
+            const nameConatinsOsiLife = name.includes("OsiLIFE");
 
-
-              return (
+            return (
               <Grid
                 key={item.id}
                 gap={2}
@@ -51,21 +50,19 @@ const FeaturedTestimonials = ({ title, items }) => {
                         <span className={`text-secondary font-bold`}>LIFE</span>
                         <span> {item.name.split("OsiLIFE")[1]}</span>
                       </>
-                    ) : 
-                    <>
-                      {item.name}
-                    </>
-                  }
+                    ) : (
+                      <>{item.name}</>
+                    )}
                   </Text>
                   <Text fontSize="lg" color="darkGray" textDecoration="italic">
                     "{item.quote.internal.content}"
                   </Text>
                 </GridItem>
               </Grid>
-            )
-            })}
-          </ChakraCaousel>
-        </Container>
+            );
+          })}
+        </ChakraCaousel>
+      </Container>
     </Box>
   );
 };

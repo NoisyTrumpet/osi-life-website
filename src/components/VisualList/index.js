@@ -7,16 +7,21 @@ const VisualList = ({ id, title, variant, cards }) => {
   // Secondary Variant
   if (variant === "Secondary") {
     return (
-      <Box
-        bg={"lightGrayBG"}
-        borderTopLeftRadius={80}
-        borderTopRightRadius={80}
-        mt={16}
-        mb={0}
-        pb={10}
-      >
-        <Container maxW="1500px" p={[5, 20]}>
-          <Heading as="h2" ml={10} my={[5, 0]} color="primary">
+      <Box mt={16} mb={0} pb={10}>
+        <Container
+          maxW="1500px"
+          p={[5, 20]}
+          borderTop="2px"
+          borderStyle="solid"
+          borderColor="secondary"
+        >
+          <Heading
+            as="h2"
+            ml={10}
+            my={[5, 0]}
+            color="darkGray"
+            textAlign={"center"}
+          >
             {title}
           </Heading>
           {/* {let imageURL = "";
@@ -27,18 +32,9 @@ const VisualList = ({ id, title, variant, cards }) => {
             }} */}
           {cards.map((card, index) => (
             <Flex
-              flexDirection={[
-                `column`,
-                `column`,
-                `column`,
-                (index % 2 === 0 && `row`) || `row-reverse`,
-                index % 2 === 0 && `row`,
-              ]}
+              flexDirection={[`column`, `column`, `column`, `row`]}
               my={`4rem`}
               pb={[5, 20]}
-              borderBottom="3px"
-              borderStyle="solid"
-              borderColor="secondary"
               _last={{
                 borderBottomWidth: 0,
                 pb: 0,
@@ -65,7 +61,6 @@ const VisualList = ({ id, title, variant, cards }) => {
                   htmlWidth="140"
                   htmlHeight="140"
                 />
-                {/* <img src={imageURL} alt="icon" height="auto" /> */}
               </Box>
               <Box
                 flex={[`100%`, `100%`, `100%`, `70%`, `70%`]}

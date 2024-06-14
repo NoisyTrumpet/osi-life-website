@@ -141,7 +141,6 @@ const BlockReturner = ({ block }) => {
       );
     }
     if (block?.internal?.type === "ContentfulBlockMediaText") {
-      console.log("block", block);
       return <MediaText {...block} path={pathname} />;
     }
     if (block?.internal?.type === "ContentfulBlockVisualList") {

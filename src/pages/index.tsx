@@ -12,8 +12,6 @@ const IndexPage = ({ data }: any) => {
     pageBlocks,
   } = data.contentfulPage as Queries.ContentfulPage;
 
-  console.log(pageBlocks);
-
   return (
     <Layout>
       <Seo title={seoTitle} description={seoDescription} />
