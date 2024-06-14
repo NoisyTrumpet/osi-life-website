@@ -173,6 +173,37 @@ export const query = graphql`
             type
           }
         }
+        ... on ContentfulBlockFeatures {
+          id
+          title
+          benefits {
+            id
+            title
+            subtitle
+            icon {
+              file {
+                url
+              }
+              ...imageQuery
+            }
+            description {
+              raw
+            }
+            accentColor
+            image {
+              ...imageQuery
+            }
+            page {
+              slug
+            }
+          }
+          internal {
+            type
+          }
+          variant
+          bgColor: backgroundColor
+          accentColor
+        }
         ... on ContentfulBlockFaq {
           id
           title

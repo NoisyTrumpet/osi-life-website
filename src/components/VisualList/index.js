@@ -7,7 +7,7 @@ const VisualList = ({ id, title, variant, cards }) => {
   // Secondary Variant
   if (variant === "Secondary") {
     return (
-      <Box mt={16} mb={0} pb={10}>
+      <Box mb={0} pb={10}>
         <Container
           maxW="1500px"
           p={[5, 20]}
@@ -33,13 +33,13 @@ const VisualList = ({ id, title, variant, cards }) => {
           {cards.map((card, index) => (
             <Flex
               flexDirection={[`column`, `column`, `column`, `row`]}
-              my={`4rem`}
               pb={[5, 20]}
               _last={{
                 borderBottomWidth: 0,
                 pb: 0,
                 mb: 0,
               }}
+              key={card.id}
             >
               <Box
                 flex={[`100%`, `100%`, `100%`, `30%`, `30%`]}
@@ -69,10 +69,10 @@ const VisualList = ({ id, title, variant, cards }) => {
                 mx={4}
                 my={`auto`}
               >
-                <Heading as="h4" color="primary">
+                <Heading as="h4" className={`uppercase text-black`}>
                   {card.title}
                 </Heading>
-                <p>{card.subtitle}</p>
+                <p className={`uppercase text-black`}>{card.subtitle}</p>
                 <Box align="left" mt={4}>
                   <RichText content={card.description} />
                 </Box>
