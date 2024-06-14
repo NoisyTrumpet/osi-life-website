@@ -16,11 +16,11 @@ const Banner = ({
   textColor: cmsTextColor,
 }: BannerBlock) => {
   const bgColor = () => {
-    if (backgroundColor[0] === "lightGrayBG") {
+    if (backgroundColor && backgroundColor[0] === "lightGrayBG") {
       return "lightBG";
     }
 
-    if (backgroundColor[0] !== "gray") {
+    if (backgroundColor && backgroundColor[0] !== "gray") {
       return backgroundColor[0];
     }
 
@@ -28,7 +28,7 @@ const Banner = ({
   };
 
   const textColor = () => {
-    if (cmsTextColor[0] !== "primary") {
+    if (cmsTextColor && cmsTextColor[0] !== "primary") {
       return cmsTextColor[0];
     }
     return "primary";
