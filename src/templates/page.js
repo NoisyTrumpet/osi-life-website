@@ -64,6 +64,27 @@ export const query = graphql`
             type
           }
         }
+        ... on ContentfulBlockText {
+          id
+          title
+          content {
+            raw
+          }
+          internal {
+            type
+          }
+          cards {
+            title
+            description {
+              raw
+            }
+            subtitle
+            image {
+              ...imageQuery
+            }
+            id
+          }
+        }
         ... on ContentfulBlockMediaText {
           id
           title
@@ -77,6 +98,7 @@ export const query = graphql`
           internal {
             type
           }
+          startsOn
         }
         ... on ContentfulBlockBanner {
           id
@@ -91,6 +113,8 @@ export const query = graphql`
             seoTitle
           }
           settingVariant
+          backgroundColor
+          textColor
         }
         ... on ContentfulBlockMissionStatement {
           id

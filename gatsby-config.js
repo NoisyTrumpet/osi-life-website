@@ -13,9 +13,9 @@ module.exports = {
     image: "src/images/icon.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@osilife",
   },
-  flags: {
-    FAST_DEV: true,
-  },
+  // flags: {
+  //   FAST_DEV: true,
+  // },
   // graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-postcss",

@@ -8,8 +8,8 @@ import FAQs from "components/FAQs";
 import FeaturedTestimonials from "components/FeaturedTestimonials";
 import MediaText from "components/MediaText/MediaText";
 import VisualList from "components/VisualList";
-import TextBlock from "components/TextBlock";
-import Banner from "components/Banner";
+import TextBlock from "components/TextBlock/TextBlock";
+import Banner from "components/Banner/Banner";
 import ServiceHero from "components/ServicesHero";
 import HomeServices from "components/HomeServices";
 import NewHero from "components/NewHero/NewHero";
@@ -108,27 +108,11 @@ const BlockReturner = ({ block }) => {
       );
     }
     if (block?.internal?.type === "ContentfulBlockText") {
-      return (
-        <TextBlock
-          id={block.id}
-          key={block.id}
-          title={block.title}
-          content={block.content}
-        />
-      );
+      return <TextBlock {...block} />;
     }
     if (block?.internal?.type === "ContentfulBlockBanner") {
-      return (
-        <Banner
-          title={block.title}
-          id={block.id}
-          key={block.id}
-          variant={block.settingVariant}
-          cta={block.ctaButton}
-          content={block.contentString}
-          path={pathname}
-        />
-      );
+      console.log("block", block);
+      return <Banner {...block} path={pathname} />;
     }
     if (block?.internal?.type === "ContentfulBlockFeaturedTestimonials") {
       return (
