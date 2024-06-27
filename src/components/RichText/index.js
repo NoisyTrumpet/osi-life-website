@@ -16,7 +16,7 @@ const RichText = ({
   const Linker = ({ children, data }) => {
     const link = data.data.uri;
     return (
-      <Link to={link} aria-label={children}>
+      <Link to={link} aria-label={children} className={`text-primary underline`}>
         {children}
       </Link>
     );

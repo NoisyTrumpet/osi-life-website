@@ -20,36 +20,47 @@ const MediaText = ({
   id,
   path,
   settingVariant: variant,
+
   startsOn,
   ...props
 }: MediaTextProps) => {
   const isSimple = variant === "Simple";
-  console.log("isSimple", variant);
 
   const isLeft = startsOn === true || startsOn === null;
   const isRight = startsOn === false;
 
   if (isSimple) {
     return (
-      <div className={``}>
+      <div className={`py-8 md:py-12`}>
         <div className={`container mx-auto max-w-7xl`}>
           <div className={`grid grid-cols-1 md:grid-cols-2 gap-4`}>
             {/* Body */}
             <div
               className={clsx(
                 `flex flex-col justify-center items-start px-2 md:px-8`,
+                `gap-4`,
                 {
                   "order-1": isRight,
                   "order-2": isLeft,
                 },
               )}
             >
-              <Heading as="h2" className={`text-4xl font-light`}>
-                {title}
-              </Heading>
-              <div className={``}>
-                <RichText content={content} />
-              </div>
+              {title && (
+                <Heading as="h2" className={`text-4xl font-bold text-darkGray`}>
+                  {title}
+                </Heading>
+              )}
+              {imageSubCaption && (
+                <Heading as="h3" className={`text-2xl font-bold text-darkGray`}>
+                  {imageSubCaption}
+                </Heading>
+              )}
+
+              {content && (
+                <div className={``}>
+                  <RichText content={content} />
+                </div>
+              )}
             </div>
             {/* Media */}
             <div
@@ -160,7 +171,6 @@ const MediaText = ({
             base: `column-reverse`,
             lg: (variant === "Primary" && `row-reverse`) || `row`,
             xl: (variant === "Primary" && `row-reverse`) || `row`,
-            "2xl": variant === "Primary" && `row-reverse`,
           }}
           pb={`4rem`}
           maxW={1500}
@@ -274,7 +284,7 @@ const MediaText = ({
           mt={[`5.5rem`, 0, 0, 0, 0]}
         >
           {/* Text Content */}
-          <Heading color="primary">{title}</Heading>
+          <Heading color="darkGray">{title}</Heading>
           <Box
             sx={{
               h2: {
@@ -360,32 +370,6 @@ const MediaText = ({
                 }}
               >
                 {imageSubCaption}
-              </Box>
-              <Box
-                className="multiHandCrossBox"
-                display={["none", "none", "none", "block", "block"]}
-                p={[10, 10, 10, 11, 0, 1]}
-                position="relative"
-                right={[
-                  "auto",
-                  "auto",
-                  "auto",
-                  "-0.2rem",
-                  "-2.2rem",
-                  "3.25rem",
-                ]}
-                mt={[0, 0, 0, 0, "-10px", "-20px"]}
-                mx={[0, 0, 0, 0, 5, 0]}
-                sx={{
-                  svg: {
-                    height: ["auto", "auto", "auto", "18rem", "25rem"],
-                  },
-                }}
-              >
-                <MultiHandCross
-                  className="AboutMultiHandCross"
-                  fill="#F2F3F4"
-                />
               </Box>
             </GridItem>
           </Grid>
