@@ -7,6 +7,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import React from "react";
+import clsx from "clsx";
 
 const MissionStatement = ({
   title,
@@ -27,17 +28,14 @@ const MissionStatement = ({
         <div
           className={`flex flex-row justify-start items-center gap-4 w-full text-center`}
         >
-          <Text
-            my={4}
-            color="darkGray"
-            fontSize="6xl"
-            textAlign={"center"}
-            fontFamily={`var(--chakra-fonts-heading)`}
-            id="testimonial-label"
-            px={[4, 0]}
-          >
+          <Heading
+              as="h2"
+              className={clsx(
+                `text-3xl md:text-4xl font-light text-center whitespace-nowrap`,
+              )}
+            >
             {title}
-          </Text>
+            </Heading>
           <div
             className={`flex-grow h-[2px] bg-secondary rounded hidden md:flex`}
           />

@@ -69,10 +69,10 @@ const VisualList = ({ id, title, variant, cards }) => {
                 mx={4}
                 my={`auto`}
               >
-                <Heading as="h4" className={`uppercase text-black`}>
+                <Heading as="h4" className={`uppercase`} color="darkGray">
                   {card.title}
                 </Heading>
-                <p className={`uppercase text-black`}>{card.subtitle}</p>
+                <p className={`uppercase`} color="darkGray">{card.subtitle}</p>
                 <Box align="left" mt={4}>
                   <RichText content={card.description} />
                 </Box>
